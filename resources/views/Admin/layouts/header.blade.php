@@ -35,31 +35,6 @@
 				<div class="top-menu">
 					<ul class="nav navbar-nav pull-right">
 						<li><a href="javascript:;" class="fullscreen-btn"><i class="fa fa-arrows-alt"></i></a></li>
-						<!-- start language menu -->
-						<li class="dropdown language-switch">
-							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <img
-									src="../assets/img/flags/gb.png" class="position-left" alt=""> English <span
-									class="fa fa-angle-down"></span>
-							</a>
-							<ul class="dropdown-menu">
-								<li>
-									<a class="deutsch"><img src="../assets/img/flags/de.png" alt=""> Deutsch</a>
-								</li>
-								<li>
-									<a class="ukrainian"><img src="../assets/img/flags/ua.png" alt=""> Українська</a>
-								</li>
-								<li>
-									<a class="english"><img src="../assets/img/flags/gb.png" alt=""> English</a>
-								</li>
-								<li>
-									<a class="espana"><img src="../assets/img/flags/es.png" alt=""> España</a>
-								</li>
-								<li>
-									<a class="russian"><img src="../assets/img/flags/ru.png" alt=""> Русский</a>
-								</li>
-							</ul>
-						</li>
-						<!-- end language menu -->
 						<!-- start notification dropdown -->
 						<li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
 							<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
@@ -200,7 +175,7 @@
 										<li>
 											<a href="index.html#">
 												<span class="photo">
-													<img src="../assets/img/prof/prof5.jpg" class="img-circle" alt="">
+													<img src="{{asset('assets/img/prof/prof5.jpg')}}" class="img-circle" alt="">
 												</span>
 												<span class="subject">
 													<span class="from"> Jacob Ryan </span>
@@ -221,7 +196,7 @@
 						<li class="dropdown dropdown-user">
 							<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
 								data-close-others="true">
-								<img alt="" class="img-circle " src="../assets/img/dp.jpg" />
+								<img alt="" class="img-circle " src="{{asset('assets/img/dp.jpg')}}" />
 								<span class="username username-hide-on-mobile"> Kiran </span>
 								<i class="fa fa-angle-down"></i>
 							</a>
@@ -253,12 +228,6 @@
 							</ul>
 						</li>
 						<!-- end manage user dropdown -->
-						<li class="dropdown dropdown-quick-sidebar-toggler">
-							<a id="headerSettingButton" class="mdl-button mdl-js-button mdl-button--icon pull-right"
-								data-upgraded=",MaterialButton">
-								<i class="material-icons">more_vert</i>
-							</a>
-						</li>
 					</ul>
 				</div>
 			</div>
