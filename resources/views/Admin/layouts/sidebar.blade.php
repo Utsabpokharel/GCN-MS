@@ -62,7 +62,8 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="add_professor_bootstrap.html" class="nav-link "> <span class="title">View All Users</span>
+                                <a href="{{route('user.index')}}" class="nav-link "> <span class="title">View All
+                                        Users</span>
                                 </a>
                             </li>
                         </ul>
@@ -94,7 +95,8 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="add_course.html" class="nav-link "> <span class="title">View All Customers</span>
+                                <a href="add_course.html" class="nav-link "> <span class="title">View All
+                                        Customers</span>
                                 </a>
                             </li>
                         </ul>
@@ -122,11 +124,13 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="all_department.html" class="nav-link "> <span class="title">Add Student Category</span>
+                                <a href="all_department.html" class="nav-link "> <span class="title">Add Student
+                                        Category</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="add_department.html" class="nav-link "> <span class="title">View Student Category</span>
+                                <a href="add_department.html" class="nav-link "> <span class="title">View Student
+                                        Category</span>
                                 </a>
                             </li>
                         </ul>
@@ -138,11 +142,13 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="all_staffs.html" class="nav-link "> <span class="title">Add Teacher Category</span>
+                                <a href="all_staffs.html" class="nav-link "> <span class="title">Add Teacher
+                                        Category</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="add_staff.html" class="nav-link "> <span class="title">View Teacher Category</span>
+                                <a href="add_staff.html" class="nav-link "> <span class="title">View Teacher
+                                        Category</span>
                                 </a>
                             </li>
                         </ul>
@@ -464,7 +470,7 @@
                                     <span class="title">Outgoing Calls</span>
                                 </a>
                             </li>
-                             <li class="nav-item">
+                            <li class="nav-item">
                                 <a href="vector_maps.html" class="nav-link ">
                                     <span class="title">Visited Calls</span>
                                 </a>
@@ -653,7 +659,7 @@
                                     <span class="title">Teacher</span>
                                 </a>
                             </li>
-                             <li class="nav-item">
+                            <li class="nav-item">
                                 <a href="vector_maps.html" class="nav-link ">
                                     <span class="title">Staff</span>
                                 </a>
@@ -863,7 +869,7 @@
                                     <span class="title">Email Settings</span>
                                 </a>
                             </li>
-                             <li class="nav-item">
+                            <li class="nav-item">
                                 <a href="vector_maps.html" class="nav-link ">
                                     <span class="title">Password Settings</span>
                                 </a>

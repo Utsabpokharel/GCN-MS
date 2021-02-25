@@ -24,7 +24,7 @@ class departmentController extends Controller
      */
     public function create()
     {
-        return view('Admin.Department.add');
+        return view('Admin.User.add');
     }
 
     /**
