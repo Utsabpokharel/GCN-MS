@@ -52,12 +52,11 @@
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link nav-toggle"> <i class="material-icons">person</i>
-                            <span class="title">Professors</span> <span class="arrow"></span>
+                            <span class="title">User</span> <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="all_professors.html" class="nav-link "> <span class="title">All
-                                        Professors</span>
+                                <a href="all_professors.html" class="nav-link "> <span class="title">Add</span>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -84,7 +83,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
-                            <span class="title">Students</span><span class="arrow"></span></a>
+                            <span class="title">Staff</span><span class="arrow"></span></a>
                         <ul class="sub-menu">
                             <li class="nav-item">
                                 <a href="all_students.html" class="nav-link "> <span class="title">All
@@ -115,7 +114,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link nav-toggle"> <i class="material-icons">school</i>
-                            <span class="title">Courses</span> <span class="arrow"></span>
+                            <span class="title">Customer</span> <span class="arrow"></span>
                             <span class="label label-rouded label-menu label-success">new</span>
                         </a>
                         <ul class="sub-menu">
@@ -148,7 +147,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link nav-toggle"> <i class="material-icons">local_library</i>
-                            <span class="title">Library</span> <span class="arrow"></span>
+                            <span class="title">Vendor</span> <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
@@ -175,7 +174,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link nav-toggle"> <i class="material-icons">business</i>
-                            <span class="title">Departments</span> <span class="arrow"></span>
+                            <span class="title">Student</span> <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
@@ -202,7 +201,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link nav-toggle"> <i class="material-icons">face</i>
-                            <span class="title">Staff</span> <span class="arrow"></span>
+                            <span class="title">Teacher</span> <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
@@ -234,7 +233,7 @@
                     <li class="nav-item">
                         <a href="#" class="nav-link nav-toggle"> <i
                                 class="material-icons">airline_seat_individual_suite</i>
-                            <span class="title">Holiday</span> <span class="arrow"></span>
+                            <span class="title">Roles</span> <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
@@ -267,7 +266,7 @@
                     <li class="nav-item">
                         <a href="#" class="nav-link nav-toggle">
                             <i class="material-icons">email</i>
-                            <span class="title">Email</span>
+                            <span class="title">Awards</span>
                             <span class="arrow"></span>
                             <span class="label label-rouded label-menu label-danger">new</span>
                         </a>
@@ -291,7 +290,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link nav-toggle"> <i class="material-icons">monetization_on</i>
-                            <span class="title">Fees</span> <span class="arrow"></span>
+                            <span class="title">Recruitment</span> <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
@@ -317,13 +316,13 @@
                     </li>
                     <li class="nav-item">
                         <a href="widget.html" class="nav-link nav-toggle"> <i class="material-icons">widgets</i>
-                            <span class="title">Widget</span>
+                            <span class="title">Attendance</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link nav-toggle">
                             <i class="material-icons">dvr</i>
-                            <span class="title">UI Elements</span>
+                            <span class="title">Payroll</span>
                             <span class="label label-rouded label-menu label-warning">new</span>
                             <span class="arrow"></span>
                         </a>
@@ -383,7 +382,7 @@
                     <li class="nav-item">
                         <a href="#" class="nav-link nav-toggle">
                             <i class="material-icons">store</i>
-                            <span class="title">Material Elements</span>
+                            <span class="title">Travel Ticket</span>
                             <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
@@ -462,7 +461,7 @@
                     <li class="nav-item">
                         <a href="javascript:;" class="nav-link nav-toggle">
                             <i class="material-icons">subtitles</i>
-                            <span class="title">Forms </span>
+                            <span class="title">Department </span>
                             <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
@@ -535,7 +534,7 @@
                     <li class="nav-item">
                         <a href="javascript:;" class="nav-link nav-toggle">
                             <i class="material-icons">timeline</i>
-                            <span class="title">Charts</span>
+                            <span class="title">Courses</span>
                             <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
@@ -559,7 +558,7 @@
                     <li class="nav-item">
                         <a href="javascript:;" class="nav-link nav-toggle">
                             <i class="material-icons">map</i>
-                            <span class="title">Maps</span>
+                            <span class="title">Exam</span>
                             <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
@@ -577,7 +576,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="javascript:;" class="nav-link nav-toggle"> <i class="material-icons">description</i>
-                            <span class="title">Extra pages</span>
+                            <span class="title">Call Logs</span>
                             <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
@@ -625,7 +624,7 @@
                     <li class="nav-item">
                         <a href="javascript:;" class="nav-link nav-toggle">
                             <i class="material-icons">slideshow</i>
-                            <span class="title">Multi Level Menu</span>
+                            <span class="title">Enquiry Management</span>
                             <span class="arrow "></span>
                         </a>
                         <ul class="sub-menu">
@@ -693,6 +692,310 @@
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     <i class="fa fa-volume-up"></i> Item 3 </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:;" class="nav-link nav-toggle">
+                            <i class="material-icons">map</i>
+                            <span class="title">Designation</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="nav-item">
+                                <a href="google_maps.html" class="nav-link ">
+                                    <span class="title">Google Maps</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="vector_maps.html" class="nav-link ">
+                                    <span class="title">Vector Maps</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:;" class="nav-link nav-toggle">
+                            <i class="material-icons">map</i>
+                            <span class="title">Appointment</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="nav-item">
+                                <a href="google_maps.html" class="nav-link ">
+                                    <span class="title">Google Maps</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="vector_maps.html" class="nav-link ">
+                                    <span class="title">Vector Maps</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:;" class="nav-link nav-toggle">
+                            <i class="material-icons">map</i>
+                            <span class="title">To Do</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="nav-item">
+                                <a href="google_maps.html" class="nav-link ">
+                                    <span class="title">Google Maps</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="vector_maps.html" class="nav-link ">
+                                    <span class="title">Vector Maps</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:;" class="nav-link nav-toggle">
+                            <i class="material-icons">map</i>
+                            <span class="title">Services</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="nav-item">
+                                <a href="google_maps.html" class="nav-link ">
+                                    <span class="title">Google Maps</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="vector_maps.html" class="nav-link ">
+                                    <span class="title">Vector Maps</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:;" class="nav-link nav-toggle">
+                            <i class="material-icons">map</i>
+                            <span class="title">Coupon</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="nav-item">
+                                <a href="google_maps.html" class="nav-link ">
+                                    <span class="title">Google Maps</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="vector_maps.html" class="nav-link ">
+                                    <span class="title">Vector Maps</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:;" class="nav-link nav-toggle">
+                            <i class="material-icons">map</i>
+                            <span class="title">Send SMS</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="nav-item">
+                                <a href="google_maps.html" class="nav-link ">
+                                    <span class="title">Google Maps</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="vector_maps.html" class="nav-link ">
+                                    <span class="title">Vector Maps</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:;" class="nav-link nav-toggle">
+                            <i class="material-icons">map</i>
+                            <span class="title">Send Email</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="nav-item">
+                                <a href="google_maps.html" class="nav-link ">
+                                    <span class="title">Google Maps</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="vector_maps.html" class="nav-link ">
+                                    <span class="title">Vector Maps</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:;" class="nav-link nav-toggle">
+                            <i class="material-icons">map</i>
+                            <span class="title">Chat</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="nav-item">
+                                <a href="google_maps.html" class="nav-link ">
+                                    <span class="title">Google Maps</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="vector_maps.html" class="nav-link ">
+                                    <span class="title">Vector Maps</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:;" class="nav-link nav-toggle">
+                            <i class="material-icons">map</i>
+                            <span class="title">Social Media Login</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="nav-item">
+                                <a href="google_maps.html" class="nav-link ">
+                                    <span class="title">Google Maps</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="vector_maps.html" class="nav-link ">
+                                    <span class="title">Vector Maps</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:;" class="nav-link nav-toggle">
+                            <i class="material-icons">map</i>
+                            <span class="title">Income</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="nav-item">
+                                <a href="google_maps.html" class="nav-link ">
+                                    <span class="title">Google Maps</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="vector_maps.html" class="nav-link ">
+                                    <span class="title">Vector Maps</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:;" class="nav-link nav-toggle">
+                            <i class="material-icons">map</i>
+                            <span class="title">Expense</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="nav-item">
+                                <a href="google_maps.html" class="nav-link ">
+                                    <span class="title">Google Maps</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="vector_maps.html" class="nav-link ">
+                                    <span class="title">Vector Maps</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:;" class="nav-link nav-toggle">
+                            <i class="material-icons">map</i>
+                            <span class="title">Invoice</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="nav-item">
+                                <a href="google_maps.html" class="nav-link ">
+                                    <span class="title">Google Maps</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="vector_maps.html" class="nav-link ">
+                                    <span class="title">Vector Maps</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:;" class="nav-link nav-toggle">
+                            <i class="material-icons">map</i>
+                            <span class="title">Fee</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="nav-item">
+                                <a href="google_maps.html" class="nav-link ">
+                                    <span class="title">Google Maps</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="vector_maps.html" class="nav-link ">
+                                    <span class="title">Vector Maps</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:;" class="nav-link nav-toggle">
+                            <i class="material-icons">map</i>
+                            <span class="title">Bank Account</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="nav-item">
+                                <a href="google_maps.html" class="nav-link ">
+                                    <span class="title">Google Maps</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="vector_maps.html" class="nav-link ">
+                                    <span class="title">Vector Maps</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:;" class="nav-link nav-toggle">
+                            <i class="material-icons">map</i>
+                            <span class="title">Payment</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="nav-item">
+                                <a href="google_maps.html" class="nav-link ">
+                                    <span class="title">Google Maps</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="vector_maps.html" class="nav-link ">
+                                    <span class="title">Vector Maps</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:;" class="nav-link nav-toggle">
+                            <i class="material-icons">map</i>
+                            <span class="title">Settings</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="nav-item">
+                                <a href="google_maps.html" class="nav-link ">
+                                    <span class="title">Google Maps</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="vector_maps.html" class="nav-link ">
+                                    <span class="title">Vector Maps</span>
+                                </a>
                             </li>
                         </ul>
                     </li>
