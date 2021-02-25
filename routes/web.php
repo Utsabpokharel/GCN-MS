@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\departmentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,4 @@ Route::get('/', function () {
 });
 //user
 Route::resource('user', userController::class);
+Route::resource('department', departmentController::class);
