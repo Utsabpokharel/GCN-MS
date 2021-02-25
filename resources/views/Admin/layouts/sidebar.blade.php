@@ -289,27 +289,17 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link nav-toggle"> <i class="material-icons">monetization_on</i>
+                        <a href="#" class="nav-link nav-toggle"> <i class="material-icons">gavel</i>
                             <span class="title">Recruitment</span> <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="fees_collection.html" class="nav-link "> <span class="title">Fees
-                                        Collection</span>
+                                <a href="" class="nav-link "> <span class="title">
+                                        Add Recruitment</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="add_fees.html" class="nav-link "> <span class="title">Add Fees </span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="add_fees_bootstrap.html" class="nav-link "> <span class="title">Add
-                                        Fees Bootstrap</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="fees_receipt.html" class="nav-link "> <span class="title">Fee
-                                        Receipt</span>
+                                <a href="add_fees.html" class="nav-link "> <span class="title">View Recruitment </span>
                                 </a>
                             </li>
                         </ul>
@@ -460,197 +450,138 @@
                     </li>
                     <li class="nav-item">
                         <a href="javascript:;" class="nav-link nav-toggle">
-                            <i class="material-icons">subtitles</i>
+                            <i class="material-icons">group</i>
                             <span class="title">Department </span>
                             <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
                                 <a href="layouts_form.html" class="nav-link ">
-                                    <span class="title">Form Layout</span>
+                                    <span class="title">Add Department</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="advance_form.html" class="nav-link ">
-                                    <span class="title">Advance Component</span>
+                                    <span class="title">View Department</span>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="wizard.html" class="nav-link ">
-                                    <span class="title">Form Wizard</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="validation_form.html" class="nav-link ">
-                                    <span class="title">Form Validation</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="editable_form.html" class="nav-link ">
-                                    <span class="title">Editor</span>
-                                </a>
-                            </li>
+
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a href="javascript:;" class="nav-link nav-toggle">
-                            <i class="material-icons">list</i>
-                            <span class="title">Data Tables</span>
-                            <span class="arrow"></span>
-                        </a>
-                        <ul class="sub-menu">
-                            <li class="nav-item">
-                                <a href="basic_table.html" class="nav-link ">
-                                    <span class="title">Basic Tables</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="advanced_table.html" class="nav-link ">
-                                    <span class="title">Advance Tables</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="export_table.html" class="nav-link ">
-                                    <span class="title">Export Tables</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="child_row_table.html" class="nav-link ">
-                                    <span class="title">Child Row Tables</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="group_table.html" class="nav-link ">
-                                    <span class="title">Grouping</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="tableData.html" class="nav-link ">
-                                    <span class="title">Tables With Sourced Data</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="javascript:;" class="nav-link nav-toggle">
-                            <i class="material-icons">timeline</i>
+                            <i class="material-icons">school</i>
                             <span class="title">Courses</span>
                             <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="charts_echarts.html" class="nav-link ">
-                                    <span class="title">eCharts</span>
+                                <a href="basic_table.html" class="nav-link ">
+                                    <span class="title">Course</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="charts_morris.html" class="nav-link ">
-                                    <span class="title">Morris Charts</span>
+                                <a href="advanced_table.html" class="nav-link ">
+                                    <span class="title">Section</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="charts_chartjs.html" class="nav-link ">
-                                    <span class="title">Chartjs</span>
+                                <a href="export_table.html" class="nav-link ">
+                                    <span class="title">Batch</span>
                                 </a>
                             </li>
+
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a href="javascript:;" class="nav-link nav-toggle">
-                            <i class="material-icons">map</i>
+                            <i class="material-icons">school</i>
                             <span class="title">Exam</span>
                             <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="google_maps.html" class="nav-link ">
-                                    <span class="title">Google Maps</span>
+                                <a href="charts_echarts.html" class="nav-link ">
+                                    <span class="title">Add Exam</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="vector_maps.html" class="nav-link ">
-                                    <span class="title">Vector Maps</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="javascript:;" class="nav-link nav-toggle"> <i class="material-icons">description</i>
-                            <span class="title">Call Logs</span>
-                            <span class="arrow"></span>
-                        </a>
-                        <ul class="sub-menu">
-                            <li class="nav-item  ">
-                                <a href="login.html" class="nav-link "> <span class="title">Login</span>
-                                </a>
-                            </li>
-                            <li class="nav-item  ">
-                                <a href="sign_up.html" class="nav-link "> <span class="title">Sign Up</span>
-                                </a>
-                            </li>
-                            <li class="nav-item  ">
-                                <a href="forgot_password.html" class="nav-link "> <span class="title">Forgot
-                                        Password</span>
-                                </a>
-                            </li>
-                            <li class="nav-item"><a href="user_profile.html" class="nav-link "><span
-                                        class="title">Profile</span>
+                                <a href="charts_morris.html" class="nav-link ">
+                                    <span class="title">View Exam</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="contact.html" class="nav-link "> <span class="title">Contact Us</span>
+                                <a href="charts_chartjs.html" class="nav-link ">
+                                    <span class="title">All Examinee List</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="lock_screen.html" class="nav-link "> <span class="title">Lock
-                                        Screen</span>
+                                <a href="charts_chartjs.html" class="nav-link ">
+                                    <span class="title">Book Exam</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="page-404.html" class="nav-link "> <span class="title">404 Page</span>
+                                <a href="charts_chartjs.html" class="nav-link ">
+                                    <span class="title">Quiz</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="page-500.html" class="nav-link "> <span class="title">500 Page</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="blank_page.html" class="nav-link "> <span class="title">Blank
-                                        Page</span>
+                                <a href="charts_chartjs.html" class="nav-link ">
+                                    <span class="title">Result</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a href="javascript:;" class="nav-link nav-toggle">
-                            <i class="material-icons">slideshow</i>
+                            <i class="material-icons">call</i>
+                            <span class="title">Call Logs</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="nav-item">
+                                <a href="google_maps.html" class="nav-link ">
+                                    <span class="title">Incoming Calls</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="vector_maps.html" class="nav-link ">
+                                    <span class="title">Outgoing Calls</span>
+                                </a>
+                            </li>
+                             <li class="nav-item">
+                                <a href="vector_maps.html" class="nav-link ">
+                                    <span class="title">Visited Calls</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:;" class="nav-link nav-toggle">
+                            <i class="material-icons">face</i>
                             <span class="title">Enquiry Management</span>
                             <span class="arrow "></span>
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
                                 <a href="javascript:;" class="nav-link nav-toggle">
-                                    <i class="fa fa-university"></i> Item 1
+                                    <i class="fa fa-university"></i> Enquiry
                                     <span class="arrow"></span>
                                 </a>
                                 <ul class="sub-menu">
                                     <li class="nav-item">
                                         <a href="javascript:;" class="nav-link nav-toggle">
-                                            <i class="fa fa-bell-o"></i> Arrow Toggle
+                                            <i class="fa fa-bell-o"></i> Enquiry Category
                                             <span class="arrow "></span>
                                         </a>
                                         <ul class="sub-menu">
                                             <li class="nav-item">
                                                 <a href="javascript:;" class="nav-link">
-                                                    <i class="fa fa-calculator"></i> Sample Link 1</a>
+                                                    <i class="fa fa-calculator"></i> Enquiry Source</a>
                                             </li>
                                             <li class="nav-item">
                                                 <a href="#" class="nav-link">
-                                                    <i class="fa fa-clone"></i> Sample Link 2</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">
-                                                    <i class="fa fa-cogs"></i> Sample Link 3</a>
+                                                    <i class="fa fa-clone"></i>Enquiry Response</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -792,38 +723,48 @@
                     </li>
                     <li class="nav-item">
                         <a href="javascript:;" class="nav-link nav-toggle">
-                            <i class="material-icons">map</i>
+                            <i class="material-icons">contact_mail</i>
                             <span class="title">Send SMS</span>
                             <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
                                 <a href="google_maps.html" class="nav-link ">
-                                    <span class="title">Google Maps</span>
+                                    <span class="title">Student</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="vector_maps.html" class="nav-link ">
-                                    <span class="title">Vector Maps</span>
+                                    <span class="title">Teacher</span>
+                                </a>
+                            </li>
+                             <li class="nav-item">
+                                <a href="vector_maps.html" class="nav-link ">
+                                    <span class="title">Staff</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a href="javascript:;" class="nav-link nav-toggle">
-                            <i class="material-icons">map</i>
+                            <i class="material-icons">email</i>
                             <span class="title">Send Email</span>
                             <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
                                 <a href="google_maps.html" class="nav-link ">
-                                    <span class="title">Google Maps</span>
+                                    <span class="title">Student</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="vector_maps.html" class="nav-link ">
-                                    <span class="title">Vector Maps</span>
+                                    <span class="title">Teacher</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="vector_maps.html" class="nav-link ">
+                                    <span class="title">Staff</span>
                                 </a>
                             </li>
                         </ul>
@@ -925,38 +866,48 @@
                     </li>
                     <li class="nav-item">
                         <a href="javascript:;" class="nav-link nav-toggle">
-                            <i class="material-icons">map</i>
+                            <i class="material-icons">school</i>
                             <span class="title">Fee</span>
                             <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
                                 <a href="google_maps.html" class="nav-link ">
-                                    <span class="title">Google Maps</span>
+                                    <span class="title">Add Fee</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="vector_maps.html" class="nav-link ">
-                                    <span class="title">Vector Maps</span>
+                                    <span class="title">View Fee</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="vector_maps.html" class="nav-link ">
+                                    <span class="title">Fee Payment</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="vector_maps.html" class="nav-link ">
+                                    <span class="title">Fee Report</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a href="javascript:;" class="nav-link nav-toggle">
-                            <i class="material-icons">map</i>
+                            <i class="material-icons">monetization_on</i>
                             <span class="title">Bank Account</span>
                             <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
                                 <a href="google_maps.html" class="nav-link ">
-                                    <span class="title">Google Maps</span>
+                                    <span class="title">Add Bank Account</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="vector_maps.html" class="nav-link ">
-                                    <span class="title">Vector Maps</span>
+                                    <span class="title">View Bank Account</span>
                                 </a>
                             </li>
                         </ul>
@@ -982,19 +933,29 @@
                     </li>
                     <li class="nav-item">
                         <a href="javascript:;" class="nav-link nav-toggle">
-                            <i class="material-icons">map</i>
+                            <i class="material-icons">settings</i>
                             <span class="title">Settings</span>
                             <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
                                 <a href="google_maps.html" class="nav-link ">
-                                    <span class="title">Google Maps</span>
+                                    <span class="title">General Settings</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="vector_maps.html" class="nav-link ">
-                                    <span class="title">Vector Maps</span>
+                                    <span class="title">Email Settings</span>
+                                </a>
+                            </li>
+                             <li class="nav-item">
+                                <a href="vector_maps.html" class="nav-link ">
+                                    <span class="title">Password Settings</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="vector_maps.html" class="nav-link ">
+                                    <span class="title">Payment Settings</span>
                                 </a>
                             </li>
                         </ul>
