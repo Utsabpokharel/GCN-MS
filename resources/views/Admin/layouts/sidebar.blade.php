@@ -50,68 +50,39 @@
                             </li>
                         </ul>
                     </li>
+
                     <li class="nav-item">
                         <a href="#" class="nav-link nav-toggle"> <i class="material-icons">person</i>
                             <span class="title">User</span> <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="all_professors.html" class="nav-link "> <span class="title">Add</span>
+                                <a href="{{route('user.create')}}" class="nav-link "> <span class="title">Add
+                                        User</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="add_professor.html" class="nav-link "> <span class="title">Add
-                                        Professor</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="add_professor_bootstrap.html" class="nav-link "> <span class="title">Add
-                                        Professor Bootstrap</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="edit_professor.html" class="nav-link "> <span class="title">Edit
-                                        Professor</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="professor_profile.html" class="nav-link "> <span class="title">About
-                                        Professor</span>
+                                <a href="add_professor_bootstrap.html" class="nav-link "> <span class="title">View All Users</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
+
                     <li class="nav-item">
                         <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
                             <span class="title">Staff</span><span class="arrow"></span></a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="all_students.html" class="nav-link "> <span class="title">All
-                                        Students</span>
+                                <a href="all_students.html" class="nav-link "> <span class="title">Add Staff</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="add_student.html" class="nav-link "> <span class="title">Add
-                                        Student</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="add_student_bootstrap.html" class="nav-link "> <span class="title">Add
-                                        Student Bootstrap</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="edit_student.html" class="nav-link "> <span class="title">Edit
-                                        Student</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="student_profile.html" class="nav-link "> <span class="title">About
-                                        Student</span>
+                                <a href="add_student.html" class="nav-link "> <span class="title">View All Staffs</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
+
                     <li class="nav-item">
                         <a href="#" class="nav-link nav-toggle"> <i class="material-icons">school</i>
                             <span class="title">Customer</span> <span class="arrow"></span>
@@ -119,117 +90,64 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="all_courses.html" class="nav-link "> <span class="title">All
-                                        Courses</span>
+                                <a href="all_courses.html" class="nav-link "> <span class="title">Add Customer</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="add_course.html" class="nav-link "> <span class="title">Add
-                                        Course</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="add_course_bootstrap.html" class="nav-link "> <span class="title">Add
-                                        Course Bootstrap</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="edit_course.html" class="nav-link "> <span class="title">Edit
-                                        Course</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="course_details.html" class="nav-link "> <span class="title">About
-                                        Course</span>
+                                <a href="add_course.html" class="nav-link "> <span class="title">View All Customers</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
+
                     <li class="nav-item">
                         <a href="#" class="nav-link nav-toggle"> <i class="material-icons">local_library</i>
                             <span class="title">Vendor</span> <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="all_assets.html" class="nav-link "> <span class="title">All Library
-                                        Assets</span>
+                                <a href="all_assets.html" class="nav-link "> <span class="title">Add Vendor</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="add_library.html" class="nav-link "> <span class="title">Add Library
-                                        Asset</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="add_library_bootstrap.html" class="nav-link "> <span class="title">Add
-                                        Asset Bootstrap</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="edit_library.html" class="nav-link "> <span class="title">Edit
-                                        Asset</span>
+                                <a href="add_library.html" class="nav-link "> <span class="title">View All Vendor</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
+
                     <li class="nav-item">
                         <a href="#" class="nav-link nav-toggle"> <i class="material-icons">business</i>
                             <span class="title">Student</span> <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="all_department.html" class="nav-link "> <span class="title">All
-                                        Departments</span>
+                                <a href="all_department.html" class="nav-link "> <span class="title">Add Student Category</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="add_department.html" class="nav-link "> <span class="title">Add
-                                        Department</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="add_department_bootstrap.html" class="nav-link "> <span class="title">Add
-                                        Department Bootstrap</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="edit_department.html" class="nav-link "> <span class="title">Edit
-                                        Department</span>
+                                <a href="add_department.html" class="nav-link "> <span class="title">View Student Category</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
+
                     <li class="nav-item">
                         <a href="#" class="nav-link nav-toggle"> <i class="material-icons">face</i>
                             <span class="title">Teacher</span> <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="all_staffs.html" class="nav-link "> <span class="title">All
-                                        Staff</span>
+                                <a href="all_staffs.html" class="nav-link "> <span class="title">Add Teacher Category</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="add_staff.html" class="nav-link "> <span class="title">Add Staff</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="add_staff_bootstrap.html" class="nav-link "> <span class="title">Add
-                                        Staff Bootstrap</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="edit_staff.html" class="nav-link "> <span class="title">Edit
-                                        Staff</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="staff_profile.html" class="nav-link "> <span class="title">Staff
-                                        Profile</span>
+                                <a href="add_staff.html" class="nav-link "> <span class="title">View Teacher Category</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
+
                     <li class="nav-item">
                         <a href="#" class="nav-link nav-toggle"> <i
                                 class="material-icons">airline_seat_individual_suite</i>
@@ -237,32 +155,12 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="all_holidays.html" class="nav-link "> <span class="title">All
-                                        Holiday</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="add_holiday.html" class="nav-link "> <span class="title">Add
-                                        Holiday</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="add_holiday_bootstrap.html" class="nav-link "> <span class="title">Add
-                                        Holiday Bootstrap</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="edit_holiday.html" class="nav-link "> <span class="title">Edit
-                                        Holiday</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="holiday_calendar.html" class="nav-link "> <span class="title">Holiday
-                                        Calendar</span>
+                                <a href="all_holidays.html" class="nav-link "> <span class="title">View All Roles</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
+
                     <li class="nav-item">
                         <a href="#" class="nav-link nav-toggle">
                             <i class="material-icons">email</i>
@@ -273,21 +171,17 @@
                         <ul class="sub-menu">
                             <li class="nav-item">
                                 <a href="email_inbox.html" class="nav-link ">
-                                    <span class="title">Inbox</span>
+                                    <span class="title">Add Award</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="email_view.html" class="nav-link ">
-                                    <span class="title">View Mail</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="email_compose.html" class="nav-link ">
-                                    <span class="title">Compose Mail</span>
+                                    <span class="title">View Award</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
+
                     <li class="nav-item">
                         <a href="#" class="nav-link nav-toggle"> <i class="material-icons">monetization_on</i>
                             <span class="title">Recruitment</span> <span class="arrow"></span>
@@ -314,11 +208,32 @@
                             </li>
                         </ul>
                     </li>
+
                     <li class="nav-item">
-                        <a href="widget.html" class="nav-link nav-toggle"> <i class="material-icons">widgets</i>
+                        <a href="javascript:;" class="nav-link nav-toggle">
+                            <i class="material-icons">timeline</i>
                             <span class="title">Attendance</span>
+                            <span class="arrow"></span>
                         </a>
+                        <ul class="sub-menu">
+                            <li class="nav-item">
+                                <a href="charts_echarts.html" class="nav-link ">
+                                    <span class="title">eCharts</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="charts_morris.html" class="nav-link ">
+                                    <span class="title">Morris Charts</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="charts_chartjs.html" class="nav-link ">
+                                    <span class="title">Chartjs</span>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
+
                     <li class="nav-item">
                         <a href="#" class="nav-link nav-toggle">
                             <i class="material-icons">dvr</i>
@@ -704,12 +619,12 @@
                         <ul class="sub-menu">
                             <li class="nav-item">
                                 <a href="google_maps.html" class="nav-link ">
-                                    <span class="title">Google Maps</span>
+                                    <span class="title">Title</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="vector_maps.html" class="nav-link ">
-                                    <span class="title">Vector Maps</span>
+                                    <span class="title">Level</span>
                                 </a>
                             </li>
                         </ul>
@@ -761,12 +676,12 @@
                         <ul class="sub-menu">
                             <li class="nav-item">
                                 <a href="google_maps.html" class="nav-link ">
-                                    <span class="title">Google Maps</span>
+                                    <span class="title">Add Services</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="vector_maps.html" class="nav-link ">
-                                    <span class="title">Vector Maps</span>
+                                    <span class="title">View Services</span>
                                 </a>
                             </li>
                         </ul>
@@ -875,12 +790,12 @@
                         <ul class="sub-menu">
                             <li class="nav-item">
                                 <a href="google_maps.html" class="nav-link ">
-                                    <span class="title">Google Maps</span>
+                                    <span class="title">Category</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="vector_maps.html" class="nav-link ">
-                                    <span class="title">Vector Maps</span>
+                                    <span class="title">Incomes</span>
                                 </a>
                             </li>
                         </ul>
@@ -894,12 +809,12 @@
                         <ul class="sub-menu">
                             <li class="nav-item">
                                 <a href="google_maps.html" class="nav-link ">
-                                    <span class="title">Google Maps</span>
+                                    <span class="title">Category</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="vector_maps.html" class="nav-link ">
-                                    <span class="title">Vector Maps</span>
+                                    <span class="title">Expenses</span>
                                 </a>
                             </li>
                         </ul>
