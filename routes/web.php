@@ -12,9 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Controllers\Admin\userController;
 
 Route::get('/', function () {
     return view('Admin.layouts.master');
 });
-//user route
-Route::resource('user',[Admin\userController::class]);
+//user
+Route::resource('user', userController::class);
