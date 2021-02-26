@@ -34,6 +34,7 @@ Route::get('/', function () {
 });
 //user
 Route::resource('user', userController::class);
+
 //recruitment
 Route::resource('recruitment', recruitmentController::class);
 //department
@@ -76,3 +77,5 @@ Route::resource('email', emailsettingsController::class);
 Route::resource('password', passwordsettingsController::class);
 //payment
 Route::resource('recruitment', paymentsettingsController::class);
+
+Route::resource('department', departmentController::class);
