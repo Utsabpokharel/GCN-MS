@@ -7,6 +7,6 @@
 
 @yield('head')
 @yield('header')
-@yield('index')
+@yield('content')
 @yield('sidebar')
 @yield('footer')
