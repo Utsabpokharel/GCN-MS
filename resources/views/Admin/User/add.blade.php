@@ -1,116 +1,148 @@
-@extends('admin.layouts.index')
-@section('page_title','Add User')
+@extends('Admin.layouts.master')
 @section('content')
-@push('css')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" />
-@endpush
-<div class="card-body card">
-  <form class="form" method="post" action="" enctype="multipart/form-data">
-    @csrf
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form-group">
-              <label>Email address</label>
-              {{-- <input type="email" name="email" class="form-control form-control-solid @error('email') is-invalid @enderror" placeholder="Enter Email" /> --}}
-              <select name="email" id="email" class="form-control form-control-solid @error('email') is-invalid @enderror">
-                <option selected disabled>Select Email</option>
-                @foreach($staffs as $name)
-                <option value="{{$name->email}}" class="form-control">{{$name->email}}</option>
-                @endforeach
-
-                @foreach($vendors as $name)
-                <option value="{{$name->email}}" class="form-control">{{$name->email}}</option>
-                @endforeach
-
-                @foreach($customers as $name)
-                <option value="{{$name->email}}" class="form-control">{{$name->email}}</option>
-                @endforeach
-              </select>
-              @error('email')
-              <span class="invalid-feedback" role="alert"> {{$message}} </span>
-              @enderror
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="page-bar">
+            <div class="page-title-breadcrumb">
+                <div class=" pull-left">
+                    <div class="page-title">Add User</div>
+                </div>
+                <ol class="breadcrumb page-breadcrumb pull-right">
+                    <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Home</a>&nbsp;<i
+                            class="fa fa-angle-right"></i>
+                    </li>
+                    <li><a class="parent-item" href="{{route('user.index')}}">Users</a>&nbsp;<i
+                            class="fa fa-angle-right"></i>
+                    </li>
+                    <li class="active">Add User</li>
+                </ol>
             </div>
-          </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label>Name</label>
-          {{--<input type="text" class="form-control form-control-solid @error('name') is-invalid @enderror" name="name"> --}}
-          <select name="name" id="name" class="form-control form-control-solid @error('name') is-invalid @enderror">
-            <option selected disabled value="">Select Name</option>
-            @foreach($staffs as $name)
-            <option value="{{$name->fname}} {{$name->lname}}" class="form-control">{{$name->fname}} {{$name->lname}}</option>
-            @endforeach
-
-            @foreach($vendors as $name)
-            <option value="{{$name->fname}} {{$name->lname}}" class="form-control">{{$name->fname}} {{$name->lname}}</option>
-            @endforeach
-
-            @foreach($customers as $name)
-            <option value="{{$name->fname}} {{$name->lname}}" class="form-control">{{$name->fname}} {{$name->lname}}</option>
-            @endforeach
-          </select>
-          @error('name')
-          <span class="invalid-feedback" role="alert"> {{$message}} </span>
-          @enderror
         </div>
-      </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="card card-box">
+                    <div class="card-head">
+                        <header>Add User</header>
+                        <button id="panel-button" class="mdl-button mdl-js-button mdl-button--icon pull-right"
+                            data-upgraded=",MaterialButton">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+                    </div>
+                    <div class="card-body" id="bar-parent">
+                        <form action="" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                            enctype="multipart/form-data">
+                            {{csrf_field()}}
+                            <div class="form-body">
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Name
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="text" name="name" required placeholder="enter User name"
+                                            class="form-control input-height" value="" />
+                                    </div>
+                                </div>
 
-      <div class="col-md-6">
-        <div class="form-group">
-          <label>Roles</label>
-          <select name="roleid" id="role" class="form-control form-control-solid @error('roleid') is-invalid @enderror">
-            <option selected disabled>Select a Role</option>
-            @foreach($roles as $roleid)
-            <option value="{{$roleid->id}}" class="form-control">{{$roleid->name}}</option>
-            @endforeach
-          </select>
-          @error('roleid')
-          <span class="invalid-feedback" role="alert"> {{$message}} </span>
-          @enderror
-        </div>
-      </div>
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Email
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="email" name="email" required placeholder="enter User email"
+                                            class="form-control input-height " value="" />
+                                    </div>
+                                </div>
 
-      <div class="col-md-6">
-        <div class="form-group">
-          <label>Department</label>
-          <select name="department" id="department" class="form-control form-control-solid @error('department') is-invalid @enderror" data-validation="required">
-            <option selected disabled value="">Please Select...</option>
-            @foreach($departments as $department)
-            <option value="{{$department->id}}" class="form-control">{{$department->dep_name}}</option>
-            @endforeach
-          </select>
-          @error('department')
-          <span class="invalid-feedback" role="alert"> {{$message}}</span>
-          @enderror
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label>Password</label>
-          <input type="password" name="password" class="form-control form-control-solid @error('password') is-invalid @enderror" placeholder="Enter Password" />
-          @error('password')
-          <span class="invalid-feedback" role="alert"> {{$message}} </span>
-          @enderror
-        </div>
-      </div>
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Password
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="password" name="password" required
+                                            placeholder="Enter password (Min: 4 - Max: 15)"
+                                            class="form-control input-height " value="" />
+                                    </div>
 
-      <div class="col-md-6">
-        <div class="form-group">
-          <label>Confirm Password</label>
-          <input type="password" name="confirm_password" class="form-control form-control-solid @error('confirm_password') is-invalid @enderror" placeholder="Enter Confirm Password" />
-          @error('confirm_password')
-          <span class="invalid-feedback" role="alert"> {{$message}} </span>
-          @enderror
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Confirm Password
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="password" name="password_confirmation" required
+                                            placeholder="Re-enter and Confirm Your password "
+                                            class="form-control input-height" />
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">User Role
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <select class="form-control input-height" name="">
+                                            <option value="" disabled selected>Select Role</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Position
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="text" name="position" required
+                                            placeholder="enter user position in company"
+                                            class="form-control input-height" value="" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Main Department
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <select class="form-control input-height" name="department_id">
+                                            <option value="" disabled selected>Select Department</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Sub-Department
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <select class="form-control input-height" name="sub_department">
+                                            <option value="" disabled selected>Select Sub-Department</option>
+                                            <option value="0">None</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Image
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <div class="input-icon right">
+                                            <input type="file" class="form-control bg-light" name="image" value="" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div class="offset-md-3 col-md-9">
+                                            <button type="submit" class="btn btn-info m-r-20">Submit</button>
+                                            <a class="btn btn-default" href="{{route('user.index')}}">Cancel</a>
+                                        </div>
+                                    </div>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-
-    <div class="card-footer">
-      <button type="submit" class="btn btn-primary mr-2" value="submit">Add</button>
-      <button type="reset" class="btn btn-secondary" value="reset">Reset</button>
-      <a href="{{route('user.view')}}" class="btn btn-danger mr-2">Cancel</a>
-    </div>
-  </form>
 </div>
 @endsection
-
