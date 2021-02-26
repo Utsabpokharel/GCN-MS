@@ -1,89 +1,117 @@
-@extends('admin.layouts.master')
-@section('title') Add Incoming Call Logs @endsection
-@section('index')
-
-
-<div class="card-body card">
-    <form class="form" method="post" action="#" >
-     @csrf
-      <div class="row">
-
-         <div class="col-md-6">
-         <div class="form-group">
-        <label for="incoming_time">Incoming Time</label>
-
-        <input type="time" class="form-control form-control-solid @error('incoming_time') is-invalid @enderror"  name="incoming_time"/>
-
-         @error('incoming_time');
-          <span class="invalid-feedback" role="alert"></span>
-        @enderror
+@extends('Admin.layouts.master')
+@section('content')
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="page-bar">
+            <div class="page-title-breadcrumb">
+                <div class=" pull-left">
+                    <div class="page-title">Add Incoming Call Logs</div>
+                </div>
+                <ol class="breadcrumb page-breadcrumb pull-right">
+                    <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Home</a>&nbsp;<i
+                            class="fa fa-angle-right"></i>
+                    </li>
+                    <li><a class="parent-item" href="{{route('incoming.index')}}">Call Logs</a>&nbsp;<i
+                            class="fa fa-angle-right"></i>
+                    </li>
+                    <li class="active">Add Incoming Call Logs</li>
+                </ol>
             </div>
-             </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="card card-box">
+                    <div class="card-head">
+                        <header>Add Incoming Call Logs</header>
+                        <button id="panel-button" class="mdl-button mdl-js-button mdl-button--icon pull-right"
+                            data-upgraded=",MaterialButton">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+                    </div>
+                    <div class="card-body" id="bar-parent">
+                        <form action="" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                            enctype="multipart/form-data">
+                            {{csrf_field()}}
+                            <div class="form-body">
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Incoming Time
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="time" name="incomingtime" required placeholder="Incoming Time"
+                                            class="form-control input-height" value="" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Incoming Date
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="date" name="incomingdate" required placeholder="Incoming Date"
+                                            class="form-control input-height " value="" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Called By
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="text" name="calledby" required
+                                            placeholder="Called By"
+                                            class="form-control input-height " value="" />
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Received By
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="text" name="receivedby" required
+                                            placeholder="Received By"
+                                            class="form-control input-height" />
+                                    </div>
+
+                                </div>
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Remarks
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <textarea class="form-control form-control-solid" rows="5" name="remarks" placeholder="Remarks"> </textarea>
+                                    </div>
+
+                                </div>
+                                 <div class="form-group row">
+                                    <label class="control-label col-md-3">Purpose
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="text" name="purpose" required
+                                            placeholder="purpose"
+                                            class="form-control input-height" />
+                                    </div>
+
+                                </div>
 
 
-<div class="col-sm-6">
-     <div class="form-group">
-      <label for="incoming_date">Incoming Date</label>
 
-      <input type="date" name="incoming_date" class="form-control form-control-solid @error('incoming_date') is-invalid @enderror" placeholder="Enter Incoming Date"/>
-      @error('incoming_date')
-          <span class="invalid-feedback" role="alert"></span>
-          @enderror
-     </div>
-   </div>
-
-   <div class="col-sm-6">
-     <div class="form-group">
-      <label for="called_by">Called By</label>
-
-      <input type="text" name="called_by" class="form-control form-control-solid @error('called_by') is-invalid @enderror" placeholder="Called by"/>
-      @error('called_by')
-          <span class="invalid-feedback" role="alert"></span>
-          @enderror
-     </div>
-   </div>
-
-   <div class="col-sm-6">
-     <div class="form-group">
-      <label for="received_by">Received By</label>
-
-      <select name="received_by" id="received_by" class="form-control form-control-solid @error('received_by') is-invalid @enderror">
-            <option selected disabled value="">Select the person who receive the call</option>
-      </select>
-     </div>
-   </div>
-
-   <div class="col-sm-6">
-      <div class="form-group">
-      <label for="remarks">Remarks</label>
-      <textarea class="form-control form-control-solid" rows="5" name="remarks" placeholder="Remarks"> </textarea>
-     </div>
-   </div>
-
-   <div class="col-sm-6">
-     <div class="form-group">
-      <label for="purpose">Purpose</label>
-
-      <input type="text" name="purpose" class="form-control form-control-solid @error('purpose') is-invalid @enderror" placeholder="Purpose" />
-      @error('purpose')
-          <span class="invalid-feedback" role="alert"></span>
-          @enderror
-     </div>
-   </div>
-
-
-
-
-
-
-<div class="col-md-12">
-
-    <div class="card-footer">
-          <input type="submit" value="Submit" class="btn btn-success">
-          <input type="reset" value="Reset" class="btn btn-danger">
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div class="offset-md-3 col-md-9">
+                                            <button type="submit" class="btn btn-info m-r-20">Submit</button>
+                                            <a class="btn btn-default" href="{{route('incoming.index')}}">Cancel</a>
+                                        </div>
+                                    </div>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
- </div>
-   </form>
 </div>
 @endsection

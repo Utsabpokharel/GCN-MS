@@ -24,7 +24,7 @@ class outgoingController extends Controller
      */
     public function create()
     {
-        return view('Admin.Call Logs.Outgoing Call Logs.view');
+        return view('Admin.Call Logs.Outgoing Call Logs.add');
     }
 
     /**

@@ -1,106 +1,115 @@
-@extends('admin.layouts.master')
-@section('title') Add Enquiry @endsection
-
-@section('script')
-    <script>
-
-        $('#is_customer').change(function () {
-            var is_checked = $('#is_customer').prop('checked');
-            if (is_checked) {
-                $('#notcustomer').addClass('d-none');
-                $('#customer').removeClass('d-none');
-                $('.notcustomer').each(function () {
-                    $(this).val('');
-                });
-            } else {
-                $('#customer').addClass('d-none');
-                $('#notcustomer').removeClass('d-none');
-                $('.customer').each(function () {
-                    $(this).val('--select any one--');
-                });
-            }
-        });
-    </script>
-@endsection
-
-@section('index')
-    <div class="card-body card">
-        <form action="#" class="form" method="post">
-            @csrf
-            <div class="form-group">
-                <label>Is Customer:</label>
-                <input type="checkbox" name="is_customer" id="is_customer" value="yes"
-                />
-            </div>
-            <div class="form-group d-none" id="customer">
-                <label>Enquiry Name :</label>
-                <select name="customer_id" class="form-control form-control-solid customer">
-                    <option disabled selected>--select any one--</option>
-                </select>
-            </div>
-            <div id="notcustomer">
-                <div class="form-group">
-                    <label>Name:</label>
-                    <input type="name" class="form-control form-control-solid notcustomer" placeholder="Enter full name"
-                           name="name"
-                    />
+@extends('Admin.layouts.master')
+@section('content')
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="page-bar">
+            <div class="page-title-breadcrumb">
+                <div class=" pull-left">
+                    <div class="page-title">Add Enquiry</div>
                 </div>
-                <div class="form-group">
-                    <label>Email:</label>
-                    <input type="email" class="form-control form-control-solid notcustomer" placeholder="Enter email"
-                           name="email"
-                    />
+                <ol class="breadcrumb page-breadcrumb pull-right">
+                    <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Home</a>&nbsp;<i
+                            class="fa fa-angle-right"></i>
+                    </li>
+
+                    <li><a class="parent-item" href="{{route('enquiry.index')}}">Enquiry</a>&nbsp;<i
+                            class="fa fa-angle-right"></i>
+                    </li>
+                    <li class="active">Add Enquiry</li>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="card card-box">
+                    <div class="card-head">
+                        <header>Add Enquiry</header>
+                        <button id="panel-button" class="mdl-button mdl-js-button mdl-button--icon pull-right"
+                            data-upgraded=",MaterialButton">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+                    </div>
+                    <div class="card-body" id="bar-parent">
+                        <form action="" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                            enctype="multipart/form-data">
+                            {{csrf_field()}}
+                            <div class="form-body">
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Enquiry Name
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="text" name="name" required placeholder="enter enquiry name"
+                                            class="form-control input-height" value="" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Enquiry Category
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="text" name="enquiryname" required placeholder="enter enquiry Category"
+                                            class="form-control input-height " value="" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Enquiry Source
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type=text name="enquirysource" required
+                                            placeholder="Enter Enquiry Source"
+                                            class="form-control input-height " value="" />
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Date
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="date" name="date" required
+                                            placeholder="Enter Date"
+                                            class="form-control input-height" />
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Time
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="time" name="time" required
+                                            placeholder="Enter Time"
+                                            class="form-control input-height" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Remarks
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                            <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div class="offset-md-3 col-md-9">
+                                            <button type="submit" class="btn btn-info m-r-20">Submit</button>
+                                            <a class="btn btn-default" href="{{route('enquiry.index')}}">Cancel</a>
+                                        </div>
+                                    </div>
+                                </div>
+                        </form>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Contact Number:</label>
-                    <input type="number" class="form-control form-control-solid notcustomer"
-                           placeholder="Enter contact number" name="phone"
-                    />
-                </div>
             </div>
-            <div class="form-group">
-                <label>Enquiry Category:</label>
-                <select name="category_id" id="" class="form-control form-control-solid" required>
-                    <option selected disabled>--Select any one--</option>
-                </select>
-                @error('category_id')
-                <div class="text-danger">The enquiry category field is required</div>
-                @enderror
-            </div>
-            <div class="form-group">
-                <label>Enquiry Source:</label>
-                <select name="source_id" id="" class="form-control form-control-solid" required>
-                    <option selected disabled>--Select any one--</option>
-                </select>
-                @error('source_id')
-                <div class="text-danger">The enquiry source field is required</div>
-                @enderror
-            </div>
-            <div class="form-group">
-                <label>Date:</label>
-                <input type="date" class="form-control form-control-solid" placeholder="Enter full name" name="date"
-                />
-                @error('date')
-                <div class="text-danger"></div>
-                @enderror
-            </div>
-            <div class="form-group">
-                <label>time:</label>
-                <input type="time" class="form-control form-control-solid" placeholder="Enter full name" name="time"
-                />
-                @error('time')
-                <div class="text-danger"></div>
-                @enderror
-            </div>
-            <div class="form-group">
-                <label>Remarks:</label>
-                <textarea class="form-control form-control-solid" name="remarks" cols="30"
-                          rows="10"></textarea>
-            </div>
-            <div class="card-footer">
-                <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                <button type="reset" class="btn btn-secondary">Cancel</button>
-            </div>
-        </form>
+        </div>
     </div>
+</div>
 @endsection

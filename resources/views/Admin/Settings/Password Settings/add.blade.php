@@ -1,20 +1,22 @@
-@extends('admin.layouts.master')
+@extends('Admin.layouts.master')
 
-@section('title')  Change Password - All Management System (All MS) @endsection
+@section('content')
 
-@section('index')
-
+    <div class="page-content-wrapper">
     <div class="page-content">
         <div class="page-bar">
             <div class="page-title-breadcrumb">
                 <div class=" pull-left">
-                    <div class="page-title">Change Password - {{ auth()->user()->name }}</div>
+                    <div class="page-title">Password Settings</div>
                 </div>
                 <ol class="breadcrumb page-breadcrumb pull-right">
-                    <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
-                                                           href="{{ route('admin.dashboard') }}">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+                    <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Home</a>&nbsp;<i
+                            class="fa fa-angle-right"></i>
                     </li>
-                    <li class="active">Change Password </li>
+                    <li><a class="parent-item" href="{{route('password.index')}}">Settings</a>&nbsp;<i
+                            class="fa fa-angle-right"></i>
+                    </li>
+                    <li class="active">Password Settings</li>
                 </ol>
             </div>
         </div>
@@ -27,8 +29,8 @@
 
                     </div>
                     <div class="card-body " id="bar-parent">
-                        <form method="post" action="{{ route('updatePassword', auth()->user()->id) }}">
-                            @csrf
+                        <form method="post" action="">
+                            {{csrf_field()}}
 
 
                                 <div class="col-md-6">
@@ -72,77 +74,11 @@
         </div>
 
     </div>
+    </div>
 
 @endsection
 
 
 
 
-@section('scripts')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
 
-    <script>
-        $.validate({
-            lang: 'en',
-            modules: 'file',
-        });
-
-    </script>
-
-    <script>
-        $.validate({
-            modules : 'security',
-            onModulesLoaded : function() {
-                var optionalConfig = {
-                    fontSize: '12pt',
-                    padding: '4px',
-                    bad : 'Very bad',
-                    weak : 'Weak',
-                    good : 'Good',
-                    strong : 'Strong'
-                };
-
-                $('input[name="pass"]').displayPasswordStrength(optionalConfig);
-            }
-        });
-    </script>
-
-    <script src="{{ asset('public/adminAssets/assets/js/sweetalert.min.js') }}"></script>
-    <script src="{{ asset('public/adminAssets/assets/js/jquery.sweet-alert.custom.js') }}"></script>
-    <script type="text/javascript">
-        @if(session('flash_message'))
-        swal("Success!", "{!! session('flash_message') !!}", "success")
-        @endif
-
-        @if(session('flash_error'))
-        swal("Error", "{!! session('flash_error') !!}")
-        @endif
-    </script>
-
-    <script>
-        $("#current_password").keyup( function () {
-           var current_password = $("#current_password").val();
-
-           $.ajax({
-               headers: {
-                   'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-               },
-               type: 'post',
-               url: 'check-password',
-               data: {
-                   current_password:current_password},
-               success: function (resp) {
-                   if(resp =="true"){
-                       $("#correct_password").text("Current Password Matches").css("color", "green");
-                   } else if (resp =="false"){
-                       $("#correct_password").text("Password Does Not Match").css("color", "red");
-                   }
-               }, error: function (resp) {
-                   alert("Error");
-               }
-
-           });
-        });
-    </script>
-
-@endsection

@@ -377,12 +377,12 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="layouts_form.html" class="nav-link ">
+                                <a href="{{route('department.create')}}" class="nav-link ">
                                     <span class="title">Add Department</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="advance_form.html" class="nav-link ">
+                                <a href="{{route('department.index')}}" class="nav-link ">
                                     <span class="title">View Department</span>
                                 </a>
                             </li>
@@ -397,17 +397,17 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="basic_table.html" class="nav-link ">
+                                <a href="{{route('course.index')}}" class="nav-link ">
                                     <span class="title">Course</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="advanced_table.html" class="nav-link ">
+                                <a href="{{route('section.index')}}" class="nav-link ">
                                     <span class="title">Section</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="export_table.html" class="nav-link ">
+                                <a href="{{route('batch.index')}}" class="nav-link ">
                                     <span class="title">Batch</span>
                                 </a>
                             </li>
@@ -422,12 +422,12 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="charts_echarts.html" class="nav-link ">
+                                <a href="{{route('exam.create')}}" class="nav-link ">
                                     <span class="title">Add Exam</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="charts_morris.html" class="nav-link ">
+                                <a href="{{route('exam.index')}}" class="nav-link ">
                                     <span class="title">View Exam</span>
                                 </a>
                             </li>
@@ -461,92 +461,52 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="google_maps.html" class="nav-link ">
+                                <a href="{{route('incoming.index')}}" class="nav-link ">
                                     <span class="title">Incoming Calls</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="vector_maps.html" class="nav-link ">
+                                <a href="{{route('outgoing.index')}}" class="nav-link ">
                                     <span class="title">Outgoing Calls</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="vector_maps.html" class="nav-link ">
+                                <a href="{{route('visited.index')}}" class="nav-link ">
                                     <span class="title">Visited Calls</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item">
+                     <li class="nav-item">
                         <a href="javascript:;" class="nav-link nav-toggle">
-                            <i class="material-icons">face</i>
+                            <i class="material-icons">call</i>
                             <span class="title">Enquiry Management</span>
-                            <span class="arrow "></span>
+                            <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="javascript:;" class="nav-link nav-toggle">
-                                    <i class="fa fa-university"></i> Enquiry
-                                    <span class="arrow"></span>
+                                <a href="{{route('enquiry.index')}}" class="nav-link ">
+                                    <span class="title">Enquiry</span>
                                 </a>
-                                <ul class="sub-menu">
-                                    <li class="nav-item">
-                                        <a href="javascript:;" class="nav-link nav-toggle">
-                                            <i class="fa fa-bell-o"></i> Enquiry Category
-                                            <span class="arrow "></span>
-                                        </a>
-                                        <ul class="sub-menu">
-                                            <li class="nav-item">
-                                                <a href="javascript:;" class="nav-link">
-                                                    <i class="fa fa-calculator"></i> Enquiry Source</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">
-                                                    <i class="fa fa-clone"></i>Enquiry Response</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="fa fa-file-pdf-o"></i> Sample Link 1</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="fa fa-rss"></i> Sample Link 2</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="fa fa-hdd-o"></i> Sample Link 3</a>
-                                    </li>
-                                </ul>
                             </li>
                             <li class="nav-item">
-                                <a href="javascript:;" class="nav-link nav-toggle">
-                                    <i class="fa fa-gavel"></i> Arrow Toggle
-                                    <span class="arrow"></span>
+                                <a href="{{route('enquirycategory.index')}}" class="nav-link ">
+                                    <span class="title">Enquiry Category</span>
                                 </a>
-                                <ul class="sub-menu">
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="fa fa-paper-plane"></i> Sample Link 1</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="fa fa-power-off"></i> Sample Link 1</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="fa fa-recycle"></i> Sample Link 1
-                                        </a>
-                                    </li>
-                                </ul>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="fa fa-volume-up"></i> Item 3 </a>
+                                <a href="{{route('enquiryresponse.index')}}" class="nav-link ">
+                                    <span class="title">Enquiry Response</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('enquirysource.index')}}" class="nav-link ">
+                                    <span class="title">Enquiry Source</span>
+                                </a>
                             </li>
                         </ul>
                     </li>
+
                     <li class="nav-item">
                         <a href="javascript:;" class="nav-link nav-toggle">
                             <i class="material-icons">map</i>
@@ -650,6 +610,16 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
+                                <a href="{{ route('sms.create') }}" class="nav-link ">
+                                    <span class="title">Add SMS Template</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('sms.index') }}" class="nav-link ">
+                                    <span class="title">View SMS Template</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="google_maps.html" class="nav-link ">
                                     <span class="title">Student</span>
                                 </a>
@@ -673,6 +643,16 @@
                             <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
+                            <li class="nav-item">
+                                <a href="{{ route('email.create') }}" class="nav-link ">
+                                    <span class="title">Add Email Template</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('email.index') }}" class="nav-link ">
+                                    <span class="title">View Email Template</span>
+                                </a>
+                            </li>
                             <li class="nav-item">
                                 <a href="google_maps.html" class="nav-link ">
                                     <span class="title">Student</span>
@@ -793,12 +773,12 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="google_maps.html" class="nav-link ">
+                                <a href="{{route('fee.create')}}"  class="nav-link ">
                                     <span class="title">Add Fee</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="vector_maps.html" class="nav-link ">
+                                <a href="{{route('fee.index')}}"  class="nav-link ">
                                     <span class="title">View Fee</span>
                                 </a>
                             </li>
@@ -822,12 +802,12 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="google_maps.html" class="nav-link ">
+                                <a href="{{route('bankaccount.create')}}"  class="nav-link ">
                                     <span class="title">Add Bank Account</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="vector_maps.html" class="nav-link ">
+                                <a href="{{route('bankaccount.index')}}"  class="nav-link ">
                                     <span class="title">View Bank Account</span>
                                 </a>
                             </li>
@@ -860,22 +840,22 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="google_maps.html" class="nav-link ">
+                                <a href="{{ route('generalsettings.create') }}" class="nav-link ">
                                     <span class="title">General Settings</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="vector_maps.html" class="nav-link ">
+                                <a href="{{ route('emailsettings.create') }}" class="nav-link ">
                                     <span class="title">Email Settings</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="vector_maps.html" class="nav-link ">
+                                <a href="{{ route('password.create') }}" class="nav-link ">
                                     <span class="title">Password Settings</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="vector_maps.html" class="nav-link ">
+                                <a href="{{ route('payment.create') }}" class="nav-link ">
                                     <span class="title">Payment Settings</span>
                                 </a>
                             </li>

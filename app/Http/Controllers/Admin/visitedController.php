@@ -14,7 +14,7 @@ class visitedController extends Controller
      */
     public function index()
     {
-        //
+        return view('Admin.Call Logs.Visitor Logs.view');
     }
 
     /**
@@ -24,7 +24,7 @@ class visitedController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.Call Logs.Visitor Logs.add');
     }
 
     /**
