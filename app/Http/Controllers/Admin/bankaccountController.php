@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Bank;
 
 class bankaccountController extends Controller
 {
@@ -14,7 +15,7 @@ class bankaccountController extends Controller
      */
     public function index()
     {
-        //
+        return view('Admin.BankAccount.view');
     }
 
     /**
@@ -24,7 +25,7 @@ class bankaccountController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.BankAccount.add');
     }
 
     /**

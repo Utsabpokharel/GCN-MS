@@ -2,7 +2,7 @@
 
 @section('title')  Add New Email Template  - Institute Management System (IMS) @endsection
 
-@section('content')
+@section('index')
 
     <div class="page-content">
         <div class="page-bar">

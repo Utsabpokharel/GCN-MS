@@ -11,7 +11,7 @@
                     <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Home</a>&nbsp;
                         <i class="fa fa-angle-right"></i>
                     </li>
-                    <li><a class="parent-item" href="{{route('user.index')}}">Users</a>&nbsp;
+                    <li><a class="parent-item" href="#">Users</a>&nbsp;
                         <i class="fa fa-angle-right"></i>
                     </li>
                     <li class="active">All Users</li>
@@ -23,7 +23,7 @@
                 <div class="card card-box">
                     <div class="card-head">
                         <header>All Users</header>
-                        <a class="parent-item pull-right btn btn-primary" href="{{ route('user.create') }}">Add +</a>
+                        <a class="parent-item pull-right btn btn-primary" href="#">Add +</a>
                     </div>
                     <div class="card-body " id="bar-parent">
                         <table id="exportTable" class="display nowrap" style="width:100%">
@@ -38,40 +38,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($users as $user)
-                                <tr>
-                                    <td>{{$user->id}}</td>
-                                    <td><a href="{{route('user.show',[$user->id])}}">{{$user->name}}</a></td>
-                                    <td>{{$user->email}}</td>
-                                    <td>{{$user->roles['name']}}</td>
-                                    @if($user->image)
-                                    <td>
-                                        <img src="{{asset('Uploads/UserImage/'.$user->image)}}" alt="User image"
-                                            width="85" height="75">
-                                    </td>
-                                    @else
-                                    <td>No image available</td>
-                                    @endif
-                                    <td class="text-left">
 
-                                        <form action="{{ route('user.edit', $user->id)}}" method="GET"
-                                            style="display: inline-block">
-                                            {{csrf_field()}}
-                                            {{method_field('PUT')}}
-                                            <button class="btn btn-primary btn-sm" type="submit"><span
-                                                    class="fa fa-pencil"></span></button>
-                                        </form>
-
-                                        <form action="{{ route('user.destroy', $user->id)}}" method="post"
-                                            style="display: inline-block">
-                                            {{csrf_field()}}
-                                            {{method_field('DELETE')}}
-                                            <button class="btn btn-danger btn-sm" type="submit"><span
-                                                    class="fa fa-trash-o"></span></button>
-                                        </form>
-                                    </td>
-                                </tr>
-                                @endforeach
                             </tbody>
                             <tfoot>
                                 <tr>

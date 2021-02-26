@@ -4,9 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Batch;
 
-class batchController extends Controller
+class visitedController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,7 @@ class batchController extends Controller
      */
     public function index()
     {
-        return view('Admin.Courses.Batch.view');
+        //
     }
 
     /**
@@ -25,7 +24,7 @@ class batchController extends Controller
      */
     public function create()
     {
-        return view('Admin.Courses.Batch.add');
+        //
     }
 
     /**
