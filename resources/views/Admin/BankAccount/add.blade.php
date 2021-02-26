@@ -1,86 +1,108 @@
-@extends('admin.layouts.master')
-@section('title') Add Bank Account @endsection
-@section('index')
+@extends('Admin.layouts.master')
+@section('content')
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="page-bar">
+            <div class="page-title-breadcrumb">
+                <div class=" pull-left">
+                    <div class="page-title">Add Bank Account</div>
+                </div>
+                <ol class="breadcrumb page-breadcrumb pull-right">
+                    <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Home</a>&nbsp;<i
+                            class="fa fa-angle-right"></i>
+                    </li>
+                    <li><a class="parent-item" href="{{route('bankaccount.index')}}">Users</a>&nbsp;<i
+                            class="fa fa-angle-right"></i>
+                    </li>
+                    <li class="active">Add Bank Account</li>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="card card-box">
+                    <div class="card-head">
+                        <header>Add Bank Account</header>
+                        <button id="panel-button" class="mdl-button mdl-js-button mdl-button--icon pull-right"
+                            data-upgraded=",MaterialButton">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+                    </div>
+                    <div class="card-body" id="bar-parent">
+                        <form action="" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                            enctype="multipart/form-data">
+                            {{csrf_field()}}
+                            <div class="form-body">
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Select User Name
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="name" name="username" required placeholder="Select User name"
+                                            class="form-control input-height" value="" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Account Holder Name
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="name" name="accountholdername" required placeholder="enter Account Holder Name"
+                                            class="form-control input-height " value="" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Bank Name
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="name" name="bankname" required
+                                            placeholder="Enter Bank Name"
+                                            class="form-control input-height " value="" />
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Branch Name
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="name" name="branchname" required
+                                            placeholder="Enter Branch Name"
+                                            class="form-control input-height" />
+                                    </div>
+
+                                </div>
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Account Number
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="name" name="accountnumber" required
+                                            placeholder="Enter Account Numebr"
+                                            class="form-control input-height" />
+                                    </div>
+
+                                </div>
 
 
-<div class="card-body card">
-    <form class="form" method="post" action="#" >
-     @csrf
-      <div class="row">
 
-                                 <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="user_id">Select User Name</label>
-
-                                    <select name="user_id"  class="form-control form-control-solid @error('user_id') is-invalid @enderror"
-                                            >
-                                        <option selected disabled="">Select  User Name</option>
-
-
-                                    </select>
-                                     @error('user_id')
-          <span class="invalid-feedback" role="alert"></span>
-          @enderror
-                                   </div>
-                                  </div>
-
-
-<div class="col-sm-6">
-     <div class="form-group">
-      <label>Account Holder Name:</label>
-
-      <input type="text" name="accountholder_name" class="form-control form-control-solid @error('accountholder_name') is-invalid @enderror" placeholder="Enter Account Holder Name"/>
-      @error('accountholder_name')
-          <span class="invalid-feedback" role="alert"></span>
-          @enderror
-     </div>
-   </div>
-
-
-
-
-
-
-
-     <div class="col-md-6">
-      <div class="form-group">
-      <label>Bank Name:</label>
-      <input type="text" name="bank_name" class="form-control form-control-solid @error('bank_name') is-invalid @enderror" placeholder="Enter Bank Name"/>
-
-      @error('dob')
-          <span class="invalid-feedback" role="alert"></span>
-          @enderror
-     </div>
-   </div>
-<div class="col-md-6">
-     <div class="form-group">
-      <label>Branch Name:</label>
-
-      <input type="text" name="branch_name" class="form-control form-control-solid @error('branch_name') is-invalid @enderror" placeholder="Enter Branch Name"/>
-      @error('branch_name')
-          <span class="invalid-feedback" role="alert"></span>
-          @enderror
-     </div>
-</div>
-
-<div class="col-md-6">
-     <div class="form-group">
-      <label>Account Number:</label>
-
-      <input type="text" name="account_number" class="form-control form-control-solid @error('account_number') is-invalid @enderror" placeholder="Enter your Account Number"/>
-      @error('account_number')
-          <span class="invalid-feedback" role="alert"></span>
-          @enderror
-     </div>
-</div>
-
-<div class="col-md-12">
-
-    <div class="card-footer">
-          <input type="submit" value="submit" class="btn btn-success">
-          <input type="reset" value="reset" class="btn btn-danger">
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div class="offset-md-3 col-md-9">
+                                            <button type="submit" class="btn btn-info m-r-20">Submit</button>
+                                            <a class="btn btn-default" href="{{route('bankaccount.index')}}">Cancel</a>
+                                        </div>
+                                    </div>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-   </form>
 </div>
 @endsection

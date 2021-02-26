@@ -14,9 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 use App\Http\Controllers\Admin\userController;
+use App\Http\Controllers\Admin\bankaccountController;
 use App\Http\Controllers\Admin\departmentController;
 use App\Http\Controllers\Admin\emailController;
 use App\Http\Controllers\Admin\emailsettingsController;
+use App\Http\Controllers\Admin\enquiryController;
 use App\Http\Controllers\Admin\enquirycategoryController;
 use App\Http\Controllers\Admin\enquiryresponseController;
 use App\Http\Controllers\Admin\enquirysourceController;
@@ -28,6 +30,12 @@ use App\Http\Controllers\Admin\passwordsettingsController;
 use App\Http\Controllers\Admin\paymentsettingsController;
 use App\Http\Controllers\Admin\recruitmentController;
 use App\Http\Controllers\Admin\smsController;
+use App\Http\Controllers\Admin\visitedController;
+use App\Http\Controllers\Admin\examController;
+use App\Http\Controllers\Admin\sectionController;
+use App\Http\Controllers\Admin\batchController;
+
+
 
 Route::get('/', function () {
     return view('Admin.layouts.master');
@@ -52,7 +60,7 @@ Route::resource('incoming', incomingController::class);
 //outgoing
 Route::resource('outgoing', outgoingController::class);
 //visited
-Route::resource('visited', vistedController::class);
+Route::resource('visited', visitedController::class);
 //enquiry
 Route::resource('enquiry', enquiryController::class);
 //enquiry category
@@ -72,10 +80,8 @@ Route::resource('bankaccount', bankaccountController::class);
 //general settings
 Route::resource('generalsettings', generalsettingsController::class);
 //email
-Route::resource('email', emailsettingsController::class);
+Route::resource('emailsettings', emailsettingsController::class);
 //password
 Route::resource('password', passwordsettingsController::class);
 //payment
-Route::resource('recruitment', paymentsettingsController::class);
-
-Route::resource('department', departmentController::class);
+Route::resource('payment', paymentsettingsController::class);

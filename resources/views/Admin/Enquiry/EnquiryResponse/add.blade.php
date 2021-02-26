@@ -1,44 +1,61 @@
-@extends('admin.layouts.master')
-@section('title') Add Enquiry Response @endsection
+@extends('Admin.layouts.master')
 @section('content')
-    <div class="card-body card">
-        <form action="" class="form" method="post">
-            @csrf
-            <div class="form-group">
-                <input type="hidden" name="enquiry_by" />
-                <br>
-                <input type="hidden" name="responded_by"
-                />
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="page-bar">
+            <div class="page-title-breadcrumb">
+                <div class=" pull-left">
+                    <div class="page-title">Add Enquiry Response</div>
+                </div>
+                <ol class="breadcrumb page-breadcrumb pull-right">
+                    <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Home</a>&nbsp;<i
+                            class="fa fa-angle-right"></i>
+                    </li>
+                    <li><a class="parent-item" href="{{route('enquiryresponse.index')}}">Add Enquiry Category</a>&nbsp;<i
+                            class="fa fa-angle-right"></i>
+                    </li>
+                    <li class="active">Add Enquiry Response</li>
+                </ol>
             </div>
-            <div class="form-group">
-                <label>Responded Through:</label>
-                <select name="responded_through" id="" class="form-control form-control-solid" required>
-                    <option selected disabled>--Select any one--</option>
-                </select>
-                @error('responded_through')
-                <div class="text-danger">The responded through field is required</div>
-                @enderror
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="card card-box">
+                    <div class="card-head">
+                        <header>Add Enquiry Response</header>
+                        <button id="panel-button" class="mdl-button mdl-js-button mdl-button--icon pull-right"
+                            data-upgraded=",MaterialButton">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+                    </div>
+                    <div class="card-body" id="bar-parent">
+                        <form action="" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                            enctype="multipart/form-data">
+                            {{csrf_field()}}
+
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Response
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div class="offset-md-3 col-md-9">
+                                            <button type="submit" class="btn btn-info m-r-20">Submit</button>
+                                            <a class="btn btn-default" href="{{route('enquiryresponse.index')}}">Cancel</a>
+                                        </div>
+                                    </div>
+                                </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label>Message:</label>
-                <textarea class="form-control form-control-solid" name="message" cols="30"
-                          rows="10"></textarea>
-                @error('message')
-                <div class="text-danger">The message field is required</div>
-                @enderror
-            </div>
-            <div class="form-group">
-                <label>Remarks:</label>
-                <textarea class="form-control form-control-solid" name="remarks" cols="30"
-                          rows="10"></textarea>
-                @error('remarks')
-                <div class="text-danger">The remarks field is required</div>
-                @enderror
-            </div>
-            <div class="card-footer">
-                <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                <button type="reset" class="btn btn-secondary">Cancel</button>
-            </div>
-        </form>
+        </div>
     </div>
+</div>
 @endsection
