@@ -1,12 +1,11 @@
-@include('Admin.layouts.head')
-@include('Admin.layouts.header')
-@include('Admin.layouts.index')
-@include('Admin.layouts.sidebar')
-@include('Admin.layouts.footer')
-
+@include('Admin.Layouts.head')
+@include('Admin.Layouts.header')
+@include('Admin.Layouts.sidebar')
+@include('Admin.Layouts.index')
+@include('Admin.Layouts.footer')
 
 @yield('head')
 @yield('header')
-@yield('content')
 @yield('sidebar')
+@yield('content')
 @yield('footer')
