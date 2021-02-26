@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('page_title','Add enquiry')
+@section('title') Add Enquiry @endsection
 
 @section('script')
     <script>
@@ -81,7 +81,7 @@
                 <input type="date" class="form-control form-control-solid" placeholder="Enter full name" name="date"
                 />
                 @error('date')
-                <div class="text-danger">{{ $message }}</div>
+                <div class="text-danger"></div>
                 @enderror
             </div>
             <div class="form-group">
@@ -89,7 +89,7 @@
                 <input type="time" class="form-control form-control-solid" placeholder="Enter full name" name="time"
                 />
                 @error('time')
-                <div class="text-danger">{{ $message }}</div>
+                <div class="text-danger"></div>
                 @enderror
             </div>
             <div class="form-group">
