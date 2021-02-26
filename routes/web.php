@@ -14,6 +14,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 use App\Http\Controllers\Admin\userController;
+use App\Http\Controllers\Admin\staffController;
+use App\Http\Controllers\Admin\customerController;
+use App\Http\Controllers\Admin\vendorController;
+use App\Http\Controllers\Admin\studentController;
+use App\Http\Controllers\Admin\teacherController;
+use App\Http\Controllers\Admin\roleController;
+use App\Http\Controllers\Admin\awardController;
+use App\Http\Controllers\Admin\designationController;
+use App\Http\Controllers\Admin\titleController;
+use App\Http\Controllers\Admin\levelController;
+use App\Http\Controllers\Admin\servicesController;
+use App\Http\Controllers\Admin\incomeController;
+use App\Http\Controllers\Admin\incomecategoryController;
+use App\Http\Controllers\Admin\expenseController;
+use App\Http\Controllers\Admin\expensecategoryController;
 use App\Http\Controllers\Admin\departmentController;
 use App\Http\Controllers\Admin\emailController;
 use App\Http\Controllers\Admin\emailsettingsController;
@@ -34,7 +49,36 @@ Route::get('/', function () {
 });
 //user
 Route::resource('user', userController::class);
-
+//staff
+Route::resource('staff', staffController::class);
+//customer
+Route::resource('customer', customerController::class);
+//vendor
+Route::resource('vendor', vendorController::class);
+//student
+Route::resource('student', studentController::class);
+//teacher
+Route::resource('teacher', teacherController::class);
+//role
+Route::resource('role', roleController::class);
+//award
+Route::resource('award', awardController::class);
+//designation
+Route::resource('designation', designationController::class);
+//title
+Route::resource('title', titleController::class);
+//level
+Route::resource('level', levelController::class);
+//services
+Route::resource('services', servicesController::class);
+//income
+Route::resource('income', incomeController::class);
+//incomecategory
+Route::resource('incomecategory', incomecategoryController::class);
+//expense
+Route::resource('expense', expenseController::class);
+//expensecategory
+Route::resource('expensecategory', expensecategoryController::class);
 //recruitment
 Route::resource('recruitment', recruitmentController::class);
 //department

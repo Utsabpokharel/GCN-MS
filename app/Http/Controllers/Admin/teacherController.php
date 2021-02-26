@@ -14,7 +14,7 @@ class teacherController extends Controller
      */
     public function index()
     {
-        //
+        return view('Admin.Teacher.view');
     }
 
     /**
@@ -24,7 +24,8 @@ class teacherController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.Teacher.add');
+    
     }
 
     /**

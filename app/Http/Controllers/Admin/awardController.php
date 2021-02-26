@@ -14,7 +14,7 @@ class awardController extends Controller
      */
     public function index()
     {
-        //
+        return view('Admin.Awards.view');
     }
 
     /**
@@ -24,7 +24,7 @@ class awardController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.Awards.add');
     }
 
     /**

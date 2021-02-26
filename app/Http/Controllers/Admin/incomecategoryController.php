@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class vendorController extends Controller
+class incomecategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,8 @@ class vendorController extends Controller
      */
     public function index()
     {
-        return view('Admin.Vendor.view');
+        return view('Admin.Incomecategory.view');
+        
     }
 
     /**
@@ -24,7 +25,8 @@ class vendorController extends Controller
      */
     public function create()
     {
-        return view('Admin.Vendor.add');
+        return view('Admin.Incomecategory.add');
+        
     }
 
     /**
