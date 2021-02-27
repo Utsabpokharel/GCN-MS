@@ -1,84 +1,117 @@
-@extends('admin.layouts.master')
-@section('title') Add Visitor Logs @endsection
-@section('index')
-
-
-<div class="card-body card">
-    <form class="form" method="post" action="#" >
-     @csrf
-      <div class="row">
-
-         <div class="col-md-6">
-         <div class="form-group">
-        <label for="visited_time">Visited Time</label>
-
-        <input type="time" class="form-control form-control-solid @error('visited_time') is-invalid @enderror"  name="visited_time"/>
-
-         @error('visited_time');
-          <span class="invalid-feedback" role="alert"></span>
-        @enderror
+@extends('Admin.layouts.master')
+@section('content')
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="page-bar">
+            <div class="page-title-breadcrumb">
+                <div class=" pull-left">
+                    <div class="page-title">Add Visitor Logs</div>
+                </div>
+                <ol class="breadcrumb page-breadcrumb pull-right">
+                    <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Home</a>&nbsp;<i
+                            class="fa fa-angle-right"></i>
+                    </li>
+                    <li><a class="parent-item" href="{{route('visited.index')}}">Call Logs</a>&nbsp;<i
+                            class="fa fa-angle-right"></i>
+                    </li>
+                    <li class="active">Add Visitor Logs</li>
+                </ol>
             </div>
-             </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="card card-box">
+                    <div class="card-head">
+                        <header>Add Visitor Logs</header>
+                        <button id="panel-button" class="mdl-button mdl-js-button mdl-button--icon pull-right"
+                            data-upgraded=",MaterialButton">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+                    </div>
+                    <div class="card-body" id="bar-parent">
+                        <form action="" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                            enctype="multipart/form-data">
+                            {{csrf_field()}}
+                            <div class="form-body">
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Visited Time
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="time" name="visited Time" required placeholder="Visited Time"
+                                            class="form-control input-height" value="" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Visited Date
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="date" name="visiteddate" required placeholder="Visited Date"
+                                            class="form-control input-height " value="" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Visitor Name
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="text" name="visitorname" required
+                                            placeholder="Visitor Name"
+                                            class="form-control input-height " value="" />
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Handled By
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="text" name="handledby" required
+                                            placeholder="Handled By"
+                                            class="form-control input-height" />
+                                    </div>
+
+                                </div>
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Remarks
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <textarea class="form-control form-control-solid" rows="5" name="remarks" placeholder="Remarks"> </textarea>
+                                    </div>
+
+                                </div>
+                                 <div class="form-group row">
+                                    <label class="control-label col-md-3">Purpose
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="text" name="purpose" required
+                                            placeholder="purpose"
+                                            class="form-control input-height" />
+                                    </div>
+
+                                </div>
 
 
-<div class="col-sm-6">
-     <div class="form-group">
-      <label for="visited_date">Visited Date</label>
 
-      <input type="date" name="visited_date" class="form-control form-control-solid @error('visted_date') is-invalid @enderror" placeholder="Enter Visited Date"/>
-      @error('visited_date')
-          <span class="invalid-feedback" role="alert"></span>
-          @enderror
-     </div>
-   </div>
-
-   <div class="col-sm-6">
-     <div class="form-group">
-      <label for="visitor_name">Visitor Name</label>
-
-      <input type="text" name="visitor_name" class="form-control form-control-solid @error('visitor_name') is-invalid @enderror" placeholder="Visitor Name"/>
-      @error('visitor_name')
-          <span class="invalid-feedback" role="alert"></span>
-          @enderror
-     </div>
-   </div>
-   <div class="col-sm-6">
-     <div class="form-group">
-      <label for="handled_by">Handled By</label>
-      <select name="handled_by" id="handled_by" class="form-control form-control-solid @error('handled_by') is-invalid @enderror">
-            <option selected disabled value="">Select the person who is handling the call</option>
-      </select>
-
-     </div>
-   </div>
-   <div class="col-md-6">
-      <div class="form-group">
-      <label for="remarks">Remarks</label>
-      <textarea class="form-control form-control-solid" rows="5" name="remarks" placeholder="Remarks"> </textarea>
-     </div>
-   </div>
-   <div class="col-sm-6">
-     <div class="form-group">
-      <label for="purpose">Purpose</label>
-
-      <input type="text" name="purpose" class="form-control form-control-solid @error('purpose') is-invalid @enderror" placeholder="Purpose" />
-      @error('purpose')
-          <span class="invalid-feedback" role="alert">{{$message}}</span>
-          @enderror
-     </div>
-   </div>
-
-
-
-
-<div class="col-md-12">
-
-    <div class="card-footer">
-          <input type="submit" value="Submit" class="btn btn-success">
-          <input type="reset" value="Reset" class="btn btn-danger">
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div class="offset-md-3 col-md-9">
+                                            <button type="submit" class="btn btn-info m-r-20">Submit</button>
+                                            <a class="btn btn-default" href="{{route('visited.index')}}">Cancel</a>
+                                        </div>
+                                    </div>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
- </div>
-   </form>
 </div>
 @endsection

@@ -1,11 +1,28 @@
-@extends('admin.layouts.master')
-@section('title') Email Setting @endsection
+@extends('Admin.layouts.master')
 @section('content')
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="page-bar">
+            <div class="page-title-breadcrumb">
+                <div class=" pull-left">
+                    <div class="page-title">Add Email Settings</div>
+                </div>
+                <ol class="breadcrumb page-breadcrumb pull-right">
+                    <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Home</a>&nbsp;<i
+                            class="fa fa-angle-right"></i>
+                    </li>
+                    <li><a class="parent-item" href="{{route('emailsettings.index')}}">Email Settings</a>&nbsp;<i
+                            class="fa fa-angle-right"></i>
+                    </li>
+                    <li class="active">Add Email Settings</li>
+                </ol>
+            </div>
+        </div>
 <div class="row">
 	<div class="col-lg-12 col-md-12">
 		<div class="card card-custom gutter-b example example-compact">
 			<div class="card-header">
-				<h3 class="card-title">Email Setting</h3>
+				<h3 class="card-title">Email Settings</h3>
 				<div class="card-toolbar">
 					<div class="example-tools justify-content-center">
 
@@ -65,6 +82,4 @@
 </div>
 @endsection
 
-@push('scripts')
 
-@endpush

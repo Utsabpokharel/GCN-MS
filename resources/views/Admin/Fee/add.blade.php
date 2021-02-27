@@ -1,20 +1,20 @@
-@extends('admin.layouts.master')
-
-@section('title')  Add Fees @endsection
-
+@extends('Admin.layouts.master')
 @section('content')
-
+<div class="page-content-wrapper">
     <div class="page-content">
         <div class="page-bar">
             <div class="page-title-breadcrumb">
                 <div class=" pull-left">
-                    <div class="page-title">Add FEE</div>
+                    <div class="page-title">Add Fee</div>
                 </div>
                 <ol class="breadcrumb page-breadcrumb pull-right">
-                    <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
-                                                           href="#">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+                    <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Fee</a>&nbsp;<i
+                            class="fa fa-angle-right"></i>
                     </li>
-                    <li class="active">Add New Fee</li>
+                    <li><a class="parent-item" href="{{route('fee.index')}}">Fee</a>&nbsp;<i
+                            class="fa fa-angle-right"></i>
+                    </li>
+                    <li class="active">Add Fee</li>
                 </ol>
             </div>
         </div>
@@ -22,127 +22,62 @@
             <div class="col-md-12 col-sm-12">
                 <div class="card card-box">
                     <div class="card-head">
-                        <header>New Fee Details</header>
-
-
+                        <header>Add Fee</header>
+                        <button id="panel-button" class="mdl-button mdl-js-button mdl-button--icon pull-right"
+                            data-upgraded=",MaterialButton">
+                            <i class="material-icons">more_vert</i>
+                        </button>
                     </div>
-                    <div class="card-body " id="bar-parent">
-                        <form method="post" action="" enctype="multipart/form-data">
-                            @csrf
-
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="name">Student</label>
-                                    <select id="student_id" class="form-control " name="student_id"  data-validation="required"
-                                                    data-validation-error-msg="At Least a student is required">
-                                                    <option selected hidden>Please Select student</option>
-                                            </select>
+                    <div class="card-body" id="bar-parent">
+                        <form action="" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                            enctype="multipart/form-data">
+                            {{csrf_field()}}
+                            <div class="form-body">
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Student
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="text" name="name" required placeholder="Select Student"
+                                            class="form-control input-height" value="" />
+                                    </div>
                                 </div>
-                            </div>
 
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Title
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="text" name=title required placeholder="title"
+                                            class="form-control input-height " value="" />
+                                    </div>
+                                </div>
 
-                            <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="title">Title </label>
-                                          <input type="text" class="form-control" id="title"
-                                                   placeholder="Title" name="title">
-                                        </div>
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Amount
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="number" name="amount" required
+                                            placeholder="Enter Amount"
+                                            class="form-control input-height " value="" />
                                     </div>
 
-                             <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="amount">Amount</label>
-                                            <input type="number" class="form-control" id="amount"
-                                                   placeholder="Enter Amount" name="amount" data-validation="required"
-                                                   data-validation-error-msg="Amount is required">
+                                </div>
+
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div class="offset-md-3 col-md-9">
+                                            <button type="submit" class="btn btn-info m-r-20">Submit</button>
+                                            <a class="btn btn-default" href="{{route('fee.index')}}">Cancel</a>
                                         </div>
                                     </div>
-
-
-                            <button  type="submit" class="btn btn-primary">Add New Fee</button>
-
-                            <a href="#" class="btn btn-danger">Go Back</a>
-
+                                </div>
                         </form>
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
-
-@endsection
-
-@section('css')
-
-    <link href="{{asset('public/adminAssets/assets/plugins/select2/css/select2.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('public/adminAssets/assets/plugins/select2/css/select2-bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
-@endsection
-
-
-
-
-@section('scripts')
-
-
-<script type="text/javascript">
-
-        document.getElementById("mode_of_payment").onchange = function() {
-            var mode=document.getElementById("mode_of_payment").value;
-
-           if(mode=="cash")
-            document.getElementById("selectpayment").style.display = "none";
-          else{
-             document.getElementById("selectpayment").style.display = "block";
-
-        }
-
-        }
-
-
-</script>
-
-<script type="text/javascript">
-
-        $("#coursefee").change(function () {
-             var fees=$(this).find(':selected').data("fees");
-             $("#fees").val(fees);
-
-        });
-
-
-</script>
-
-
-    <script src="{{asset('public/adminAssets/assets/plugins/select2/js/select2.js')}}"></script>
-    <script src="{{asset('public/adminAssets/assets/js/pages/select2/select2-init.js')}}"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
-
-
-    <script>
-        $.validate({
-            lang: 'en',
-            modules: 'file',
-        });
-
-    </script>
-
-    <script src="{{ asset('public/adminAssets/assets/js/sweetalert.min.js') }}"></script>
-    <script src="{{ asset('public/adminAssets/assets/js/jquery.sweet-alert.custom.js') }}"></script>
-    <script type="text/javascript">
-        @if(session('flash_message'))
-        swal("Success!", "{!! session('flash_message') !!}", "success")
-        @endif
-
-        @if(session('flash_error'))
-        swal("Error", "{!! session('flash_error') !!}")
-        @endif
-    </script>
-
-
-
-
+</div>
 @endsection
