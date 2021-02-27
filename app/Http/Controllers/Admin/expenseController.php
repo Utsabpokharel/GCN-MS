@@ -14,7 +14,7 @@ class expenseController extends Controller
      */
     public function index()
     {
-        //
+        return view('Admin.Expense.view');
     }
 
     /**
@@ -24,7 +24,7 @@ class expenseController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.Expense.add');
     }
 
     /**

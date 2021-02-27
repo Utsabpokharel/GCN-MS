@@ -74,11 +74,11 @@
                             <span class="title">Staff</span><span class="arrow"></span></a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="all_students.html" class="nav-link "> <span class="title">Add Staff</span>
+                                <a href="{{route('staff.create')}}" class="nav-link "> <span class="title">Add Staff</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="add_student.html" class="nav-link "> <span class="title">View All Staffs</span>
+                                <a href="{{route('staff.index')}}" class="nav-link "> <span class="title">View All Staffs</span>
                                 </a>
                             </li>
                         </ul>
@@ -91,11 +91,11 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="all_courses.html" class="nav-link "> <span class="title">Add Customer</span>
+                                <a href="{{route('customer.create')}}" class="nav-link "> <span class="title">Add Customer</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="add_course.html" class="nav-link "> <span class="title">View All
+                                <a href="{{route('customer.index')}}" class="nav-link "> <span class="title">View All
                                         Customers</span>
                                 </a>
                             </li>
@@ -108,11 +108,11 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="all_assets.html" class="nav-link "> <span class="title">Add Vendor</span>
+                                <a href="{{route('vendor.create')}}" class="nav-link "> <span class="title">Add Vendor</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="add_library.html" class="nav-link "> <span class="title">View All Vendor</span>
+                                <a href="{{route('vendor.index')}}" class="nav-link "> <span class="title">View All Vendor</span>
                                 </a>
                             </li>
                         </ul>
@@ -124,12 +124,12 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="all_department.html" class="nav-link "> <span class="title">Add Student
+                                <a href="{{route('student.create')}}" class="nav-link "> <span class="title">Add Student
                                         Category</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="add_department.html" class="nav-link "> <span class="title">View Student
+                                <a href="{{route('student.index')}}" class="nav-link "> <span class="title">View Student
                                         Category</span>
                                 </a>
                             </li>
@@ -142,12 +142,12 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="all_staffs.html" class="nav-link "> <span class="title">Add Teacher
+                                <a href="{{route('teacher.create')}}" class="nav-link "> <span class="title">Add Teacher
                                         Category</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="add_staff.html" class="nav-link "> <span class="title">View Teacher
+                                <a href="{{route('teacher.index')}}" class="nav-link "> <span class="title">View Teacher
                                         Category</span>
                                 </a>
                             </li>
@@ -161,7 +161,7 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="all_holidays.html" class="nav-link "> <span class="title">View All Roles</span>
+                                <a href="{{route('role.index')}}" class="nav-link "> <span class="title">View All Roles</span>
                                 </a>
                             </li>
                         </ul>
@@ -176,12 +176,12 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="email_inbox.html" class="nav-link ">
+                                <a href="{{route('award.create')}}" class="nav-link ">
                                     <span class="title">Add Award</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="email_view.html" class="nav-link ">
+                                <a href="{{route('award.index')}}" class="nav-link ">
                                     <span class="title">View Award</span>
                                 </a>
                             </li>
@@ -515,12 +515,12 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="google_maps.html" class="nav-link ">
+                                <a href="{{route('title.index')}}" class="nav-link ">
                                     <span class="title">Title</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="vector_maps.html" class="nav-link ">
+                                <a href="{{route('level.index')}}" class="nav-link ">
                                     <span class="title">Level</span>
                                 </a>
                             </li>
@@ -572,13 +572,13 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="google_maps.html" class="nav-link ">
+                                <a href="{{route('services.create')}}" class="nav-link ">
                                     <span class="title">Add Services</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="vector_maps.html" class="nav-link ">
-                                    <span class="title">View Services</span>
+                                <a href="{{route('services.index')}}" class="nav-link ">
+                                    <span class="title">View All Services</span>
                                 </a>
                             </li>
                         </ul>
@@ -716,12 +716,12 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="google_maps.html" class="nav-link ">
+                                <a href="{{route('incomecategory.index')}}" class="nav-link ">
                                     <span class="title">Category</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="vector_maps.html" class="nav-link ">
+                                <a href="{{route('income.index')}}" class="nav-link ">
                                     <span class="title">Incomes</span>
                                 </a>
                             </li>
@@ -735,12 +735,12 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="google_maps.html" class="nav-link ">
+                                <a href="{{route('expensecategory.index')}}" class="nav-link ">
                                     <span class="title">Category</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="vector_maps.html" class="nav-link ">
+                                <a href="{{route('expense.index')}}" class="nav-link ">
                                     <span class="title">Expenses</span>
                                 </a>
                             </li>

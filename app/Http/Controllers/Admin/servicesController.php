@@ -14,7 +14,7 @@ class servicesController extends Controller
      */
     public function index()
     {
-        //
+        return view('Admin.Services.view');
     }
 
     /**
@@ -24,7 +24,7 @@ class servicesController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.Services.add');
     }
 
     /**

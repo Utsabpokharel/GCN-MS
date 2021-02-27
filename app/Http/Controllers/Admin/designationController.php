@@ -14,7 +14,7 @@ class designationController extends Controller
      */
     public function index()
     {
-        //
+        return view('Admin.Designation.view');
     }
 
     /**
@@ -24,7 +24,7 @@ class designationController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.Designation.add');
     }
 
     /**

@@ -14,7 +14,7 @@ class roleController extends Controller
      */
     public function index()
     {
-        //
+        return view('Admin.Roles.view');
     }
 
     /**
@@ -24,7 +24,7 @@ class roleController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.Roles.add');
     }
 
     /**

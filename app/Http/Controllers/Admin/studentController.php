@@ -14,7 +14,7 @@ class studentController extends Controller
      */
     public function index()
     {
-        //
+        return view('Admin.Student.view');
     }
 
     /**
@@ -24,7 +24,7 @@ class studentController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.Student.add');
     }
 
     /**
