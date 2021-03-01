@@ -43,12 +43,36 @@ use App\Http\Controllers\Admin\incomingController;
 use App\Http\Controllers\Admin\outgoingController;
 use App\Http\Controllers\Admin\passwordsettingsController;
 use App\Http\Controllers\Admin\paymentsettingsController;
-use App\Http\Controllers\Admin\recruitmentController;
 use App\Http\Controllers\Admin\smsController;
 use App\Http\Controllers\Admin\visitedController;
 use App\Http\Controllers\Admin\examController;
 use App\Http\Controllers\Admin\sectionController;
 use App\Http\Controllers\Admin\batchController;
+use App\Http\Controllers\Admin\disciplinaryController;
+use App\Http\Controllers\Admin\employeeterminationController;
+use App\Http\Controllers\Admin\documentmanagementController;
+use App\Http\Controllers\Admin\rcourseController;
+use App\Http\Controllers\Admin\customfieldController;
+use App\Http\Controllers\Admin\educationController;
+use App\Http\Controllers\Admin\languageController;
+use App\Http\Controllers\Admin\skillController;
+use App\Http\Controllers\Admin\licenseController;
+use App\Http\Controllers\Admin\reportingController;
+use App\Http\Controllers\Admin\employeecontractController;
+use App\Http\Controllers\Admin\employeeotherinfoController;
+use App\Http\Controllers\Admin\employeequalificationController;
+use App\Http\Controllers\Admin\employeeresignationController;
+use App\Http\Controllers\Admin\employmentstatusController;
+use App\Http\Controllers\Admin\employeetableController;
+use App\Http\Controllers\Admin\salaryController;
+use App\Http\Controllers\Admin\paycalendarController;
+use App\Http\Controllers\Admin\advancedController;
+use App\Http\Controllers\Admin\benefitdeductionController;
+use App\Http\Controllers\Admin\invoiceController;
+
+
+
+
 
 
 
@@ -87,8 +111,6 @@ Route::resource('incomecategory', incomecategoryController::class);
 Route::resource('expense', expenseController::class);
 //expensecategory
 Route::resource('expensecategory', expensecategoryController::class);
-//recruitment
-Route::resource('recruitment', recruitmentController::class);
 //department
 Route::resource('department', departmentController::class);
 //course
@@ -129,3 +151,47 @@ Route::resource('emailsettings', emailsettingsController::class);
 Route::resource('password', passwordsettingsController::class);
 //payment
 Route::resource('payment', paymentsettingsController::class);
+//document management
+Route::resource('documentmanagement', documentmanagementController::class);
+// recruitment course
+Route::resource('rcourse', rcourseController::class);
+// custom field
+Route::resource('customfield', customfieldController::class);
+// education
+Route::resource('education', educationController::class);
+// language
+Route::resource('language', languageController::class);
+// skill
+Route::resource('skill', skillController::class);
+// license
+Route::resource('license', licenseController::class);
+// disciplinary
+Route::resource('disciplinary', disciplinaryController::class);
+// reporting
+Route::resource('reporting', reportingController::class);
+// employee contract
+Route::resource('employeecontract', employeecontractController::class);
+// employee other info
+Route::resource('employeeotherinfo', employeeotherinfoController::class);
+// employee qualification
+Route::resource('employeequalification', employeequalificationController::class);
+// employee resignation
+Route::resource('employeeresignation', employeeresignationController::class);
+// employment status
+Route::resource('employmentstatus', employmentStatusController::class);
+// employment status verification
+Route::resource('employmentstatusverification', employmentstatusverificationController::class);
+// employee termination
+Route::resource('employeetermination', employeeterminationController::class);
+// employee table
+Route::resource('employeetable', employeetableController::class);
+// salary
+Route::resource('salary', salaryController::class);
+// pay calendar
+Route::resource('paycalendar', paycalendarController::class);
+// advanced
+Route::resource('advanced', advancedController::class);
+// benefit/deduction
+Route::resource('benefitdeduction', benefitdeductionController::class);
+// invoice
+Route::resource('invoice', invoiceController::class);

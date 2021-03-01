@@ -5,16 +5,17 @@
         <div class="page-bar">
             <div class="page-title-breadcrumb">
                 <div class=" pull-left">
-                    <div class="page-title">Add Fee</div>
+                    <div class="page-title">Add Education</div>
                 </div>
                 <ol class="breadcrumb page-breadcrumb pull-right">
                     <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Home</a>&nbsp;<i
                             class="fa fa-angle-right"></i>
                     </li>
-                    <li><a class="parent-item" href="{{route('fee.index')}}">Fee</a>&nbsp;<i
+
+                    <li><a class="parent-item" href="{{route('enquiry.index')}}">Recruitment</a>&nbsp;<i
                             class="fa fa-angle-right"></i>
                     </li>
-                    <li class="active">Add Fee</li>
+                    <li class="active">Add Education</li>
                 </ol>
             </div>
         </div>
@@ -22,7 +23,7 @@
             <div class="col-md-12 col-sm-12">
                 <div class="card card-box">
                     <div class="card-head">
-                        <header>Add Fee</header>
+                        <header>Add Education</header>
                         <button id="panel-button" class="mdl-button mdl-js-button mdl-button--icon pull-right"
                             data-upgraded=",MaterialButton">
                             <i class="material-icons">more_vert</i>
@@ -34,42 +35,49 @@
                             {{csrf_field()}}
                             <div class="form-body">
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">Student
+                                    <label class="control-label col-md-3">Code
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="name" required placeholder="Select Student"
+                                        <input type="text" name="code" required placeholder="enter code"
                                             class="form-control input-height" value="" />
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">Title
+                                    <label class="control-label col-md-3">Name
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name=title required placeholder="title"
+                                        <input type="text" name="name" required placeholder="enter name"
                                             class="form-control input-height " value="" />
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">Amount
+                                    <label class="control-label col-md-3">Length
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="number" name="amount" required
-                                            placeholder="Enter Amount"
+                                        <input type=text name="length" required
+                                            placeholder="Length"
                                             class="form-control input-height " value="" />
                                     </div>
 
                                 </div>
-
+                                 <div class="form-group row">
+                                    <label class="control-label col-md-3">Description
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                    <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+                                    </div>
+                                </div>
                                 <div class="form-actions">
                                     <div class="row">
                                         <div class="offset-md-3 col-md-9">
                                             <button type="submit" class="btn btn-info m-r-20">Submit</button>
-                                            <a class="btn btn-default" href="{{route('fee.index')}}">Cancel</a>
+                                            <a class="btn btn-default" href="{{route('enquiry.index')}}">Cancel</a>
                                         </div>
                                     </div>
                                 </div>
