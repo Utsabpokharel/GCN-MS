@@ -5,16 +5,16 @@
         <div class="page-bar">
             <div class="page-title-breadcrumb">
                 <div class=" pull-left">
-                    <div class="page-title">Add Fee</div>
+                    <div class="page-title">Add Pay Calendar</div>
                 </div>
                 <ol class="breadcrumb page-breadcrumb pull-right">
                     <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Home</a>&nbsp;<i
                             class="fa fa-angle-right"></i>
                     </li>
-                    <li><a class="parent-item" href="{{route('fee.index')}}">Fee</a>&nbsp;<i
+                    <li><a class="parent-item" href="{{route('fee.index')}}">PayRoll</a>&nbsp;<i
                             class="fa fa-angle-right"></i>
                     </li>
-                    <li class="active">Add Fee</li>
+                    <li class="active">Add PayCalendar</li>
                 </ol>
             </div>
         </div>
@@ -22,7 +22,7 @@
             <div class="col-md-12 col-sm-12">
                 <div class="card card-box">
                     <div class="card-head">
-                        <header>Add Fee</header>
+                        <header>Add PayCalendar</header>
                         <button id="panel-button" class="mdl-button mdl-js-button mdl-button--icon pull-right"
                             data-upgraded=",MaterialButton">
                             <i class="material-icons">more_vert</i>
@@ -34,27 +34,27 @@
                             {{csrf_field()}}
                             <div class="form-body">
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">Student
+                                    <label class="control-label col-md-3">Staff Name
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="name" required placeholder="Select Student"
+                                        <input type="text" name="name" required placeholder="Select Staff Name"
                                             class="form-control input-height" value="" />
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">Title
+                                    <label class="control-label col-md-3">Type of Payment Mode
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name=title required placeholder="title"
+                                        <input type="text" name="paymentmode" required placeholder="Select Payment Mode"
                                             class="form-control input-height " value="" />
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">Amount
+                                    <label class="control-label col-md-3">Month
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">

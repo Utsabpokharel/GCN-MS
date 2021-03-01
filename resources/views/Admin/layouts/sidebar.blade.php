@@ -195,11 +195,71 @@
                         <ul class="sub-menu">
                             <li class="nav-item">
                                 <a href="" class="nav-link "> <span class="title">
-                                        Add Recruitment</span>
+                                        Document Management</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="add_fees.html" class="nav-link "> <span class="title">View Recruitment </span>
+                                <a href="" class="nav-link "> <span class="title">Course </span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link "> <span class="title">Custom Field</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link "> <span class="title">Education</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link "> <span class="title">Language</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link "> <span class="title">Skill</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link "> <span class="title">License</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link "> <span class="title">Disciplinary</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link "> <span class="title">Reporting</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link "> <span class="title">Employee Contract</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link "> <span class="title">Employee Other Info</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link "> <span class="title">Employee Qualifiaction</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link "> <span class="title">Employee Resignation</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link "> <span class="title">Employment Status</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link "> <span class="title">Employment Status Verification</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link "> <span class="title">Employee Termination</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link "> <span class="title">Employee Table</span>
                                 </a>
                             </li>
                         </ul>
@@ -231,61 +291,30 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link nav-toggle">
+                        <a href="" class="nav-link nav-toggle">
                             <i class="material-icons">dvr</i>
                             <span class="title">Payroll</span>
-                            <span class="label label-rouded label-menu label-warning">new</span>
                             <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="ui_buttons.html" class="nav-link ">
-                                    <span class="title">Buttons</span>
+                                <a href="" class="nav-link ">
+                                    <span class="title">Salary</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="ui_tabs_accordions_navs.html" class="nav-link ">
-                                    <span class="title">Tabs &amp; Accordions</span>
+                                <a href="" class="nav-link ">
+                                    <span class="title">Pay Calendar</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="ui_typography.html" class="nav-link ">
-                                    <span class="title">Typography</span>
+                                <a href="" class="nav-link ">
+                                    <span class="">Advanced</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="notification.html" class="nav-link ">
-                                    <span class="title">Notification</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="ui_icons.html" class="nav-link ">
-                                    <span class="title">Icons</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="ui_panels.html" class="nav-link ">
-                                    <span class="title">Panels</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="ui_grid.html" class="nav-link ">
-                                    <span class="title">Grids</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="calendar.html" class="nav-link ">
-                                    <span class="title">Calender</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="ui_tree.html" class="nav-link ">
-                                    <span class="title">Tree View</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="ui_carousel.html" class="nav-link ">
-                                    <span class="title">Carousel</span>
+                                <a href="" class="nav-link ">
+                                    <span class="title">Benefit/Deduction</span>
                                 </a>
                             </li>
                         </ul>

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class recruitmentController extends Controller
+class employmentstatusController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class recruitmentController extends Controller
      */
     public function index()
     {
-        return view('Admin.Recruitment.view');
+        return view('Admin.Recruitment.EmploymentStatus.view');
     }
 
     /**
@@ -24,7 +24,7 @@ class recruitmentController extends Controller
      */
     public function create()
     {
-        return view('Admin.Recruitment.add');
+        return view('Admin.Recruitment.EmploymentStatus.add');
     }
 
     /**
@@ -35,7 +35,6 @@ class recruitmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**
