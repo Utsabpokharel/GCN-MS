@@ -79,7 +79,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">Action
+                                    <label class="control-label col-md-3">Disciplinary Action
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">

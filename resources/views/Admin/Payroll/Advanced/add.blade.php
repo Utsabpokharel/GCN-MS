@@ -11,7 +11,7 @@
                     <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Home</a>&nbsp;<i
                             class="fa fa-angle-right"></i>
                     </li>
-                    <li><a class="parent-item" href="{{route('fee.index')}}">PayRoll</a>&nbsp;<i
+                    <li><a class="parent-item" href="{{route('advanced.index')}}">PayRoll</a>&nbsp;<i
                             class="fa fa-angle-right"></i>
                     </li>
                     <li class="active">Add Advanced</li>
@@ -100,7 +100,7 @@
                                     <div class="row">
                                         <div class="offset-md-3 col-md-9">
                                             <button type="submit" class="btn btn-info m-r-20">Submit</button>
-                                            <a class="btn btn-default" href="{{route('fee.index')}}">Cancel</a>
+                                            <a class="btn btn-default" href="{{route('advanced.index')}}">Cancel</a>
                                         </div>
                                     </div>
                                 </div>
