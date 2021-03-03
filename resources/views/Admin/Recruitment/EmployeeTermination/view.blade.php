@@ -11,7 +11,7 @@
                     <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Home</a>&nbsp;
                         <i class="fa fa-angle-right"></i>
                     </li>
-                    <li><a class="parent-item" href="{{route('user.index')}}">Recruitment</a>&nbsp;
+                    <li><a class="parent-item" href="{{route('employeetermination.index')}}">Recruitment</a>&nbsp;
                         <i class="fa fa-angle-right"></i>
                     </li>
                     <li class="active">Employee Termination</li>
@@ -23,7 +23,7 @@
                 <div class="card card-box">
                     <div class="card-head">
                         <header>View Employee Termination</header>
-                        <a class="parent-item pull-right btn btn-primary" href="{{ route('user.create') }}">Add +</a>
+                        <a class="parent-item pull-right btn btn-primary" href="{{ route('employeetermination.create') }}">Add +</a>
                     </div>
                     <div class="card-body " id="bar-parent">
                         <table id="exportTable" class="display nowrap" style="width:100%">
@@ -37,6 +37,7 @@
                                     <th>Service End Date</th>
                                     <th>Forward To</th>
                                     <th>Termination Document</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -56,6 +57,7 @@
                                     <th>Service End Date</th>
                                     <th>Forward To</th>
                                     <th>Termination Document</th>
+                                    <th>Actions</th>
                                 </tr>
                             </tfoot>
                         </table>

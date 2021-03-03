@@ -24,7 +24,7 @@ class customfieldController extends Controller
      */
     public function create()
     {
-        return view('Admin.Payroll.BenefitDeduction.add');
+        return view('Admin.Recruitment.CustomField.add');
     }
 
     /**
