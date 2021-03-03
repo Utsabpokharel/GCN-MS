@@ -91,7 +91,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="purpose" required
-                                            placeholder="purpose"
+                                            placeholder="Purpose"
                                             class="form-control input-height" />
                                     </div>
 

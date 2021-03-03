@@ -39,7 +39,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="name" required placeholder="enter batch name"
+                                        <input type="text" name="name" required placeholder="Enter Batch Name"
                                             class="form-control input-height" value="" />
                                     </div>
                                 </div>
@@ -72,7 +72,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="courses" required
-                                            placeholder="Enter Date"
+                                            placeholder="Enter Course"
                                             class="form-control input-height" />
                                     </div>
 

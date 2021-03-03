@@ -80,7 +80,7 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">													
-													<input type="email" name="email" required placeholder="enter User email" 
+													<input type="email" name="email" required placeholder="Enter Email" 
 													class="form-control input-height @error('email') is-invalid @enderror" value="{{old('email','')}}" />
 													@error('email')
 														<span class="invalid-feedback" role="alert">

@@ -67,7 +67,7 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">													
-													<input type="email" name="email" required placeholder="enter User email" 
+													<input type="email" name="email" required placeholder="Enter Email" 
 													class="form-control input-height @error('email') is-invalid @enderror" value="{{old('email','')}}" />
 													@error('email')
 														<span class="invalid-feedback" role="alert">
@@ -92,19 +92,14 @@
 											</div>
 											</div>
 											<div class="form-group row">
-											<label class="control-label col-md-3">Time
-												<span class="required"> * </span>
-											</label>
-											<div class="col-md-5">
-          										<select name="time"  class="form-control form-control-solid @error('time') is-invalid @enderror" value="{{ old('time') }}">
-          										<option value="">Select Time</option>
-          										</select>
-         					 					@error('time')
-          										<span class="invalid-feedback" role="alert">
-												  <strong>{{$message}}</strong>
-												  </span>
-          										@enderror
-											</div>
+												<label class="control-label col-md-3">Time
+                                           			<span class="required"> * </span>
+                                    			</label>
+                                    			<div class="col-md-5">
+                                        			<input type="time" name="time" required
+                                            		placeholder="Enter Time"
+                                            		class="form-control input-height" />
+                                    			</div>
 											</div>
 											<div class="form-group row">
 											<label class="control-label col-md-3">Batch

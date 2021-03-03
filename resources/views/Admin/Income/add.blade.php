@@ -51,7 +51,7 @@
 										<span class="required"> * </span>
 									</label>
 									<div class="col-md-5">
-                    					<input type="number" class="form-control input-height @error('amount') is-invalid @enderror" data-date-format="yyyy-mm-dd" value="{{old('amount','')}}" />
+                    					<input type="number" class="form-control input-height @error('amount') is-invalid @enderror" data-date-format="yyyy-mm-dd" placeholder="Enter Amount" value="{{old('amount','')}}" />
 										@error('amount')
 										<span class="invalid-feedback" role="alert">
 										    <strong>{{$message}}</strong>

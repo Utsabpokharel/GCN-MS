@@ -40,7 +40,7 @@
                                             <div class="form-group">
                                                 <label for="company_name">Company Name</label>
                                                 <input type="text" class="form-control" id="company_name"
-                                                       placeholder="Enter name" name="company_name"  data-validation="length"
+                                                       placeholder="Enter Name" name="company_name"  data-validation="length"
                                                        data-validation-length="3-400"
                                                        data-validation-error-msg="Company Name is required (3-50 chars)">
                                             </div>
@@ -50,7 +50,7 @@
                                             <div class="form-group">
                                                 <label for="short_name">Short Name</label>
                                                 <input type="text" class="form-control" id="short_name"
-                                                       placeholder="Enter name" name="short_name"  >
+                                                       placeholder="Enter Name" name="short_name"  >
                                             </div>
                                         </div>
 
@@ -59,7 +59,7 @@
                                             <div class="form-group">
                                                 <label for="tagline">Company Tagline</label>
                                                 <input type="text" class="form-control" id="tagline"
-                                                       placeholder="Enter name" name="tagline" >
+                                                       placeholder="Enter Name" name="tagline" >
                                             </div>
                                         </div>
 
@@ -94,7 +94,7 @@
                                             <div class="form-group">
                                                 <label for="email">Email address</label>
                                                 <input type="email" class="form-control" id="email" name="email"
-                                                       placeholder="Enter email address" >
+                                                       placeholder="Enter Email Address" >
                                             </div>
                                         </div>
 

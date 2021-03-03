@@ -39,7 +39,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="name" required placeholder="enter batch name"
+                                        <input type="text" name="name" required placeholder="Enter Batch Name"
                                             class="form-control input-height" value="" />
                                     </div>
                                 </div>
@@ -49,7 +49,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="duration" required placeholder="enter duration in weeks"
+                                        <input type="text" name="duration" required placeholder="Enter Duration in Weeks"
                                             class="form-control input-height " value="" />
                                     </div>
                                 </div>
@@ -60,7 +60,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="fees" required
-                                            placeholder="Enter fees"
+                                            placeholder="Enter Fees"
                                             class="form-control input-height " value="" />
                                     </div>
 
