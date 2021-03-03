@@ -37,9 +37,9 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-													<input type="text" name="name" required placeholder="Enter First Name" 
-													class="form-control input-height @error('name') is-invalid @enderror" value="{{old('name','')}}" />
-													@error('name')
+													<input type="text" name="fname" required placeholder="Enter First Name" 
+													class="form-control input-height @error('fname') is-invalid @enderror" value="{{old('fname','')}}" />
+													@error('fname')
 														<span class="invalid-feedback" role="alert">
 															<strong>{{$message}}</strong>
 														</span>
@@ -53,8 +53,8 @@
 												</label>
 												<div class="col-md-5">
 													<input type="text" name="name" required placeholder="Enter Last Name" 
-													class="form-control input-height @error('name') is-invalid @enderror" value="{{old('name','')}}" />
-													@error('name')
+													class="form-control input-height @error('lname') is-invalid @enderror" value="{{old('lname','')}}" />
+													@error('lname')
 														<span class="invalid-feedback" role="alert">
 															<strong>{{$message}}</strong>
 														</span>
@@ -81,7 +81,7 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">													
-													<input type="email" name="email" required placeholder="enter User email" 
+													<input type="email" name="email" required placeholder="Enter Email" 
 													class="form-control input-height @error('email') is-invalid @enderror" value="{{old('email','')}}" />
 													@error('email')
 														<span class="invalid-feedback" role="alert">
@@ -222,9 +222,9 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-                    								<input type="text" name='title_id' list='title_id' placeholder="Please Select..." 
-													class="form-control input-height @error('title_id') is-invalid @enderror" value="{{old('title_id','')}}">
-													@error('title_id')
+                    								<input type="text" name='department' list='department' placeholder="Please Select..." 
+													class="form-control input-height @error('department') is-invalid @enderror" value="{{old('department','')}}">
+													@error('department')
                     								<span class="invalid-feedback" role="alert"> 
 														<strong>{{$message}}</strong>
 													</span>
@@ -252,8 +252,8 @@
                                        			</label>
                                        			<div class="col-md-5">
 													<div class="input-icon right">
-														<input type="file" class="form-control bg-light @error('resume') is-invalid @enderror" name="resume" value="{{old('resume','')}}"/>
-														@error('resume')
+														<input type="file" class="form-control bg-light @error('image') is-invalid @enderror" name="image" value="{{old('image','')}}"/>
+														@error('image')
 															<span class="invalid-feedback" role="alert">
 																<strong>{{$message}}</strong>
 															</span>
@@ -268,8 +268,8 @@
                                        			</label>
                                        			<div class="col-md-5">
 													<div class="input-icon right">
-														<input type="file" class="form-control bg-light @error('image') is-invalid @enderror" name="image" value="{{old('image','')}}"/>
-														@error('image')
+														<input type="file" class="form-control bg-light @error('resume') is-invalid @enderror" name="resume" value="{{old('resume','')}}"/>
+														@error('resume')
 															<span class="invalid-feedback" role="alert">
 																<strong>{{$message}}</strong>
 															</span>

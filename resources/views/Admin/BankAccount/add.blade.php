@@ -48,7 +48,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="name" name="accountholdername" required placeholder="enter Account Holder Name"
+                                        <input type="name" name="accountholdername" required placeholder="Enter Account Holder Name"
                                             class="form-control input-height " value="" />
                                     </div>
                                 </div>

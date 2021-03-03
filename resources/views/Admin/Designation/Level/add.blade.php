@@ -47,7 +47,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <textarea name="description" class="form-control input-height @error('description') is-invalid @enderror"
+                                        <textarea name="description" cols="30" rows="10" class="form-control  @error('description') is-invalid @enderror"
                                         placeholder="Enter Description" >{{old('description','')}}</textarea>
                                     </div>
                                     @error('description')

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class roleController extends Controller
+class staffattController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,8 @@ class roleController extends Controller
      */
     public function index()
     {
-        return view('Admin.Roles.view');
+        return view('Admin.Attendance.Staff.view');
+    
     }
 
     /**
@@ -24,7 +25,7 @@ class roleController extends Controller
      */
     public function create()
     {
-        // return view('Admin.Roles.add');
+        //
     }
 
     /**

@@ -38,7 +38,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="name" required placeholder="enter User name"
+                                        <input type="text" name="name" required placeholder="Enter User Name"
                                             class="form-control input-height" value="" />
                                     </div>
                                 </div>
@@ -48,7 +48,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="email" name="email" required placeholder="enter User email"
+                                        <input type="email" name="email" required placeholder="Enter User Email"
                                             class="form-control input-height " value="" />
                                     </div>
                                 </div>
@@ -59,7 +59,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="password" name="password" required
-                                            placeholder="Enter password (Min: 4 - Max: 15)"
+                                            placeholder="Enter Password (Min: 4 - Max: 15)"
                                             class="form-control input-height " value="" />
                                     </div>
 
@@ -93,7 +93,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="position" required
-                                            placeholder="enter user position in company"
+                                            placeholder="Enter User Position in Company"
                                             class="form-control input-height" value="" />
                                     </div>
                                 </div>
@@ -116,7 +116,6 @@
                                     <div class="col-md-5">
                                         <select class="form-control input-height" name="sub_department">
                                             <option value="" disabled selected>Select Sub-Department</option>
-                                            <option value="0">None</option>
                                         </select>
                                     </div>
                                 </div>

@@ -69,6 +69,11 @@ use App\Http\Controllers\Admin\paycalendarController;
 use App\Http\Controllers\Admin\advancedController;
 use App\Http\Controllers\Admin\benefitdeductionController;
 use App\Http\Controllers\Admin\invoiceController;
+use App\Http\Controllers\Admin\attendanceController;
+use App\Http\Controllers\Admin\staffattController;
+use App\Http\Controllers\Admin\teacherattController;
+use App\Http\Controllers\Admin\studentattController;
+
 
 
 
@@ -195,3 +200,9 @@ Route::resource('advanced', advancedController::class);
 Route::resource('benefitdeduction', benefitdeductionController::class);
 // invoice
 Route::resource('invoice', invoiceController::class);
+//attendance staff 
+Route::resource('staffatt', staffattController::class);
+//attendance student
+Route::resource('studentatt', studentattController::class);
+//attendance teacher
+Route::resource('teacheratt', teacherattController::class);

@@ -273,18 +273,18 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="charts_echarts.html" class="nav-link ">
-                                    <span class="title">eCharts</span>
+                                <a href="{{route('studentatt.index')}}" class="nav-link ">
+                                    <span class="title">Student Attendance</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="charts_morris.html" class="nav-link ">
-                                    <span class="title">Morris Charts</span>
+                                <a href="{{route('teacheratt.index')}}" class="nav-link ">
+                                    <span class="title">Teacher Attendance </span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="charts_chartjs.html" class="nav-link ">
-                                    <span class="title">Chartjs</span>
+                                <a href="{{route('staffatt.index')}}" class="nav-link ">
+                                    <span class="title">Staff Attendance</span>
                                 </a>
                             </li>
                         </ul>

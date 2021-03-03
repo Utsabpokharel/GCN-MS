@@ -48,9 +48,12 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="textarea" name="description" required placeholder="Enter Description"
-                                            class="form-control input-height " value="" />
+                                    <textarea name="description" cols="30" rows="10" class="form-control  @error('description') is-invalid @enderror"
+                                        placeholder="Enter Description" >{{old('description','')}}</textarea>
                                     </div>
+                                    @error('description')
+                                    <span class="invalid-feedback" role="alert">{{$message}}</span>
+                                    @enderror
                                 </div>
                             </div>
                                 <div class="form-actions">
