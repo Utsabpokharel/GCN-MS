@@ -63,7 +63,7 @@ use App\Http\Controllers\Admin\employeeotherinfoController;
 use App\Http\Controllers\Admin\employeequalificationController;
 use App\Http\Controllers\Admin\employeeresignationController;
 use App\Http\Controllers\Admin\employmentstatusController;
-use App\Http\Controllers\Admin\employeetableController;
+use App\Http\Controllers\Admin\employmentstatusverificationController;
 use App\Http\Controllers\Admin\salaryController;
 use App\Http\Controllers\Admin\paycalendarController;
 use App\Http\Controllers\Admin\advancedController;
@@ -183,8 +183,6 @@ Route::resource('employmentstatus', employmentStatusController::class);
 Route::resource('employmentstatusverification', employmentstatusverificationController::class);
 // employee termination
 Route::resource('employeetermination', employeeterminationController::class);
-// employee table
-Route::resource('employeetable', employeetableController::class);
 // salary
 Route::resource('salary', salaryController::class);
 // pay calendar

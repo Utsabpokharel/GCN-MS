@@ -189,77 +189,73 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link nav-toggle"> <i class="material-icons">gavel</i>
+                        <a href="" class="nav-link nav-toggle"> <i class="material-icons">gavel</i>
                             <span class="title">Recruitment</span> <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="" class="nav-link "> <span class="title">
+                                <a href="{{route('documentmanagement.index')}}" class="nav-link "> <span class="title">
                                         Document Management</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link "> <span class="title">Course </span>
+                                <a href="{{route('rcourse.index')}}" class="nav-link "> <span class="title">Course </span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link "> <span class="title">Custom Field</span>
+                                <a href="{{route('customfield.index')}}" class="nav-link "> <span class="title">Custom Field</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link "> <span class="title">Education</span>
+                                <a href="{{route('education.index')}}" class="nav-link "> <span class="title">Education</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link "> <span class="title">Language</span>
+                                <a href="{{route('language.index')}}" class="nav-link "> <span class="title">Language</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link "> <span class="title">Skill</span>
+                                <a href="{{route('skill.index')}}" class="nav-link "> <span class="title">Skill</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link "> <span class="title">License</span>
+                                <a href="{{route('license.index')}}" class="nav-link "> <span class="title">License</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link "> <span class="title">Disciplinary</span>
+                                <a href="{{route('disciplinary.index')}}" class="nav-link "> <span class="title">Disciplinary</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link "> <span class="title">Reporting</span>
+                                <a href="{{route('reporting.index')}}" class="nav-link "> <span class="title">Reporting</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link "> <span class="title">Employee Contract</span>
+                                <a href="{{route('employeecontract.index')}}" class="nav-link "> <span class="title">Employee Contract</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link "> <span class="title">Employee Other Info</span>
+                                <a href="{{route('employeeotherinfo.index')}}" class="nav-link "> <span class="title">Employee Other Info</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link "> <span class="title">Employee Qualifiaction</span>
+                                <a href="{{route('employeequalification.index')}}" class="nav-link "> <span class="title">Employee Qualifiaction</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link "> <span class="title">Employee Resignation</span>
+                                <a href="{{route('employeeresignation.index')}}" class="nav-link "> <span class="title">Employee Resignation</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link "> <span class="title">Employment Status</span>
+                                <a href="{{route('employmentstatus.index')}}" class="nav-link "> <span class="title">Employment Status</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link "> <span class="title">Employment Status Verification</span>
+                                <a href="{{route('employmentstatusverification.index')}}" class="nav-link "> <span class="title">Employment Status Verification</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link "> <span class="title">Employee Termination</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="" class="nav-link "> <span class="title">Employee Table</span>
+                                <a href="{{route('employeetermination.index')}}" class="nav-link "> <span class="title">Employee Termination</span>
                                 </a>
                             </li>
                         </ul>
@@ -298,22 +294,22 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="" class="nav-link ">
+                                <a href="{{route('salary.index')}}" class="nav-link ">
                                     <span class="title">Salary</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link ">
+                                <a href="{{route('paycalendar.index')}}" class="nav-link ">
                                     <span class="title">Pay Calendar</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link ">
+                                <a href="{{route('advanced.index')}}" class="nav-link ">
                                     <span class="">Advanced</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link ">
+                                <a href="{{route('benefitdeduction.index')}}" class="nav-link ">
                                     <span class="title">Benefit/Deduction</span>
                                 </a>
                             </li>
@@ -783,13 +779,13 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="google_maps.html" class="nav-link ">
-                                    <span class="title">Google Maps</span>
+                                <a href="invoice.index" class="nav-link ">
+                                    <span class="title">Check In</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="vector_maps.html" class="nav-link ">
-                                    <span class="title">Vector Maps</span>
+                                <a href="invoice.index" class="nav-link ">
+                                    <span class="title">Check out</span>
                                 </a>
                             </li>
                         </ul>

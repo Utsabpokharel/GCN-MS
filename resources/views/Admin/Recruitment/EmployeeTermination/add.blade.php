@@ -12,7 +12,7 @@
                             class="fa fa-angle-right"></i>
                     </li>
 
-                    <li><a class="parent-item" href="{{route('enquiry.index')}}">Recruitment</a>&nbsp;<i
+                    <li><a class="parent-item" href="{{route('employeetermination.index')}}">Recruitment</a>&nbsp;<i
                             class="fa fa-angle-right"></i>
                     </li>
                     <li class="active">Add Employee Termination</li>
@@ -23,7 +23,7 @@
             <div class="col-md-12 col-sm-12">
                 <div class="card card-box">
                     <div class="card-head">
-                        <header>Add Employee Resignation</header>
+                        <header>Add Employee Termination</header>
                         <button id="panel-button" class="mdl-button mdl-js-button mdl-button--icon pull-right"
                             data-upgraded=",MaterialButton">
                             <i class="material-icons">more_vert</i>
@@ -124,7 +124,7 @@
                                     <div class="row">
                                         <div class="offset-md-3 col-md-9">
                                             <button type="submit" class="btn btn-info m-r-20">Submit</button>
-                                            <a class="btn btn-default" href="{{route('enquiry.index')}}">Cancel</a>
+                                            <a class="btn btn-default" href="{{route('employeetermination.index')}}">Cancel</a>
                                         </div>
                                     </div>
                                 </div>

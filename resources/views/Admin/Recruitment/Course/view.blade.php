@@ -11,7 +11,7 @@
                     <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Home</a>&nbsp;
                         <i class="fa fa-angle-right"></i>
                     </li>
-                    <li><a class="parent-item" href="{{route('user.index')}}">Recruitment</a>&nbsp;
+                    <li><a class="parent-item" href="{{route('rcourse.index')}}">Recruitment</a>&nbsp;
                         <i class="fa fa-angle-right"></i>
                     </li>
                     <li class="active">Course</li>
@@ -23,7 +23,7 @@
                 <div class="card card-box">
                     <div class="card-head">
                         <header>All Course</header>
-                        <a class="parent-item pull-right btn btn-primary" href="{{ route('user.create') }}">Add +</a>
+                        <a class="parent-item pull-right btn btn-primary" href="{{ route('rcourse.create') }}">Add +</a>
                     </div>
                     <div class="card-body " id="bar-parent">
                         <table id="exportTable" class="display nowrap" style="width:100%">
@@ -49,10 +49,12 @@
                             <tfoot>
                                 <tr>
                                     <th>#</th>
-                                    <th>Staff Name</th>
-                                    <th>Designation</th>
-                                    <th>PAN Number</th>
-                                    <th>Amount</th>
+                                    <th>Title</th>
+                                    <th>Department</th>
+                                    <th>Coordinator</th>
+                                    <th>Version</th>
+                                    <th>Currency</th>
+                                    <th>Cost</th>
                                     <th>Actions</th>
                                 </tr>
                             </tfoot>

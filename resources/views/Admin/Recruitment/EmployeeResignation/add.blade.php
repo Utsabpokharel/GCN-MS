@@ -12,7 +12,7 @@
                             class="fa fa-angle-right"></i>
                     </li>
 
-                    <li><a class="parent-item" href="{{route('enquiry.index')}}">Recruitment</a>&nbsp;<i
+                    <li><a class="parent-item" href="{{route('employeeresignation.index')}}">Recruitment</a>&nbsp;<i
                             class="fa fa-angle-right"></i>
                     </li>
                     <li class="active">Add Employee Resignation</li>
@@ -110,21 +110,12 @@
                                     <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
                                     </div>
                                 </div>
-                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">Resignation Document
-                                        <span class="required"> * </span>
-                                    </label>
-                                    <div class="col-md-5">
-                                    <input type="file" name="resignationdocument" required
-                                            class="form-control input-height" />
-                                    </div>
-                                </div>
 
                                 <div class="form-actions">
                                     <div class="row">
                                         <div class="offset-md-3 col-md-9">
                                             <button type="submit" class="btn btn-info m-r-20">Submit</button>
-                                            <a class="btn btn-default" href="{{route('enquiry.index')}}">Cancel</a>
+                                            <a class="btn btn-default" href="{{route('employeeresignation.index')}}">Cancel</a>
                                         </div>
                                     </div>
                                 </div>

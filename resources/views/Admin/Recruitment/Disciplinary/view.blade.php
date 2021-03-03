@@ -11,7 +11,7 @@
                     <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Home</a>&nbsp;
                         <i class="fa fa-angle-right"></i>
                     </li>
-                    <li><a class="parent-item" href="{{route('user.index')}}">Recruitment</a>&nbsp;
+                    <li><a class="parent-item" href="{{route('disciplinary.index')}}">Recruitment</a>&nbsp;
                         <i class="fa fa-angle-right"></i>
                     </li>
                     <li class="active">Disciplinary Cases</li>
@@ -22,8 +22,8 @@
             <div class="col-md-12 col-sm-12">
                 <div class="card card-box">
                     <div class="card-head">
-                        <header>Custom Field</header>
-                        <a class="parent-item pull-right btn btn-primary" href="{{ route('user.create') }}">Add +</a>
+                        <header>Disciplinary Cases</header>
+                        <a class="parent-item pull-right btn btn-primary" href="{{ route('disciplinary.create') }}">Add +</a>
                     </div>
                     <div class="card-body " id="bar-parent">
                         <table id="exportTable" class="display nowrap" style="width:100%">

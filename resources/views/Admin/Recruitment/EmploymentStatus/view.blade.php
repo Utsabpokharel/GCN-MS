@@ -11,7 +11,7 @@
                     <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Home</a>&nbsp;
                         <i class="fa fa-angle-right"></i>
                     </li>
-                    <li><a class="parent-item" href="{{route('user.index')}}">Recruitment</a>&nbsp;
+                    <li><a class="parent-item" href="{{route('employmentstatus.index')}}">Recruitment</a>&nbsp;
                         <i class="fa fa-angle-right"></i>
                     </li>
                     <li class="active">Employment Status</li>
@@ -23,7 +23,7 @@
                 <div class="card card-box">
                     <div class="card-head">
                         <header>View Employment Status</header>
-                        <a class="parent-item pull-right btn btn-primary" href="{{ route('user.create') }}">Add +</a>
+                        <a class="parent-item pull-right btn btn-primary" href="{{ route('employmentstatus.create') }}">Add +</a>
                     </div>
                     <div class="card-body " id="bar-parent">
                         <table id="exportTable" class="display nowrap" style="width:100%">
@@ -34,6 +34,7 @@
                                     <th>Employee Code</th>
                                     <th>Employment Status</th>
                                     <th>Is Contract</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -50,6 +51,7 @@
                                     <th>Employee Code</th>
                                     <th>Employment Status</th>
                                     <th>Is Contract</th>
+                                    <th>Actions</th>
                                 </tr>
                             </tfoot>
                         </table>

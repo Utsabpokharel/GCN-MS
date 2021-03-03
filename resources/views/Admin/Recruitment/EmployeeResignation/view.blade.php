@@ -5,13 +5,13 @@
         <div class="page-bar">
             <div class="page-title-breadcrumb">
                 <div class=" pull-left">
-                    <div class="page-title">View Employee Qualification</div>
+                    <div class="page-title">View Employee Resignation</div>
                 </div>
                 <ol class="breadcrumb page-breadcrumb pull-right">
                     <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Home</a>&nbsp;
                         <i class="fa fa-angle-right"></i>
                     </li>
-                    <li><a class="parent-item" href="{{route('user.index')}}">Recruitment</a>&nbsp;
+                    <li><a class="parent-item" href="{{route('employeeresignation.index')}}">Recruitment</a>&nbsp;
                         <i class="fa fa-angle-right"></i>
                     </li>
                     <li class="active">Employee Resignation</li>
@@ -23,7 +23,7 @@
                 <div class="card card-box">
                     <div class="card-head">
                         <header>View Employee Resignation</header>
-                        <a class="parent-item pull-right btn btn-primary" href="{{ route('user.create') }}">Add +</a>
+                        <a class="parent-item pull-right btn btn-primary" href="{{ route('employeeresignation.create') }}">Add +</a>
                     </div>
                     <div class="card-body " id="bar-parent">
                         <table id="exportTable" class="display nowrap" style="width:100%">
@@ -36,6 +36,7 @@
                                     <th>Forward To</th>
                                     <th>Desired Resign Date</th>
                                     <th>Resignation Document</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -48,9 +49,12 @@
                             <tfoot>
                                 <tr>
                                     <th>#</th>
-                                    <th>Employee Code</th>
                                     <th>Employee Name</th>
-                                    <th>Description</th>
+                                    <th>Employee Code</th>
+                                    <th>Notice Date</th>
+                                    <th>Forward To</th>
+                                    <th>Desired Resign Date</th>
+                                    <th>Resignation Document</th>
                                     <th>Actions</th>
                                 </tr>
                             </tfoot>
