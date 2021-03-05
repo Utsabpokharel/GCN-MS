@@ -14,8 +14,8 @@ class invoiceController extends Controller
      */
     public function index()
     {
-        return view('Admin.Invoice.cashin');
-        return view('Admin.Invoice.cashout');
+        return view('Admin.Invoice.Cashin.cashin');
+        return view('Admin.Invoice.Cashout.cashout');
     }
 
     /**

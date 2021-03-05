@@ -11,7 +11,7 @@
 								<li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
 										href="">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>
-								<li><a class="parent-item" href="{{route('studentatt.index')}}">Attendance Details</a>&nbsp;<i class="fa fa-angle-right"></i>
+								<li><a class="parent-item" href="{{route('studentatt.index')}}">Attendance</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>
 								<li class="active"> Attendance Details</li>
 							</ol>
@@ -21,7 +21,7 @@
 						<div class="col-md-12 col-sm-12">
 							<div class="card card-box">
 								<div class="card-head">
-									<header> Attendance Details</header>
+									<header> Student Attendance Details</header>
 									<button id="panel-button"
 										class="mdl-button mdl-js-button mdl-button--icon pull-right"
 										data-upgraded=",MaterialButton">

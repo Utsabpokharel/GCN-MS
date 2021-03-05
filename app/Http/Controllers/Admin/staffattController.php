@@ -25,7 +25,8 @@ class staffattController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.Attendance.Staff.add');
+        
     }
 
     /**

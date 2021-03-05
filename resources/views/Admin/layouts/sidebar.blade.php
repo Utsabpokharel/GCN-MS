@@ -269,17 +269,17 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="{{route('studentatt.index')}}" class="nav-link ">
+                                <a href="{{route('studentatt.create')}}" class="nav-link ">
                                     <span class="title">Student Attendance</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('teacheratt.index')}}" class="nav-link ">
+                                <a href="{{route('teacheratt.create')}}" class="nav-link ">
                                     <span class="title">Teacher Attendance </span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('staffatt.index')}}" class="nav-link ">
+                                <a href="{{route('staffatt.create')}}" class="nav-link ">
                                     <span class="title">Staff Attendance</span>
                                 </a>
                             </li>
@@ -779,13 +779,13 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="invoice.index" class="nav-link ">
-                                    <span class="title">Check In</span>
+                                <a href="{{route('cashin.index')}}" class="nav-link ">
+                                    <span class="title">Cash In</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="invoice.index" class="nav-link ">
-                                    <span class="title">Check out</span>
+                                <a href="{{route('cashout.index')}}" class="nav-link ">
+                                    <span class="title">Cash out</span>
                                 </a>
                             </li>
                         </ul>

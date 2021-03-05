@@ -21,7 +21,7 @@
 						<div class="col-md-12 col-sm-12">
 							<div class="card card-box">
 								<div class="card-head">
-									<header> Attendance Details</header>
+									<header> Teacher Attendance Details</header>
 									<button id="panel-button"
 										class="mdl-button mdl-js-button mdl-button--icon pull-right"
 										data-upgraded=",MaterialButton">
