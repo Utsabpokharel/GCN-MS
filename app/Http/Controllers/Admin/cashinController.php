@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class studentattController extends Controller
+class cashinController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class studentattController extends Controller
      */
     public function index()
     {
-        return view('Admin.Attendance.Student.view');
+        return view('Admin.Invoice.Cashin.cashin');
         
     }
 
@@ -25,8 +25,7 @@ class studentattController extends Controller
      */
     public function create()
     {
-        return view('Admin.Attendance.Student.add');
-        
+        //
     }
 
     /**

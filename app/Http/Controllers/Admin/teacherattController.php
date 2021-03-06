@@ -25,7 +25,8 @@ class teacherattController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.Attendance.Teacher.add');
+        
     }
 
     /**
