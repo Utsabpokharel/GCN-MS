@@ -16,11 +16,14 @@ class CreateReportingsTable extends Migration
         Schema::create('reportings', function (Blueprint $table) {
             $table->id();
             $table->string('staffname');
-            $table->string('staffid');
+            $table->string('staffcode');
             $table->string('designation');
             $table->string('department');
-
+            $table->string('phonenumber');
+            $table->string('emailaddress');
+            $table->string('reportingmanager');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

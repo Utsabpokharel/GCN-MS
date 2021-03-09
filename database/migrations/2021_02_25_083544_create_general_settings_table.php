@@ -15,7 +15,12 @@ class CreateGeneralSettingsTable extends Migration
     {
         Schema::create('general_settings', function (Blueprint $table) {
             $table->id();
+            $table->string('website_logo')->nullable();
+            $table->string('website_name');
+            $table->string('website_link');
+            $table->string('emailaddress');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

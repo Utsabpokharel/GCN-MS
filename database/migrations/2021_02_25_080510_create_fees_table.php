@@ -15,7 +15,7 @@ class CreateFeesTable extends Migration
     {
         Schema::create('fees', function (Blueprint $table) {
             $table->id();
-            $table->int('studentid');
+            $table->integer('studentid');
             $table->string('title');
             $table->string('amount');
             $table->timestamps();

@@ -20,7 +20,7 @@ class CreateEmployeeResignationsTable extends Migration
             $table->date('noticedate');
             $table->string('forwardto');
             $table->date('desireresigndate');
-            $table->string('resignationdocument');
+            $table->string('resignationdocument')->nullable();
             $table->longText('reason');
             $table->longText('details');
             $table->timestamps();

@@ -21,7 +21,7 @@ class CreateEmployeeTerminationsTable extends Migration
             $table->date('noticedate');
             $table->date('serviceenddate');
             $table->string('forwardto');
-            $table->string('terminationdocument');
+            $table->string('terminationdocument')->nullable();
             $table->longText('reason');
             $table->longText('details');
             $table->timestamps();
