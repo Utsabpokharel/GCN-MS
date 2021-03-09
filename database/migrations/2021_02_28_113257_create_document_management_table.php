@@ -15,7 +15,15 @@ class CreateDocumentManagementTable extends Migration
     {
         Schema::create('document_management', function (Blueprint $table) {
             $table->id();
+            $table->string('staffname');
+            $table->string('bankaccountnumber');
+            $table->string('pannumber');
+            $table->string('pfdocument');
+            $table->string('citdocument');
+            $table->string('appointmentdocument');
+            $table->string('contractdocument');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -166,38 +166,12 @@
                             </li>
                         </ul>
                     </li>
-
-                    <li class="nav-item">
-                        <a href="#" class="nav-link nav-toggle">
-                            <i class="material-icons">email</i>
-                            <span class="title">Awards</span>
-                            <span class="arrow"></span>
-                            <span class="label label-rouded label-menu label-danger">new</span>
-                        </a>
-                        <ul class="sub-menu">
-                            <li class="nav-item">
-                                <a href="{{route('award.create')}}" class="nav-link ">
-                                    <span class="title">Add Award</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{route('award.index')}}" class="nav-link ">
-                                    <span class="title">View Award</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item">
+                     <li class="nav-item">
                         <a href="" class="nav-link nav-toggle"> <i class="material-icons">gavel</i>
-                            <span class="title">Recruitment</span> <span class="arrow"></span>
+                            <span class="title">Employee Management</span> <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
-                            <li class="nav-item">
-                                <a href="{{route('documentmanagement.index')}}" class="nav-link "> <span class="title">
-                                        Document Management</span>
-                                </a>
-                            </li>
+
                             <li class="nav-item">
                                 <a href="{{route('rcourse.index')}}" class="nav-link "> <span class="title">Course </span>
                                 </a>
@@ -258,8 +232,36 @@
                                 <a href="{{route('employeetermination.index')}}" class="nav-link "> <span class="title">Employee Termination</span>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{route('documentmanagement.index')}}" class="nav-link "> <span class="title">
+                                            All Documents</span>
+                                </a>
+                            </li>
                         </ul>
                     </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link nav-toggle">
+                            <i class="material-icons">email</i>
+                            <span class="title">Awards</span>
+                            <span class="arrow"></span>
+                            <span class="label label-rouded label-menu label-danger">new</span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="nav-item">
+                                <a href="{{route('award.create')}}" class="nav-link ">
+                                    <span class="title">Add Award</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('award.index')}}" class="nav-link ">
+                                    <span class="title">View Award</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+
 
                     <li class="nav-item">
                         <a href="javascript:;" class="nav-link nav-toggle">
@@ -269,17 +271,17 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="{{route('studentatt.create')}}" class="nav-link ">
+                                <a href="{{route('studentatt.index')}}" class="nav-link ">
                                     <span class="title">Student Attendance</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('teacheratt.create')}}" class="nav-link ">
+                                <a href="{{route('teacheratt.index')}}" class="nav-link ">
                                     <span class="title">Teacher Attendance </span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('staffatt.create')}}" class="nav-link ">
+                                <a href="{{route('staffatt.index')}}" class="nav-link ">
                                     <span class="title">Staff Attendance</span>
                                 </a>
                             </li>
@@ -779,13 +781,13 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="{{route('cashin.index')}}" class="nav-link ">
-                                    <span class="title">Cash In</span>
+                                <a href="invoice.index" class="nav-link ">
+                                    <span class="title">Check In</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('cashout.index')}}" class="nav-link ">
-                                    <span class="title">Cash out</span>
+                                <a href="invoice.index" class="nav-link ">
+                                    <span class="title">Check out</span>
                                 </a>
                             </li>
                         </ul>

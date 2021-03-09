@@ -15,7 +15,16 @@ class CreateEmployeeResignationsTable extends Migration
     {
         Schema::create('employee_resignations', function (Blueprint $table) {
             $table->id();
+            $table->string('staffname');
+            $table->string('staffcode');
+            $table->date('noticedate');
+            $table->string('forwardto');
+            $table->date('desireresigndate');
+            $table->string('resignationdocument');
+            $table->longText('reason');
+            $table->longText('details');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

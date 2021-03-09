@@ -26,7 +26,7 @@
 										class="mdl-button mdl-js-button mdl-button--icon pull-right"
 										data-upgraded=",MaterialButton">
 										<i class="material-icons">more_vert</i>
-									</button>									
+									</button>
 								</div>
 								<div class="card-body" id="bar-parent">
 									<form action="{{route('teacher.store')}}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"  enctype="multipart/form-data">
@@ -37,7 +37,7 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-													<input type="text" name="name" required placeholder="Enter First Name" 
+													<input type="text" name="name" required placeholder="Enter First Name"
 													class="form-control input-height @error('name') is-invalid @enderror" value="{{old('name','')}}" />
 													@error('name')
 														<span class="invalid-feedback" role="alert">
@@ -52,7 +52,7 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-													<input type="text" name="name" required placeholder="Enter Last Name" 
+													<input type="text" name="name" required placeholder="Enter Last Name"
 													class="form-control input-height @error('name') is-invalid @enderror" value="{{old('name','')}}" />
 													@error('name')
 														<span class="invalid-feedback" role="alert">
@@ -66,14 +66,14 @@
 												<label class="control-label col-md-3">Email
 													<span class="required"> * </span>
 												</label>
-												<div class="col-md-5">													
-													<input type="email" name="email" required placeholder="Enter Email" 
+												<div class="col-md-5">
+													<input type="email" name="email" required placeholder="Enter Email"
 													class="form-control input-height @error('email') is-invalid @enderror" value="{{old('email','')}}" />
 													@error('email')
 														<span class="invalid-feedback" role="alert">
 															<strong>{{$message}}</strong>
 														</span>
-													@enderror												
+													@enderror
 												</div>
 											</div>
 											<div class="form-group row">
@@ -136,10 +136,10 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-                    								<input type="text" name='address' list='address' placeholder="Please Select..." 
+                    								<input type="text" name='address' list='address' placeholder="Please Select..."
 													class="form-control input-height @error('address') is-invalid @enderror" value="{{old('address','')}}">
                     								@error('address')
-                    								<span class="invalid-feedback" role="alert"> 
+                    								<span class="invalid-feedback" role="alert">
 														<strong>{{$message}}</strong>
 													</span>
                     								@enderror
@@ -150,7 +150,7 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-                    								<input type="number" name="phoneno" required placeholder="Enter Phone Number"  
+                    								<input type="number" name="phoneno" required placeholder="Enter Phone Number"
 													class="form-control input-height @error('phoneno') is-invalid @enderror" value="{{old('phoneno','')}}"/>
                                                    	@error('phoneno')
                     								<span class="invalid-feedback" role="alert">
@@ -174,9 +174,9 @@
 													</div>
                                         		</div>
                                     		</div>
-							
+
                                         </div>
-                                   	</div>                                               
+                                   	</div>
 										<div class="form-actions">
 											<div class="row">
 												<div class="offset-md-3 col-md-9">
@@ -184,7 +184,7 @@
 													 <a class="btn btn-default" href="{{route('teacher.index')}}">Cancel</a>
 												</div>
 											</div>
-										</div>									
+										</div>
 									</form>
 								</div>
 							</div>
@@ -192,4 +192,4 @@
 					</div>
 				</div>
 			</div>
-@endsection			
+@endsection

@@ -15,7 +15,17 @@ class CreateEmployeeTerminationsTable extends Migration
     {
         Schema::create('employee_terminations', function (Blueprint $table) {
             $table->id();
+            $table->string('staffname');
+            $table->string('staffcode');
+            $table->string('changestatus');
+            $table->date('noticedate');
+            $table->date('serviceenddate');
+            $table->string('forwardto');
+            $table->string('terminationdocument');
+            $table->longText('reason');
+            $table->longText('details');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

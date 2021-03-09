@@ -15,7 +15,14 @@ class CreateDisciplinariesTable extends Migration
     {
         Schema::create('disciplinaries', function (Blueprint $table) {
             $table->id();
+            $table->string('staffname');
+            $table->string('casename');
+            $table->string('status');
+            $table->string('forwardto');
+            $table->string('disciplinaryaction');
+            $table->longtext('description');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
