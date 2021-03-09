@@ -5,17 +5,17 @@
         <div class="page-bar">
             <div class="page-title-breadcrumb">
                 <div class=" pull-left">
-                    <div class="page-title">Add Documents</div>
+                    <div class="page-title">Employee Contract</div>
                 </div>
                 <ol class="breadcrumb page-breadcrumb pull-right">
                     <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Home</a>&nbsp;<i
                             class="fa fa-angle-right"></i>
                     </li>
 
-                    <li><a class="parent-item" href="{{route('documentmanagement.index')}}">Recruitment</a>&nbsp;<i
+                    <li><a class="parent-item" href="{{route('employeecontract.index')}}">Recruitment</a>&nbsp;<i
                             class="fa fa-angle-right"></i>
                     </li>
-                    <li class="active">Add Documents</li>
+                    <li class="active">Add Employee Contract</li>
                 </ol>
             </div>
         </div>
@@ -23,7 +23,7 @@
             <div class="col-md-12 col-sm-12">
                 <div class="card card-box">
                     <div class="card-head">
-                        <header>Add Important Documents</header>
+                        <header>Add Employee Contract</header>
                         <button id="panel-button" class="mdl-button mdl-js-button mdl-button--icon pull-right"
                             data-upgraded=",MaterialButton">
                             <i class="material-icons">more_vert</i>
@@ -39,78 +39,67 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="staffname" required placeholder="Select Staff"
-                                            class="form-control input-height"/>
+                                        <input type="text" name="staffname" required placeholder="Enter Employee Name"
+                                            class="form-control input-height" value="" />
                                     </div>
-
                                 </div>
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">Bank Account Number
+                                    <label class="control-label col-md-3">Employee Code
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="bankaccountnumber" required placeholder="Bank Account Number"
-                                            class="form-control input-height"/>
-                                    </div>
-
-                                </div>
-                                <div class="form-group row">
-                                    <label class="control-label col-md-3">PAN Document
-                                        <span class="required"> * </span>
-                                    </label>
-                                    <div class="col-md-5">
-                                        <input type="text" name="pandocument" required placeholder="PAN Number"
-                                            class="form-control input-height"/>
-                                    </div>
-
-                                </div>
-                                <div class="form-group row">
-                                    <label class="control-label col-md-3">Provident Fund Document
-                                        <span class="required"> * </span>
-                                    </label>
-                                    <div class="col-md-5">
-                                        <input type="file" name="pfdocument"
-                                            class="form-control input-height"/>
+                                        <input type="text" name="staffcode" required placeholder="Enter staff Code"
+                                            class="form-control input-height" value="" />
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">CIT Document
+                                    <label class="control-label col-md-3">Employment Status
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="file" name="citdocument"
+                                        <input type="text" name="staffstatus" required placeholder="employment Status"
                                             class="form-control input-height " value="" />
                                     </div>
                                 </div>
+
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">Appointment Document
+                                    <label class="control-label col-md-3">Began On
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="file" name="appointmentdocument"
+                                        <input type="date" name="beganon" required
                                             class="form-control input-height " value="" />
                                     </div>
+
                                 </div>
-                                 <div class="form-group row">
+
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Ended On
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="date" name="endedon"
+                                            class="form-control input-height" />
+                                    </div>
+
+                                </div>
+                                <div class="form-group row">
                                     <label class="control-label col-md-3">Contract Document
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="file" name="contractdocument"
-                                            class="form-control input-height " value="" />
+                                        <input type="file" name="contractdocument" required
+                                            class="form-control input-height" />
                                     </div>
+
                                 </div>
-
-
-
-
 
                                 <div class="form-actions">
                                     <div class="row">
                                         <div class="offset-md-3 col-md-9">
                                             <button type="submit" class="btn btn-info m-r-20">Submit</button>
-                                            <a class="btn btn-default" href="{{route('documentmanagement.index')}}">Cancel</a>
+                                            <a class="btn btn-default" href="{{route('employeecontract.index')}}">Cancel</a>
                                         </div>
                                     </div>
                                 </div>

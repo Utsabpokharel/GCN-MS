@@ -38,81 +38,45 @@
                                     <div class="col-md-6">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="company_name">Company Name</label>
-                                                <input type="text" class="form-control" id="company_name"
-                                                       placeholder="Enter Name" name="company_name"  data-validation="length"
-                                                       data-validation-length="3-400"
-                                                       data-validation-error-msg="Company Name is required (3-50 chars)">
+                                                <label for="website_logo">Website Logo</label>
+                                                <input type="file" class="form-control" name="website_logo" id="website_logo"
+                                                       name="website_logo">
                                             </div>
                                         </div>
 
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="short_name">Short Name</label>
-                                                <input type="text" class="form-control" id="short_name"
-                                                       placeholder="Enter Name" name="short_name"  >
+                                                <label for="short_name">Website Name</label>
+                                                <input type="text" class="form-control" name="website_name" id="website_name"
+                                                       placeholder="Enter Name of Website" name="website_name"  >
                                             </div>
                                         </div>
 
 
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="tagline">Company Tagline</label>
-                                                <input type="text" class="form-control" id="tagline"
-                                                       placeholder="Enter Name" name="tagline" >
+                                                <label for="tagline">Website Link</label>
+                                                <input type="text" class="form-control" name="websitelink" id="websitelink"
+                                                       placeholder="Enter Name " name="tagline" >
                                             </div>
                                         </div>
-
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="logo">Company Logo</label>
-                                                <input type="hidden" name="current_image" >
-                                                <input type="file" class="form-control" id="logo"
-                                                       name="logo" data-validation="mime size"
-                                                       data-validation-allowing="jpg, png"
-                                                       data-validation-max-size="500kb"
-                                                       data-validation-error-msg-required="Please Upload Company Logo">
-                                            </div>
-
-                                        </div>
-
-
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label for="favicon">Fav Icon</label>
-                                                <input type="hidden" name="current_image2" >
-                                                <input type="file" class="form-control" id="favicon"
-                                                       name="favicon" data-validation="mime size"
-                                                       data-validation-allowing="jpg, png"
-                                                       data-validation-max-size="500kb"
-                                                       data-validation-error-msg-required="Please Upload Fav Icon">
-                                            </div>
-
-                                        </div>
-
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label for="email">Email address</label>
-                                                <input type="email" class="form-control" id="email" name="email"
-                                                       placeholder="Enter Email Address" >
+                                                <label for="tagline">Email Address</label>
+                                                <input type="email" class="form-control" name="emailaddress" id="emailaddress"
+                                                       placeholder="Enter Name " name="tagline" >
                                             </div>
                                         </div>
 
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label for="address">Address</label>
-                                                <input type="text" class="form-control" id="address"
-                                                       placeholder="Enter Address" name="address">
-                                            </div>
-                                        </div>
 
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label for="phone">Phone Number</label>
-                                                <input type="text" class="form-control" id="phone"
-                                                       placeholder="Enter Phone Number" name="phone" >
-                                            </div>
-                                        </div>
+
+
+
+
+
+
+
+
 
 
                                     </div>

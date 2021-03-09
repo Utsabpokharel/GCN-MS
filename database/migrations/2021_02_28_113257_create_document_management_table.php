@@ -17,11 +17,11 @@ class CreateDocumentManagementTable extends Migration
             $table->id();
             $table->string('staffname');
             $table->string('bankaccountnumber');
-            $table->string('pannumber');
-            $table->string('pfdocument');
-            $table->string('citdocument');
-            $table->string('appointmentdocument');
-            $table->string('contractdocument');
+            $table->string('pandocument')->nullable();
+            $table->string('pfdocument')->nullable();
+            $table->string('citdocument')->nullable();
+            $table->string('appointmentdocument')->nullable();
+            $table->string('contractdocument')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class SMS extends Model
 {
+    protected $fillable=['templatename','smstemplate'];
     use HasFactory;
 }

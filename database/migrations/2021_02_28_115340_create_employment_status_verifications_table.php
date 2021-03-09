@@ -21,7 +21,8 @@ class CreateEmploymentStatusVerificationsTable extends Migration
             $table->string('period');
             $table->date('approvedon');
             $table->string('approvedby');
-            $table->timestamps();;
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -20,8 +20,8 @@ class CreateRCoursesTable extends Migration
             $table->string('department');
             $table->string('coordinator');
             $table->string('version');
-            $table->int('cost');
-            $table->longtext('description');
+            $table->integer('cost');
+            $table->longtext('description')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
