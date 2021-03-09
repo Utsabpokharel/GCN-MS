@@ -15,6 +15,11 @@ class CreateReportingsTable extends Migration
     {
         Schema::create('reportings', function (Blueprint $table) {
             $table->id();
+            $table->string('staffname');
+            $table->string('staffid');
+            $table->string('designation');
+            $table->string('department');
+
             $table->timestamps();
         });
     }

@@ -15,7 +15,19 @@ class CreateEmployeeOtherInfosTable extends Migration
     {
         Schema::create('employee_other_infos', function (Blueprint $table) {
             $table->id();
+            $table->string('staffcode');
+            $table->string('title');
+            $table->string('organisation');
+            $table->string('fathername');
+            $table->string('mothername');
+            $table->string('grandfathername');
+            $table->string('parentcontactnumber');
+            $table->string('maritalstatus');
+            $table->string('spousename');
+            $table->string('emergencyperson');
+            $table->string('emergencynumber');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -15,7 +15,13 @@ class CreateEmploymentStatusVerificationsTable extends Migration
     {
         Schema::create('employment_status_verifications', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('staffname');
+            $table->string('staffcode');
+            $table->string('employmentstatus');
+            $table->string('period');
+            $table->date('approvedon');
+            $table->string('approvedby');
+            $table->timestamps();;
         });
     }
 

@@ -15,6 +15,9 @@ class CreateEmployeeQualificationsTable extends Migration
     {
         Schema::create('employee_qualifications', function (Blueprint $table) {
             $table->id();
+            $table->string('staffcode');
+            $table->string('staffname');
+            $table->longText('description');
             $table->timestamps();
         });
     }

@@ -4,6 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+
 class CreateRCoursesTable extends Migration
 {
     /**
@@ -15,7 +16,14 @@ class CreateRCoursesTable extends Migration
     {
         Schema::create('r_courses', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('department');
+            $table->string('coordinator');
+            $table->string('version');
+            $table->int('cost');
+            $table->longtext('description');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
