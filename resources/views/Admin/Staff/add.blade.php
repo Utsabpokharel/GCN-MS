@@ -52,7 +52,7 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-													<input type="text" name="name" required placeholder="Enter Last Name" 
+													<input type="text" name="lname" required placeholder="Enter Last Name" 
 													class="form-control input-height @error('lname') is-invalid @enderror" value="{{old('lname','')}}" />
 													@error('lname')
 														<span class="invalid-feedback" role="alert">
@@ -247,13 +247,13 @@
 
                                         	
 											<div class="form-group row">
-                                        		<label class="control-label col-md-3">Image
+                                        		<label class="control-label col-md-3">Photo
                                            		 	<span class="required"> * </span>
                                        			</label>
                                        			<div class="col-md-5">
 													<div class="input-icon right">
-														<input type="file" class="form-control bg-light @error('image') is-invalid @enderror" name="image" value="{{old('image','')}}"/>
-														@error('image')
+														<input type="file" class="form-control bg-light @error('photo') is-invalid @enderror" name="photo" value="{{old('photo','')}}"/>
+														@error('photo')
 															<span class="invalid-feedback" role="alert">
 																<strong>{{$message}}</strong>
 															</span>

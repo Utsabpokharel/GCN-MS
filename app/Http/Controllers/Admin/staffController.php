@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Staff;
 
 class staffController extends Controller
 {
@@ -14,7 +15,8 @@ class staffController extends Controller
      */
     public function index()
     {
-        return view('Admin.Staff.view');
+        $staff = Staff::all();
+        return view('Admin.Staff.view',compact('staff'));
     }
 
     /**
@@ -35,7 +37,10 @@ class staffController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $staff = Staff::create($data);
+        return redirect()->route('staff.view')->with('success', 'Staff Created successfully');
+        
     }
 
     /**

@@ -11,7 +11,7 @@
 								<li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
 										href="">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>
-								<li><a class="parent-item" href="{{route('staff.index')}}">Users</a>&nbsp;<i class="fa fa-angle-right"></i>
+								<li><a class="parent-item" href="{{route('staff.index')}}">Staff</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>
 								<li class="active">Edit Staff</li>
 							</ol>
@@ -29,32 +29,50 @@
 									</button>									
 								</div>
 								<div class="card-body" id="bar-parent">
-									<form action="" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"  enctype="multipart/form-data">
+									<form action="" id="form_sample_1" action="{{ route('staff.update',$staff->id)}}" class="form-horizontal" method="post" autocomplete="on"  enctype="multipart/form-data">
 										{{csrf_field()}}
-										<input type="hidden" name="_method" value="PUT">
 										<div class="form-body">
-											@if ($errors->any())
-												<div class="alert alert-danger">
-													<ul>
-														@foreach ($errors->all() as $error)
-															<li>{{ $error }}</li>
-														@endforeach
-													</ul>
-												</div>
-											@endif
-
 											<div class="form-group row">
-												<label class="control-label col-md-3">Name
+												<label class="control-label col-md-3">First Name
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-													<input type="text" name="name" required placeholder="enter User name" 
-													class="form-control input-height @error('name') is-invalid @enderror" value="{{old('name',$users->name)}}" />
-													@error('name')
+													<input type="text" name="fname" required placeholder="Enter First Name" 
+													class="form-control input-height @error('fname') is-invalid @enderror" value="{{old('fname',$staff->fname)}}" />
+													@error('fname')
 														<span class="invalid-feedback" role="alert">
 															<strong>{{$message}}</strong>
 														</span>
 													@enderror
+												</div>
+											</div>
+
+											<div class="form-group row">
+												<label class="control-label col-md-3">Last Name
+													<span class="required"> * </span>
+												</label>
+												<div class="col-md-5">
+													<input type="text" name="lname" required placeholder="Enter Last Name" 
+													class="form-control input-height @error('lname') is-invalid @enderror" value="{{old('lname',$staff->lname)}}" />
+													@error('lname')
+														<span class="invalid-feedback" role="alert">
+															<strong>{{$message}}</strong>
+														</span>
+													@enderror
+												</div>
+											</div>
+											
+											<div class="form-group row">
+												<label class="control-label col-md-3">Date of Birth
+                    								<span class="required">*</span>
+												</label>
+												<div class="col-md-5">
+                    								<input type="date" class="form-control input-height @error('dob') is-invalid @enderror" value="{{old('dob',$staff->dob)}}" />
+                    								@error('dob')
+                    									<span class="invalid-feedback" role="alert">
+															<strong>{{$message}}</strong>
+														</span>
+                    								@enderror
 												</div>
 											</div>
 
@@ -63,105 +81,258 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">													
-													<input type="email" name="email" required placeholder="enter User email" 
-													class="form-control input-height @error('email') is-invalid @enderror" value="{{old('email',$users->email)}}" />	
+													<input type="email" name="email" required placeholder="Enter Email" 
+													class="form-control input-height @error('email') is-invalid @enderror" value="{{old('email',$staff->email)}}" />
 													@error('email')
 														<span class="invalid-feedback" role="alert">
 															<strong>{{$message}}</strong>
 														</span>
-													@enderror											
-												</div>
-											</div>																														
-																						
-											<div class="form-group row">
-												<label class="control-label col-md-3">User Role
-													<span class="required"> * </span>
-												</label>
-												<div class="col-md-5">
-													<select class="form-control input-height @error('role_id') is-invalid @enderror" name="role_id">
-													<option value="{{ $users->role_id }}" selected>{{ $users->roles['name'] }}</option>
-														<option value="" class="bg-dark" disabled>---Select Role---</option>
-														@foreach($roles as $role)
-                                                        <option value="{{$role->id}}">{{$role->name}}</option>
-                                                   		@endforeach
-													</select>
-													@error('role_id')
-														<span class="invalid-feedback" role="alert">
-															<strong>{{$message}}</strong>
-														</span>
-													@enderror
-												</div>
-											</div>
-											<div class="form-group row">
-												<label class="control-label col-md-3">Position
-													<span class="required"> * </span>
-												</label>
-												<div class="col-md-5">
-													<input type="text" name="position" required placeholder="enter user position in company" 
-													class="form-control input-height @error('position') is-invalid @enderror" value="{{old('position',$users->position)}}" />
-													@error('position')
-														<span class="invalid-feedback" role="alert">
-															<strong>{{$message}}</strong>
-														</span>
-													@enderror
+													@enderror												
 												</div>
 											</div>
 
 											<div class="form-group row">
-												<label class="control-label col-md-3">Main Department
+												<label class="control-label col-md-3">Mobile Number
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-													<select class="form-control input-height @error('department_id') is-invalid @enderror" name="department_id">
-													<option value="{{ $users->department_id }}" selected>{{ $users->department['main_dept'] }}</option>													
-													<option value="" class="bg-dark" disabled>---Select Main-Department---</option>
-														@foreach($depart as $dept)
-                                                        <option value="{{$dept->id}}">{{$dept->main_dept}}</option>
-                                                   		@endforeach
-													</select>
-													@error('department_id')
-														<span class="invalid-feedback" role="alert">
-															<strong>{{$message}}</strong>
-														</span>
-													@enderror
+                    								<input type="number" name="mobileno" required placeholder="Enter Mobile Number"  
+													class="form-control input-height @error('mobileno') is-invalid @enderror" value="{{old('mobileno',$staff->mobileno)}}"/>
+                                                   	@error('mobileno')
+                    								<span class="invalid-feedback" role="alert">
+														<strong>{{$message}}</strong>
+													</span>
+                   									@enderror
 												</div>
-											</div>
-											
+                							</div>
 											<div class="form-group row">
-												<label class="control-label col-md-3">Sub-Department
+												<label class="control-label col-md-3">Phone Number
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-													<select class="form-control input-height @error('sub_department') is-invalid @enderror" name="sub_department">
-													<option value="{{ $users->department_id }}" selected>{{ $users->department['sub_dept'] }}</option>	
-													<option value="" class="bg-dark" disabled>---Select Sub-Department---</option>
-														@foreach($depart as $dept)
-                                                        <option value="{{$dept->id}}">{{$dept->sub_dept}}</option>
-                                                   		@endforeach
-													</select>
-													@error('sub_department')
+                    								<input type="number" name="phoneno" required placeholder="Enter Phone Number"  
+													class="form-control input-height @error('phoneno') is-invalid @enderror" value="{{old('phoneno',$staff->phoneno)}}"/>
+                                                   	@error('phoneno')
+                    								<span class="invalid-feedback" role="alert">
+														<strong>{{$message}}</strong>
+													</span>
+                   									@enderror
+												</div>
+                							</div>
+											<div class="form-group row">
+											<label class="control-label col-md-3">PAN Number
+													<span class="required"> * </span>
+											</label>
+											<div class="col-md-5">
+												<input type="number" name="panno" required placeholder="Enter PAN Number"
+												class="form-control input-height @error('panno') is-invalid @enderror" value="{{old('panno',$staff->panno)}}"/>
+												@error('panno')
+                    							<span class="invalid-feedback" role="alert">
+														<strong>{{$message}}</strong>
+												</span>
+                   								@enderror
+											</div>
+                							</div>
+											<div class="form-group row">
+												<label class="control-label col-md-3">City
+													<span class="required"> * </span>
+												</label>
+												<div class="col-md-5">
+                    								<input type="text" name='city' list='cityname' placeholder="Please Select..." 
+													class="form-control input-height @error('city') is-invalid @enderror" value="{{old('city',$staff->city)}}">
+													@error('city')
+                    								<span class="invalid-feedback" role="alert"> 
+														<strong>{{$message}}</strong>
+													</span>
+                    								@enderror
+												</div>
+                							</div>
+											<div class="form-group row">
+												<label class="control-label col-md-3">District
+													<span class="required"> * </span>
+												</label>
+												<div class="col-md-5">
+                    								<input type="text" name='District' list='districtname' placeholder="Please Select..." 
+													class="form-control input-height @error('district') is-invalid @enderror" value="{{old('district',$staff->district)}}">
+                    								@error('district')
+                    								<span class="invalid-feedback" role="alert"> 
+														<strong>{{$message}}</strong>
+													</span>
+                    								@enderror
+												</div>
+                							</div>
+											<div class="form-group row">
+												<label class="control-label col-md-3">Permanent Address
+													<span class="required"> * </span>
+												</label>
+												<div class="col-md-5">
+                    								<input type="text" name='permanent_address' list='permanent_address' placeholder="Please Select..." 
+													class="form-control input-height @error('permanent_address') is-invalid @enderror" value="{{old('permanent_address',$staff->permanent_address)}}">
+                    								@error('permanent_address')
+                    								<span class="invalid-feedback" role="alert"> 
+														<strong>{{$message}}</strong>
+													</span>
+                    								@enderror
+												</div>
+                							</div>
+											<div class="form-group row">
+												<label class="control-label col-md-3">Temporary Address
+													<span class="required"> * </span>
+												</label>
+												<div class="col-md-5">
+                    								<input type="text" name='temporary_address' list='temporary_address' placeholder="Please Select..." 
+													class="form-control input-height @error('temporary_address') is-invalid @enderror" value="{{old('temporary_address',$staff->temporary_address)}}">
+                    								@error('temporary_address')
+                    								<span class="invalid-feedback" role="alert"> 
+														<strong>{{$message}}</strong>
+													</span>
+                    								@enderror
+												</div>
+                							</div>
+											<div class="form-group row">
+												<label class="control-label col-md-3">Designation Title
+													<span class="required"> * </span>
+												</label>
+												<div class="col-md-5">
+                    								<input type="text" name='title_id' list='title_id' placeholder="Please Select..." 
+													class="form-control input-height @error('title_id') is-invalid @enderror" value="{{old('title_id',$staff->title_id)}}">
+													@error('title_id')
+                    								<span class="invalid-feedback" role="alert"> 
+														<strong>{{$message}}</strong>
+													</span>
+                    								@enderror
+												</div>
+                							</div>
+											<div class="form-group row">
+												<label class="control-label col-md-3">Designation Level
+													<span class="required"> * </span>
+												</label>
+												<div class="col-md-5">
+                    								<input type="text" name='level_id' list='level_id' placeholder="Please Select..." 
+													class="form-control input-height @error('level_id') is-invalid @enderror" value="{{old('level_id',$staff->level_id)}}">
+													@error('level_id')
+                    								<span class="invalid-feedback" role="alert"> 
+														<strong>{{$message}}</strong>
+													</span>
+                    								@enderror
+												</div>
+                							</div>
+											<div class="form-group row">
+												<label class="control-label col-md-3"> Department
+													<span class="required"> * </span>
+												</label>
+												<div class="col-md-5">
+                    								<input type="text" name='department' list='department' placeholder="Please Select..." 
+													class="form-control input-height @error('department') is-invalid @enderror" value="{{old('department',$staff->department)}}">
+													@error('department')
+                    								<span class="invalid-feedback" role="alert"> 
+														<strong>{{$message}}</strong>
+													</span>
+                    								@enderror
+												</div>
+                							</div>
+											<div class="form-group row">
+												<label class="control-label col-md-3">Joined Date
+													<span class="required"> * </span>
+												</label>
+												<div class="col-md-5">
+                    								<input type="date" class="form-control input-height @error('joined_date') is-invalid @enderror" data-date-format="yyyy-mm-dd" value="{{old('joined_date',$staff->joined_date)}}" />
+													@error('joined_date')
 													<span class="invalid-feedback" role="alert">
 														<strong>{{$message}}</strong>
 													</span>
 													@enderror
-												</div>
-											</div>
-											<div class="form-group row">
-												<label class="control-label col-md-3">Joined Dated
-													<span class="required"> * </span>
-												</label>												
-                                            <div class="input-append date form_date col-md-5 @error('joined_date') is-invalid @enderror" data-date-format="yyyy-mm-dd" data-date="2013-02-21T15:25:00Z">
-                                                <input size="40" type="date" name="joined_date" value="{{old('joined_date',$users->joined_date)}}">
-                                                <span class="add-on"><i class="fa fa-remove icon-remove"></i></span>
-                                                <span class="add-on"><i class="fa fa-calendar"></i></span>
-												@error('joined_date')
-													<span class="invalid-feedback" role="alert">
-														<strong>{{$message}}</strong>
-													</span>
-												@enderror
-                                            </div>
+                                        		</div>
                                         	</div>
-											
+
+                                        	
+											<div class="form-group row">
+                                        		<label class="control-label col-md-3">Photo
+                                           		 	<span class="required"> * </span>
+                                       			</label>
+                                       			<div class="col-md-5">
+													<div class="input-icon right">
+														<input type="file" class="form-control bg-light @error('photo') is-invalid @enderror" name="photo" value="{{old('photo',$staff->photo)}}"/>
+														@error('photo')
+															<span class="invalid-feedback" role="alert">
+																<strong>{{$message}}</strong>
+															</span>
+														@enderror
+													</div>
+                                        		</div>
+                                    		</div>
+
+											<div class="form-group row">
+                                        		<label class="control-label col-md-3">Resume
+                                           		 	<span class="required"> * </span>
+                                       			</label>
+                                       			<div class="col-md-5">
+													<div class="input-icon right">
+														<input type="file" class="form-control bg-light @error('resume') is-invalid @enderror" name="resume" value="{{old('resume',$staff->resume)}}"/>
+														@error('resume')
+															<span class="invalid-feedback" role="alert">
+																<strong>{{$message}}</strong>
+															</span>
+														@enderror
+													</div>
+                                        		</div>
+                                    		</div>
+											<div class="form-group row">
+													<label class="control-label col-md-3">Citizenship Proof (Frontside)
+														<span class="required"> * </span>
+                                       				</label>
+													<div class="col-md-5">
+                    									<input type="file" class="form-control bg-light @error('ctzn_front') is-invalid @enderror" name="ctzn_front" value="{{old('ctzn_front',$staff->ctzn_front)}}"/>
+														@error('ctzn_front')
+                    										<span class="invalid-feedback" role="alert"> 
+																<strong>{{$message}}</strong>
+															</span>
+                    									@enderror
+                                    				</div>
+											</div>
+											<div class="form-group row">
+													<label class="control-label col-md-3">Citizenship Proof (Backside)
+														<span class="required"> * </span>
+                                       				</label>
+													<div class="col-md-5">
+                    									<input type="file" class="form-control bg-light @error('ctzn_back') is-invalid @enderror" name="ctzn_back" value="{{old('ctzn_back',$staff->ctzn_back)}}"/>
+														@error('ctzn_back')
+                    										<span class="invalid-feedback" role="alert"> 
+																<strong>{{$message}}</strong>
+															</span>
+                    									@enderror
+                                    				</div>
+											</div>
+											<div class="form-group row">
+                                        		<label class="control-label col-md-3">Contract and Agreement
+                                           		 	<span class="required"> * </span>
+                                       			</label>
+                                       			<div class="col-md-5">
+													<div class="input-icon right">
+														<input type="file" class="form-control bg-light @error('contract_agreement') is-invalid @enderror" name="contract_agreement" value="{{old('contract_agreement',$staff->contract_agreement)}}"/>
+														@error('contract_agreement')
+															<span class="invalid-feedback" role="alert">
+																<strong>{{$message}}</strong>
+															</span>
+														@enderror
+													</div>
+                                        		</div>
+                                    		</div>
+											<div class="form-group row">
+                                        		<label class="control-label col-md-3">Appointment Letter
+                                           		 	<span class="required"> * </span>
+                                       			</label>
+                                       			<div class="col-md-5">
+													<div class="input-icon right">
+														<input type="file" class="form-control bg-light @error('appointment_letter') is-invalid @enderror" name="appointment_letter" value="{{old('appointment_letter',$staff->appointment_letter)}}"/>
+														@error('appointment_letter')
+															<span class="invalid-feedback" role="alert">
+																<strong>{{$message}}</strong>
+															</span>
+														@enderror
+													</div>
+                                        		</div>
+                                    		</div>
 											<div class="form-group row">
                                         		<label class="control-label col-md-3">Gender
                                             		<span class="required"> * </span>
@@ -170,15 +341,15 @@
 											<div class="row">
                                             	<div class="card-body" id="bar-parent3">                                               
                                                     <div class="radio">
-                                                        <input id="radiobg1" name="gender" type="radio"  value="Male" {{'Male'== old('gender',$users->gender) ? 'checked' : ''}}>
+                                                        <input id="radiobg1" name="gender" type="radio" checked="checked" value="Male" {{'Male'== old('gender','') ? 'checked' : ''}}>
                                                         <label for="radiobg1">Male</label>
                                                     </div>
                                                     <div class="radio">
-                                                        <input id="radiobg2" name="gender" type="radio" value="Female" {{'Female'== old('gender',$users->gender) ? 'checked' : ''}}>
+                                                        <input id="radiobg2" name="gender" type="radio" value="Female" {{'Female'== old('gender','') ? 'checked' : ''}}>
                                                         <label for="radiobg2">Female</label>
                                                     </div>
                                                     <div class="radio">
-                                                        <input id="radiobg3" name="gender" type="radio" value="Other" {{'Other'== old('gender',$users->gender) ? 'checked' : ''}}>
+                                                        <input id="radiobg3" name="gender" type="radio" value="Other" {{'Other'== old('gender','') ? 'checked' : ''}}>
 														<label for="radiobg3">Others</label>
                                                     </div>
                                                 </div>
@@ -200,4 +371,4 @@
 					</div>
 				</div>
 			</div>
-@endsection			
+										

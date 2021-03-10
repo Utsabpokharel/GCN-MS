@@ -15,7 +15,13 @@ class CreateBanksTable extends Migration
     {
         Schema::create('banks', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id')->nullable();
+            $table->string('accountholder_name');
+            $table->string('bank_name');
+            $table->string('branch_name');
+            $table->string('account_number');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
