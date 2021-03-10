@@ -179,9 +179,9 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-                    								<input type="text" name='Customer Type' list='Customer Type' placeholder="Please Select..." 
-													class="form-control input-height @error('customertype') is-invalid @enderror" value="{{old('customertype','')}}">
-                    								@error('customertype')
+                    								<input type="text" name='customer_type' list='customer_type' placeholder="Please Select..." 
+													class="form-control input-height @error('customer_type') is-invalid @enderror" value="{{old('customer_type','')}}">
+                    								@error('customer_type')
                     								<span class="invalid-feedback" role="alert"> 
 														<strong>{{$message}}</strong>
 													</span>
