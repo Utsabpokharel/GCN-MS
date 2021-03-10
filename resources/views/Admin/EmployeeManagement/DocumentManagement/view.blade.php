@@ -11,7 +11,7 @@
                     <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Home</a>&nbsp;
                         <i class="fa fa-angle-right"></i>
                     </li>
-                    <li><a class="parent-item" href="{{route('documentmanagement.index')}}">Recruitment</a>&nbsp;
+                    <li><a class="parent-item" href="{{route('documentmanagement.index')}}">Employee Management</a>&nbsp;
                         <i class="fa fa-angle-right"></i>
                     </li>
                     <li class="active">Document Management</li>
@@ -40,10 +40,31 @@
                                 </tr>
                             </thead>
                             <tbody>
+                           @foreach($documentmanagement as $value)
+                                                        <tr>
+                                                            <td>{{$loop->index+1}}</td>
+                                                            <td>{{$value->staffname}}</td>
+                                                            <td>{{$value->bankaccountnumber}}</td>
+                                                            <td>{{$value->pfdocument }}</td>
+                                                            <td>{{ $value->citdocument }}</td>
+                                                            <td>{{ $value->appointmentdocument }}</td>
+                                                            <td>{{ $value->contractdocument }}</td>
+                                                            
 
-                                <tr>
+                                                            <td>
+                                                                <a href="{{route('documentmanagement.edit',$value->id) }}"
+                                                                   class="btn btn-primary btn-xs">
+                                                                    <i class="fa fa-pencil"></i>
+                                                                </a>
+                                                                <a href="{{ route('documentmanagement.destroy',$value->id) }}"
+                                                                    class="btn btn-danger btn-xs">
+                                                                    <i class="fa fa-trash-o "></i>
+                                                                </button>
 
-                                </tr>
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
+                                
 
                             </tbody>
                             <tfoot>

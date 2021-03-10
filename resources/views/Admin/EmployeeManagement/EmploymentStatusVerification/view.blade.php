@@ -41,9 +41,31 @@
                             </thead>
                             <tbody>
 
-                                <tr>
+                                 @foreach($employmentstatusverification as $value)
+                                                        <tr>
+                                                            <td>{{$loop->index+1}}</td>
+                                                            <td>{{$value->staffname}}</td>
+                                                            <td>{{$value->staffcode}}</td>
+                                                            <td>{{$value->employmentstaus}}</td>
+                                                            <td>{{ $value->period }}</td>
+                                                            <td>{{ $value->approvedon }}</td>
+                                                            <td>{{ $value->approvedby }}</td>
+                                                            
+                                                            
 
-                                </tr>
+                                                            <td>
+                                                                <a href="{{route('employmentstatusverification.edit',$value->id) }}"
+                                                                   class="btn btn-primary btn-xs">
+                                                                    <i class="fa fa-pencil"></i>
+                                                                </a>
+                                                                <a href="{{ route('employmentstatusverification.destroy',$value->id) }}"
+                                                                    class="btn btn-danger btn-xs">
+                                                                    <i class="fa fa-trash-o "></i>
+                                                                </button>
+
+                                                            </td>
+                                                        </tr>
+                                    @endforeach
 
                             </tbody>
                             <tfoot>

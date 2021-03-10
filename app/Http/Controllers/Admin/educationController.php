@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Education;
 
 class educationController extends Controller
 {
@@ -14,7 +15,8 @@ class educationController extends Controller
      */
     public function index()
     {
-        return view('Admin.Recruitment.Education.view');
+        $education = Education::all();
+        return view('Admin.EmployeeManagement.Education.view', compact('education'));
     }
 
     /**
@@ -24,7 +26,8 @@ class educationController extends Controller
      */
     public function create()
     {
-        return view('Admin.Recruitment.Education.add');
+        $education = Education::all();
+        return view('Admin.EmployeeManagement.Education.add', compact('education'));
     }
 
     /**
@@ -33,9 +36,12 @@ class educationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Education::create($data);
+        return redirect()->route('education.view')->with('success', 'Employee Education created Successfully');
     }
 
     /**
@@ -57,7 +63,8 @@ class educationController extends Controller
      */
     public function edit($id)
     {
-        //
+        $education = Education::findorfail($id);
+        return view('Admin.EmployeeManagement.Education.edit', compact('education'));
     }
 
     /**
@@ -69,7 +76,10 @@ class educationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $education = Education::findorfail($id);
+        $education->update($data);
+        return redirect()->route('education.index')->with('success', 'Employee Education Updated Successfully');
     }
 
     /**
@@ -80,6 +90,8 @@ class educationController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $education = Education::findorfail($id);
+        $education->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Employee Education Deleted Successfully");
     }
 }

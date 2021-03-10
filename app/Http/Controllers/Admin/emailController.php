@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Email;
 
 class emailController extends Controller
 {
@@ -14,7 +15,8 @@ class emailController extends Controller
      */
     public function index()
     {
-        return view('Admin.Email.view');
+        $email = Email::all();
+        return view('Admin.Email.view', compact('email'));
     }
 
     /**
@@ -24,7 +26,8 @@ class emailController extends Controller
      */
     public function create()
     {
-        return view('Admin.Email.add');
+        $email = Email::all();
+        return view('Admin.Email.add', compact('email'));
     }
 
     /**
@@ -35,7 +38,9 @@ class emailController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Email::create($data);
+        return redirect()->route('email.index')->with('success', 'Email created Successfully');
     }
 
     /**
@@ -57,7 +62,8 @@ class emailController extends Controller
      */
     public function edit($id)
     {
-        //
+        $email = Email::findorfail($id);
+        return view('Admin.Email.edit', compact('email'));
     }
 
     /**
@@ -69,7 +75,10 @@ class emailController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $email = Email::findorfail($id);
+        $email->update($data);
+        return redirect()->route('email.index')->with('success', 'Employee Education Updated Successfully');
     }
 
     /**
@@ -80,6 +89,8 @@ class emailController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $email = Email::findorfail($id);
+        $email->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Employee Education Deleted Successfully");
     }
 }

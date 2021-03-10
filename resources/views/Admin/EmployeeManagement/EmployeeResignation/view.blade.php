@@ -41,9 +41,30 @@
                             </thead>
                             <tbody>
 
-                                <tr>
+                                 @foreach($employeeresignation as $value)
+                                                        <tr>
+                                                            <td>{{$loop->index+1}}</td>
+                                                            <td>{{$value->staffname}}</td>
+                                                            <td>{{$value->staffcode}}</td>
+                                                            <td>{{$value->noticedate}}</td>
+                                                            <td>{{ $value->forwardto}}</td>
+                                                            <td>{{ $value->desireresigndate }}</td>
+                                                            <td>{{ $value->resignationdocument }}</td>
+                                                            
 
-                                </tr>
+                                                            <td>
+                                                                <a href="{{route('employeeresignation.edit',$value->id) }}"
+                                                                   class="btn btn-primary btn-xs">
+                                                                    <i class="fa fa-pencil"></i>
+                                                                </a>
+                                                                <a href="{{ route('employeeresignation.destroy',$value->id) }}"
+                                                                    class="btn btn-danger btn-xs">
+                                                                    <i class="fa fa-trash-o "></i>
+                                                                </button>
+
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
 
                             </tbody>
                             <tfoot>

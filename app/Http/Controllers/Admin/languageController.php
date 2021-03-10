@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Language;
 use Illuminate\Http\Request;
+
 
 class languageController extends Controller
 {
@@ -14,7 +16,8 @@ class languageController extends Controller
      */
     public function index()
     {
-        return view('Admin.Recruitment.Language.view');
+        $language = Language::all();
+        return view('Admin.EmployeeManagement.Language.view');
     }
 
     /**
@@ -24,7 +27,8 @@ class languageController extends Controller
      */
     public function create()
     {
-        return view('Admin.Recruitment.Language.add');
+        $language = Language::all();
+        return view('Admin.EmployeeManagement.Language.add');
     }
 
     /**
@@ -35,7 +39,9 @@ class languageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Language::create($data);
+        return redirect()->route('Language.view')->with('success', 'Employee Language created Successfully');
     }
 
     /**
@@ -57,7 +63,8 @@ class languageController extends Controller
      */
     public function edit($id)
     {
-        //
+        $language = Language::findorfail($id);
+        return view('Admin.EmployeeManagement.Skill.edit', compact('skill'));
     }
 
     /**
@@ -69,7 +76,10 @@ class languageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $language = Language::findorfail($id);
+        $language->update($data);
+        return redirect()->route('education.view')->with('success', 'Employee Language Updated Successfully');
     }
 
     /**
@@ -80,6 +90,8 @@ class languageController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $language = Language::findorfail($id);
+        $language->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Employee Language Deleted Successfully");
     }
 }

@@ -30,8 +30,8 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Staff Name</th>
-                                    <th>Staff Code</th>
+                                    <th>Employee Name</th>
+                                    <th>Employee Code</th>
                                     <th>Designation</th>
                                     <th>Department</th>
                                     <th>Phone Number</th>
@@ -41,10 +41,28 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                 @foreach($reporting as $value)
+                                                        <tr>
+                                                            <td>{{$loop->index+1}}</td>
+                                                            <td>{{$value->staffname}}</td>
+                                                            <td>{{$value->staffcode}}</td>
+                                                            <td>{{$value->designation}}</td>
+                                                            <td>{{ $value->department}}</td>
+                                                            <td>{{ $value->phonenumber}}</td>
+                                                            <td>{{ $value->emailaddress }}</td>
+                                                             <td>{{ $value->reportingmanager }}</td>
+                                                                <a href="{{route('reporting.edit',$value->id) }}"
+                                                                   class="btn btn-primary btn-xs">
+                                                                    <i class="fa fa-pencil"></i>
+                                                                </a>
+                                                                <a href="{{ route('reporting.destroy',$value->id) }}"
+                                                                    class="btn btn-danger btn-xs">
+                                                                    <i class="fa fa-trash-o "></i>
+                                                                </button>
 
-                                <tr>
-
-                                </tr>
+                                                            </td>
+                                                        </tr>
+                                    @endforeach
 
                             </tbody>
                             <tfoot>

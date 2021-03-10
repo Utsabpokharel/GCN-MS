@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\DocumentManagement;
 use Illuminate\Http\Request;
 
 class documentmanagementController extends Controller
@@ -14,7 +15,8 @@ class documentmanagementController extends Controller
      */
     public function index()
     {
-        return view('Admin.Recruitment.DocumentManagement.view');
+        $documentmanagement = DocumentManagement::all();
+        return view('Admin.EmployeeManagement.DocumentManagement.view', compact('documentmanagement'));
     }
 
     /**
@@ -24,7 +26,8 @@ class documentmanagementController extends Controller
      */
     public function create()
     {
-        return view('Admin.Recruitment.DocumentManagement.add');
+        $documentmanagement = DocumentManagement::all();
+        return view('Admin.EmployeeManagement.DocumentManagement.add', compact('documentmanagement'));
     }
 
     /**
@@ -35,7 +38,9 @@ class documentmanagementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        DocumentManagement::create($data);
+        return redirect()->route('documentmanagement.index')->with('success', 'Employee Documents created Successfully');
     }
 
     /**
@@ -57,7 +62,8 @@ class documentmanagementController extends Controller
      */
     public function edit($id)
     {
-        //
+        $documentmanagement = DocumentManagement::findorfail($id);
+        return view('Admin.EmployeeManagement.DocumentManagement.edit', compact('documentmanagement'));
     }
 
     /**
@@ -69,7 +75,10 @@ class documentmanagementController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $documentmanagement = DocumentManagement::findorfail($id);
+        $documentmanagement->update($data);
+        return redirect()->route('documentmanagement.index')->with('success', 'Employee Document Updated Successfully');
     }
 
     /**
@@ -80,6 +89,8 @@ class documentmanagementController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $documentmanagement = DocumentManagement::findorfail($id);
+        $documentmanagement->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Employee Document Deleted Successfully");
     }
 }

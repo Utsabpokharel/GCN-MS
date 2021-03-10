@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\RCourse;
 use Illuminate\Http\Request;
 
 class rcourseController extends Controller
@@ -14,7 +15,8 @@ class rcourseController extends Controller
      */
     public function index()
     {
-        return view('Admin.Recruitment.Course.view');
+        $rcourse = RCourse::all();
+        return view('Admin.EmployeeManagement.Subject.view', compact('rcourse'));
     }
 
     /**
@@ -24,7 +26,8 @@ class rcourseController extends Controller
      */
     public function create()
     {
-        return view('Admin.Recruitment.Course.add');
+        $rcourse = Rcourse::all();
+        return view('Admin.EmployeeManagement.Subject.add', compact('rcourse'));
     }
 
     /**
@@ -35,7 +38,12 @@ class rcourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $data = $request->all();
+        RCourse::create($data);
+        return redirect()->route('rcourse
+        
+        .index')->with('success', 'Subject is created');
     }
 
     /**
@@ -57,7 +65,8 @@ class rcourseController extends Controller
      */
     public function edit($id)
     {
-        //
+        $rcourse = RCourse::findOrFail($id);
+        return view('Admin.EmployeeManagement.Subject.edit', compact('rcourse'));
     }
 
     /**
@@ -69,7 +78,10 @@ class rcourseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $rcourse = RCourse::findorFail($id);
+        $rcourse->update($data);
+        return redirect()->route('rcourse.index')->with('success', 'Subject Updated Successfully');
     }
 
     /**
@@ -80,6 +92,8 @@ class rcourseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $rcourse = RCourse::findorFail($id);
+        $rcourse->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', 'Subject Deleted Successfully');
     }
 }

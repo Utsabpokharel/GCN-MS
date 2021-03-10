@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Fee;
 use Illuminate\Http\Request;
 
 class feeController extends Controller
@@ -14,7 +15,8 @@ class feeController extends Controller
      */
     public function index()
     {
-        return view('Admin.Fee.view');
+        $fees = Fee::all();
+        return view('Admin.Fee.view', compact('fee'));
     }
 
     /**
@@ -24,7 +26,8 @@ class feeController extends Controller
      */
     public function create()
     {
-        return view('Admin.Fee.add');
+        $fees = Fee::all();
+        return view('Admin.Fee.add', compact('fee'));
     }
 
     /**
@@ -35,7 +38,7 @@ class feeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

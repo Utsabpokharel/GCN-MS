@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Skill;
 
 class skillController extends Controller
 {
@@ -14,7 +15,8 @@ class skillController extends Controller
      */
     public function index()
     {
-        return view('Admin.Recruitment.Skill.view');
+        $skill = Skill::all();
+        return view('Admin.EmployeeManagement.Skill.view', compact('skill'));
     }
 
     /**
@@ -24,7 +26,8 @@ class skillController extends Controller
      */
     public function create()
     {
-        return view('Admin.Recruitment.Skill.add');
+        $skill = Skill::all();
+        return view('Admin.EmployeeManagement.Skill.add', compact('skill'));
     }
 
     /**
@@ -35,7 +38,9 @@ class skillController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Skill::create($data);
+        return redirect()->route('skill.view')->with('success', 'Employee Skill created Successfully');
     }
 
     /**
@@ -57,7 +62,8 @@ class skillController extends Controller
      */
     public function edit($id)
     {
-        //
+        $skill = Skill::findorfail($id);
+        return view('Admin.EmployeeManagement.Skill.edit', compact('skill'));
     }
 
     /**
@@ -69,7 +75,10 @@ class skillController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $skill = Skill::findorfail($id);
+        $skill->update($data);
+        return redirect()->route('education.view')->with('success', 'Employee Education Updated Successfully');
     }
 
     /**
@@ -80,6 +89,8 @@ class skillController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $skill = Skill::findorfail($id);
+        $skill->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Employee Skill Deleted Successfully");
     }
 }

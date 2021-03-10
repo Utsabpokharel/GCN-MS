@@ -37,10 +37,25 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                 @foreach($skill as $value)
+                                                        <tr>
+                                                            <td>{{$loop->index+1}}</td>
+                                                            <td>{{$value->code}}</td>
+                                                            <td>{{$value->name}}</td>
+                                                            <td>{{$value->description}}</td>
+                                                                <a href="{{route('skill.edit',$value->id) }}"
+                                                                   class="btn btn-primary btn-xs">
+                                                                    <i class="fa fa-pencil"></i>
+                                                                </a>
+                                                                <a href="{{ route('skill.destroy',$value->id) }}"
+                                                                    class="btn btn-danger btn-xs">
+                                                                    <i class="fa fa-trash-o "></i>
+                                                                </button>
 
-                                <tr>
+                                                            </td>
+                                                        </tr>
+                                    @endforeach
 
-                                </tr>
 
                             </tbody>
                             <tfoot>

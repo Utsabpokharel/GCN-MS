@@ -30,30 +30,50 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Case</th>
-                                    <th>Description</th>
-                                    <th>Created On</th>
+                                    <th>Staff Name</th>
+                                    <th>Case Name</th>
                                     <th>Status</th>
                                     <th>Forward To</th>
                                     <th>Disciplinary Action</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
 
-                                <tr>
+                                @foreach($disciplinary as $value)
+                                                        <tr>
+                                                            <td>{{$loop->index+1}}</td>
+                                                            <td>{{$value->staffname}}</td>
+                                                            <td>{{$value->casename}}</td>
+                                                            <td>{{$value->status }}</td>
+                                                            <td>{{ $value->forwardto }}</td>
+                                                            <td>{{ $value->disciplinaryaction }}</td>
+                                                            
 
-                                </tr>
+                                                            <td>
+                                                                <a href="{{route('disciplinary.edit',$value->id) }}"
+                                                                   class="btn btn-primary btn-xs">
+                                                                    <i class="fa fa-pencil"></i>
+                                                                </a>
+                                                                <a href="{{ route('disciplinary.destroy',$value->id) }}"
+                                                                    class="btn btn-danger btn-xs">
+                                                                    <i class="fa fa-trash-o "></i>
+                                                                </button>
+
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
 
                             </tbody>
                             <tfoot>
                                 <tr>
                                     <th>#</th>
-                                    <th>Case</th>
-                                    <th>Description</th>
-                                    <th>Created On</th>
+                                    <th>Staff Name</th>
+                                    <th>Case Name</th>
                                     <th>Status</th>
                                     <th>Forward To</th>
                                     <th>Disciplinary Action</th>
+                                    <th>Actions</th>
                                 </tr>
                             </tfoot>
                         </table>

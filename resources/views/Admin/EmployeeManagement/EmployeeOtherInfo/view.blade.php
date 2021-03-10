@@ -40,9 +40,29 @@
                             </thead>
                             <tbody>
 
-                                <tr>
+                                 @foreach($employeeotherinfo as $value)
+                                                        <tr>
+                                                            <td>{{$loop->index+1}}</td>
+                                                            <td>{{$value->staffcode}}</td>
+                                                            <td>{{$value->title}}</td>
+                                                            <td>{{$value->organisation}}</td>
+                                                            <td>{{ $value->beganon }}</td>
+                                                            <td>{{ $value->endedon }}</td>
+                                                            
 
-                                </tr>
+                                                            <td>
+                                                                <a href="{{route('employeeotherinfo.edit',$value->id) }}"
+                                                                   class="btn btn-primary btn-xs">
+                                                                    <i class="fa fa-pencil"></i>
+                                                                </a>
+                                                                <a href="{{ route('employeeotherinfo.destroy',$value->id) }}"
+                                                                    class="btn btn-danger btn-xs">
+                                                                    <i class="fa fa-trash-o "></i>
+                                                                </button>
+
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
 
                             </tbody>
                             <tfoot>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\License;
 use Illuminate\Http\Request;
 
 class licenseController extends Controller
@@ -14,7 +15,8 @@ class licenseController extends Controller
      */
     public function index()
     {
-        return view('Admin.Recruitment.License.view');
+        $license = License::all();
+        return view('Admin.EmployeeManagement.License.view', compact('license'));
     }
 
     /**
@@ -24,7 +26,8 @@ class licenseController extends Controller
      */
     public function create()
     {
-        return view('Admin.Recruitment.License.add');
+        $license = License::all();
+        return view('Admin.EmployeeManagement.License.add', compact('license'));
     }
 
     /**
@@ -35,7 +38,9 @@ class licenseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        License::create($data);
+        return redirect()->route('License.view')->with('success', 'Employee License created Successfully');
     }
 
     /**
@@ -57,7 +62,8 @@ class licenseController extends Controller
      */
     public function edit($id)
     {
-        //
+        $license = License::findorfail($id);
+        return view('Admin.EmployeeManagement.License.edit', compact('license'));
     }
 
     /**
@@ -69,7 +75,10 @@ class licenseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $license = License::findorfail($id);
+        $license->update($data);
+        return redirect()->route('license.index')->with('success', 'Employee License Updated Successfully');
     }
 
     /**
@@ -80,6 +89,8 @@ class licenseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $license = License::findorfail($id);
+        $license->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Employee License Deleted Successfully");
     }
 }

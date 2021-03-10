@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\EmploymentStatus;
 use Illuminate\Http\Request;
 
 class employmentstatusController extends Controller
@@ -14,7 +15,8 @@ class employmentstatusController extends Controller
      */
     public function index()
     {
-        return view('Admin.Recruitment.EmploymentStatus.view');
+        $employmentstatus = EmploymentStatus::all();
+        return view('Admin.EmployeeManagement.EmploymentStatus.view', compact('employmentstatus'));
     }
 
     /**
@@ -24,6 +26,7 @@ class employmentstatusController extends Controller
      */
     public function create()
     {
+        $employmentstatus = EmploymentStatus::all();
         return view('Admin.Recruitment.EmploymentStatus.add');
     }
 
@@ -35,6 +38,9 @@ class employmentstatusController extends Controller
      */
     public function store(Request $request)
     {
+        $data = $request->all();
+        EmploymentStatus::create($data);
+        return redirect()->route('employmentstatus.index')->with('success', 'Employment Status created successfully');
     }
 
     /**
@@ -56,7 +62,8 @@ class employmentstatusController extends Controller
      */
     public function edit($id)
     {
-        //
+        $employmentstatus = EmploymentStatus::findorfail($id);
+        return view('Admin.EmployeeManagement.EmployeeTermination.edit', compact('employmentstatus'));
     }
 
     /**
@@ -68,7 +75,10 @@ class employmentstatusController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $employmentstatus = EmploymentStatus::findorfail($id);
+        $employmentstatus->update($data);
+        return redirect()->route('employmentstatus.index')->with('success', 'Employment Status Updated Successfully');
     }
 
     /**
@@ -79,6 +89,8 @@ class employmentstatusController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $employmentstatus = EmploymentStatus::findorfail($id);
+        $employmentstatus->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Employment Status Deleted Successfully");
     }
 }

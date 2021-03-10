@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\EmployeeResignation;
 use Illuminate\Http\Request;
 
 class employeeresignationController extends Controller
@@ -14,7 +15,8 @@ class employeeresignationController extends Controller
      */
     public function index()
     {
-        return view('Admin.Recruitment.EmployeeResignation.view');
+        $employeeresignation = EmployeeResignation::all();
+        return view('Admin.Recruitment.EmployeeResignation.view', compact('employeeresignation'));
     }
 
     /**
@@ -24,7 +26,8 @@ class employeeresignationController extends Controller
      */
     public function create()
     {
-        return view('Admin.Recruitment.EmployeeResignation.add');
+        $employeeresignation = EmployeeResignation::all();
+        return view('Admin.Recruitment.EmployeeResignation.add', compact('employeeresignation'));
     }
 
     /**
@@ -35,7 +38,9 @@ class employeeresignationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data=$request->all();
+        EmployeeResignation::create($data);
+        return redirect()->route('employeecontract.index')->with('success','Employee Resignation created successfully');
     }
 
     /**
@@ -57,7 +62,8 @@ class employeeresignationController extends Controller
      */
     public function edit($id)
     {
-        //
+        $employeeresignation = EmployeeResignation::findorfail($id);
+        return view('Admin.EmployeeManagement.EmployeeQualification.edit', compact('employeequalification'));
     }
 
     /**
@@ -69,7 +75,10 @@ class employeeresignationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $employeeresignation = EmployeeResignation::findorfail($id);
+        $employeeresignation->update($data);
+        return redirect()->route('employeeresignation.index')->with('success', 'Employee Resignation Updated Successfully');
     }
 
     /**
@@ -80,6 +89,9 @@ class employeeresignationController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $employeeresignation = EmployeeResignation::findorfail($id);
+        $employeeresignation->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Employee Resignation Deleted Successfully");
+    
     }
 }

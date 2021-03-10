@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Disciplinary;
 use Illuminate\Http\Request;
 
 class disciplinaryController extends Controller
@@ -14,7 +15,9 @@ class disciplinaryController extends Controller
      */
     public function index()
     {
-        return view('Admin.Recruitment.Disciplinary.view');
+        $disciplinary = Disciplinary::all();
+
+        return view('Admin.EmployeeManagement.Disciplinary.view', compact('disciplinary'));
     }
 
     /**
@@ -24,7 +27,8 @@ class disciplinaryController extends Controller
      */
     public function create()
     {
-        return view('Admin.Recruitment.Disciplinary.add');
+        $disciplinary = Disciplinary::all();
+        return view('Admin.EmployeeManagement.Disciplinary.add', compact('disciplinary'));
     }
 
     /**
@@ -35,7 +39,9 @@ class disciplinaryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Disciplinary::create($data);
+        return redirect()->route('disciplinary.index')->with('success', 'Employee Disciplinary Case created Successfully');
     }
 
     /**
@@ -57,7 +63,8 @@ class disciplinaryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $disciplinary = Disciplinary::findorfail($id);
+        return view('Admin.Disciplinary.edit', compact('disciplinary'));
     }
 
     /**
@@ -69,7 +76,10 @@ class disciplinaryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $disciplinary = Disciplinary::findorfail($id);
+        $disciplinary->update($data);
+        return redirect()->route('disciplinary.index')->with('success', 'Employee Disciplinary Case Updated Successfully');
     }
 
     /**
@@ -80,6 +90,8 @@ class disciplinaryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $disciplinary = Disciplinary::findorfail($id);
+        $disciplinary->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Employee Disciplinary Case Deleted Successfully");
     }
 }
