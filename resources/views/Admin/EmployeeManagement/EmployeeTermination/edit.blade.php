@@ -5,17 +5,17 @@
         <div class="page-bar">
             <div class="page-title-breadcrumb">
                 <div class=" pull-left">
-                    <div class="page-title">Employment Status</div>
+                    <div class="page-title">Employee Termination</div>
                 </div>
                 <ol class="breadcrumb page-breadcrumb pull-right">
                     <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Home</a>&nbsp;<i
                             class="fa fa-angle-right"></i>
                     </li>
 
-                    <li><a class="parent-item" href="{{route('employmentstatus.index')}}">Recruitment</a>&nbsp;<i
+                    <li><a class="parent-item" href="{{route('employeetermination.index')}}">Employee Management</a>&nbsp;<i
                             class="fa fa-angle-right"></i>
                     </li>
-                    <li class="active">Add Employment Status</li>
+                    <li class="active">Edit Employee Termination</li>
                 </ol>
             </div>
         </div>
@@ -23,14 +23,14 @@
             <div class="col-md-12 col-sm-12">
                 <div class="card card-box">
                     <div class="card-head">
-                        <header>Add Employment Status</header>
+                        <header>Edit Employee Termination</header>
                         <button id="panel-button" class="mdl-button mdl-js-button mdl-button--icon pull-right"
                             data-upgraded=",MaterialButton">
                             <i class="material-icons">more_vert</i>
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="{{ route('employmentstatus.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{ route('employeetermination.update',$employeetermination->id) }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
                             <div class="form-body">
@@ -52,40 +52,79 @@
                                             class="form-control input-height" value="" />
                                     </div>
                                 </div>
-
-                                <div class="form-group row">
-                                    <label class="control-label col-md-3">Employment Status
+                                 <div class="form-group row">
+                                    <label class="control-label col-md-3">Change Status
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="employmentstatus"
+                                        <input type="text" name="changestatus" required placeholder="changestatus"
+                                            class="form-control input-height" value="" />
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Notice Date
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="date" name="noticedate"
+                                            class="form-control input-height " value="" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Service End Date
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="date" name="serviceenddate"
                                             class="form-control input-height " value="" />
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">Description
+                                    <label class="control-label col-md-3">Forward To
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                    <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+                                        <input type="text" name="forwardto" required
+                                            class="form-control input-height " value="" />
+                                    </div>
+
+                                </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Termination Document
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="file" name="terminationdocument" required
+                                            class="form-control input-height" />
+                                    </div>
+
+                                </div>
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Reason
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                    <textarea name="reason" id="reason" cols="30" rows="10" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">IsContract
+                                    <label class="control-label col-md-3">Details
+                                        <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                    <input type="checkbox" name="contract" id="contract" value="1" checked>
-                                            <label for="status">Active</label>
+                                    <textarea name="details" id="details" cols="30" rows="10" class="form-control"></textarea>
                                     </div>
                                 </div>
-
 
                                 <div class="form-actions">
                                     <div class="row">
                                         <div class="offset-md-3 col-md-9">
-                                            <button type="submit" class="btn btn-info m-r-20">Submit</button>
-                                            <a class="btn btn-default" href="{{route('employmentstatus.index')}}">Cancel</a>
+                                            <button type="submit" class="btn btn-info m-r-20">Update</button>
+                                            <a class="btn btn-default" href="{{route('employeetermination.index')}}">Cancel</a>
                                         </div>
                                     </div>
                                 </div>

@@ -38,9 +38,27 @@
                             </thead>
                             <tbody>
 
-                                <tr>
+                                @foreach($education as $value)
+                                                        <tr>
+                                                            <td>{{$loop->index+1}}</td>
+                                                            <td>{{$value->code}}</td>
+                                                            <td>{{$value->name}}</td>
+                                                            <td>{{$value->description}}</td>
+                                                            
 
-                                </tr>
+                                                            <td>
+                                                                <a href="{{route('education.edit',$value->id) }}"
+                                                                   class="btn btn-primary btn-xs">
+                                                                    <i class="fa fa-pencil"></i>
+                                                                </a>
+                                                                <a href="{{ route('education.destroy',$value->id) }}"
+                                                                    class="btn btn-danger btn-xs">
+                                                                    <i class="fa fa-trash-o "></i>
+                                                                </button>
+
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
 
                             </tbody>
                             <tfoot>

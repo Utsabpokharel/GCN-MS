@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\EmployeeOtherInfo;
 use Illuminate\Http\Request;
 
 class employeeotherinfoController extends Controller
@@ -14,7 +15,8 @@ class employeeotherinfoController extends Controller
      */
     public function index()
     {
-        return view('Admin.Recruitment.EmployeeOtherInfo.view');
+        $employeeotherinfo=EmployeeOtherInfo::all();
+        return view('Admin.EmployeeManagement.EmployeeOtherInfo.view',compact('employeeotherinfo'));
     }
 
     /**
@@ -24,7 +26,8 @@ class employeeotherinfoController extends Controller
      */
     public function create()
     {
-        return view('Admin.Recruitment.EmployeeOtherInfo.add');
+        $employeeotherinfo=EmployeeOtherInfo::all();
+        return view('Admin.EmployeeManagment.EmployeeOtherInfo.add',compact('employeeotherinfo'));
     }
 
     /**
@@ -35,7 +38,9 @@ class employeeotherinfoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        EmployeeOtherInfo::create($data);
+        return redirect()->route('employeeotherinfo.view')->with('success', 'Employee Other Information created Successfully');
     }
 
     /**
@@ -46,7 +51,7 @@ class employeeotherinfoController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -57,7 +62,8 @@ class employeeotherinfoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $employeeotherinfo = EmployeeOtherInfo::findorfail($id);
+        return view('Admin.EmployeeManagement.Skill.edit', compact('skill'));
     }
 
     /**
@@ -69,7 +75,10 @@ class employeeotherinfoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $employeeotherinfo = EmployeeOtherInfo::findorfail($id);
+        $employeeotherinfo->update($data);
+        return redirect()->route('employeeotherinfo.index')->with('success', 'Employee Other Information Updated Successfully');
     }
 
     /**
@@ -80,6 +89,9 @@ class employeeotherinfoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $employeeotherinfo = EmployeeOtherInfo::findorfail($id);
+        $employeeotherinfo->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Employee Other Information Deleted Successfully");
+    
     }
 }

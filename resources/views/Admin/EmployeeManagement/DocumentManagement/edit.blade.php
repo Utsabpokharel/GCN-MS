@@ -12,10 +12,10 @@
                             class="fa fa-angle-right"></i>
                     </li>
 
-                    <li><a class="parent-item" href="{{route('documentmanagement.index')}}">Recruitment</a>&nbsp;<i
+                    <li><a class="parent-item" href="{{route('documentmanagement.index')}}">Employee Management</a>&nbsp;<i
                             class="fa fa-angle-right"></i>
                     </li>
-                    <li class="active">Add Documents</li>
+                    <li class="active">Edit Documents</li>
                 </ol>
             </div>
         </div>
@@ -23,14 +23,14 @@
             <div class="col-md-12 col-sm-12">
                 <div class="card card-box">
                     <div class="card-head">
-                        <header>Add Important Documents</header>
+                        <header>Edit Important Documents</header>
                         <button id="panel-button" class="mdl-button mdl-js-button mdl-button--icon pull-right"
                             data-upgraded=",MaterialButton">
                             <i class="material-icons">more_vert</i>
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{ route('documentmanagement.update',$document->id) }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
                             <div class="form-body">
@@ -109,7 +109,7 @@
                                 <div class="form-actions">
                                     <div class="row">
                                         <div class="offset-md-3 col-md-9">
-                                            <button type="submit" class="btn btn-info m-r-20">Submit</button>
+                                            <button type="submit" class="btn btn-info m-r-20">Update</button>
                                             <a class="btn btn-default" href="{{route('documentmanagement.index')}}">Cancel</a>
                                         </div>
                                     </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\EmploymentStatusVerification;
 use Illuminate\Http\Request;
 
 class employmentstatusverificationController extends Controller
@@ -14,7 +15,8 @@ class employmentstatusverificationController extends Controller
      */
     public function index()
     {
-        return view('Admin.Recruitment.EmploymentStatusVerification.view');
+        $employmentstatusverification = EmploymentStatusVerification::all();
+        return view('Admin.EmployeeManagement.EmploymentStatusVerification.view', compact('employmentstatusverification'));
     }
 
     /**
@@ -24,7 +26,8 @@ class employmentstatusverificationController extends Controller
      */
     public function create()
     {
-        return view('Admin.Recruitment.EmploymentStatusVerification.add');
+        $employmentstatusverification = EmploymentStatusVerification::all();
+        return view('Admin.Recruitment.EmploymentStatusVerification.add', compact('employmentstatusverification'));
     }
 
     /**
@@ -35,7 +38,9 @@ class employmentstatusverificationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        EmploymentStatusVerification::create($data);
+        return redirect()->route('employmentstatusverification.index')->with('success', 'Employment Staus Verification is created');
     }
 
     /**
@@ -57,8 +62,10 @@ class employmentstatusverificationController extends Controller
      */
     public function edit($id)
     {
-        //
+        $employmentstatusverification = EmploymentStatusVerification::findOrFail($id);
+        return view('Admin.Recruitment.EmploymentStatusVerification.edit', compact('employmentstatusverification'));
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -69,7 +76,11 @@ class employmentstatusverificationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data=$request->all();
+        $employmentstatusverification=EmploymentStatusVerification::findorFail($id);
+        $employmentstatusverification->update($data);
+        return redirect()->route('employmentstatusverification.index')->with('success','Employment Status Verification Updated Successfully');
+        
     }
 
     /**
@@ -80,6 +91,8 @@ class employmentstatusverificationController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $employmentstatusverification=EmploymentStatusVerification::findorFail($id);
+        $employmentstatusverification->delete();
+        return back()->with('flash_error','Deleted Successfully')->with('warning','Employment Status Verification Deleted Successfully');
     }
 }

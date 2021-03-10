@@ -12,7 +12,7 @@
                             class="fa fa-angle-right"></i>
                     </li>
 
-                    <li><a class="parent-item" href="{{route('documentmanagement.index')}}">Recruitment</a>&nbsp;<i
+                    <li><a class="parent-item" href="{{route('documentmanagement.index')}}">Employee Management</a>&nbsp;<i
                             class="fa fa-angle-right"></i>
                     </li>
                     <li class="active">Add Documents</li>
@@ -30,7 +30,7 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{ route('documentmanagement.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
                             <div class="form-body">
@@ -39,7 +39,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="staffname" required placeholder="Select Staff"
+                                        <input type="text" name="staffname"  required placeholder="Select Staff"
                                             class="form-control input-height"/>
                                     </div>
 
@@ -49,7 +49,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="bankaccountnumber" required placeholder="Bank Account Number"
+                                        <input type="text" name="bankaccountnumber" id="" required placeholder="Bank Account Number"
                                             class="form-control input-height"/>
                                     </div>
 

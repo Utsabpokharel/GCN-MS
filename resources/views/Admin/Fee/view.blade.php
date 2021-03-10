@@ -37,9 +37,24 @@
                             </thead>
                             <tbody>
 
-                                <tr>
+                                @foreach($fee as $value)
+                                                        <tr>
+                                                            <td>{{$loop->index+1}}</td>
+                                                            <td>{{$value->title}}</td>
+                                                            <td>{{$value->amount}}</td>
+                                                                <a href="{{route('fee.edit',$value->id) }}"
+                                                                   class="btn btn-primary btn-xs">
+                                                                    <i class="fa fa-pencil"></i>
+                                                                </a>
+                                                                <a href="{{ route('fee.destroy',$value->id) }}"
+                                                                    class="btn btn-danger btn-xs">
+                                                                    <i class="fa fa-trash-o "></i>
+                                                                </button>
 
-                                </tr>
+                                                            </td>
+                                                        </tr>
+                                    @endforeach
+                                
 
                             </tbody>
                             <tfoot>

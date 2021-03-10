@@ -14,7 +14,7 @@ class generalsettingsController extends Controller
      */
     public function index()
     {
-        return view('Admin.Settings.General Settings.view');
+        return view('Admin.Settings.General Settings.generalform');
     }
 
     /**
@@ -24,7 +24,7 @@ class generalsettingsController extends Controller
      */
     public function create()
     {
-        return view('Admin.Settings.General Settings.add');
+        return view('Admin.Settings.General Settings.generalform');
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\SMS;
 use Illuminate\Http\Request;
 
 class smsController extends Controller
@@ -14,7 +15,8 @@ class smsController extends Controller
      */
     public function index()
     {
-        return view('Admin.SMS.view');
+        $sms = SMS::all();
+        return view('Admin.SMS.view', compact('sms'));
     }
 
     /**
@@ -24,7 +26,8 @@ class smsController extends Controller
      */
     public function create()
     {
-        return view('Admin.SMS.add');
+        $sms = SMS::all();
+        return view('Admin.SMS.add', compact('sms'));
     }
 
     /**
@@ -35,7 +38,9 @@ class smsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        SMS::create($data);
+        return redirect()->route('SMS.view')->with('success', 'SMS Template created Successfully');
     }
 
     /**
@@ -57,7 +62,8 @@ class smsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $sms = SMS::findorfail($id);
+        return view('Admin.SMS.edit', compact('sms'));
     }
 
     /**
@@ -69,7 +75,10 @@ class smsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $sms = SMS::findorfail($id);
+        $sms->update($data);
+        return redirect()->route('education.view')->with('success', 'SMS Template Updated Successfully');
     }
 
     /**
@@ -80,6 +89,8 @@ class smsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $sms = SMS::findorfail($id);
+        $sms->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Employee License Deleted Successfully");
     }
 }

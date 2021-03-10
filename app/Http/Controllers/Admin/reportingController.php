@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Reporting;
 use Illuminate\Http\Request;
 
 class reportingController extends Controller
@@ -14,7 +15,8 @@ class reportingController extends Controller
      */
     public function index()
     {
-        return view('Admin.Recruitment.Reporting.view');
+        $reporting = Reporting::all();
+        return view('Admin.EmployeeManagement.Reporting.view', compact('reporting'));
     }
 
     /**
@@ -24,7 +26,8 @@ class reportingController extends Controller
      */
     public function create()
     {
-        return view('Admin.Recruitment.Reporting.add');
+        $reporting = Reporting::all();
+        return view('Admin.EmployeeManagement.Reporting.add', compact('reporting'));
     }
 
     /**
@@ -35,7 +38,9 @@ class reportingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Reporting::create($data);
+        return redirect()->route('reporting.index')->with('success', 'Reporting Line Up is created');
     }
 
     /**
@@ -57,7 +62,8 @@ class reportingController extends Controller
      */
     public function edit($id)
     {
-        //
+        $reporting = Reporting::findOrFail($id);
+        return view('Admin.EmployeeManagement.Reporting.edit', compact('reporting'));
     }
 
     /**
@@ -69,7 +75,10 @@ class reportingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $reporting = Reporting::findorFail($id);
+        $reporting->update($data);
+        return redirect()->route('reporting.index')->with('success', 'Reporting Line Up Updated Successfully');
     }
 
     /**
@@ -80,6 +89,8 @@ class reportingController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $reporting = Reporting::findorFail($id);
+        $reporting->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', 'Reporting Deleted Successfully');
     }
 }

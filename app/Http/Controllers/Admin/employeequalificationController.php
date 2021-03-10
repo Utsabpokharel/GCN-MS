@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\EmployeeQualification;
 use Illuminate\Http\Request;
 
 class employeequalificationController extends Controller
@@ -14,7 +15,8 @@ class employeequalificationController extends Controller
      */
     public function index()
     {
-        return view('Admin.Recruitment.EmployeeQualification.view');
+        $employeequalification = EmployeeQualification::all();
+        return view('Admin.EmployeeQualification.EmployeeQualification.view', compact('employeequalification'));
     }
 
     /**
@@ -24,7 +26,8 @@ class employeequalificationController extends Controller
      */
     public function create()
     {
-        return view('Admin.Recruitment.EmployeeQualification.add');
+        $employeequalification = EmployeeQualification::all();
+        return view('Admin.Recruitment.EmployeeQualification.add', compact('employeequalification'));
     }
 
     /**
@@ -35,7 +38,9 @@ class employeequalificationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        EmployeeQualification::create($data);
+        return redirect()->route('employeequalification.index')->with('success', 'Employee Qualification created Successfully');
     }
 
     /**
@@ -57,7 +62,8 @@ class employeequalificationController extends Controller
      */
     public function edit($id)
     {
-        //
+        $employeequalification = EmployeeQualification::findorfail($id);
+        return view('Admin.EmployeeManagement.EmployeeQualification.edit', compact('employeequalification'));
     }
 
     /**
@@ -69,7 +75,10 @@ class employeequalificationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $employeequalification = EmployeeQualification::findorfail($id);
+        $employeequalification->update($data);
+        return redirect()->route('employeequalification.index')->with('success', 'Employee Qualification Updated Successfully');
     }
 
     /**
@@ -80,6 +89,9 @@ class employeequalificationController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $employeequalification = EmployeeQualification::findorfail($id);
+        $employeequalification->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Employee Qualification Deleted Successfully");
+    
     }
 }

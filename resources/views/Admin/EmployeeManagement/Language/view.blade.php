@@ -38,9 +38,25 @@
                             </thead>
                             <tbody>
 
-                                <tr>
+                                @foreach($language as $value)
+                                                        <tr>
+                                                            <td>{{$loop->index+1}}</td>
+                                                            <td>{{$value->code}}</td>
+                                                            <td>{{$value->name}}</td>
+                                                            <td>{{$value->description}}</td>
+                                                             <td>
+                                                                <a href="{{route('language.edit',$value->id) }}"
+                                                                   class="btn btn-primary btn-xs">
+                                                                    <i class="fa fa-pencil"></i>
+                                                                </a>
+                                                                <a href="{{ route('language.destroy',$value->id) }}"
+                                                                    class="btn btn-danger btn-xs">
+                                                                    <i class="fa fa-trash-o "></i>
+                                                                </button>
 
-                                </tr>
+                                                            </td>
+                                                        </tr>
+                                    @endforeach
 
                             </tbody>
                             <tfoot>

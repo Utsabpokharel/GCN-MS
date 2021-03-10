@@ -12,7 +12,7 @@
                             class="fa fa-angle-right"></i>
                     </li>
 
-                    <li><a class="parent-item" href="{{route('employeeresignation.index')}}">Recruitment</a>&nbsp;<i
+                    <li><a class="parent-item" href="{{route('employeeresignation.index')}}">Employee Management</a>&nbsp;<i
                             class="fa fa-angle-right"></i>
                     </li>
                     <li class="active">Add Employee Resignation</li>
@@ -30,7 +30,7 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{ route('employeeresignation.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
                             <div class="form-body">

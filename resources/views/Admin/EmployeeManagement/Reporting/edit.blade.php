@@ -5,17 +5,17 @@
         <div class="page-bar">
             <div class="page-title-breadcrumb">
                 <div class=" pull-left">
-                    <div class="page-title">Add Course</div>
+                    <div class="page-title">Editing Reporting Line up</div>
                 </div>
                 <ol class="breadcrumb page-breadcrumb pull-right">
                     <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Home</a>&nbsp;<i
                             class="fa fa-angle-right"></i>
                     </li>
 
-                    <li><a class="parent-item" href="{{route('rcourse.index')}}">Course</a>&nbsp;<i
+                    <li><a class="parent-item" href="{{route('reporting.index')}}">Employee Management</a>&nbsp;<i
                             class="fa fa-angle-right"></i>
                     </li>
-                    <li class="active">Add Course</li>
+                    <li class="active">Editing Reporting Line Up</li>
                 </ol>
             </div>
         </div>
@@ -23,25 +23,47 @@
             <div class="col-md-12 col-sm-12">
                 <div class="card card-box">
                     <div class="card-head">
-                        <header>Add Course</header>
+                        <header> Editing Reporting Line Up</header>
                         <button id="panel-button" class="mdl-button mdl-js-button mdl-button--icon pull-right"
                             data-upgraded=",MaterialButton">
                             <i class="material-icons">more_vert</i>
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{ route('reporting.update',$reporting->id) }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
                             <div class="form-body">
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">Title
+                                    <label class="control-label col-md-3">Staff Name
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="title" id="title" required placeholder="enter title"
+                                        <input type="text" name="staffname" id="staffname" required placeholder="enter staffname"
                                             class="form-control input-height" value="" />
                                     </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Staff Code
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="text" name="staffcode" id="staffcode" required placeholder="enter staffcode"
+                                            class="form-control input-height " value="" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Designation
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="text" name="designation" id="designation" required
+                                            placeholder="Designation"
+                                            class="form-control input-height " value="" />
+                                    </div>
+
                                 </div>
 
                                 <div class="form-group row">
@@ -49,68 +71,49 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="department" id="department" required placeholder="enter Department"
-                                            class="form-control input-height " value="" />
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label class="control-label col-md-3">Coordinator
-                                        <span class="required"> * </span>
-                                    </label>
-                                    <div class="col-md-5">
-                                        <input type=text name="coordinator" id="coordinator" required
-                                            placeholder="Enter Name of Coordinator"
-                                            class="form-control input-height " value="" />
+                                        <input type="text" name="department" id="department" required
+                                            placeholder="Department"
+                                            class="form-control input-height" />
                                     </div>
 
                                 </div>
-
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">Currency
+                                    <label class="control-label col-md-3">Phone number
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="currency" id="currency" required
-                                            placeholder="Select Currency"
+                                        <input type="text" name="phonenumber" id="phonenumber" required
+                                            placeholder="Enter your phone Number"
                                             class="form-control input-height" />
                                     </div>
 
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">Version
+                                    <label class="control-label col-md-3">Email Address
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="version" id="version" required
-                                            placeholder="Enter version"
+                                        <input type="email" name="emailaddress" id="emailaddress" required
+                                            placeholder="Enter your email address"
                                             class="form-control input-height" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">Cost
+                                    <label class="control-label col-md-3">Reporting Manager
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="number" name="cost" id="cost" required
-                                            placeholder="Enter Cost"
-                                            class="form-control input-height" />
+                                        <input type="text" name="reportingmanager" id="reportingmanager" required placeholder="Reporting Manager"
+                                            class="form-control input-height" value="" />
                                     </div>
                                 </div>
-                               <div class="form-group row">
-                                    <label class="control-label col-md-3">Description
-                                        <span class="required"> * </span>
-                                    </label>
-                                    <div class="col-md-5">
-                                    <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
-                                    </div>
-                                </div>
+
                                 <div class="form-actions">
                                     <div class="row">
                                         <div class="offset-md-3 col-md-9">
-                                            <button type="submit" class="btn btn-info m-r-20">Submit</button>
-                                            <a class="btn btn-default" href="{{route('rcourse.index')}}">Cancel</a>
+                                            <button type="submit" class="btn btn-info m-r-20">Update</button>
+                                            <a class="btn btn-default" href="{{route('reporting.index')}}">Cancel</a>
                                         </div>
                                     </div>
                                 </div>

@@ -5,14 +5,14 @@
         <div class="page-bar">
             <div class="page-title-breadcrumb">
                 <div class=" pull-left">
-                    <div class="page-title">Add Disciplinary Cases Creation</div>
+                    <div class="page-title">Edit Disciplinary Cases Creation</div>
                 </div>
                 <ol class="breadcrumb page-breadcrumb pull-right">
                     <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Home</a>&nbsp;<i
                             class="fa fa-angle-right"></i>
                     </li>
 
-                    <li><a class="parent-item" href="{{route('disciplinary.index')}}">Recruitment</a>&nbsp;<i
+                    <li><a class="parent-item" href="{{route('disciplinary.index')}}">Employee Management</a>&nbsp;<i
                             class="fa fa-angle-right"></i>
                     </li>
                     <li class="active">Add Disciplinary Cases Creation</li>
@@ -30,7 +30,7 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{ route('disciplinary.update',$disciplinary->id) }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
                             <div class="form-body">
@@ -103,7 +103,7 @@
                                 <div class="form-actions">
                                     <div class="row">
                                         <div class="offset-md-3 col-md-9">
-                                            <button type="submit" class="btn btn-info m-r-20">Submit</button>
+                                            <button type="submit" class="btn btn-info m-r-20">Update</button>
                                             <a class="btn btn-default" href="{{route('disciplinary.index')}}">Cancel</a>
                                         </div>
                                     </div>
