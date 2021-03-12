@@ -18,7 +18,7 @@ class CreateVendorsTable extends Migration
             $table->string('fname');
             $table->string('lname');
             $table->string('gender');
-            $table->date('dateofbirth');
+            $table->date('dob');
             $table->string('registrationnumber')->nullable();
             $table->string('panvatnumber')->nullable();
             $table->string('image')->nullable();

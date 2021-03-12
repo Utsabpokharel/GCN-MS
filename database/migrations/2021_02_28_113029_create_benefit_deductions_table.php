@@ -15,6 +15,13 @@ class CreateBenefitDeductionsTable extends Migration
     {
         Schema::create('benefit_deductions', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->integer('bankno');
+            $table->float('amount');
+            $table->float('currency');
+            $table->string('payment');
+            $table->string('benefit');
+            $table->longText('reason');
             $table->timestamps();
         });
     }

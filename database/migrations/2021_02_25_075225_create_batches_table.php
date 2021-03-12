@@ -15,6 +15,12 @@ class CreateBatchesTable extends Migration
     {
         Schema::create('batches', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->date('year');
+            $table->string('month');
+            $table->string('course');
+            $table->string('section');
+            $table->string('shift');
             $table->timestamps();
         });
     }

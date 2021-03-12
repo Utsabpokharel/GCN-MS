@@ -15,6 +15,12 @@ class CreateVisitedsTable extends Migration
     {
         Schema::create('visiteds', function (Blueprint $table) {
             $table->id();
+            $table->time('visittime');
+            $table->date('visitdate');
+            $table->string('name');
+            $table->string('handledby');
+            $table->longText('remarks');
+            $table->string('purpose');
             $table->timestamps();
         });
     }

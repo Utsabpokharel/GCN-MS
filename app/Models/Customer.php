@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Customer extends Model
 {
+    use SoftDeletes;
+    protected $fillable = ['fname', 'lname', 'gender', 'dob', 'email', 'image','phone', 'mobile', 'city', 'district', 'permanent_address', 'temporary_address','customer_type','frontcitizenshipimage', 'backcitizenshipimage'];
     use HasFactory;
 }

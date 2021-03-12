@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Exam extends Model
 {
+    use SoftDeletes;
+    protected $fillable = ['name', 'course','examdate'];
     use HasFactory;
 }

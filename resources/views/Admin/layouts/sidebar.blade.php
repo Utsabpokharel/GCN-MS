@@ -781,13 +781,13 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item">
-                                <a href="invoice.index" class="nav-link ">
-                                    <span class="title">Check In</span>
+                                <a href="{{route('cashin.index')}}" class="nav-link ">
+                                    <span class="title">Cash In</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="invoice.index" class="nav-link ">
-                                    <span class="title">Check out</span>
+                                <a href="{{route('cashout.index')}}" class="nav-link ">
+                                    <span class="title">Cash out</span>
                                 </a>
                             </li>
                         </ul>

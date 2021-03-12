@@ -25,7 +25,8 @@ class cashinController extends Controller
      */
     public function create()
     {
-        //
+    
+        
     }
 
     /**

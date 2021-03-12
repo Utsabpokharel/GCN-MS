@@ -15,6 +15,9 @@ class CreateStaffattsTable extends Migration
     {
         Schema::create('staffatts', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('attendance');
+            $table->longText('remarks');  
             $table->timestamps();
         });
     }

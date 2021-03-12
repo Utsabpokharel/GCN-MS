@@ -15,6 +15,12 @@ class CreateAdvancedsTable extends Migration
     {
         Schema::create('advanceds', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->integer('bankno');
+            $table->float('amount');
+            $table->float('currency');
+            $table->string('payment');
+            $table->longText('reason');
             $table->timestamps();
         });
     }

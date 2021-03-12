@@ -15,6 +15,9 @@ class CreateTeacherattsTable extends Migration
     {
         Schema::create('teacheratts', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('attendance');
+            $table->longText('remarks');  
             $table->timestamps();
         });
     }

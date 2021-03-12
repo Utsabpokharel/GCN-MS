@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Teacher extends Model
 {
+    use SoftDeletes;
+    protected $fillable = ['fname', 'lname','email','image','phone','teachcat',
+    'batch','course','teachtime','address'];
     use HasFactory;
 }

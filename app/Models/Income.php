@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Income extends Model
 {
+    use SoftDeletes;
+    protected $fillable = ['incdate','amount','paidby','catid','payment','receivedby'];
     use HasFactory;
 }

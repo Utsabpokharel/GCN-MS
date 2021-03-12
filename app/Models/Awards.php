@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Awards extends Model
 {
+    protected $fillable = ['staffname', 'awaname', 'gift','awadate','thankyou'];
     use HasFactory;
 }

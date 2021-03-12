@@ -15,6 +15,8 @@ class CreateEnquiryCategoriesTable extends Migration
     {
         Schema::create('enquiry_categories', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->longText('description');
             $table->timestamps();
         });
     }
