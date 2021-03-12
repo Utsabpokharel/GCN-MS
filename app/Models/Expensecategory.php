@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Expensecategory extends Model
 {
+    use SoftDeletes;
+    protected $fillable = ['name', 'description'];
     use HasFactory;
 }

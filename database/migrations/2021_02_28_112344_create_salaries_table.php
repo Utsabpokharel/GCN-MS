@@ -15,6 +15,14 @@ class CreateSalariesTable extends Migration
     {
         Schema::create('salaries', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('designation');
+            $table->string('pan');
+            $table->float('amount');
+            $table->float('currency');
+            $table->integer('bankno');
+            $table->string('payment');
+            $table->date('joindate');
             $table->timestamps();
         });
     }

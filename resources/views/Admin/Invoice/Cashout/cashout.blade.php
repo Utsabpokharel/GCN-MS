@@ -22,7 +22,7 @@ table, th, td {
                     <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Home</a>&nbsp;<i
                             class="fa fa-angle-right"></i>
                     </li>
-                    <li><a class="parent-item" href="{{route('invoice.index')}}">Invoice</a>&nbsp;<i
+                    <li><a class="parent-item" href="{{route('cashout.index')}}">Invoice</a>&nbsp;<i
                             class="fa fa-angle-right"></i>
                     </li>
                     <li class="active">All Cashout</li>

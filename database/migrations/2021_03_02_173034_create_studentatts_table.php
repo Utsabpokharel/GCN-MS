@@ -15,6 +15,9 @@ class CreateStudentattsTable extends Migration
     {
         Schema::create('studentatts', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('attendance');
+            $table->longText('remarks');  
             $table->timestamps();
         });
     }

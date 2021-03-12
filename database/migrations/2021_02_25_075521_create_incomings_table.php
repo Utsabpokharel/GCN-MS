@@ -15,6 +15,12 @@ class CreateIncomingsTable extends Migration
     {
         Schema::create('incomings', function (Blueprint $table) {
             $table->id();
+            $table->time('intime');
+            $table->date('indate');
+            $table->string('calledby');
+            $table->string('receivedby');
+            $table->longText('remarks');
+            $table->string('purpose');
             $table->timestamps();
         });
     }

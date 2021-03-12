@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Enquiry extends Model
 {
+    use SoftDeletes;
+    protected $fillable = ['name', 'category', 'source', 'endate', 'entime', 'remarks'];
     use HasFactory;
 }

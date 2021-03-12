@@ -15,6 +15,12 @@ class CreateOutgoingsTable extends Migration
     {
         Schema::create('outgoings', function (Blueprint $table) {
             $table->id();
+            $table->time('outtime');
+            $table->date('outdate');
+            $table->string('calledby');
+            $table->string('receivedby');
+            $table->longText('remarks');
+            $table->string('purpose');
             $table->timestamps();
         });
     }

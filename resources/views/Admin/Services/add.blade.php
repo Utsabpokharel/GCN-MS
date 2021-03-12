@@ -65,8 +65,8 @@
 												<label class="control-label col-md-3">Description
 												</label>
 												<div class="col-md-5">	
-													<input type="text"name="description" class="form-control input-height @error('description') is-invalid @enderror" value="{{old('description','')}}"
-            										placeholder="Enter Description" >
+												<textarea name="description" cols="20" rows="10" class="form-control @error('description') is-invalid @enderror"
+                                        		placeholder="Enter Description" >{{old('description','')}}</textarea>
             										@error('description')
                 										<span class="invalid-feedback" role="alert">
 															<strong>{{$message}}</strong>

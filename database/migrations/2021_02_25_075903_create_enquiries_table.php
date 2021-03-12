@@ -15,6 +15,12 @@ class CreateEnquiriesTable extends Migration
     {
         Schema::create('enquiries', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('category');
+            $table->string('source');
+            $table->date('endate');
+            $table->time('entime');
+            $table->longText('remarks');
             $table->timestamps();
         });
     }

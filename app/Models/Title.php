@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Title extends Model
 {
+    use SoftDeletes;
+    protected $fillable = ['title', 'description'];
     use HasFactory;
 }

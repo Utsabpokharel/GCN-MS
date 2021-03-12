@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Salary extends Model
 {
+    use SoftDeletes;
+    protected $fillable = ['name', 'designation','pan','amount','currency','bankno','payment','joindate',];
     use HasFactory;
 }

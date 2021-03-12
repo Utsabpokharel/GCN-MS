@@ -15,6 +15,12 @@ class CreateCategoriesTable extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
+            $table->date('incdate');
+            $table->float('amount');
+            $table->string('paidby');
+            $table->string('catid');
+            $table->string('payment');
+            $table->string('receivedby');
             $table->timestamps();
         });
     }

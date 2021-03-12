@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class BenefitDeduction extends Model
 {
+    protected $fillable = ['name', 'bankno', 'amount', 'currency', 'payment','benefit', 'reason'];
     use HasFactory;
 }

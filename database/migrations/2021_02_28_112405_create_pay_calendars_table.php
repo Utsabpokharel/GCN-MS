@@ -15,6 +15,9 @@ class CreatePayCalendarsTable extends Migration
     {
         Schema::create('pay_calendars', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('payment');
+            $table->string('month');
             $table->timestamps();
         });
     }

@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PayCalendar extends Model
 {
+    use SoftDeletes;
+    protected $fillable = ['name', 'payment','month'];
     use HasFactory;
 }

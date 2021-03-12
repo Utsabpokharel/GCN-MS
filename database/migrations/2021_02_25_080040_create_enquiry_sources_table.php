@@ -15,6 +15,8 @@ class CreateEnquirySourcesTable extends Migration
     {
         Schema::create('enquiry_sources', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->longText('description');
             $table->timestamps();
         });
     }

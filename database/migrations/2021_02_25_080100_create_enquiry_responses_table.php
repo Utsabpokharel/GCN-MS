@@ -15,6 +15,7 @@ class CreateEnquiryResponsesTable extends Migration
     {
         Schema::create('enquiry_responses', function (Blueprint $table) {
             $table->id();
+            $table->longText('response');
             $table->timestamps();
         });
     }
