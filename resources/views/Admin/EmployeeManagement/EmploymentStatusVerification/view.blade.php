@@ -46,12 +46,12 @@
                                                             <td>{{$loop->index+1}}</td>
                                                             <td>{{$value->staffname}}</td>
                                                             <td>{{$value->staffcode}}</td>
-                                                            <td>{{$value->employmentstaus}}</td>
+                                                            <td>{{$value->employmentstatus}}</td>
                                                             <td>{{ $value->period }}</td>
                                                             <td>{{ $value->approvedon }}</td>
                                                             <td>{{ $value->approvedby }}</td>
-                                                            
-                                                            
+
+
 
                                                             <td>
                                                                 <a href="{{route('employmentstatusverification.edit',$value->id) }}"

@@ -27,7 +27,7 @@ class employmentstatusverificationController extends Controller
     public function create()
     {
         $employmentstatusverification = EmploymentStatusVerification::all();
-        return view('Admin.Recruitment.EmploymentStatusVerification.add', compact('employmentstatusverification'));
+        return view('Admin.EmployeeManagement.EmploymentStatusVerification.add', compact('employmentstatusverification'));
     }
 
     /**
@@ -63,7 +63,7 @@ class employmentstatusverificationController extends Controller
     public function edit($id)
     {
         $employmentstatusverification = EmploymentStatusVerification::findOrFail($id);
-        return view('Admin.Recruitment.EmploymentStatusVerification.edit', compact('employmentstatusverification'));
+        return view('Admin.EmployeeManagement.EmploymentStatusVerification.edit', compact('employmentstatusverification'));
     }
 
 
@@ -80,7 +80,7 @@ class employmentstatusverificationController extends Controller
         $employmentstatusverification=EmploymentStatusVerification::findorFail($id);
         $employmentstatusverification->update($data);
         return redirect()->route('employmentstatusverification.index')->with('success','Employment Status Verification Updated Successfully');
-        
+
     }
 
     /**

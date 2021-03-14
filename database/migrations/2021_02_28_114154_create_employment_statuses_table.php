@@ -19,7 +19,7 @@ class CreateEmploymentStatusesTable extends Migration
             $table->string('staffcode');
             $table->string('employmentstatus');
             $table->longText('description');
-            $table->tinyInteger('contract');
+            $table->tinyInteger('contract')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

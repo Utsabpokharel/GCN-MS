@@ -16,7 +16,7 @@ class employeeterminationController extends Controller
     public function index()
     {
         $employeetermination = EmployeeTermination::all();
-        return view('Admin.Recruitment.EmployeeTermination.view', compact('employeetermination'));
+        return view('Admin.EmployeeManagement.EmployeeTermination.view', compact('employeetermination'));
     }
 
     /**
@@ -26,9 +26,9 @@ class employeeterminationController extends Controller
      */
     public function create()
     {
-        
+
         $employeetermination = EmployeeTermination::all();
-        return view('Admin.Recruitment.EmployeeTermination.add', compact('employeetermination'));
+        return view('Admin.EmployeeManagement.EmployeeTermination.add', compact('employeetermination'));
     }
 
     /**

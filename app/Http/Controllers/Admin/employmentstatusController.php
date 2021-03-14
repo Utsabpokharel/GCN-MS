@@ -27,7 +27,7 @@ class employmentstatusController extends Controller
     public function create()
     {
         $employmentstatus = EmploymentStatus::all();
-        return view('Admin.Recruitment.EmploymentStatus.add');
+        return view('Admin.EmployeeManagement.EmploymentStatus.add');
     }
 
     /**
@@ -63,7 +63,7 @@ class employmentstatusController extends Controller
     public function edit($id)
     {
         $employmentstatus = EmploymentStatus::findorfail($id);
-        return view('Admin.EmployeeManagement.EmployeeTermination.edit', compact('employmentstatus'));
+        return view('Admin.EmployeeManagement.EmploymentStatus.edit', compact('employmentstatus'));
     }
 
     /**

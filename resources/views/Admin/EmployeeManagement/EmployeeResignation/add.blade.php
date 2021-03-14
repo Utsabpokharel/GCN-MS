@@ -5,7 +5,7 @@
         <div class="page-bar">
             <div class="page-title-breadcrumb">
                 <div class=" pull-left">
-                    <div class="page-title">Employee Resignation</div>
+                    <div class="page-title">Add Employee Resignation</div>
                 </div>
                 <ol class="breadcrumb page-breadcrumb pull-right">
                     <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Home</a>&nbsp;<i
@@ -30,7 +30,7 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                       <form action="{{ route('employeeresignation.store') }}" id="form_sample_1" class="form-horizontal" method="POST" autocomplete="on"
+                        <form action="{{ route('employeeresignation.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
                             <div class="form-body">
@@ -39,67 +39,44 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="staffname" required placeholder="Enter Employee Name"
+                                        <input type="text" name="staffname" id="staffname" required placeholder="Enter Staff Name"
                                             class="form-control input-height" value="" />
                                     </div>
                                 </div>
+
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Employee Code
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="staffcode" required placeholder="enter staffcode"
-                                            class="form-control input-height" value="" />
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label class="control-label col-md-3">Notice Date
-                                        <span class="required"> * </span>
-                                    </label>
-                                    <div class="col-md-5">
-                                        <input type="date" name="noticedate"
+                                        <input type="text" name="staffcode" id="staffcode" required placeholder="Enter Staff Code"
                                             class="form-control input-height " value="" />
                                     </div>
                                 </div>
-
-                                <div class="form-group row">
-                                    <label class="control-label col-md-3">Forward To
-                                        <span class="required"> * </span>
-                                    </label>
-                                    <div class="col-md-5">
-                                        <input type="text" name="forwardto" required
-                                            class="form-control input-height " value="" />
-                                    </div>
-
-                                </div>
-
-                                <div class="form-group row">
+                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Desired Resign Date
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="date" name="desireresigndate"
-                                            class="form-control input-height" />
+                                    <input type="date" name="desireresigndate" id="desireresigndate"
+                                            class="form-control input-height " value="" />
                                     </div>
-
                                 </div>
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Resignation Document
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="file" name="resignationdocument" required
-                                            class="form-control input-height" />
+                                    <input type="file" name="resignationdocument" id="resignationdocument"
+                                            class="form-control input-height " value="" />
                                     </div>
-
                                 </div>
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Reason
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                    <textarea name="reason" id="reason" cols="30" rows="10" class="form-control"></textarea>
+                                    <textarea name="reason" id="reason" cols="30" rows="10" class="form-control" value="" ></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -107,7 +84,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                    <textarea name="details" id="details" cols="30" rows="10" class="form-control"></textarea>
+                                    <textarea name="details" id="details" cols="30" rows="10" class="form-control" value=""></textarea>
                                     </div>
                                 </div>
 
