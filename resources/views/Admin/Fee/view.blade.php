@@ -41,7 +41,7 @@
                                 @foreach($fees as $value)
                                                         <tr>
                                                             <td>{{$loop->index+1}}</td>
-                                                            <td>{{ $value->studentid }}
+                                                            <td>{{$value->studentid}}
                                                             <td>{{$value->title}}</td>
                                                             <td>{{$value->amount}}</td>
                                                             <td>
@@ -49,7 +49,7 @@
                                                                    class="btn btn-primary btn-xs">
                                                                     <i class="fa fa-pencil"></i>
                                                                 </a>
-                                                                <a href="{{ route('fee.destroy',$value->id) }}"
+                                                                <a href="{{route('fee.destroy',$value->id)}}"
                                                                     class="btn btn-danger btn-xs">
                                                                     <i class="fa fa-trash-o "></i>
                                                                 </button>
@@ -57,7 +57,7 @@
                                                             </td>
                                                         </tr>
                                     @endforeach
-                                
+
 
                             </tbody>
                             <tfoot>

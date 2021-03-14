@@ -38,7 +38,7 @@ class feeController extends Controller
      */
     public function store(Request $request)
     {
-         $data = $request->all();
+        $data = $request->all();
         Fee::create($data);
         return redirect()->route('fee.index')->with('success', 'Fee created Successfully');
     }
@@ -91,6 +91,6 @@ class feeController extends Controller
     {
         $fees = Fee::findorfail($id);
         $fees->delete();
-        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Fee Deleted Successfully");
+        return redirect()->route('fee.index');
     }
 }

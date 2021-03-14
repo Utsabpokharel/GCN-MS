@@ -5,14 +5,14 @@
         <div class="page-bar">
             <div class="page-title-breadcrumb">
                 <div class=" pull-left">
-                    <div class="page-title">Employment Status Verification</div>
+                    <div class="page-title">Add Employment Status Verification</div>
                 </div>
                 <ol class="breadcrumb page-breadcrumb pull-right">
                     <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Home</a>&nbsp;<i
                             class="fa fa-angle-right"></i>
                     </li>
 
-                    <li><a class="parent-item" href="{{route('employmentstatusverification.index')}}">EmployeeManagement</a>&nbsp;<i
+                    <li><a class="parent-item" href="{{route('employmentstatusverification.index')}}">Employee Management</a>&nbsp;<i
                             class="fa fa-angle-right"></i>
                     </li>
                     <li class="active">Add Employment Status Verification</li>
@@ -32,7 +32,6 @@
                     <div class="card-body" id="bar-parent">
                         <form action="{{ route('employmentstatusverification.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
-                            @method('GET')
                             {{csrf_field()}}
                             <div class="form-body">
                                 <div class="form-group row">
@@ -40,59 +39,56 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="staffname" required placeholder="Enter Employee Name"
+                                        <input type="text" name="staffname" id="staffname" required placeholder="Enter Employee Name"
                                             class="form-control input-height" value="" />
                                     </div>
                                 </div>
+
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Employee Code
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="staffcode" required placeholder="enter staffcode"
-                                            class="form-control input-height" value="" />
+                                        <input type="text" name="staffcode" id="staffcode" required placeholder="Enter Employee Code"
+                                            class="form-control input-height " value="" />
                                     </div>
                                 </div>
-
-                                <div class="form-group row">
+                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Employment Status
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="employmentstatus"
+                                      <input type="text" name="employmentstatus" id="employmentstatus" required placeholder="Enter Employee Status"
                                             class="form-control input-height " value="" />
                                     </div>
                                 </div>
-
-                                <div class="form-group row">
+                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Period
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                    <input type="text" name="period"
+                                      <input type="text" name="period" id="period" required placeholder="Enter Period"
                                             class="form-control input-height " value="" />
+                                    </div>
                                 </div>
-                                </div>
-                                <div class="form-group row">
+                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Approved On
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                    <input type="date" name="approvedon"
+                                      <input type="date" name="approvedon" id="approvedon"
                                             class="form-control input-height " value="" />
+                                    </div>
                                 </div>
-                                </div>
-                                <div class="form-group row">
+                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Approved By
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                    <input type="text" name="approvedby" required placeholder="Approved By"
+                                      <input type="text" name="approvedby" id="approvedby" required placeholder="Approved By"
                                             class="form-control input-height " value="" />
+                                    </div>
                                 </div>
-                                </div>
-
-
 
                                 <div class="form-actions">
                                     <div class="row">

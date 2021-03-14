@@ -58,7 +58,6 @@ use App\Http\Controllers\Admin\languageController;
 use App\Http\Controllers\Admin\skillController;
 use App\Http\Controllers\Admin\licenseController;
 use App\Http\Controllers\Admin\reportingController;
-use App\Http\Controllers\Admin\employeecontractController;
 use App\Http\Controllers\Admin\employeeotherinfoController;
 use App\Http\Controllers\Admin\employeequalificationController;
 use App\Http\Controllers\Admin\employeeresignationController;
@@ -176,8 +175,6 @@ Route::resource('license', licenseController::class);
 Route::resource('disciplinary', disciplinaryController::class);
 // reporting
 Route::resource('reporting', reportingController::class);
-// employee contract
-Route::resource('employeecontract', employeecontractController::class);
 // employee other info
 Route::resource('employeeotherinfo', employeeotherinfoController::class);
 // employee qualification
@@ -185,7 +182,7 @@ Route::resource('employeequalification', employeequalificationController::class)
 // employee resignation
 Route::resource('employeeresignation', employeeresignationController::class);
 // employment status
-Route::resource('employmentstatus', employmentStatusController::class);
+Route::resource('employmentstatus', employmentstatusController::class);
 // employment status verification
 Route::resource('employmentstatusverification', employmentstatusverificationController::class);
 // employee termination

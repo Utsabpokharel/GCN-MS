@@ -16,7 +16,7 @@ class employeeresignationController extends Controller
     public function index()
     {
         $employeeresignation = EmployeeResignation::all();
-        return view('Admin.Recruitment.EmployeeResignation.view', compact('employeeresignation'));
+        return view('Admin.EmployeeManagement.EmployeeResignation.view', compact('employeeresignation'));
     }
 
     /**
@@ -27,7 +27,7 @@ class employeeresignationController extends Controller
     public function create()
     {
         $employeeresignation = EmployeeResignation::all();
-        return view('Admin.Recruitment.EmployeeResignation.add', compact('employeeresignation'));
+        return view('Admin.EmployeeManagement.EmployeeResignation.add', compact('employeeresignation'));
     }
 
     /**
