@@ -30,6 +30,7 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
+                                    <th>Student </th>
                                     <th>Title</th>
                                     <th>Amount</th>
                                     <th>Actions</th>
@@ -37,11 +38,13 @@
                             </thead>
                             <tbody>
 
-                                @foreach($fee as $value)
+                                @foreach($fees as $value)
                                                         <tr>
                                                             <td>{{$loop->index+1}}</td>
+                                                            <td>{{ $value->studentid }}
                                                             <td>{{$value->title}}</td>
                                                             <td>{{$value->amount}}</td>
+                                                            <td>
                                                                 <a href="{{route('fee.edit',$value->id) }}"
                                                                    class="btn btn-primary btn-xs">
                                                                     <i class="fa fa-pencil"></i>
@@ -60,6 +63,7 @@
                             <tfoot>
                                 <tr>
                                    <th>#</th>
+                                   <th>Student</th>
                                     <th>Title</th>
                                     <th>Amount</th>
                                     <th>Actions</th>

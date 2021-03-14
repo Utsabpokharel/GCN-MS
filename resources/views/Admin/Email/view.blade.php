@@ -41,7 +41,7 @@
                                                             <td>{{$loop->index+1}}</td>
                                                             <td>{{$value->templatename}}</td>
                                                             <td>{{$value->emailtemplate}}</td>
-                                                            <td> </td>
+
 
                                                             <td>
                                                                 <a href="{{route('email.edit',$value->id) }}"

@@ -40,7 +40,7 @@ class licenseController extends Controller
     {
         $data = $request->all();
         License::create($data);
-        return redirect()->route('License.view')->with('success', 'Employee License created Successfully');
+        return redirect()->route('license.index')->with('success', 'Employee License created Successfully');
     }
 
     /**

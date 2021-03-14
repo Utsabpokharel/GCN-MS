@@ -16,7 +16,7 @@ class employeeterminationController extends Controller
     public function index()
     {
         $employeetermination = EmployeeTermination::all();
-        return view('Admin.Recruitment.EmployeeTermination.view', compact('employeetermintion'));
+        return view('Admin.Recruitment.EmployeeTermination.view', compact('employeetermination'));
     }
 
     /**
@@ -26,6 +26,7 @@ class employeeterminationController extends Controller
      */
     public function create()
     {
+        
         $employeetermination = EmployeeTermination::all();
         return view('Admin.Recruitment.EmployeeTermination.add', compact('employeetermination'));
     }
@@ -39,6 +40,9 @@ class employeeterminationController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        $imagepath = 'images/EmployeeTermination/';
+
+        $data['terminationdocument'] = save_image($request->terminationdocument, 150, 150, $imagepath);
         EmployeeTermination::create($data);
         return redirect()->route('employeetermination.index')->with('success', 'Employee Termination created successfully');
     }

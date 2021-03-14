@@ -33,6 +33,7 @@
                         <form action="{{ route('employeetermination.update',$employeetermination->id) }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
+                            @method('PUT')
                             <div class="form-body">
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Employee Name
@@ -40,7 +41,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="staffname" required placeholder="Enter Employee Name"
-                                            class="form-control input-height" value="" />
+                                            class="form-control input-height" value="{{ old('staffname',$employeetermination->staffname) }}" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -48,8 +49,8 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="staffcode" required placeholder="enter staffcode"
-                                            class="form-control input-height" value="" />
+                                        <input type="text" name="staffcode" required placeholder="Enter staffcode"
+                                            class="form-control input-height" value="{{ old('staffcode',$employeetermination->staffcode) }}" />
                                     </div>
                                 </div>
                                  <div class="form-group row">
@@ -58,7 +59,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="changestatus" required placeholder="changestatus"
-                                            class="form-control input-height" value="" />
+                                            class="form-control input-height" value="{{ old('changestatus',$employeetermination->changestatus) }}" />
                                     </div>
                                 </div>
 
@@ -69,7 +70,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="date" name="noticedate"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{ old('noticedate',$employeetermination->noticedate) }}" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -78,7 +79,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="date" name="serviceenddate"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{ old('serviceenddate',$employeetermination->serviceenddate) }}" />
                                     </div>
                                 </div>
 
@@ -88,7 +89,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="forwardto" required
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{ old('forwardto',$employeetermination->forwardto) }}" />
                                     </div>
 
                                 </div>
@@ -99,7 +100,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="file" name="terminationdocument" required
-                                            class="form-control input-height" />
+                                            class="form-control input-height" value="{{ old('terminationdocument',$employeetermination->terminationdocument) }}" />
                                     </div>
 
                                 </div>
@@ -108,7 +109,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                    <textarea name="reason" id="reason" cols="30" rows="10" class="form-control"></textarea>
+                                    <textarea name="reason" id="reason" cols="30" rows="10" class="form-control" value="{{ old('reason',$employeetermination->reason) }}"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -116,7 +117,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                    <textarea name="details" id="details" cols="30" rows="10" class="form-control"></textarea>
+                                    <textarea name="details" id="details" cols="30" rows="10" class="form-control" value="{{ old('details',$employeetermination->details) }}"></textarea>
                                     </div>
                                 </div>
 

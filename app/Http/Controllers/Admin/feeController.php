@@ -16,7 +16,7 @@ class feeController extends Controller
     public function index()
     {
         $fees = Fee::all();
-        return view('Admin.Fee.view', compact('fee'));
+        return view('Admin.Fee.view', compact('fees'));
     }
 
     /**
@@ -27,7 +27,7 @@ class feeController extends Controller
     public function create()
     {
         $fees = Fee::all();
-        return view('Admin.Fee.add', compact('fee'));
+        return view('Admin.Fee.add', compact('fees'));
     }
 
     /**
@@ -38,7 +38,9 @@ class feeController extends Controller
      */
     public function store(Request $request)
     {
-        
+         $data = $request->all();
+        Fee::create($data);
+        return redirect()->route('fee.index')->with('success', 'Fee created Successfully');
     }
 
     /**
@@ -60,7 +62,8 @@ class feeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $fees = Fee::findorfail($id);
+        return view('Admin.Fee.edit', compact('fees'));
     }
 
     /**
@@ -72,7 +75,10 @@ class feeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $fees = Fee::findorfail($id);
+        $fees->update($data);
+        return redirect()->route('fee.index')->with('success', 'Fee Updated Successfully');
     }
 
     /**
@@ -83,6 +89,8 @@ class feeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $fees = Fee::findorfail($id);
+        $fees->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Fee Deleted Successfully");
     }
 }

@@ -32,6 +32,7 @@
                     <div class="card-body" id="bar-parent">
                         <form action="{{ route('skill.update',$skill->id) }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
+                            @method('PUT')
                             {{csrf_field()}}
                             <div class="form-body">
                                 <div class="form-group row">
@@ -39,8 +40,8 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="code" id="code" required placeholder="enter code"
-                                            class="form-control input-height" value="" />
+                                        <input type="text" name="code" id="code" required placeholder=" Enter code"
+                                            class="form-control input-height" value="{{old('code',$skill->code)}}" />
                                     </div>
                                 </div>
 
@@ -50,7 +51,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="name" id="name" required placeholder="enter name"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{ old('name',$skill->name) }}" />
                                     </div>
                                 </div>
                                  <div class="form-group row">
@@ -58,7 +59,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                    <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+                                    <textarea name="description" id="description" cols="30" rows="10" class="form-control" value="{{ old('description',$skill->description) }}"></textarea>
                                     </div>
                                 </div>
 

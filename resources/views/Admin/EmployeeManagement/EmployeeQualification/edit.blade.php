@@ -33,6 +33,7 @@
                         <form action="{{ route('employeequalification.update',$employeequalification->id) }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
+                            @method('PUT')
                             <div class="form-body">
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Employee Code
@@ -40,7 +41,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="staffcode" required placeholder="Enter Employee code"
-                                            class="form-control input-height" value="" />
+                                            class="form-control input-height" value="{{ old('staffcode',$employeequalification->staffcode) }}" />
                                     </div>
                                 </div>
 
@@ -50,7 +51,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="staffname" required placeholder="Enter Employee Name"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{ old('staffname',$employeequalification->staffname) }}" />
                                     </div>
                                 </div>
 
@@ -59,7 +60,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                    <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+                                    <textarea name="description" id="description" cols="30" rows="10" class="form-control" value="{{ old('description',$employeequalification->description) }}"></textarea>
                                     </div>
                                 </div>
 

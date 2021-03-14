@@ -33,6 +33,7 @@
                         <form action="{{ route('reporting.update',$reporting->id) }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
+                            @method('PUT')
                             <div class="form-body">
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Staff Name
@@ -40,7 +41,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="staffname" id="staffname" required placeholder="enter staffname"
-                                            class="form-control input-height" value="" />
+                                            class="form-control input-height" value="{{ old('staffname',$reporting->staffname) }}" />
                                     </div>
                                 </div>
 
@@ -50,7 +51,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="staffcode" id="staffcode" required placeholder="enter staffcode"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{ old('staffcode',$reporting->staffcode) }}" />
                                     </div>
                                 </div>
 
@@ -61,7 +62,7 @@
                                     <div class="col-md-5">
                                         <input type="text" name="designation" id="designation" required
                                             placeholder="Designation"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{ old('designation',$reporting->designation) }}" />
                                     </div>
 
                                 </div>
@@ -73,7 +74,7 @@
                                     <div class="col-md-5">
                                         <input type="text" name="department" id="department" required
                                             placeholder="Department"
-                                            class="form-control input-height" />
+                                            class="form-control input-height" value="{{ old('department',$reporting->department) }}" />
                                     </div>
 
                                 </div>
@@ -84,7 +85,7 @@
                                     <div class="col-md-5">
                                         <input type="text" name="phonenumber" id="phonenumber" required
                                             placeholder="Enter your phone Number"
-                                            class="form-control input-height" />
+                                            class="form-control input-height" value="{{ old('phonenumber',$reporting->phonenumber) }}" />
                                     </div>
 
                                 </div>
@@ -96,7 +97,7 @@
                                     <div class="col-md-5">
                                         <input type="email" name="emailaddress" id="emailaddress" required
                                             placeholder="Enter your email address"
-                                            class="form-control input-height" />
+                                            class="form-control input-height" value="{{ old('emailaddress',$reporting->emailaddress) }}" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -105,7 +106,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="reportingmanager" id="reportingmanager" required placeholder="Reporting Manager"
-                                            class="form-control input-height" value="" />
+                                            class="form-control input-height" value="{{ old('reportingmanager',$reporting->reportingmanager) }}" />
                                     </div>
                                 </div>
 

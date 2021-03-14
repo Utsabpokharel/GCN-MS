@@ -32,14 +32,15 @@
                         <form action="{{ route('email.update',$sms->id) }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
+                            @method('PUT')
                             <div class="form-body">
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Template Name
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="name" required placeholder="Template Name"
-                                            class="form-control input-height" value="" />
+                                        <input type="text" name="templatename" required placeholder="Template Name"
+                                            class="form-control input-height" value="{{ old('templatename',$email->templatename) }}" />
                                     </div>
                                 </div>
 
@@ -48,7 +49,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+                                        <textarea name="" id="description" cols="30" rows="10" class="form-control" value="{{ old('emailtemplate',$email->emailtemplate) }}"></textarea>
                                     </div>
 
                                 </div>

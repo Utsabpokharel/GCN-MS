@@ -33,6 +33,7 @@
                         <form action="{{ route('employeeotherinfo.update',$employeeotherinfo->id) }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
+                            @method('PUT')
                             <div class="form-body">
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Employee Code
@@ -40,7 +41,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="staffcode" required placeholder="enter staffcode"
-                                            class="form-control input-height" value="" />
+                                            class="form-control input-height" value="{{ old('staffcode',$employeeotherinfo->staffcode) }}" />
                                     </div>
                                 </div>
 
@@ -50,7 +51,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="title" required placeholder="title"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{ old('title',$employeeotherinfo->title) }}" />
                                     </div>
                                 </div>
 
@@ -60,7 +61,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="organisation"required placeholder="organisation" required
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{ old('organisation',$employeeotherinfo->organisation) }}" />
                                     </div>
 
                                 </div>
@@ -71,7 +72,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="fathername"
-                                            class="form-control input-height" />
+                                            class="form-control input-height" value="{{ old('fathername',$employeeotherinfo->fathername) }}" />
                                     </div>
 
                                 </div>
@@ -81,7 +82,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="mothername" required
-                                            class="form-control input-height" />
+                                            class="form-control input-height" value="{{ old('mothername',$employeeotherinfo->mothername) }}" />
                                     </div>
 
                                 </div>
@@ -91,7 +92,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="grandfathername" required
-                                            class="form-control input-height" />
+                                            class="form-control input-height" value="{{ old('grandfathername',$employeeotherinfo->grandfathername) }}" />
                                     </div>
 
                                 </div>
@@ -101,7 +102,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="parentcontactnumber" required
-                                            class="form-control input-height" />
+                                            class="form-control input-height" value="{{ old('parentcontactnumber',$employeeotherinfo->parentcontactnumber) }}" />
                                     </div>
 
                                 </div>
@@ -110,8 +111,8 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                    <input type="text" name="maritalstatus" placeholder="bloodgroup" required
-                                            class="form-control input-height " value="" />
+                                    <input type="text" name="maritalstatus" placeholder="Marital Status" required
+                                            class="form-control input-height " value="{{ old('maritalstatus',$employeeotherinfo->maritalstatus) }}" />
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -120,7 +121,7 @@
                                     </label>
                                     <div class="col-md-5">
                                     <input type="text" name="spousename" placeholder="Enter name of your Spouse" required
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{ old('spousename',$employeeotherinfo->spousename) }}" />
                                 </div>
                             </div>
 
@@ -138,7 +139,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="emergencyperson" required
-                                            class="form-control input-height" />
+                                            class="form-control input-height" value="{{ old('emergencyperson',$employeeotherinfo->emergencyperson) }}" />
                                     </div>
 
                                 </div>
@@ -148,7 +149,7 @@
                                     </label>
                                     <div class="col-md-5">
                                     <input type="text" name="emergencynumber" placeholder="emergencynumber" required
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{ old('emergencynumber',$employeeotherinfo->emergencynumber) }}" />
                                 </div>
                             </div>
 

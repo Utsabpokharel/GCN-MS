@@ -39,6 +39,14 @@ class documentmanagementController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        $imagepath = 'images/Document/';
+
+        $data['pandocument'] = save_image($request->pandocument, 150, 150, $imagepath);
+        $data['pfdocument'] = save_image($request->pfdocument, 150, 150, $imagepath);
+        $data['citdocument'] = save_image($request->citdocument, 150, 150, $imagepath);
+        $data['appointmentdocument'] = save_image($request->appointmentdocument, 150, 150, $imagepath);
+        $data['contractdocument'] = save_image($request->offer_letter, 150, 150, $imagepath);
+
         DocumentManagement::create($data);
         return redirect()->route('documentmanagement.index')->with('success', 'Employee Documents created Successfully');
     }
@@ -77,6 +85,43 @@ class documentmanagementController extends Controller
     {
         $data = $request->all();
         $documentmanagement = DocumentManagement::findorfail($id);
+        $data = $request->except('pandocument', 'pfdocument', 'citdocument', 'appointmentdocument', 'contractdocument');
+        if ($request->hasFile('pandocument')) {
+            $data['pandocument'] = save_image($request->image, 150, 150, $this->imagePath());
+            delete_image($documentmanagement->image, $this->imagePath());
+        } else {
+            $data['pandocument'] = $request->current_pandocument;
+        }
+
+        if ($request->hasFile('pfdocument')) {
+            $data['pfdocument'] = save_image($request->pfdocument, 150, 150, $this->imagePath());
+            delete_image($documentmanagement->frontcitizenshipimage, $this->imagePath());
+        } else {
+
+            $data['pfdocument'] = $request->current_pfdocument;
+        }
+        if ($request->hasFile('citdocument')) {
+            $data['citdocument'] = save_image($request->citdocument, 150, 150, $this->imagePath());
+            delete_image($documentmanagement->citdocument, $this->imagePath());
+        } else {
+
+            $data['citdocument'] = $request->current_citdocument;
+        }
+        if ($request->hasFile('appointmentdocument')) {
+            $data['appointmentdocument'] = save_image($request->appointmentdocument, 150, 150, $this->imagePath());
+            delete_image($documentmanagement->resume, $this->imagePath());
+        } else {
+
+            $data['appointmentdocument'] = $request->current_appointmentdocument;
+        }
+        if ($request->hasFile('contractdocument')) {
+            $data['contractdocument'] = save_image($request->contractdocument, 150, 150, $this->imagePath());
+            delete_image($documentmanagement->contractdocument, $this->imagePath());
+        } else {
+
+            $data['contractdocument'] = $request->current_contractdocument;
+        }
+
         $documentmanagement->update($data);
         return redirect()->route('documentmanagement.index')->with('success', 'Employee Document Updated Successfully');
     }
@@ -92,5 +137,9 @@ class documentmanagementController extends Controller
         $documentmanagement = DocumentManagement::findorfail($id);
         $documentmanagement->delete();
         return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Employee Document Deleted Successfully");
+    }
+    protected function imagePath()
+    {
+        return "images/Document/";
     }
 }

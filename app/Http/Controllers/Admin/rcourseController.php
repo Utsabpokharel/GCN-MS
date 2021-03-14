@@ -41,9 +41,7 @@ class rcourseController extends Controller
 
         $data = $request->all();
         RCourse::create($data);
-        return redirect()->route('rcourse
-        
-        .index')->with('success', 'Subject is created');
+        return redirect()->route('rcourse.index')->with('success', 'Subject is created');
     }
 
     /**
@@ -81,7 +79,7 @@ class rcourseController extends Controller
         $data = $request->all();
         $rcourse = RCourse::findorFail($id);
         $rcourse->update($data);
-        return redirect()->route('rcourse.index')->with('success', 'Subject Updated Successfully');
+        return redirect()->route('rcourse.index');
     }
 
     /**
@@ -94,6 +92,6 @@ class rcourseController extends Controller
     {
         $rcourse = RCourse::findorFail($id);
         $rcourse->delete();
-        return back()->with('flash_error', 'Deleted Successfully')->with('warning', 'Subject Deleted Successfully');
+        return back()->with('flash_error', 'Deleted Successfully');
     }
 }

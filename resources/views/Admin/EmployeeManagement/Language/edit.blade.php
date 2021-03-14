@@ -33,6 +33,7 @@
                         <form action="{{ route('language.update',$language->id) }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
+                            @method('PUT')
                             <div class="form-body">
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Code
@@ -40,7 +41,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="code" id="code" required placeholder="enter code"
-                                            class="form-control input-height" value="" />
+                                            class="form-control input-height" value="{{old('code',$language->code) }}" />
                                     </div>
                                 </div>
 
@@ -50,7 +51,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="name" id="name" required placeholder="enter name"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{ old('name',$language->name) }}" />
                                     </div>
                                 </div>
                                  <div class="form-group row">
@@ -58,7 +59,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                    <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+                                    <textarea name="description" id="description" cols="30" rows="10" class="form-control" value="{{ old('description',$language->description) }}"></textarea>
                                     </div>
                                 </div>
 

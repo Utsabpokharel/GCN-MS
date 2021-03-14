@@ -38,7 +38,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="name" required placeholder="Select Student"
+                                        <input type="text" name="studentid" required placeholder="Select Student"
                                             class="form-control input-height" value="" />
                                     </div>
                                 </div>

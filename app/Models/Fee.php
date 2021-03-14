@@ -9,6 +9,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Fee extends Model
 {
     use SoftDeletes;
-    protected $fillable = ['student_id', 'title', 'amount'];
+    protected $fillable = ['studentid', 'title', 'amount'];
     use HasFactory;
 }

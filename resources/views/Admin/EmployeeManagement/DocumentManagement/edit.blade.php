@@ -33,6 +33,7 @@
                         <form action="{{ route('documentmanagement.update',$document->id) }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
+                            @method('PUT')
                             <div class="form-body">
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Employee Name
@@ -40,7 +41,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="staffname" required placeholder="Select Staff"
-                                            class="form-control input-height"/>
+                                            class="form-control input-height" value="{{ old('staffname',$documentmanagement->staffname) }}"/>
                                     </div>
 
                                 </div>
@@ -50,7 +51,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="bankaccountnumber" required placeholder="Bank Account Number"
-                                            class="form-control input-height"/>
+                                            class="form-control input-height" value="{{ old('bankaccountnumber',$documentmanagement->bankaccountnumber) }}"/>
                                     </div>
 
                                 </div>
@@ -60,7 +61,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="pandocument" required placeholder="PAN Number"
-                                            class="form-control input-height"/>
+                                            class="form-control input-height" value="{{ old('pandocument',$documentmanagement->pandocument) }}"/>
                                     </div>
 
                                 </div>
@@ -70,7 +71,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="file" name="pfdocument"
-                                            class="form-control input-height"/>
+                                            class="form-control input-height" value="{{ old('pfdocument',$documentmanagement->pfdocument) }}"/>
                                     </div>
                                 </div>
 
@@ -80,7 +81,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="file" name="citdocument"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{ old('citdocument',$documentmanagement->citdocument) }}" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -89,7 +90,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="file" name="appointmentdocument"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{ old('appointmentdocument',$documentmanagement->appointmentdocument) }}" />
                                     </div>
                                 </div>
                                  <div class="form-group row">
@@ -98,7 +99,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="file" name="contractdocument"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{ old('contractdocument',$documentmanagement->contractdocument) }}" />
                                     </div>
                                 </div>
 

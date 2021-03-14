@@ -12,7 +12,7 @@
                             class="fa fa-angle-right"></i>
                     </li>
 
-                    <li><a class="parent-item" href="{{route('licensing.index')}}">Recruitment</a>&nbsp;<i
+                    <li><a class="parent-item" href="{{route('license.index')}}">Recruitment</a>&nbsp;<i
                             class="fa fa-angle-right"></i>
                     </li>
                     <li class="active">Add License</li>

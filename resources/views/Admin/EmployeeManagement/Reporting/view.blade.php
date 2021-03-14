@@ -51,6 +51,7 @@
                                                             <td>{{ $value->phonenumber}}</td>
                                                             <td>{{ $value->emailaddress }}</td>
                                                              <td>{{ $value->reportingmanager }}</td>
+                                                             <td>
                                                                 <a href="{{route('reporting.edit',$value->id) }}"
                                                                    class="btn btn-primary btn-xs">
                                                                     <i class="fa fa-pencil"></i>

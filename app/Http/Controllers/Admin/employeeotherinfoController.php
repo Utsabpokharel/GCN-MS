@@ -27,7 +27,7 @@ class employeeotherinfoController extends Controller
     public function create()
     {
         $employeeotherinfo=EmployeeOtherInfo::all();
-        return view('Admin.EmployeeManagment.EmployeeOtherInfo.add',compact('employeeotherinfo'));
+        return view('Admin.EmployeeManagement.EmployeeOtherInfo.add',compact('employeeotherinfo'));
     }
 
     /**
@@ -40,7 +40,7 @@ class employeeotherinfoController extends Controller
     {
         $data = $request->all();
         EmployeeOtherInfo::create($data);
-        return redirect()->route('employeeotherinfo.view')->with('success', 'Employee Other Information created Successfully');
+        return redirect()->route('employeeotherinfo.index')->with('success', 'Employee Other Information created Successfully');
     }
 
     /**
@@ -51,7 +51,7 @@ class employeeotherinfoController extends Controller
      */
     public function show($id)
     {
-        
+
     }
 
     /**
@@ -63,7 +63,7 @@ class employeeotherinfoController extends Controller
     public function edit($id)
     {
         $employeeotherinfo = EmployeeOtherInfo::findorfail($id);
-        return view('Admin.EmployeeManagement.Skill.edit', compact('skill'));
+        return view('Admin.EmployeeManagement.EmployeeOtherInfo.edit', compact('skill'));
     }
 
     /**
@@ -92,6 +92,6 @@ class employeeotherinfoController extends Controller
         $employeeotherinfo = EmployeeOtherInfo::findorfail($id);
         $employeeotherinfo->delete();
         return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Employee Other Information Deleted Successfully");
-    
+
     }
 }

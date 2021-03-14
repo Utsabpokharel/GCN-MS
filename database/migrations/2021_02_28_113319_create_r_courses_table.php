@@ -21,6 +21,7 @@ class CreateRCoursesTable extends Migration
             $table->string('coordinator');
             $table->string('version');
             $table->integer('cost');
+            $table->string('currency');
             $table->longtext('description')->nullable();
             $table->timestamps();
             $table->softDeletes();

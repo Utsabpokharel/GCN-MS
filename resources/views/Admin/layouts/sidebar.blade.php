@@ -29,26 +29,8 @@
                             <i class="material-icons">dashboard</i>
                             <span class="title">Dashboard</span>
                             <span class="selected"></span>
-                            <span class="arrow open"></span>
+
                         </a>
-                        <ul class="sub-menu">
-                            <li class="nav-item active">
-                                <a href="" class="nav-link ">
-                                    <span class="title">Dashboard 1</span>
-                                    <span class="selected"></span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="dashboard2.html" class="nav-link ">
-                                    <span class="title">Dashboard 2</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="dashboard3.html" class="nav-link ">
-                                    <span class="title">Dashboard 3</span>
-                                </a>
-                            </li>
-                        </ul>
                     </li>
 
                     <li class="nav-item">
@@ -173,14 +155,10 @@
                         <ul class="sub-menu">
 
                             <li class="nav-item">
-                                <a href="{{route('rcourse.index')}}" class="nav-link "> <span class="title">Course </span>
+                                <a href="{{route('rcourse.index')}}" class="nav-link "> <span class="title">Subject</span>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="{{route('customfield.index')}}" class="nav-link "> <span class="title">Custom Field</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
+                           <li class="nav-item">
                                 <a href="{{route('education.index')}}" class="nav-link "> <span class="title">Education</span>
                                 </a>
                             </li>
@@ -202,10 +180,6 @@
                             </li>
                             <li class="nav-item">
                                 <a href="{{route('reporting.index')}}" class="nav-link "> <span class="title">Reporting</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{route('employeecontract.index')}}" class="nav-link "> <span class="title">Employee Contract</span>
                                 </a>
                             </li>
                             <li class="nav-item">

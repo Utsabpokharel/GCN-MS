@@ -41,7 +41,7 @@ class educationController extends Controller
     {
         $data = $request->all();
         Education::create($data);
-        return redirect()->route('education.view')->with('success', 'Employee Education created Successfully');
+        return redirect()->route('education.index')->with('success', 'Employee Education created Successfully');
     }
 
     /**
