@@ -29,17 +29,18 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="{{ route('fee.update',$fee->id) }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{ route('fee.update',$fees->id) }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
+                            @method('PUT')
                             <div class="form-body">
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Student
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="name" required placeholder="Select Student"
-                                            class="form-control input-height" value="" />
+                                        <input type="text" name="studentid" required placeholder="Select Student"
+                                            class="form-control input-height" value="{{ old('studentid',$fees->student_id) }}" />
                                     </div>
                                 </div>
 
@@ -49,7 +50,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name=title required placeholder="title"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{ old('title',$fees->title) }}" />
                                     </div>
                                 </div>
 
@@ -60,7 +61,7 @@
                                     <div class="col-md-5">
                                         <input type="number" name="amount" required
                                             placeholder="Enter Amount"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{ old('amount',$fees->amount) }}" />
                                     </div>
 
                                 </div>

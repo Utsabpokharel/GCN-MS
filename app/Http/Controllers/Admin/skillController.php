@@ -40,7 +40,7 @@ class skillController extends Controller
     {
         $data = $request->all();
         Skill::create($data);
-        return redirect()->route('skill.view')->with('success', 'Employee Skill created Successfully');
+        return redirect()->route('skill.index')->with('success', 'Employee Skill created Successfully');
     }
 
     /**
@@ -78,7 +78,7 @@ class skillController extends Controller
         $data = $request->all();
         $skill = Skill::findorfail($id);
         $skill->update($data);
-        return redirect()->route('education.view')->with('success', 'Employee Education Updated Successfully');
+        return redirect()->route('skill.index')->with('success', 'Employee Education Updated Successfully');
     }
 
     /**

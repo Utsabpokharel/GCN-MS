@@ -38,7 +38,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="name" required placeholder="Template Name"
+                                        <input type="text" name="templatename" required placeholder="Template Name"
                                             class="form-control input-height" value="" />
                                     </div>
                                 </div>
@@ -48,7 +48,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+                                        <textarea name="emailtemplate" id="emailtemplate" cols="30" rows="10" class="form-control"></textarea>
                                     </div>
 
                                 </div>

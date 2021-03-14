@@ -44,8 +44,8 @@
                                                             <td>{{$value->staffname}}</td>
                                                             <td>{{$value->staffcode}}</td>
                                                             <td>{{$value->employmentstaus}}</td>
-                                                            
-                                                            
+
+
 
                                                             <td>
                                                                 <a href="{{route('employeeresignation.edit',$value->id) }}"
@@ -68,7 +68,6 @@
                                     <th>Employee Name</th>
                                     <th>Employee Code</th>
                                     <th>Employment Status</th>
-                                    <th>Is Contract</th>
                                     <th>Actions</th>
                                 </tr>
                             </tfoot>

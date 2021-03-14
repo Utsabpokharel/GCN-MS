@@ -49,11 +49,12 @@
                                                             <td>{{ $value->version }}</td>
                                                             <td>{{ $value->currency }}</td>
                                                             <td>{{ $value->cost }}</td>
-                                                                <a href="{{route('rcourse.edit',$value->id) }}"
+                                                              <td>
+                                                                <a href="{{route('rcourse.edit',$value->id)}}"
                                                                    class="btn btn-primary btn-xs">
                                                                     <i class="fa fa-pencil"></i>
                                                                 </a>
-                                                                <a href="{{ route('rcourse.destroy',$value->id) }}"
+                                                                <a href="{{ route('rcourse.destroy',$value->id)}}"
                                                                     class="btn btn-danger btn-xs">
                                                                     <i class="fa fa-trash-o "></i>
                                                                 </button>

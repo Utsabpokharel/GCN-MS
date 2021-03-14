@@ -37,9 +37,27 @@
                             </thead>
                             <tbody>
 
-                                <tr>
+                                @foreach($sms as $value)
+                                                        <tr>
+                                                            <td>{{$loop->index+1}}</td>
+                                                            <td>{{$value->templatename}}</td>
+                                                            <td>{{$value->smstemplate}}</td>
 
-                                </tr>
+
+                                                            <td>
+                                                                <a href="{{route('sms.edit',$value->id) }}"
+                                                                   class="btn btn-primary btn-xs">
+                                                                    <i class="fa fa-pencil"></i>
+                                                                </a>
+                                                                <a href="{{ route('sms.destroy',$value->id) }}"
+                                                                    class="btn btn-danger btn-xs">
+                                                                    <i class="fa fa-trash-o "></i>
+                                                                </button>
+
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
+
 
                             </tbody>
                             <tfoot>

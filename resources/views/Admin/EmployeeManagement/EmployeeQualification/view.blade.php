@@ -37,10 +37,29 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                 @foreach($employeequalification as $value)
 
                                 <tr>
+                                    <td>{{$loop->index+1}}</td>
+                                                            <td>{{$value->staffcode}}</td>
+                                                            <td>{{$value->staffname}}</td>
+                                                            <td>{{$value->description}}</td>
+
+
+                                                            <td>
+                                                                <a href="{{route('employeequalification.edit',$value->id) }}"
+                                                                   class="btn btn-primary btn-xs">
+                                                                    <i class="fa fa-pencil"></i>
+                                                                </a>
+                                                                <a href="{{ route('employeequalification.destroy',$value->id) }}"
+                                                                    class="btn btn-danger btn-xs">
+                                                                    <i class="fa fa-trash-o "></i>
+                                                                </button>
+
+                                                            </td>
 
                                 </tr>
+                                @endforeach
 
                             </tbody>
                             <tfoot>

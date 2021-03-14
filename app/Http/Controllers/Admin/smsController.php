@@ -40,7 +40,7 @@ class smsController extends Controller
     {
         $data = $request->all();
         SMS::create($data);
-        return redirect()->route('SMS.view')->with('success', 'SMS Template created Successfully');
+        return redirect()->route('sms.index')->with('success', 'SMS Template created Successfully');
     }
 
     /**
@@ -78,7 +78,7 @@ class smsController extends Controller
         $data = $request->all();
         $sms = SMS::findorfail($id);
         $sms->update($data);
-        return redirect()->route('education.view')->with('success', 'SMS Template Updated Successfully');
+        return redirect()->route('sms.index')->with('success', 'SMS Template Updated Successfully');
     }
 
     /**
@@ -89,8 +89,8 @@ class smsController extends Controller
      */
     public function destroy($id)
     {
-        $sms = SMS::findorfail($id);
+        $sms = SMS::find($id);
         $sms->delete();
-        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Employee License Deleted Successfully");
+        return redirect()->route('sms.index')->with('warning', "Employee License Deleted Successfully");
     }
 }

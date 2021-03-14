@@ -9,6 +9,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class RCourse extends Model
 {
     use SoftDeletes;
-    protected $fillable = ['title', 'department', 'coordinator', 'version', 'cost', 'description'];
+    protected $fillable = ['title', 'department', 'coordinator', 'version', 'cost','currency', 'description'];
     use HasFactory;
 }

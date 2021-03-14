@@ -30,8 +30,9 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="{{ route('documentmanagement.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{ route('documentmanagement.store') }}" id="form_sample_1" class="form-horizontal" method="put" autocomplete="on"
                             enctype="multipart/form-data">
+                            @method('GET')
                             {{csrf_field()}}
                             <div class="form-body">
                                 <div class="form-group row">
@@ -49,7 +50,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="bankaccountnumber" id="" required placeholder="Bank Account Number"
+                                        <input type="text" name="bankaccountnumber" id="bankaccountnumber" required placeholder="Bank Account Number"
                                             class="form-control input-height"/>
                                     </div>
 
@@ -59,7 +60,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="pandocument" required placeholder="PAN Number"
+                                        <input type="file" name="pandocument" r
                                             class="form-control input-height"/>
                                     </div>
 

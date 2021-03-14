@@ -39,8 +39,11 @@ class employeeresignationController extends Controller
     public function store(Request $request)
     {
         $data=$request->all();
+        $imagepath = 'images/EmployeeResignation/';
+
+        $data['resignationdocument'] = save_image($request->resignationdocument, 150, 150, $imagepath);
         EmployeeResignation::create($data);
-        return redirect()->route('employeecontract.index')->with('success','Employee Resignation created successfully');
+        return redirect()->route('employeeresignation.index')->with('success','Employee Resignation created successfully');
     }
 
     /**
@@ -92,6 +95,6 @@ class employeeresignationController extends Controller
         $employeeresignation = EmployeeResignation::findorfail($id);
         $employeeresignation->delete();
         return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Employee Resignation Deleted Successfully");
-    
+
     }
 }

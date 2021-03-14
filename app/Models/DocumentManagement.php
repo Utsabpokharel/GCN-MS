@@ -9,6 +9,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class DocumentManagement extends Model
 {
     use SoftDeletes;
-    protected $fillable = ['staffname', 'bankaccountnumber', 'pannumber', 'pfdocument', 'citdocument', 'appointmentdocument', 'contractdocument'];
+    protected $fillable = ['staffname', 'bankaccountnumber', 'pandocument', 'pfdocument', 'citdocument', 'appointmentdocument', 'contractdocument'];
     use HasFactory;
 }

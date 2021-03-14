@@ -19,6 +19,7 @@ class CreateEmployeeQualificationsTable extends Migration
             $table->string('staffname');
             $table->longText('description');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

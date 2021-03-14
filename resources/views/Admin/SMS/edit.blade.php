@@ -29,8 +29,8 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="{{ route('sms.update',$sms->id) }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
-                            enctype="multipart/form-data">
+                         <form class="form" method="post" action="{{route('sms.update',$sms->id)}}">
+                            @method('PUT')
                             {{csrf_field()}}
                             <div class="form-body">
                                 <div class="form-group row">
@@ -39,7 +39,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="templatename" required placeholder="Template Name"
-                                            class="form-control input-height" value="" />
+                                            class="form-control input-height" value="{{ old('templatename',$sms->templatename) }}" />
                                     </div>
                                 </div>
 
@@ -48,7 +48,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <textarea name="smstemplate" id="smstemplate" cols="30" rows="10" class="form-control"></textarea>
+                                        <textarea name="smstemplate" id="smstemplate" cols="30" rows="10" class="form-control" value="{{ old('smstemplate',$sms->templatename) }}"></textarea>
                                     </div>
 
                                 </div>

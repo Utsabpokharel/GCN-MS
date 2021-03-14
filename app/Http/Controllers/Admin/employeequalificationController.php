@@ -16,7 +16,7 @@ class employeequalificationController extends Controller
     public function index()
     {
         $employeequalification = EmployeeQualification::all();
-        return view('Admin.EmployeeQualification.EmployeeQualification.view', compact('employeequalification'));
+        return view('Admin.EmployeeManagement.EmployeeQualification.view', compact('employeequalification'));
     }
 
     /**
@@ -27,7 +27,7 @@ class employeequalificationController extends Controller
     public function create()
     {
         $employeequalification = EmployeeQualification::all();
-        return view('Admin.Recruitment.EmployeeQualification.add', compact('employeequalification'));
+        return view('Admin.EmployeeManagement.EmployeeQualification.add', compact('employeequalification'));
     }
 
     /**
@@ -92,6 +92,6 @@ class employeequalificationController extends Controller
         $employeequalification = EmployeeQualification::findorfail($id);
         $employeequalification->delete();
         return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Employee Qualification Deleted Successfully");
-    
+
     }
 }

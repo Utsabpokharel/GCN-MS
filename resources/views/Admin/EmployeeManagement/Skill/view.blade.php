@@ -43,6 +43,7 @@
                                                             <td>{{$value->code}}</td>
                                                             <td>{{$value->name}}</td>
                                                             <td>{{$value->description}}</td>
+                                                            <td>
                                                                 <a href="{{route('skill.edit',$value->id) }}"
                                                                    class="btn btn-primary btn-xs">
                                                                     <i class="fa fa-pencil"></i>

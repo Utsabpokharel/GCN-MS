@@ -64,7 +64,7 @@ class disciplinaryController extends Controller
     public function edit($id)
     {
         $disciplinary = Disciplinary::findorfail($id);
-        return view('Admin.Disciplinary.edit', compact('disciplinary'));
+        return view('Admin.EmployeeManagement.Disciplinary.edit', compact('disciplinary'));
     }
 
     /**

@@ -30,9 +30,10 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="{{ route('employeetermination.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
-                            enctype="multipart/form-data">
+                        <form class="form" method="post" action="{{route('employeetermination.store')}}">
+                            @method('GET')
                             {{csrf_field()}}
+
                             <div class="form-body">
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Employee Name

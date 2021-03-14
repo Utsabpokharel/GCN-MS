@@ -21,6 +21,7 @@ class CreateEmploymentStatusesTable extends Migration
             $table->longText('description');
             $table->tinyInteger('contract');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -17,8 +17,9 @@ class CreateFeesTable extends Migration
             $table->id();
             $table->integer('studentid');
             $table->string('title');
-            $table->string('amount');
+            $table->integer('amount');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

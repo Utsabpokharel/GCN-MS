@@ -204,7 +204,7 @@ Route::resource('invoice', invoiceController::class);
 Route::resource('cashin', cashinController::class);
 //cashout
 Route::resource('cashout', cashoutController::class);
-//attendance staff 
+//attendance staff
 Route::resource('staffatt', staffattController::class);
 //attendance student
 Route::resource('studentatt', studentattController::class);

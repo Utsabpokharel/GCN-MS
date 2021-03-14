@@ -33,6 +33,7 @@
                         <form action="{{ route('employmentstatusverification.update',$employmentstatusverification->id) }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
+                            @method('PUT')
                             <div class="form-body">
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Employee Name
@@ -40,7 +41,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="staffname" required placeholder="Enter Employee Name"
-                                            class="form-control input-height" value="" />
+                                            class="form-control input-height" value="{{ old('staffname',$employmentstatusverification->staffname) }}" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -49,7 +50,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="staffcode" required placeholder="enter staffcode"
-                                            class="form-control input-height" value="" />
+                                            class="form-control input-height" value="{{ old('staffcode',$employmentstatusverification->staffcode) }}" />
                                     </div>
                                 </div>
 
@@ -59,7 +60,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="employmentstatus"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{ old('employmentstatus',$employmentstatusverification->employmentstatus) }}" />
                                     </div>
                                 </div>
 
@@ -69,7 +70,7 @@
                                     </label>
                                     <div class="col-md-5">
                                     <input type="text" name="period"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{ old('period',$employmentstatusverification->period) }}" />
                                 </div>
                                 </div>
                                 <div class="form-group row">
@@ -78,7 +79,7 @@
                                     </label>
                                     <div class="col-md-5">
                                     <input type="date" name="approvedon"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{ old('approvedon',$employmentstatusverification->approvedon) }}" />
                                 </div>
                                 </div>
                                 <div class="form-group row">
@@ -87,7 +88,7 @@
                                     </label>
                                     <div class="col-md-5">
                                     <input type="text" name="approvedby" required placeholder="Approved By"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{ old('approvedby',$employmentstatusverification->approvedby) }}" />
                                 </div>
                                 </div>
 

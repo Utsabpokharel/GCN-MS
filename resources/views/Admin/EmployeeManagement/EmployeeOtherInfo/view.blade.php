@@ -33,8 +33,9 @@
                                     <th>Employee Code</th>
                                     <th>Title</th>
                                     <th>Organisation</th>
-                                    <th>Began On</th>
-                                    <th>Ended On</th>
+                                    <th>Father's Name</th>
+                                    <th>Mother's Name</th>
+                                    <th>Grandfather's Name</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -46,9 +47,10 @@
                                                             <td>{{$value->staffcode}}</td>
                                                             <td>{{$value->title}}</td>
                                                             <td>{{$value->organisation}}</td>
-                                                            <td>{{ $value->beganon }}</td>
-                                                            <td>{{ $value->endedon }}</td>
-                                                            
+                                                            <td>{{ $value->fathername}}</td>
+                                                            <td>{{ $value->mothername}}</td>
+                                                            <td>{{ $value->grandfathername }}</td>
+
 
                                                             <td>
                                                                 <a href="{{route('employeeotherinfo.edit',$value->id) }}"
@@ -71,8 +73,9 @@
                                     <th>Employee Code</th>
                                     <th>Title</th>
                                     <th>Organisation</th>
-                                    <th>Began On</th>
-                                    <th>Ended On</th>
+                                    <th>Father's Name</th>
+                                    <th>Mother's Name</th>
+                                    <th>Grand Father's Name</th>
                                     <th>Action</th>
 
                                 </tr>

@@ -30,8 +30,9 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="{{ route('employmentstatus.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{ route('employmentstatus.store')}}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
+                            @method('GET')
                             {{csrf_field()}}
                             <div class="form-body">
                                 <div class="form-group row">

@@ -33,14 +33,15 @@
                         <form action="{{ route('disciplinary.update',$disciplinary->id) }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
+                            @method('PUT')
                             <div class="form-body">
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Staff Name
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="staffname" required placeholder="enter staff name"
-                                            class="form-control input-height" value="" />
+                                        <input type="text" name="staffname" id="staffname" required placeholder="enter staff name"
+                                            class="form-control input-height" value="{{ old('staffname',$disciplinary->staffname) }}" />
                                     </div>
                                 </div>
 
@@ -49,8 +50,8 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="casename" required placeholder="enter name of case"
-                                            class="form-control input-height " value="" />
+                                        <input type="text" name="casename" id="casename" required placeholder="enter name of case"
+                                            class="form-control input-height " value="{{ old('casename',$disciplinary->casename) }}" />
                                     </div>
                                 </div>
 
@@ -59,9 +60,9 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type=text name="status" required
+                                        <input type=text name="status" id="status" required
                                             placeholder="Select Status"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{ old('status',$disciplinary->status) }}" />
                                     </div>
 
                                 </div>
@@ -71,9 +72,9 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="forwardto" required
+                                        <input type="text" name="forwardto" id="forwardto" required
                                             placeholder="Forwarded To"
-                                            class="form-control input-height" />
+                                            class="form-control input-height" value="{{ old('forwardto',$disciplinary->forwardto) }}" />
                                     </div>
 
                                 </div>
@@ -83,9 +84,9 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="disciplinaryaction" required
+                                        <input type="text" name="disciplinaryaction" id="disciplinaryaction" required
                                             placeholder="Action"
-                                            class="form-control input-height" />
+                                            class="form-control input-height" value="{{ old('disciplinaryaction',$disciplinary->disciplinaryaction) }}" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -93,7 +94,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                    <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+                                    <textarea name="description" id="description" cols="30" rows="10" class="form-control" value="{{ old('description',$disciplinary->decription) }}"></textarea>
                                     </div>
                                 </div>
 

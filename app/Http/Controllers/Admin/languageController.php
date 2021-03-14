@@ -17,7 +17,7 @@ class languageController extends Controller
     public function index()
     {
         $language = Language::all();
-        return view('Admin.EmployeeManagement.Language.view');
+        return view('Admin.EmployeeManagement.Language.view',compact('language'));
     }
 
     /**
@@ -28,7 +28,7 @@ class languageController extends Controller
     public function create()
     {
         $language = Language::all();
-        return view('Admin.EmployeeManagement.Language.add');
+        return view('Admin.EmployeeManagement.Language.add',compact('language'));
     }
 
     /**
@@ -41,7 +41,7 @@ class languageController extends Controller
     {
         $data = $request->all();
         Language::create($data);
-        return redirect()->route('Language.view')->with('success', 'Employee Language created Successfully');
+        return redirect()->route('language.index')->with('success', 'Employee Language created Successfully');
     }
 
     /**
@@ -64,7 +64,7 @@ class languageController extends Controller
     public function edit($id)
     {
         $language = Language::findorfail($id);
-        return view('Admin.EmployeeManagement.Skill.edit', compact('skill'));
+        return view('Admin.EmployeeManagement.language.edit', compact('language'));
     }
 
     /**
@@ -79,7 +79,7 @@ class languageController extends Controller
         $data = $request->all();
         $language = Language::findorfail($id);
         $language->update($data);
-        return redirect()->route('education.view')->with('success', 'Employee Language Updated Successfully');
+        return redirect()->route('language.index')->with('success', 'Employee Language Updated Successfully');
     }
 
     /**
