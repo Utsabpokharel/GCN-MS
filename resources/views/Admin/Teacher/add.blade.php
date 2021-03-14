@@ -37,9 +37,9 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-													<input type="text" name="name" required placeholder="Enter First Name"
-													class="form-control input-height @error('name') is-invalid @enderror" value="{{old('name','')}}" />
-													@error('name')
+													<input type="text" name="fname" required placeholder="Enter First fname"
+													class="form-control input-height @error('fname') is-invalid @enderror" value="{{old('fname','')}}" />
+													@error('fname')
 														<span class="invalid-feedback" role="alert">
 															<strong>{{$message}}</strong>
 														</span>
@@ -52,9 +52,9 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-													<input type="text" name="name" required placeholder="Enter Last Name"
-													class="form-control input-height @error('name') is-invalid @enderror" value="{{old('name','')}}" />
-													@error('name')
+													<input type="text" name="lname" required placeholder="Enter Last lname"
+													class="form-control input-height @error('lname') is-invalid @enderror" value="{{old('lname','')}}" />
+													@error('lname')
 														<span class="invalid-feedback" role="alert">
 															<strong>{{$message}}</strong>
 														</span>
@@ -81,10 +81,10 @@
 												<span class="required"> * </span>
 											</label>
 											<div class="col-md-5">
-          										<select name="teacher"  class="form-control form-control-solid @error('teacher') is-invalid @enderror" value="{{ old('student') }}">
+          										<select name="teachcat"  class="form-control form-control-solid @error('teachcat') is-invalid @enderror" value="{{ old('student') }}">
           										<option value="">Select Teacher Category</option>
           										</select>
-         					 					@error('teacher')
+         					 					@error('teachcat')
           										<span class="invalid-feedback" role="alert">
 												  <strong>{{$message}}</strong>
 												  </span>
@@ -96,7 +96,7 @@
                                            			<span class="required"> * </span>
                                     			</label>
                                     			<div class="col-md-5">
-                                        			<input type="time" name="time" required
+                                        			<input type="time" name="teachtime" required
                                             		placeholder="Enter Time"
                                             		class="form-control input-height" />
                                     			</div>
@@ -150,9 +150,9 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-                    								<input type="number" name="phoneno" required placeholder="Enter Phone Number"
-													class="form-control input-height @error('phoneno') is-invalid @enderror" value="{{old('phoneno','')}}"/>
-                                                   	@error('phoneno')
+                    								<input type="number" name="phone" required placeholder="Enter Phone Number"
+													class="form-control input-height @error('phone') is-invalid @enderror" value="{{old('phone','')}}"/>
+                                                   	@error('phone')
                     								<span class="invalid-feedback" role="alert">
 														<strong>{{$message}}</strong>
 													</span>

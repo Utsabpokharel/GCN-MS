@@ -29,7 +29,7 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{ route('department.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
                             <div class="form-body">
@@ -48,7 +48,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name=title required placeholder="Department Name"
+                                        <input type="text" name= "dep_name"required placeholder="Department Name"
                                             class="form-control input-height " value="" />
                                     </div>
                                 </div>
@@ -58,7 +58,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+                                        <textarea name="description" id="dep_description" cols="30" rows="10" class="form-control"></textarea>
                                     </div>
 
                                 </div>

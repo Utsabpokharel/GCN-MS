@@ -33,7 +33,7 @@
 								<h3>Date Today:</h3>
 								</div>
 								<div class="card-body" id="bar-parent">
-									<form action="" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"  enctype="multipart/form-data">
+									<form action="{{ route('studentatt.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"  enctype="multipart/form-data">
 										{{csrf_field()}}
 										<div class="form-body">
 											<div class="form-group row">
@@ -41,12 +41,12 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-												<select name="student" id="student"
-													class="form-control input-height @error('student') is-invalid @enderror" value="{{old('student','')}}" />
+												<select name="name" id="name"
+													class="form-control input-height @error('name') is-invalid @enderror" value="{{old('name','')}}" />
 													<option selected disabled="">Select Student Name </option>
 													</select>
 		   
-													@error('student')
+													@error('name')
 														<span class="invalid-feedback" role="alert">
 															<strong>{{$message}}</strong>
 														</span>

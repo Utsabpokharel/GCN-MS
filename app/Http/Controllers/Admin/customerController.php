@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Customer;
+
 
 class customerController extends Controller
 {
@@ -14,7 +16,8 @@ class customerController extends Controller
      */
     public function index()
     {
-        return view('Admin.Customer.view');
+        $customer = Customer::all();
+        return view('Admin.Customer.view',compact('customer'));
     }
 
     /**
@@ -24,7 +27,8 @@ class customerController extends Controller
      */
     public function create()
     {
-        return view('Admin.Customer.add');
+        $customer = Customer::all();
+        return view('Admin.Customer.add',compact('customer'));
     }
 
     /**
@@ -35,7 +39,9 @@ class customerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Customer::create($data);
+        return redirect()->route('customer.index')->with('success', 'Customer Created successfully');
     }
 
     /**

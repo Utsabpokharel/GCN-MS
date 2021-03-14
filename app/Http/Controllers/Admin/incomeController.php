@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Income;
 
 class incomeController extends Controller
 {
@@ -14,7 +15,8 @@ class incomeController extends Controller
      */
     public function index()
     {
-        return view('Admin.Income.view');
+        $income = Income::all();
+        return view('Admin.Income.view',compact('income'));
     }
 
     /**
@@ -24,7 +26,8 @@ class incomeController extends Controller
      */
     public function create()
     {
-        return view('Admin.Income.add');
+        $income = Income::all();
+        return view('Admin.Income.add',compact('income'));
     }
 
     /**
@@ -35,7 +38,9 @@ class incomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Income::create($data);
+        return redirect()->route('income.index')->with('success', 'Income Created Successfully');
     }
 
     /**

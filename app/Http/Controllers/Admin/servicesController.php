@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Services;
 
 class servicesController extends Controller
 {
@@ -14,7 +15,8 @@ class servicesController extends Controller
      */
     public function index()
     {
-        return view('Admin.Services.view');
+        $services = Services::all();
+        return view('Admin.Services.view',compact('services'));
     }
 
     /**
@@ -24,7 +26,8 @@ class servicesController extends Controller
      */
     public function create()
     {
-        return view('Admin.Services.add');
+        $services = Services::all();
+        return view('Admin.Services.add',compact('services'));
     }
 
     /**
@@ -35,7 +38,9 @@ class servicesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Services::create($data);
+        return redirect()->route('services.index')->with('success', 'Services Created Successfully');
     }
 
     /**

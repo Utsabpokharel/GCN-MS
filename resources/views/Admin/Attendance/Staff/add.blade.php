@@ -33,7 +33,7 @@
 								<h3>Date Today:</h3>
 								</div>
 								<div class="card-body" id="bar-parent">
-									<form action="" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"  enctype="multipart/form-data">
+									<form action="{{ route('staffatt.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"  enctype="multipart/form-data">
 										{{csrf_field()}}
 										<div class="form-body">
 											<div class="form-group row">
@@ -41,12 +41,12 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-												<select name="staff" id="staff"
-													class="form-control input-height @error('staff') is-invalid @enderror" value="{{old('staff','')}}" />
+												<select name="name" id="name"
+													class="form-control input-height @error('name') is-invalid @enderror" value="{{old('name','')}}" />
 													<option selected disabled="">Select Staff Name </option>
 													</select>
 		   
-													@error('staff')
+													@error('name')
 														<span class="invalid-feedback" role="alert">
 															<strong>{{$message}}</strong>
 														</span>
@@ -73,7 +73,7 @@
 											<div class="form-group row">
 												<label class="control-label col-md-3">Remarks </label>
 												<div class="col-md-5">
-												<textarea class="form-control form-control-solid" rows="5" name="remarks" required placeholder="" > </textarea>
+												<textarea class="form-control form-control-solid" rows="5" name="remarks" required placeholder="Remarks" > </textarea>
      										</div>
 										</div>                                      
                                    	</div>                                               

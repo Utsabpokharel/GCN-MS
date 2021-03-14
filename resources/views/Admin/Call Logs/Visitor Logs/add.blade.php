@@ -29,7 +29,7 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{ route('visited.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
                             <div class="form-body">
@@ -38,7 +38,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="time" name="visited Time" required placeholder="Visited Time"
+                                        <input type="time" name="visittime" required placeholder="Visited Time"
                                             class="form-control input-height" value="" />
                                     </div>
                                 </div>
@@ -48,7 +48,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="date" name="visiteddate" required placeholder="Visited Date"
+                                        <input type="date" name="visitdate" required placeholder="Visited Date"
                                             class="form-control input-height " value="" />
                                     </div>
                                 </div>
@@ -58,7 +58,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="visitorname" required
+                                        <input type="text" name="name" required
                                             placeholder="Visitor Name"
                                             class="form-control input-height " value="" />
                                     </div>

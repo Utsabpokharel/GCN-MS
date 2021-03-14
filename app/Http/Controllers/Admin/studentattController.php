@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Studentatt;
 
 class studentattController extends Controller
 {
@@ -14,7 +15,8 @@ class studentattController extends Controller
      */
     public function index()
     {
-        return view('Admin.Attendance.Student.view');
+        $studentatt = Studentatt::all();
+        return view('Admin.Attendance.Student.view',compact('studentatt'));
         
     }
 
@@ -25,7 +27,8 @@ class studentattController extends Controller
      */
     public function create()
     {
-        return view('Admin.Attendance.Student.add');
+        $studentatt = Studentatt::all();
+        return view('Admin.Attendance.Student.add',compact('studentatt'));
         
     }
 
@@ -37,7 +40,9 @@ class studentattController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Studentatt::create($data);
+        return redirect()->route('Studentatt.index')->with('success', 'Student Attendance Created Successfully');
     }
 
     /**

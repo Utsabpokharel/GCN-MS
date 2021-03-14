@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Salary;
 
 class salaryController extends Controller
 {
@@ -14,7 +15,8 @@ class salaryController extends Controller
      */
     public function index()
     {
-        return view('Admin.Payroll.Salary.view');
+        $salary = Salary::all();
+        return view('Admin.Payroll.Salary.view',compact('salary'));
     }
 
     /**
@@ -24,7 +26,8 @@ class salaryController extends Controller
      */
     public function create()
     {
-        return view('Admin.Payroll.Salary.add');
+        $salary = Salary::all();
+        return view('Admin.Payroll.Salary.add',compact('salary'));
     }
 
     /**
@@ -35,7 +38,9 @@ class salaryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Salary::create($data);
+        return redirect()->route('salary.index')->with('success', 'Salary Created Successfully');
     }
 
     /**

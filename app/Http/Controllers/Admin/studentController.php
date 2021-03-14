@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Student;
 
 class studentController extends Controller
 {
@@ -14,7 +15,8 @@ class studentController extends Controller
      */
     public function index()
     {
-        return view('Admin.Student.view');
+        $student = Student::all();
+        return view('Admin.Student.view',compact('student'));
     }
 
     /**
@@ -24,7 +26,8 @@ class studentController extends Controller
      */
     public function create()
     {
-        return view('Admin.Student.add');
+        $student = Student::all();
+        return view('Admin.Student.add',compact('student'));
     }
 
     /**
@@ -35,7 +38,9 @@ class studentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Student::create($data);
+        return redirect()->route('student.index')->with('success', 'Student Created successfully');
     }
 
     /**

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\BenefitDeduction;
 
 class benefitdeductionController extends Controller
 {
@@ -14,7 +15,8 @@ class benefitdeductionController extends Controller
      */
     public function index()
     {
-        return view('Admin.Payroll.BenefitDeduction.view');
+        $benefit = BenefitDeduction::all();
+        return view('Admin.Payroll.BenefitDeduction.view',compact('benefit'));
     }
 
     /**
@@ -24,7 +26,8 @@ class benefitdeductionController extends Controller
      */
     public function create()
     {
-        return view('Admin.Payroll.BenefitDeduction.add');
+        $benefit = BenefitDeduction::all();
+        return view('Admin.Payroll.BenefitDeduction.add',compact('benefit'));
     }
 
     /**
@@ -35,7 +38,9 @@ class benefitdeductionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        BenefitDeduction::create($data);
+        return redirect()->route('benefitdeduction.index')->with('success', 'BenefitDeduction Created successfully');
     }
 
     /**

@@ -29,7 +29,7 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{ route('advanced.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
                             <div class="form-body">
@@ -48,7 +48,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="number" name="bankaccountnumber" required placeholder="Select Bank Account Number"
+                                        <input type="number" name="bankno" required placeholder="Select Bank Account Number"
                                             class="form-control input-height " value="" />
                                     </div>
                                 </div>
@@ -69,8 +69,8 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="number" name="amount" required
-                                            placeholder="Enter Amount"
+                                        <input type="number" name="currency" required
+                                            placeholder="Enter Currency"
                                             class="form-control input-height " value="" />
                                     </div>
 
@@ -80,7 +80,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="number" name="amount" required
+                                        <input type="number" name="payment" required
                                             placeholder="Enter Amount"
                                             class="form-control input-height " value="" />
                                     </div>
@@ -91,7 +91,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                    <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+                                    <textarea name="reason" id="reason" cols="30" rows="10" class="form-control"></textarea>
                                     </div>
                                 </div>
 

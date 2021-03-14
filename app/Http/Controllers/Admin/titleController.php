@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Title;
 
 class titleController extends Controller
 {
@@ -14,7 +15,8 @@ class titleController extends Controller
      */
     public function index()
     {
-        return view('Admin.Designation.Title.view');
+        $title = Title::all();
+        return view('Admin.Designation.Title.view',compact('title'));
     }
 
     /**
@@ -24,7 +26,8 @@ class titleController extends Controller
      */
     public function create()
     {
-        return view('Admin.Designation.Title.add');
+        $title = Title::all();
+        return view('Admin.Designation.Title.add',compact('title'));
     }
 
     /**
@@ -35,7 +38,9 @@ class titleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Title::create($data);
+        return redirect()->route('title.index')->with('success', 'Title Created Successfully');
     }
 
     /**

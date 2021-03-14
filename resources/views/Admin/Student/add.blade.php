@@ -37,9 +37,9 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-													<input type="text" name="name" required placeholder="Enter First Name" 
-													class="form-control input-height @error('name') is-invalid @enderror" value="{{old('name','')}}" />
-													@error('name')
+													<input type="text" name="fname" required placeholder="Enter First fname" 
+													class="form-control input-height @error('fname') is-invalid @enderror" value="{{old('fname','')}}" />
+													@error('fname')
 														<span class="invalid-feedback" role="alert">
 															<strong>{{$message}}</strong>
 														</span>
@@ -52,9 +52,9 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-													<input type="text" name="name" required placeholder="Enter Last Name" 
-													class="form-control input-height @error('name') is-invalid @enderror" value="{{old('name','')}}" />
-													@error('name')
+													<input type="text" name="lname" required placeholder="Enter Last lname" 
+													class="form-control input-height @error('lname') is-invalid @enderror" value="{{old('lname','')}}" />
+													@error('lname')
 														<span class="invalid-feedback" role="alert">
 															<strong>{{$message}}</strong>
 														</span>
@@ -94,10 +94,10 @@
 												<span class="required"> * </span>
 											</label>
 											<div class="col-md-5">
-          										<select name="student"  class="form-control form-control-solid @error('student') is-invalid @enderror" value="{{ old('student') }}">
+          										<select name="stdcat"  class="form-control form-control-solid @error('stdcat') is-invalid @enderror" value="{{ old('stdcat') }}">
           										<option value="">Select Student Category</option>
           										</select>
-         					 					@error('student')
+         					 					@error('stdcat')
           										<span class="invalid-feedback" role="alert">
 												  <strong>{{$message}}</strong>
 												  </span>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Incomecategory;
 
 class incomecategoryController extends Controller
 {
@@ -14,7 +15,8 @@ class incomecategoryController extends Controller
      */
     public function index()
     {
-        return view('Admin.Incomecategory.view');
+        $incomecategory = Incomecategory::all();
+        return view('Admin.Incomecategory.view',compact('incomecategory'));
         
     }
 
@@ -25,7 +27,8 @@ class incomecategoryController extends Controller
      */
     public function create()
     {
-        return view('Admin.Incomecategory.add');
+        $incomecategory = Incomecategory::all();
+        return view('Admin.Incomecategory.add',compact('incomecategory'));
         
     }
 
@@ -37,7 +40,9 @@ class incomecategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Incomecategory::create($data);
+        return redirect()->route('incomecategory.index')->with('success', 'Income Category Created Successfully');
     }
 
     /**

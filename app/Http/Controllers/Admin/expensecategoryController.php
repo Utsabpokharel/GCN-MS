@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Expensecategory;
 
 class expensecategoryController extends Controller
 {
@@ -14,7 +15,8 @@ class expensecategoryController extends Controller
      */
     public function index()
     {
-        return view('Admin.Expensecategory.view');
+        $expensecategory = Expensecategory::all();
+        return view('Admin.Expensecategory.view',compact('expensecategory'));
     }
 
     /**
@@ -24,7 +26,8 @@ class expensecategoryController extends Controller
      */
     public function create()
     {
-        return view('Admin.Expensecategory.add');
+        $expensecategory = Expensecategory::all();
+        return view('Admin.Expensecategory.add',compact('expensecategory'));
         
     }
 
@@ -36,7 +39,9 @@ class expensecategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Expensecategory::create($data);
+        return redirect()->route('expensecategory.index')->with('success', 'Expense Category Created Successfully');
     }
 
     /**

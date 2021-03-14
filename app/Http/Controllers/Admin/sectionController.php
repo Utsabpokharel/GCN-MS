@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Section;
 
 class sectionController extends Controller
 {
@@ -14,7 +15,8 @@ class sectionController extends Controller
      */
     public function index()
     {
-        return view('Admin.Courses.Section.view');
+        $section = Section::all();
+        return view('Admin.Courses.Section.view',compact('section'));
     }
 
     /**
@@ -24,7 +26,8 @@ class sectionController extends Controller
      */
     public function create()
     {
-        return view('Admin.Courses.Section.add');
+        $section = Section::all();
+        return view('Admin.Courses.Section.add',compact('section'));
     }
 
     /**
@@ -35,7 +38,9 @@ class sectionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Section::create($data);
+        return redirect()->route('section.index')->with('success', 'Section Created Successfully');
     }
 
     /**

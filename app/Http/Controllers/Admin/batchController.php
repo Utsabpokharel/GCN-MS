@@ -15,7 +15,8 @@ class batchController extends Controller
      */
     public function index()
     {
-        return view('Admin.Courses.Batch.view');
+        $batch = Batch::all();
+        return view('Admin.Courses.Batch.view',compact('batch'));
     }
 
     /**
@@ -25,7 +26,8 @@ class batchController extends Controller
      */
     public function create()
     {
-        return view('Admin.Courses.Batch.add');
+        $batch = Batch::all();
+        return view('Admin.Courses.Batch.add',compact('batch'));
     }
 
     /**
@@ -36,7 +38,9 @@ class batchController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Batch::create($data);
+        return redirect()->route('batch.index')->with('success', 'Batch Created Successfully');
     }
 
     /**

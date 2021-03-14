@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\EnquiryCategory;
 
 class enquirycategoryController extends Controller
 {
@@ -14,7 +15,8 @@ class enquirycategoryController extends Controller
      */
     public function index()
     {
-        return view('Admin.Enquiry.EnquiryCategory.view');
+        $enquiry = EnquiryCategory::all();
+        return view('Admin.Enquiry.EnquiryCategory.view',compact('enquiry'));
     }
 
     /**
@@ -24,7 +26,8 @@ class enquirycategoryController extends Controller
      */
     public function create()
     {
-        return view('Admin.Enquiry.EnquiryCategory.add');
+        $enquiry = EnquiryCategory::all();
+        return view('Admin.Enquiry.EnquiryCategory.add',compact('enquiry'));
     }
 
     /**
@@ -35,7 +38,9 @@ class enquirycategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        EnquiryCategory::create($data);
+        return redirect()->route('enquirycategory.index')->with('success', 'Enquiry Category Created Successfully');
     }
 
     /**

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Advanced extends Model
 {
-    use SoftDeletes;
+
     protected $fillable = ['name', 'bankno', 'amount', 'currency', 'payment', 'reason'];
     use HasFactory;
 }

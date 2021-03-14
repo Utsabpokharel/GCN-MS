@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Teacheratt;
 
 class teacherattController extends Controller
 {
@@ -14,7 +15,8 @@ class teacherattController extends Controller
      */
     public function index()
     {
-        return view('Admin.Attendance.Teacher.view');
+        $teacheratt = Teacheratt::all();
+        return view('Admin.Attendance.Teacher.view',compact('teacheratt'));
         
     }
 
@@ -25,7 +27,8 @@ class teacherattController extends Controller
      */
     public function create()
     {
-        return view('Admin.Attendance.Teacher.add');
+        $teacheratt = Teacheratt::all();
+        return view('Admin.Attendance.Teacher.add',compact('teacheratt'));
         
     }
 
@@ -37,7 +40,9 @@ class teacherattController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Teacheratt::create($data);
+        return redirect()->route('teacheratt.index')->with('success', 'Teacher Attendance Created Successfully');
     }
 
     /**

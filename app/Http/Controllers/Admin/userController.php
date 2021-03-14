@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class userController extends Controller
@@ -14,7 +15,8 @@ class userController extends Controller
      */
     public function index()
     {
-        return view('Admin.User.view');
+        $user = User::all();
+        return view('Admin.User.view',compact('user'));
     }
 
     /**
@@ -24,7 +26,8 @@ class userController extends Controller
      */
     public function create()
     {
-        return view('Admin.User.add');
+        $user = User::all();
+        return view('Admin.User.add',compact('user'));
     }
 
     /**
@@ -35,7 +38,9 @@ class userController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        User::create($data);
+        return redirect()->route('user.index')->with('success', 'User Created Successfully');
     }
 
     /**

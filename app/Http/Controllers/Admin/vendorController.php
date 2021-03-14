@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Vendor;
 
 class vendorController extends Controller
 {
@@ -14,7 +15,8 @@ class vendorController extends Controller
      */
     public function index()
     {
-        return view('Admin.Vendor.view');
+        $vendor= Vendor::all();
+        return view('Admin.Vendor.view',compact('vendor'));
     }
 
     /**
@@ -24,7 +26,8 @@ class vendorController extends Controller
      */
     public function create()
     {
-        return view('Admin.Vendor.add');
+        $vendor= Vendor::all();
+        return view('Admin.Vendor.add',compact('vendor'));
     }
 
     /**
@@ -35,7 +38,9 @@ class vendorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Vendor::create($data);
+        return redirect()->route('vendor.index')->with('success', 'Vendor Created successfully');
     }
 
     /**
