@@ -29,7 +29,7 @@
 									</button>									
 								</div>
 								<div class="card-body" id="bar-parent">
-									<form action="" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"  enctype="multipart/form-data">
+									<form action="{{ route('customer.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"  enctype="multipart/form-data">
 										{{csrf_field()}}
 										<div class="form-body">
 										<div class="form-group row">
@@ -37,9 +37,9 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-													<input type="text" name="name" required placeholder="Enter First Name" 
-													class="form-control input-height @error('name') is-invalid @enderror" value="{{old('name','')}}" />
-													@error('name')
+													<input type="text" name="fname" required placeholder="Enter First Name" 
+													class="form-control input-height @error('fname') is-invalid @enderror" value="{{old('fname','')}}" />
+													@error('fname')
 														<span class="invalid-feedback" role="alert">
 															<strong>{{$message}}</strong>
 														</span>
@@ -52,9 +52,9 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-													<input type="text" name="name" required placeholder="Enter Last Name" 
-													class="form-control input-height @error('name') is-invalid @enderror" value="{{old('name','')}}" />
-													@error('name')
+													<input type="text" name="lname" required placeholder="Enter Last Name" 
+													class="form-control input-height @error('lname') is-invalid @enderror" value="{{old('lname','')}}" />
+													@error('lname')
 														<span class="invalid-feedback" role="alert">
 															<strong>{{$message}}</strong>
 														</span>
@@ -94,9 +94,9 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-                    								<input type="number" name="mobileno" required placeholder="Enter Mobile Number"  
-													class="form-control input-height @error('mobileno') is-invalid @enderror" value="{{old('mobileno','')}}"/>
-                                                   	@error('mobileno')
+                    								<input type="number" name="mobile" required placeholder="Enter Mobile Number"  
+													class="form-control input-height @error('mobile') is-invalid @enderror" value="{{old('mobile','')}}"/>
+                                                   	@error('mobile')
                     								<span class="invalid-feedback" role="alert">
 														<strong>{{$message}}</strong>
 													</span>
@@ -108,9 +108,9 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-                    								<input type="number" name="phoneno" required placeholder="Enter Phone Number"  
-													class="form-control input-height @error('phoneno') is-invalid @enderror" value="{{old('phoneno','')}}"/>
-                                                   	@error('phoneno')
+                    								<input type="number" name="phone" required placeholder="Enter Phone Number"  
+													class="form-control input-height @error('phone') is-invalid @enderror" value="{{old('phone','')}}"/>
+                                                   	@error('phone')
                     								<span class="invalid-feedback" role="alert">
 														<strong>{{$message}}</strong>
 													</span>
@@ -136,7 +136,7 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-                    								<input type="text" name='District' list='districtname' placeholder="Please Select..." 
+                    								<input type="text" name='district' list='districtname' placeholder="Please Select..." 
 													class="form-control input-height @error('district') is-invalid @enderror" value="{{old('district','')}}">
                     								@error('district')
                     								<span class="invalid-feedback" role="alert"> 
@@ -209,8 +209,8 @@
 														<span class="required"> * </span>
                                        				</label>
 													<div class="col-md-5">
-                    									<input type="file" class="form-control bg-light @error('ctzn_front') is-invalid @enderror" name="ctzn_front" value="{{old('ctzn_front','')}}"/>
-														@error('ctzn_front')
+                    									<input type="file" class="form-control bg-light @error('frontcitizenshipimage') is-invalid @enderror" name="frontcitizenshipimage" value="{{old('frontcitizenshipimage','')}}"/>
+														@error('frontcitizenshipimage')
                     										<span class="invalid-feedback" role="alert"> 
 																<strong>{{$message}}</strong>
 															</span>
@@ -222,8 +222,8 @@
 														<span class="required"> * </span>
                                        				</label>
 													<div class="col-md-5">
-                    									<input type="file" class="form-control bg-light @error('ctzn_back') is-invalid @enderror" name="ctzn_back" value="{{old('ctzn_back','')}}"/>
-														@error('ctzn_back')
+                    									<input type="file" class="form-control bg-light @error('backcitizenshipimage') is-invalid @enderror" name="backcitizenshipimage" value="{{old('backcitizenshipimage','')}}"/>
+														@error('backcitizenshipimage')
                     										<span class="invalid-feedback" role="alert"> 
 																<strong>{{$message}}</strong>
 															</span>

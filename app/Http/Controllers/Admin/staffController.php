@@ -26,7 +26,8 @@ class staffController extends Controller
      */
     public function create()
     {
-        return view('Admin.Staff.add');
+        $staff = Staff::all();
+        return view('Admin.Staff.add',compact('staff'));
     }
 
     /**
@@ -38,8 +39,8 @@ class staffController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $staff = Staff::create($data);
-        return redirect()->route('staff.view')->with('success', 'Staff Created successfully');
+        Staff::create($data);
+        return redirect()->route('staff.index')->with('success', 'Staff Created Successfully');
         
     }
 

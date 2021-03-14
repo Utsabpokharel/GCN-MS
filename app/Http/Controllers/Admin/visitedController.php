@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Visited;
 
 class visitedController extends Controller
 {
@@ -14,7 +15,8 @@ class visitedController extends Controller
      */
     public function index()
     {
-        return view('Admin.Call Logs.Visitor Logs.view');
+        $visited = Visited::all();
+        return view('Admin.Call Logs.Visitor Logs.view',compact('visited'));
     }
 
     /**
@@ -24,7 +26,8 @@ class visitedController extends Controller
      */
     public function create()
     {
-        return view('Admin.Call Logs.Visitor Logs.add');
+        $visited = Visited::all();
+        return view('Admin.Call Logs.Visitor Logs.add',compact('visited'));
     }
 
     /**
@@ -35,7 +38,9 @@ class visitedController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Visited::create($data);
+        return redirect()->route('visited.index')->with('success', 'Visited Created Successfully');
     }
 
     /**

@@ -28,7 +28,6 @@ class CreateCustomersTable extends Migration
             $table->string('permanent_address');
             $table->string('temporary_address')->nullable();
             $table->enum('customer_type',['Organization','Individual']);
-            $table->tinyinteger('ifuser')->default(0);
             $table->string('frontcitizenshipimage')->nullable();
             $table->string('backcitizenshipimage')->nullable();
             $table->timestamps();

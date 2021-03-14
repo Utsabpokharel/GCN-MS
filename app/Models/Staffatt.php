@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Staffatt extends Model
 {
     use SoftDeletes;
-    protected $fillable = ['name', 'attendance', 'remarks'];
+    protected $fillable = ['staff', 'attendance', 'remarks'];
     use HasFactory;
 }

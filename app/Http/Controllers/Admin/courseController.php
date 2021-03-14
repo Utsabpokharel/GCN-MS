@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Course;
 
 class courseController extends Controller
 {
@@ -14,7 +15,8 @@ class courseController extends Controller
      */
     public function index()
     {
-        return view('Admin.Courses.Course.view');
+        $course = Course::all();
+        return view('Admin.Courses.Course.view',compact('course'));
     }
 
     /**
@@ -24,7 +26,8 @@ class courseController extends Controller
      */
     public function create()
     {
-        return view('Admin.Courses.Course.add');
+        $course = Course::all();
+        return view('Admin.Courses.Course.add',compact('course'));
     }
 
     /**
@@ -35,7 +38,9 @@ class courseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Course::create($data);
+        return redirect()->route('course.index')->with('success', 'Course Created Successfully');
     }
 
     /**

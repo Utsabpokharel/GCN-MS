@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Department;
 
 class departmentController extends Controller
 {
@@ -14,7 +15,8 @@ class departmentController extends Controller
      */
     public function index()
     {
-        return view('Admin.Department.view');
+        $department = Department::all();
+        return view('Admin.Department.view',compact('department'));
     }
 
     /**
@@ -24,7 +26,8 @@ class departmentController extends Controller
      */
     public function create()
     {
-        return view('Admin.Department.add');
+        $department = Department::all();
+        return view('Admin.Department.add',compact('department'));
     }
 
     /**
@@ -35,7 +38,9 @@ class departmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Department::create($data);
+        return redirect()->route('department.index')->with('success', 'Department Created Successfully');
     }
 
     /**

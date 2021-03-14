@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Staffatt;
 
 class staffattController extends Controller
 {
@@ -14,7 +15,8 @@ class staffattController extends Controller
      */
     public function index()
     {
-        return view('Admin.Attendance.Staff.view');
+        $staffatt = Staffatt::all();
+        return view('Admin.Attendance.Staff.view',compact('staffatt'));
     
     }
 
@@ -25,7 +27,8 @@ class staffattController extends Controller
      */
     public function create()
     {
-        return view('Admin.Attendance.Staff.add');
+        $staffatt = Staffatt::all();
+        return view('Admin.Attendance.Staff.add',compact('staffatt'));
         
     }
 
@@ -37,7 +40,9 @@ class staffattController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Staffatt::create($data);
+        return redirect()->route('staffatt.index')->with('success', 'Staff Attendance Created Successfully');
     }
 
     /**

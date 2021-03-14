@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Level;
 
 class levelController extends Controller
 {
@@ -14,7 +15,8 @@ class levelController extends Controller
      */
     public function index()
     {
-        return view('Admin.Designation.Level.view');
+        $level = Level::all();
+        return view('Admin.Designation.Level.view',compact('level'));
     }
 
     /**
@@ -24,7 +26,8 @@ class levelController extends Controller
      */
     public function create()
     {
-        return view('Admin.Designation.Level.add');
+        $level = Level::all();
+        return view('Admin.Designation.Level.add',compact('level'));
     }
 
     /**
@@ -35,7 +38,9 @@ class levelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Level::create($data);
+        return redirect()->route('level.index')->with('success', 'Level Created Successfully');
     }
 
     /**

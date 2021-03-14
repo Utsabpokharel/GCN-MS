@@ -30,7 +30,7 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{ route('enquiry.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
                             <div class="form-body">
@@ -49,7 +49,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="enquiryname" required placeholder="enter enquiry Category"
+                                        <input type="text" name="category" required placeholder="enter enquiry Category"
                                             class="form-control input-height " value="" />
                                     </div>
                                 </div>
@@ -59,7 +59,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type=text name="enquirysource" required
+                                        <input type=text name="source" required
                                             placeholder="Enter Enquiry Source"
                                             class="form-control input-height " value="" />
                                     </div>
@@ -71,7 +71,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="date" name="date" required
+                                        <input type="date" name="endate" required
                                             placeholder="Enter Date"
                                             class="form-control input-height" />
                                     </div>
@@ -83,7 +83,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="time" name="time" required
+                                        <input type="time" name="entime" required
                                             placeholder="Enter Time"
                                             class="form-control input-height" />
                                     </div>
@@ -93,7 +93,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                            <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+                                            <textarea name="remarks" id="remarks" cols="30" rows="10" class="form-control"></textarea>
                                     </div>
                                 </div>
 

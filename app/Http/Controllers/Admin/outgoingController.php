@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Outgoing;
 
 class outgoingController extends Controller
 {
@@ -14,7 +15,8 @@ class outgoingController extends Controller
      */
     public function index()
     {
-        return view('Admin.Call Logs.Outgoing Call Logs.view');
+        $outgoing = Outgoing::all();
+        return view('Admin.Call Logs.Outgoing Call Logs.view',compact('outgoing'));
     }
 
     /**
@@ -24,7 +26,8 @@ class outgoingController extends Controller
      */
     public function create()
     {
-        return view('Admin.Call Logs.Outgoing Call Logs.add');
+        $Outgoing = Outgoing::all();
+        return view('Admin.Call Logs.Outgoing Call Logs.add',compact('Outgoing'));
     }
 
     /**
@@ -35,7 +38,9 @@ class outgoingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Outgoing::create($data);
+        return redirect()->route('outgoing.index')->with('success', 'Outgoing Created Successfully');
     }
 
     /**

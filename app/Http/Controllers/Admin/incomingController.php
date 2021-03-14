@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Incoming;
 
 class incomingController extends Controller
 {
@@ -14,7 +15,8 @@ class incomingController extends Controller
      */
     public function index()
     {
-        return view('Admin.Call Logs.Incoming Call Logs.view');
+        $incoming = Incoming::all();
+        return view('Admin.Call Logs.Incoming Call Logs.view',compact('incoming'));
     }
 
     /**
@@ -24,7 +26,8 @@ class incomingController extends Controller
      */
     public function create()
     {
-        return view('Admin.Call Logs.Incoming Call Logs.add');
+        $incoming = Incoming::all();
+        return view('Admin.Call Logs.Incoming Call Logs.add',compact('incoming'));
     }
 
     /**
@@ -35,7 +38,9 @@ class incomingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Incoming::create($data);
+        return redirect()->route('incoming.index')->with('success', 'Incoming Created Successfully');
     }
 
     /**

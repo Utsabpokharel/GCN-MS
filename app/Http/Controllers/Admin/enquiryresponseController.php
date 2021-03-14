@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\EnquiryResponse;
 
 class enquiryresponseController extends Controller
 {
@@ -14,7 +15,8 @@ class enquiryresponseController extends Controller
      */
     public function index()
     {
-        return view('Admin.Enquiry.EnquiryResponse.view');
+        $enquiry = EnquiryResponse::all();
+        return view('Admin.Enquiry.EnquiryResponse.view',compact('enquiry'));
     }
 
     /**
@@ -24,7 +26,8 @@ class enquiryresponseController extends Controller
      */
     public function create()
     {
-        return view('Admin.Enquiry.EnquiryResponse.add');
+        $enquiry = EnquiryResponse::all();
+        return view('Admin.Enquiry.EnquiryResponse.add',compact('enquiry'));
     }
 
     /**
@@ -35,7 +38,9 @@ class enquiryresponseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        EnquiryResponse::create($data);
+        return redirect()->route('enquiryresponse.index')->with('success', 'Enquiry Response Created Successfully');
     }
 
     /**

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Award;
 
 class awardController extends Controller
 {
@@ -14,7 +15,8 @@ class awardController extends Controller
      */
     public function index()
     {
-        return view('Admin.Awards.view');
+        $award = Award::all();
+        return view('Admin.Awards.view',compact('award'));
     }
 
     /**
@@ -24,7 +26,8 @@ class awardController extends Controller
      */
     public function create()
     {
-        return view('Admin.Awards.add');
+        $award = Award::all();
+        return view('Admin.Awards.add',compact('award'));
     }
 
     /**
@@ -35,7 +38,9 @@ class awardController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Award::create($data);
+        return redirect()->route('award.index')->with('success', 'Award Created Successfully');
     }
 
     /**

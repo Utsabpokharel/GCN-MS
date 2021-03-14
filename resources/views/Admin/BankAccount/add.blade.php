@@ -29,7 +29,7 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{ route('bankaccount.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
                             <div class="form-body">
@@ -38,7 +38,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="name" name="username" required placeholder="Select User name"
+                                        <input type="name" name="user_id" required placeholder="Select User name"
                                             class="form-control input-height" value="" />
                                     </div>
                                 </div>
@@ -48,7 +48,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="name" name="accountholdername" required placeholder="Enter Account Holder Name"
+                                        <input type="name" name="accountholder_name" required placeholder="Enter Account Holder Name"
                                             class="form-control input-height " value="" />
                                     </div>
                                 </div>
@@ -58,7 +58,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="name" name="bankname" required
+                                        <input type="name" name="bank_name" required
                                             placeholder="Enter Bank Name"
                                             class="form-control input-height " value="" />
                                     </div>
@@ -70,7 +70,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="name" name="branchname" required
+                                        <input type="name" name="branch_name" required
                                             placeholder="Enter Branch Name"
                                             class="form-control input-height" />
                                     </div>
@@ -81,7 +81,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="name" name="accountnumber" required
+                                        <input type="name" name="account_number" required
                                             placeholder="Enter Account Numebr"
                                             class="form-control input-height" />
                                     </div>

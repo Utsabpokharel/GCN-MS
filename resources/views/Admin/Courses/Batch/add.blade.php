@@ -30,7 +30,7 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{ route('batch.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
                             <div class="form-body">
@@ -49,7 +49,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="date" name="batchyear" required placeholder="enter batch year"
+                                        <input type="date" name="year" required placeholder="enter batch year"
                                             class="form-control input-height " value="" />
                                     </div>
                                 </div>
@@ -71,7 +71,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="courses" required
+                                        <input type="text" name="course" required
                                             placeholder="Enter Course"
                                             class="form-control input-height" />
                                     </div>

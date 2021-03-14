@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Exam;
 
 class examController extends Controller
 {
@@ -14,7 +15,8 @@ class examController extends Controller
      */
     public function index()
     {
-        return view('Admin.Exam.view');
+        $exam = Exam::all();
+        return view('Admin.Exam.view',compact('exam'));
     }
 
     /**
@@ -24,7 +26,8 @@ class examController extends Controller
      */
     public function create()
     {
-        return view('Admin.Exam.add');
+        $exam = Exam::all();
+        return view('Admin.Exam.add',compact('exam'));
     }
 
     /**
@@ -35,7 +38,9 @@ class examController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Exam::create($data);
+        return redirect()->route('exam.index')->with('success', 'Exam Created Successfully');
     }
 
     /**

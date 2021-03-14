@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\PayCalendar;
 
 class paycalendarController extends Controller
 {
@@ -14,7 +15,8 @@ class paycalendarController extends Controller
      */
     public function index()
     {
-        return view('Admin.Payroll.PayCalendar.view');
+        $paycalendar = PayCalendar::all();
+        return view('Admin.Payroll.PayCalendar.view',compact('paycalendar'));
     }
 
     /**
@@ -24,7 +26,8 @@ class paycalendarController extends Controller
      */
     public function create()
     {
-        return view('Admin.Payroll.PayCalendar.add');
+        $paycalendar = PayCalendar::all();
+        return view('Admin.Payroll.PayCalendar.add',compact('paycalendar'));
     }
 
     /**
@@ -35,7 +38,9 @@ class paycalendarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        PayCalendar::create($data);
+        return redirect()->route('paycalendar.index')->with('success', 'PayCalendar Created Successfully');
     }
 
     /**

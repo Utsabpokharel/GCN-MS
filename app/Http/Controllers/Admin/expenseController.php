@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Expense;
 
 class expenseController extends Controller
 {
@@ -14,7 +15,8 @@ class expenseController extends Controller
      */
     public function index()
     {
-        return view('Admin.Expense.view');
+        $expense = Expense::all();
+        return view('Admin.Expense.view',compact('expense'));
     }
 
     /**
@@ -24,7 +26,8 @@ class expenseController extends Controller
      */
     public function create()
     {
-        return view('Admin.Expense.add');
+        $expense = Expense::all();
+        return view('Admin.Expense.add',compact('expense'));
     }
 
     /**
@@ -35,7 +38,9 @@ class expenseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Expense::create($data);
+        return redirect()->route('expense.index')->with('success', 'Expense Created Successfully');
     }
 
     /**

@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Visited extends Model
 {
     use HasFactory;
+    protected $fillable = ['visittime','visitdate','name','handledby','remarks','purpose'];
+
 }

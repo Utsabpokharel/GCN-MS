@@ -29,7 +29,7 @@
 									</button>									
 								</div>
 								<div class="card-body" id="bar-parent">
-									<form action="" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"  enctype="multipart/form-data">
+									<form action="{{ route('award.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"  enctype="multipart/form-data">
 										{{csrf_field()}}
 										<div class="form-body">
 											<div class="form-group row">
@@ -37,12 +37,12 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-												<select name="staff" id="staff"
-													class="form-control input-height @error('staff') is-invalid @enderror" value="{{old('name','')}}" />
+												<select name="staffname" id="staffname"
+													class="form-control input-height @error('staffname') is-invalid @enderror" value="{{old('name','')}}" />
 													<option selected disabled="">Select Staff Name </option>
 													</select>
 		   
-													@error('staff')
+													@error('staffname')
 														<span class="invalid-feedback" role="alert">
 															<strong>{{$message}}</strong>
 														</span>
@@ -54,9 +54,9 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-												<input type="text" name="award" required placeholder="Enter Award Name" 
-													class="form-control input-height @error('award') is-invalid @enderror" value="{{old('award','')}}" />
-													@error('award')
+												<input type="text" name="awaname" required placeholder="Enter Award Name" 
+													class="form-control input-height @error('awaname') is-invalid @enderror" value="{{old('awaname','')}}" />
+													@error('awaname')
 														<span class="invalid-feedback" role="alert">
 															<strong>{{$message}}</strong>
 														</span>
@@ -74,8 +74,8 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-                    								<input type="date" class="form-control input-height @error('date') is-invalid @enderror" data-date-format="yyyy-mm-dd" value="{{old('date','')}}" />
-													@error('date')
+                    								<input type="date" class="form-control input-height @error('awadate') is-invalid @enderror" data-date-format="yyyy-mm-dd" value="{{old('awadate','')}}" />
+													@error('awadate')
 													<span class="invalid-feedback" role="alert">
 														<strong>{{$message}}</strong>
 													</span>

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Bank;
+use App\Models\BankAccount;
 
 class bankaccountController extends Controller
 {
@@ -15,7 +15,8 @@ class bankaccountController extends Controller
      */
     public function index()
     {
-        return view('Admin.BankAccount.view');
+        $bank = BankAccount::all();
+        return view('Admin.BankAccount.view',compact('bank'));
     }
 
     /**
@@ -25,7 +26,8 @@ class bankaccountController extends Controller
      */
     public function create()
     {
-        return view('Admin.BankAccount.add');
+        $bank = BankAccount::all();
+        return view('Admin.BankAccount.add',compact('bank'));
     }
 
     /**
@@ -36,7 +38,9 @@ class bankaccountController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        BankAccount::create($data);
+        return redirect()->route('bankaccount.index')->with('success', 'Bank Account Created Successfully');
     }
 
     /**

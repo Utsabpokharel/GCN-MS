@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Advanced;
 use Illuminate\Http\Request;
 
 class advancedController extends Controller
@@ -14,7 +15,8 @@ class advancedController extends Controller
      */
     public function index()
     {
-        return view('Admin.Payroll.Advanced.view');
+        $advanced = Advanced::all();
+        return view('Admin.Payroll.Advanced.view',compact('advanced'));
     }
 
     /**
@@ -24,7 +26,8 @@ class advancedController extends Controller
      */
     public function create()
     {
-        return view('Admin.Payroll.Advanced.add');
+        $advanced = Advanced::all();
+        return view('Admin.Payroll.Advanced.add',compact('advanced'));
     }
 
     /**
@@ -35,7 +38,9 @@ class advancedController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Advanced::create($data);
+        return redirect()->route('advanced.index')->with('success', 'Advanced Created Successfully');
     }
 
     /**

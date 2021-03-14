@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\EnquirySource;
 
 class enquirysourceController extends Controller
 {
@@ -14,7 +15,8 @@ class enquirysourceController extends Controller
      */
     public function index()
     {
-        return view('Admin.Enquiry.EnquirySource.view');
+        $enquiry = EnquirySource::all();
+        return view('Admin.Enquiry.EnquirySource.view',compact('enquiry'));
     }
 
     /**
@@ -24,7 +26,8 @@ class enquirysourceController extends Controller
      */
     public function create()
     {
-        return view('Admin.Enquiry.EnquirySource.add');
+        $enquiry = EnquirySource::all();
+        return view('Admin.Enquiry.EnquirySource.add',compact('enquiry'));
     }
 
     /**
@@ -35,7 +38,9 @@ class enquirysourceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        EnquirySource::create($data);
+        return redirect()->route('enquirysource.index')->with('success', 'Enquiry Source Created Successfully');
     }
 
     /**

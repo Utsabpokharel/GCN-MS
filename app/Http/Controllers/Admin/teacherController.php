@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Teacher;
 
 class teacherController extends Controller
 {
@@ -14,7 +15,8 @@ class teacherController extends Controller
      */
     public function index()
     {
-        return view('Admin.Teacher.view');
+        $teacher= Teacher::all();
+        return view('Admin.Teacher.view',compact('teacher'));
     }
 
     /**
@@ -24,7 +26,8 @@ class teacherController extends Controller
      */
     public function create()
     {
-        return view('Admin.Teacher.add');
+        $teacher= Teacher::all();
+        return view('Admin.Teacher.add',compact('teacher'));
     
     }
 
@@ -36,7 +39,9 @@ class teacherController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Teacher::create($data);
+        return redirect()->route('teacher.index')->with('success', 'Teacher Created successfully');
     }
 
     /**

@@ -29,7 +29,7 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{ route('income.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
                             <div class="form-body">
@@ -38,8 +38,8 @@
 										<span class="required"> * </span>
 									</label>
 									<div class="col-md-5">
-                    					<input type="date" class="form-control input-height @error('date') is-invalid @enderror" data-date-format="yyyy-mm-dd" value="{{old('date','')}}" />
-										@error('date')
+                    					<input type="date" class="form-control input-height @error('incdate') is-invalid @enderror" data-date-format="yyyy-mm-dd" value="{{old('incdate','')}}" />
+										@error('incdate')
 										<span class="invalid-feedback" role="alert">
 										    <strong>{{$message}}</strong>
 										</span>
@@ -64,11 +64,11 @@
 										<span class="required"> * </span>
 									</label>
 									<div class="col-md-5">
-                                    <select name="paid" class="form-control input-height @error('paid') is-invalid @enderror"  value="" >
+                                    <select name="paidby" class="form-control input-height @error('paidby') is-invalid @enderror"  value="" >
                                         <option selected disabled="">Paid By</option>
                                         
                                     </select>
-										@error('paid')
+										@error('paidby')
 										<span class="invalid-feedback" role="alert">
 										    <strong>{{$message}}</strong>
 										</span>
@@ -80,11 +80,11 @@
 										<span class="required"> * </span>
 									</label>
 									<div class="col-md-5">
-                                    <select name="cat_id" class="form-control input-height @error('cat_id') is-invalid @enderror"  value="" >
+                                    <select name="catid" class="form-control input-height @error('catid') is-invalid @enderror"  value="" >
                                         <option selected disabled="">Select Category ID</option>
                                         
                                     </select>
-										@error('cat_id')
+										@error('catid')
 										<span class="invalid-feedback" role="alert">
 										    <strong>{{$message}}</strong>
 										</span>
@@ -96,13 +96,13 @@
 										<span class="required"> * </span>
 									</label>
 									<div class="col-md-5">
-                                    <select name="mode_of_payment" class="form-control input-height @error('mode_of_payment') is-invalid @enderror"  value="">
+                                    <select name="payment" class="form-control input-height @error('payment') is-invalid @enderror"  value="">
                                         <option selected disabled="">Select Payment Method</option>
                                         <option value="bank">Bank</option>
                                         <option value="esewa">Esewa</option>
                                         <option value="khalti">Khalti</option>
                                     </select>
-                                    @error('mode_of_payment')
+                                    @error('payment')
 										<span class="invalid-feedback" role="alert">
 										    <strong>{{$message}}</strong>
 										</span>
@@ -114,11 +114,11 @@
 										<span class="required"> * </span>
 									</label>
 									<div class="col-md-5">
-                                    <select name="received" class="form-control input-height @error('received') is-invalid @enderror"  value="" >
+                                    <select name="receivedby" class="form-control input-height @error('receivedby') is-invalid @enderror"  value="" >
                                         <option selected disabled="">Select Received By</option>
                                         
                                     </select>
-										@error('received')
+										@error('receivedby')
 										<span class="invalid-feedback" role="alert">
 										    <strong>{{$message}}</strong>
 										</span>
