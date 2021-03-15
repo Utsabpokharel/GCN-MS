@@ -44,17 +44,20 @@
                                                             <td>{{$value->code}}</td>
                                                             <td>{{$value->name}}</td>
                                                             <td>{{$value->description}}</td>
-                                                            
+
 
                                                             <td>
                                                                 <a href="{{route('education.edit',$value->id) }}"
                                                                    class="btn btn-primary btn-xs">
                                                                     <i class="fa fa-pencil"></i>
                                                                 </a>
-                                                                <a href="{{ route('education.destroy',$value->id) }}"
-                                                                    class="btn btn-danger btn-xs">
-                                                                    <i class="fa fa-trash-o "></i>
-                                                                </button>
+                                                                <form method="POST" action="{{ route('education.destroy', $value->id) }}" id="deleteForm">
+                                                                @csrf
+                                                          @method('DELETE')
+                                                  <button class="btn btn-danger btn-xs">
+                                                     <i class="fa fa-trash-o "></i>
+                                                  </button>
+                                                </form>
 
                                                             </td>
                                                         </tr>

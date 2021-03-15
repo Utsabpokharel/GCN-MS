@@ -48,14 +48,17 @@
 
 
                                                             <td>
-                                                                <a href="{{route('employeeresignation.edit',$value->id) }}"
+                                                                <a href="{{route('employmentstatus.edit',$value->id) }}"
                                                                    class="btn btn-primary btn-xs">
                                                                     <i class="fa fa-pencil"></i>
                                                                 </a>
-                                                                <a href="{{ route('employeeresignation.destroy',$value->id) }}"
-                                                                    class="btn btn-danger btn-xs">
-                                                                    <i class="fa fa-trash-o "></i>
-                                                                </button>
+                                                                <form method="POST" action="{{ route('employmentstatus.destroy', $value->id) }}" id="deleteForm">
+                                                                @csrf
+                                                          @method('DELETE')
+                                                  <button class="btn btn-danger btn-xs">
+                                                     <i class="fa fa-trash-o "></i>
+                                                  </button>
+                                                </form>
 
                                                             </td>
                                                         </tr>

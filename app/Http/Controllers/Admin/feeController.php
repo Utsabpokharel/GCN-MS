@@ -91,6 +91,6 @@ class feeController extends Controller
     {
         $fees = Fee::findorfail($id);
         $fees->delete();
-        return redirect()->route('fee.index');
+        return redirect()->route('fee.index')->with('warning', 'Fee Deleted Successfully');
     }
 }

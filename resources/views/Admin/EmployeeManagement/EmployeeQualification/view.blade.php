@@ -51,10 +51,13 @@
                                                                    class="btn btn-primary btn-xs">
                                                                     <i class="fa fa-pencil"></i>
                                                                 </a>
-                                                                <a href="{{ route('employeequalification.destroy',$value->id) }}"
-                                                                    class="btn btn-danger btn-xs">
-                                                                    <i class="fa fa-trash-o "></i>
-                                                                </button>
+                                                                <form method="POST" action="{{ route('employeequalification.destroy', $value->id) }}" id="deleteForm">
+                                                                @csrf
+                                                          @method('DELETE')
+                                                  <button class="btn btn-danger btn-xs">
+                                                     <i class="fa fa-trash-o "></i>
+                                                  </button>
+                                                </form>
 
                                                             </td>
 
