@@ -48,17 +48,20 @@
                                                             <td>{{$value->status }}</td>
                                                             <td>{{ $value->forwardto }}</td>
                                                             <td>{{ $value->disciplinaryaction }}</td>
-                                                            
+
 
                                                             <td>
                                                                 <a href="{{route('disciplinary.edit',$value->id) }}"
                                                                    class="btn btn-primary btn-xs">
                                                                     <i class="fa fa-pencil"></i>
                                                                 </a>
-                                                                <a href="{{ route('disciplinary.destroy',$value->id) }}"
-                                                                    class="btn btn-danger btn-xs">
-                                                                    <i class="fa fa-trash-o "></i>
-                                                                </button>
+                                                                <form method="POST" action="{{ route('disciplinary.destroy', $value->id) }}" id="deleteForm">
+                                                                @csrf
+                                                          @method('DELETE')
+                                                  <button class="btn btn-danger btn-xs">
+                                                     <i class="fa fa-trash-o "></i>
+                                                  </button>
+                                                </form>
 
                                                             </td>
                                                         </tr>
