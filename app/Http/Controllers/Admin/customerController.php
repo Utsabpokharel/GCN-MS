@@ -63,7 +63,8 @@ class customerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $customer = Customer::findorfail($id);
+        return view('Admin.Customer.edit', compact('customer'));
     }
 
     /**
@@ -75,7 +76,10 @@ class customerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $customer = Customer::findorfail($id);
+        $customer->update($data);
+        return redirect()->route('customer.index')->with('success', 'Customer Updated Successfully');
     }
 
     /**

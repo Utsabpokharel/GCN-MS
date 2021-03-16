@@ -29,28 +29,35 @@
                         <table id="exportTable" class="display nowrap" style="width:100%">
                             <thead>
                                 <tr>
-                                    <th>#</th>
-                                    <th>Name</th>
+                                    <th>S.N.</th>
                                     <th>Email</th>
                                     <th>Role</th>
-                                    <th>Image</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-
-                                <tr>
-
-                                </tr>
-
+                            @foreach($user as $value)
+                            <tr>
+                                <td>{{$value->step+1}}</td>
+                                <td>{{$value->email}}</td>
+								<td>{{$value->role}}</td>
+								<td>
+                                <a href="{{route('user.edit',$value->id) }}"
+                                class="btn btn-primary btn-xs">
+                                <i class="fa fa-pencil"></i></a>
+                                <a href=""
+                                class="btn btn-danger btn-xs">
+                    			<i class="fa fa-trash-o "></i>
+                                </button>
+								</td>
+                            </tr>
+                            @endforeach 
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>#</th>
-                                    <th>Name</th>
+                                    <th>S.N.</th>
                                     <th>Email</th>
                                     <th>Role</th>
-                                    <th>Image</th>
                                     <th>Actions</th>
                                 </tr>
                             </tfoot>

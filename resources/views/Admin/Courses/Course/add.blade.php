@@ -49,7 +49,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="duration" required placeholder="Enter Duration in Weeks"
+                                        <input type="number" name="duration" required placeholder="Enter Duration in Weeks"
                                             class="form-control input-height " value="" />
                                     </div>
                                 </div>
@@ -59,7 +59,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="fees" required
+                                        <input type="number" name="fees" required
                                             placeholder="Enter Fees"
                                             class="form-control input-height " value="" />
                                     </div>
@@ -86,7 +86,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                    <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+                                    <textarea name="description" id="description" cols="30" rows="10" class="form-control" placeholder="Enter Description"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">

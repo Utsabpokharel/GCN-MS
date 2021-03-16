@@ -29,7 +29,7 @@
                         <table id="exportTable" class="display nowrap" style="width:100%">
                             <thead>
                                 <tr>
-                                    <th>#</th>
+                                    <th>S.N.</th>
                                     <th>Staff Name</th>
                                     <th>Amount</th>
                                     <th>Payment Method</th>
@@ -37,15 +37,26 @@
                                 </tr>
                             </thead>
                             <tbody>
-
-                                <tr>
-
-                                </tr>
-
-                            </tbody>
+                            @foreach($advanced as $value)
+                            <tr>
+                                <td>{{$value->step+1}}</td>
+                                <td>{{$value->name}}</td>
+                                <td>{{$value->amount}}</td>
+                                <td>{{$value->payment}}</td>
+								<td>
+                                <a href="{{route('advanced.edit',$value->id) }}"
+                                class="btn btn-primary btn-xs">
+                                <i class="fa fa-pencil"></i></a>
+                                <a href=""
+                                class="btn btn-danger btn-xs">
+                    			<i class="fa fa-trash-o "></i>
+                                </button>
+								</td>
+                            </tr>
+                            @endforeach 
                             <tfoot>
                                 <tr>
-                                   <th>#</th>
+                                   <th>S.N.</th>
                                     <th>Staff Name</th>
                                     <th>Amount</th>
                                     <th>Payment Method</th>

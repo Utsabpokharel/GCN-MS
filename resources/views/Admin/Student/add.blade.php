@@ -66,7 +66,7 @@
                     								<span class="required">*</span>
 												</label>
 												<div class="col-md-5">
-                    								<input type="date" class="form-control input-height @error('dob') is-invalid @enderror" value="{{old('dob','')}}" />
+                    								<input type="date" name="dob"class="form-control input-height @error('dob') is-invalid @enderror" value="{{old('dob','')}}" />
                     								@error('dob')
                     									<span class="invalid-feedback" role="alert">
 															<strong>{{$message}}</strong>
@@ -96,6 +96,7 @@
 											<div class="col-md-5">
           										<select name="stdcat"  class="form-control form-control-solid @error('stdcat') is-invalid @enderror" value="{{ old('stdcat') }}">
           										<option value="">Select Student Category</option>
+												  <option value="abc">abc</option>
           										</select>
          					 					@error('stdcat')
           										<span class="invalid-feedback" role="alert">
@@ -111,6 +112,7 @@
 											<div class="col-md-5">
           										<select name="batch"  class="form-control form-control-solid @error('batch') is-invalid @enderror" value="{{ old('batch') }}">
           										<option value="">Select Batch</option>
+												<option value="abc">abc</option> 
           										</select>
          					 					@error('batch')
           										<span class="invalid-feedback" role="alert">
@@ -126,6 +128,7 @@
 											<div class="col-md-5">
           										<select name="section"  class="form-control form-control-solid @error('section') is-invalid @enderror" value="{{ old('section') }}">
           										<option value="">Select Section</option>
+												<option value="abc">abc</option>
           										</select>
          					 					@error('section')
           										<span class="invalid-feedback" role="alert">
@@ -141,6 +144,7 @@
 											<div class="col-md-5">
           										<select name="course"  class="form-control form-control-solid @error('course') is-invalid @enderror" value="{{ old('course') }}">
           										<option value="">Select Course</option>
+												<option value="abc">abc</option>  
           										</select>
          					 					@error('course')
           										<span class="invalid-feedback" role="alert">
@@ -168,9 +172,9 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-                    								<input type="number" name="phoneno" required placeholder="Enter Phone Number"  
-													class="form-control input-height @error('phoneno') is-invalid @enderror" value="{{old('phoneno','')}}"/>
-                                                   	@error('phoneno')
+                    								<input type="number" name="phone" required placeholder="Enter Phone Number"  
+													class="form-control input-height @error('phone') is-invalid @enderror" value="{{old('phone','')}}"/>
+                                                   	@error('phone')
                     								<span class="invalid-feedback" role="alert">
 														<strong>{{$message}}</strong>
 													</span>

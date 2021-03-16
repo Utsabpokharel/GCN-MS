@@ -62,7 +62,8 @@ class expenseController extends Controller
      */
     public function edit($id)
     {
-        //
+        $expense = Expense::findorfail($id);
+        return view('Admin.Expense.edit', compact('expense'));
     }
 
     /**
@@ -74,7 +75,10 @@ class expenseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $expense = Expense::findorfail($id);
+        $expense->update($data);
+        return redirect()->route('expense.index')->with('success', 'Expense Updated Successfully');
     }
 
     /**

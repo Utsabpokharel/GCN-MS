@@ -30,25 +30,41 @@
                             <thead>
                                 <tr>
                                 <th>S.N.</th>
-						<th>Staff Name</th>
-						<th>Award Name</th>
-						<th>Gift</th>
-						<th>Award Date</th>
-						<th>Actions</th>
+						        <th>Staff Name</th>
+						        <th>Award Name</th>
+						        <th>Gift</th>
+						        <th>Award Date</th>
+						        <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                              
-                                
+                            @foreach($award as $value)
+                            <tr>
+                                <td>{{$value->step+1}}</td>
+                                <td>{{$value->staffname}}</td>
+                                <td>{{$value->awaname}}</td>
+								<td>{{$value->gift}}</td>
+								<td>{{$value->awadate}}</td>
+								<td>
+                                <a href="{{route('award.edit',$value->id) }}"
+                                class="btn btn-primary btn-xs">
+                                <i class="fa fa-pencil"></i></a>
+                                <a href=""
+                                class="btn btn-danger btn-xs">
+                    			<i class="fa fa-trash-o "></i>
+                                </button>
+								</td>
+                            </tr>
+                            @endforeach                                 
                             </tbody>
                             <tfoot>
                                 <tr>
                                 <th>S.N.</th>
-						<th>Staff Name</th>
-						<th>Award Name</th>
-						<th>Gift</th>
-						<th>Award Date</th>
-						<th>Actions</th>
+						        <th>Staff Name</th>
+						        <th>Award Name</th>
+						        <th>Gift</th>
+						        <th>Award Date</th>
+						        <th>Actions</th>
                                 </tr>
                             </tfoot>
                         </table>

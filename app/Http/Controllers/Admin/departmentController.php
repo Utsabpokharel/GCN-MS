@@ -62,7 +62,8 @@ class departmentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $department = Department::findorfail($id);
+        return view('Admin.Department.edit', compact('department'));
     }
 
     /**
@@ -74,7 +75,10 @@ class departmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $department = Department::findorfail($id);
+        $department->update($data);
+        return redirect()->route('department.index')->with('success', 'Department Updated Successfully');
     }
 
     /**

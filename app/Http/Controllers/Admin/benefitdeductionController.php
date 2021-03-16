@@ -62,7 +62,8 @@ class benefitdeductionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $benefit = BenefitDeduction::findorfail($id);
+        return view('Admin.BenefitDeduction.edit', compact('benefit'));
     }
 
     /**
@@ -74,7 +75,10 @@ class benefitdeductionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $benefit = BenefitDeduction::findorfail($id);
+        $benefit->update($data);
+        return redirect()->route('benefit.index')->with('success', 'Benefit/Deduction Updated Successfully');
     }
 
     /**

@@ -18,10 +18,11 @@ class CreateBenefitDeductionsTable extends Migration
             $table->string('name');
             $table->integer('bankno');
             $table->float('amount');
-            $table->float('currency');
+            $table->string('currency');
             $table->string('payment');
             $table->string('benefit');
             $table->longText('reason');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

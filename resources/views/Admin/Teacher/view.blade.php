@@ -30,32 +30,43 @@
                             <thead>
                                 <tr>
                                     <th>S.N.</th>
-                                    <th>Image</th>
                                     <th>Name</th>
                                     <th>Phone</th>
                                     <th>Course</th>
-                                    <th>Category</th>
                                     <th>Time</th>
                                     <th>Email</th>
-                                    <th>Adress</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                    
-                                
+                            <tbody>                    
+                            @foreach($teacher as $value)
+                            <tr>
+                                <td>{{$value->step+1}}</td>
+                                <td>{{$value->fname}}{{$value->lname}}</td>
+                                <td>{{$value->phone}}</td>
+                                <td>{{$value->course}}</td>
+                                <td>{{$value->teachtime}}</td>
+                                <td>{{$value->email}}</td>
+								<td>
+                                <a href="{{route('teacher.edit',$value->id) }}"
+                                class="btn btn-primary btn-xs">
+                                <i class="fa fa-pencil"></i></a>
+                                <a href=""
+                                class="btn btn-danger btn-xs">
+                    			<i class="fa fa-trash-o "></i>
+                                </button>
+								</td>
+                            </tr>
+                            @endforeach 
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>S.N.</th>
-                                    <th>Image</th>
+                                <th>S.N.</th>
                                     <th>Name</th>
                                     <th>Phone</th>
                                     <th>Course</th>
-                                    <th>Category</th>
                                     <th>Time</th>
                                     <th>Email</th>
-                                    <th>Adress</th>
                                     <th>Actions</th>
                                 </tr>
                             </tfoot>

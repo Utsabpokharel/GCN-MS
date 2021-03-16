@@ -62,7 +62,8 @@ class incomeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $income = Income::findorfail($id);
+        return view('Admin.Income.edit', compact('income'));
     }
 
     /**
@@ -74,7 +75,10 @@ class incomeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $income = Income::findorfail($id);
+        $income->update($data);
+        return redirect()->route('income.index')->with('success', 'Income Updated Successfully');
     }
 
     /**

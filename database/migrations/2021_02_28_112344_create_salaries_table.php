@@ -19,10 +19,11 @@ class CreateSalariesTable extends Migration
             $table->string('designation');
             $table->string('pan');
             $table->float('amount');
-            $table->float('currency');
+            $table->string('currency');
             $table->integer('bankno');
             $table->string('payment');
             $table->date('joindate');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

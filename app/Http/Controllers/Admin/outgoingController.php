@@ -26,8 +26,8 @@ class outgoingController extends Controller
      */
     public function create()
     {
-        $Outgoing = Outgoing::all();
-        return view('Admin.Call Logs.Outgoing Call Logs.add',compact('Outgoing'));
+        $outgoing = Outgoing::all();
+        return view('Admin.Call Logs.Outgoing Call Logs.add',compact('outgoing'));
     }
 
     /**
@@ -62,7 +62,8 @@ class outgoingController extends Controller
      */
     public function edit($id)
     {
-        //
+        $outgoing = Outgoing::findorfail($id);
+        return view('Admin.Outgoing.edit', compact('outgoing'));
     }
 
     /**
@@ -74,7 +75,10 @@ class outgoingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $outgoing = Outgoing::findorfail($id);
+        $outgoing->update($data);
+        return redirect()->route('outgoing.index')->with('success', 'Outgoing Updated Successfully');
     }
 
     /**

@@ -64,7 +64,8 @@ class staffattController extends Controller
      */
     public function edit($id)
     {
-        //
+        $staffatt = Staffatt::findorfail($id);
+        return view('Admin.Staffatt.edit', compact('staffatt'));
     }
 
     /**
@@ -76,7 +77,10 @@ class staffattController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $staffatt = Staffatt::findorfail($id);
+        $staffatt->update($data);
+        return redirect()->route('staffatt.index')->with('success', 'Staff Attendance Updated Successfully');
     }
 
     /**

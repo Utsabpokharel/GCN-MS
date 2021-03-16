@@ -63,7 +63,8 @@ class expensecategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $expensecategory = Expensecategory::findorfail($id);
+        return view('Admin.Expensecategory.edit', compact('expensecategory'));
     }
 
     /**
@@ -75,7 +76,10 @@ class expensecategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $expensecategory = Expensecategory::findorfail($id);
+        $expensecategory->update($data);
+        return redirect()->route('expensecategory.index')->with('success', 'Expense Category Updated Successfully');
     }
 
     /**

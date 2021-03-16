@@ -18,6 +18,7 @@ class CreatePayCalendarsTable extends Migration
             $table->string('name');
             $table->string('payment');
             $table->string('month');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

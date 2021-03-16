@@ -62,7 +62,8 @@ class enquiryresponseController extends Controller
      */
     public function edit($id)
     {
-        //
+        $enquiry = EnquiryResponse::findorfail($id);
+        return view('Admin.Enquiry.EnquiryResponse.edit', compact('enquiry'));
     }
 
     /**
@@ -74,7 +75,10 @@ class enquiryresponseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $enquiry = EnquiryResponse::findorfail($id);
+        $enquiry->update($data);
+        return redirect()->route('enquiryresponse.index')->with('success', 'Enquiry Response Updated Successfully');
     }
 
     /**

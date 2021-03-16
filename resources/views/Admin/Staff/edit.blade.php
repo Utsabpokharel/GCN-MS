@@ -29,8 +29,9 @@
 									</button>									
 								</div>
 								<div class="card-body" id="bar-parent">
-									<form action="" id="form_sample_1" action="{{ route('staff.update',$staff->id)}}" class="form-horizontal" method="post" autocomplete="on"  enctype="multipart/form-data">
+									<form action="{{route('staff.update',$staff->id)}}" id="form_sample_1" action="{{ route('staff.update',$staff->id)}}" class="form-horizontal" method="post" autocomplete="on"  enctype="multipart/form-data">
 										{{csrf_field()}}
+										@method('PUT')
 										<div class="form-body">
 											<div class="form-group row">
 												<label class="control-label col-md-3">First Name
@@ -38,11 +39,11 @@
 												</label>
 												<div class="col-md-5">
 													<input type="text" name="fname" required placeholder="Enter First Name" 
-													class="form-control input-height @error('fname') is-invalid @enderror" value="{{old('fname',$staff->fname)}}" />
+													class="form-control input-height @error('fname') is-invalid @enderror" value="{{$staff->fname)}}" />
 													@error('fname')
 														<span class="invalid-feedback" role="alert">
 															<strong>{{$message}}</strong>
-														</span>
+														</span>               
 													@enderror
 												</div>
 											</div>

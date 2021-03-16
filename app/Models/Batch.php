@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Batch extends Model
 {
-    use SoftDeletes;
+
     protected $fillable = ['name', 'year', 'month','course','section','shift'];
     use HasFactory;
 }

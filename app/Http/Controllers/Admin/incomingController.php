@@ -62,7 +62,8 @@ class incomingController extends Controller
      */
     public function edit($id)
     {
-        //
+        $incoming = Incoming::findorfail($id);
+        return view('Admin.Call Logs.Incoming Call Logs.edit', compact('incoming'));
     }
 
     /**
@@ -74,7 +75,10 @@ class incomingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $incoming = Incoming::findorfail($id);
+        $incoming->update($data);
+        return redirect()->route('incoming.index')->with('success', 'Incoming Updated Successfully');
     }
 
     /**

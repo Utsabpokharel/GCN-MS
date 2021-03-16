@@ -62,7 +62,8 @@ class studentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $student = Student::findorfail($id);
+        return view('Admin.Student.edit', compact('student'));
     }
 
     /**
@@ -74,7 +75,10 @@ class studentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $student = Student::findorfail($id);
+        $student->update($data);
+        return redirect()->route('student.index')->with('success', 'Student Updated Successfully');
     }
 
     /**

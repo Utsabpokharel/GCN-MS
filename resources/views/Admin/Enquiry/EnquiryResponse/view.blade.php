@@ -11,10 +11,10 @@
                     <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Home</a>&nbsp;
                         <i class="fa fa-angle-right"></i>
                     </li>
-                    <li><a class="parent-item" href="{{route('enquiryresponse.index')}}">Enquiry Response</a>&nbsp;
+                    <li><a class="parent-item" href="{{route('enquiryresponse.index')}}">Enquiry </a>&nbsp;
                         <i class="fa fa-angle-right"></i>
                     </li>
-                    <li class="active">All Enquiry Responses</li>
+                    <li class="active">Enquiry Responses</li>
                 </ol>
             </div>
         </div>
@@ -29,7 +29,7 @@
                         <table id="exportTable" class="display nowrap" style="width:100%">
                             <thead>
                                 <tr>
-                                    <th>#</th>
+                                    <th>S.N.</th>
                                     <th>Enquiry By</th>
                                     <th>Responded By</th>
                                     <th>Responded Through</th>
@@ -39,15 +39,25 @@
                                 </tr>
                             </thead>
                             <tbody>
-
-                                <tr>
-
-                                </tr>
-
-                            </tbody>
+                            @foreach($enquiry as $value)
+                            <tr>
+                                <td>{{$value->step+1}}</td>
+                                <td>{{$value->name}}</td>
+                                <td>{{$value->description}}</td>
+                                <td>
+                                <a href="{{route('enquiryresponse.edit',$value->id) }}"
+                                class="btn btn-primary btn-xs">
+                                <i class="fa fa-pencil"></i></a>
+                                <a href=""
+                                class="btn btn-danger btn-xs">
+                    			<i class="fa fa-trash-o "></i>
+                                </button>
+								</td>
+                            </tr>
+                            @endforeach
                             <tfoot>
                                 <tr>
-                                    <th>#</th>
+                                    <th>S.N.</th>
                                     <th>Enquiry By</th>
                                     <th>Responded By</th>
                                     <th>Responded Through</th>

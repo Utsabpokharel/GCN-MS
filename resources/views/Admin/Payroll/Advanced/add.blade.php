@@ -38,8 +38,10 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="name" required placeholder="Select Staff Name"
-                                            class="form-control input-height" value="" />
+                                    <select name="name"  class="form-control form-control-solid @error('name') is-invalid @enderror" value="{{ old('name') }}">
+          								<option value="">Select Staff Name</option>
+										<option value="abc">abc</option> 
+                                    </select>
                                     </div>
                                 </div>
 
@@ -69,7 +71,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="number" name="currency" required
+                                        <input type="text" name="currency" required
                                             placeholder="Enter Currency"
                                             class="form-control input-height " value="" />
                                     </div>
@@ -80,7 +82,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="number" name="payment" required
+                                        <input type="text" name="payment" required
                                             placeholder="Enter Amount"
                                             class="form-control input-height " value="" />
                                     </div>

@@ -62,7 +62,8 @@ class salaryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $salary = Salary::findorfail($id);
+        return view('Admin.Salary.edit', compact('salary'));
     }
 
     /**
@@ -74,7 +75,10 @@ class salaryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $salary = Salary::findorfail($id);
+        $salary->update($data);
+        return redirect()->route('salary.index')->with('success', 'Salary Updated Successfully');
     }
 
     /**

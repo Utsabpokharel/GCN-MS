@@ -29,7 +29,7 @@
                         <table id="exportTable" class="display nowrap" style="width:100%">
                             <thead>
                                 <tr>
-                                    <th>#</th>
+                                    <th>S.N.</th>
                                     <th>Staff Name</th>
                                     <th>Designation</th>
                                     <th>PAN Number</th>
@@ -38,15 +38,28 @@
                                 </tr>
                             </thead>
                             <tbody>
-
-                                <tr>
-
-                                </tr>
-
+                            @foreach($salary as $value)
+                            <tr>
+                                <td>{{$value->step+1}}</td>
+                                <td>{{$value->name}}</td>
+                                <td>{{$value->designation}}</td>
+								<td>{{$value->pan}}</td>
+								<td>{{$value->amount}}</td>
+								<td>
+                                <a href="{{route('salary.edit',$value->id) }}"
+                                class="btn btn-primary btn-xs">
+                                <i class="fa fa-pencil"></i></a>
+                                <a href=""
+                                class="btn btn-danger btn-xs">
+                    			<i class="fa fa-trash-o "></i>
+                                </button>
+								</td>
+                            </tr>
+                            @endforeach 
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>#</th>
+                                    <th>S.N.</th>
                                     <th>Staff Name</th>
                                     <th>Designation</th>
                                     <th>PAN Number</th>

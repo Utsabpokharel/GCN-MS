@@ -63,7 +63,8 @@ class teacherController extends Controller
      */
     public function edit($id)
     {
-        //
+        $teacher = Teacher::findorfail($id);
+        return view('Admin.Teacher.edit', compact('teacher'));
     }
 
     /**
@@ -75,7 +76,10 @@ class teacherController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $teacher = Teacher::findorfail($id);
+        $teacher->update($data);
+        return redirect()->route('teacher.index')->with('success', 'Teacher Updated Successfully');
     }
 
     /**

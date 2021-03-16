@@ -29,7 +29,7 @@
                         <table id="exportTable" class="display nowrap" style="width:100%">
                             <thead>
                                 <tr>
-                                    <th>#</th>
+                                    <th>S.N.</th>
                                     <th>User Name</th>
                                     <th>Account Holder Name</th>
                                     <th>Bank Name</th>
@@ -39,15 +39,29 @@
                                 </tr>
                             </thead>
                             <tbody>
-
-                                <tr>
-
-                                </tr>
-
+                            @foreach($bank as $value)
+                            <tr>
+                                <td>{{$value->step+1}}</td>
+                                <td>{{$value->user_id}}</td>
+                                <td>{{$value->accountholder_name}}</td>
+								<td>{{$value->bank_name}}</td>
+								<td>{{$value->branch_name}}</td>
+								<td>{{$value->account_number}}</td>
+								<td>
+                                <a href="{{route('bankaccount.edit',$value->id) }}"
+                                class="btn btn-primary btn-xs">
+                                <i class="fa fa-pencil"></i></a>
+                                <a href=""
+                                class="btn btn-danger btn-xs">
+                    			<i class="fa fa-trash-o "></i>
+                                </button>
+								</td>
+                            </tr>
+                            @endforeach  
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>#</th>
+                                    <th>S.N.</th>
                                     <th>User Name</th>
                                     <th>Account Holder Name</th>
                                     <th>Bank Name</th>

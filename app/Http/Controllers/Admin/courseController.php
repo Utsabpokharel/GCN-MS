@@ -62,7 +62,8 @@ class courseController extends Controller
      */
     public function edit($id)
     {
-        //
+        $course = course::findorfail($id);
+        return view('Admin.Course.edit', compact('course'));
     }
 
     /**
@@ -74,7 +75,10 @@ class courseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $course = Course::findorfail($id);
+        $course->update($data);
+        return redirect()->route('course.index')->with('success', 'Course Updated Successfully');
     }
 
     /**

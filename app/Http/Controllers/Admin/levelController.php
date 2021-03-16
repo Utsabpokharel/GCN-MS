@@ -62,7 +62,8 @@ class levelController extends Controller
      */
     public function edit($id)
     {
-        //
+        $level = Level::findorfail($id);
+        return view('Admin.Level.edit', compact('level'));
     }
 
     /**
@@ -74,7 +75,10 @@ class levelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $level = Level::findorfail($id);
+        $level->update($data);
+        return redirect()->route('level.index')->with('success', 'Level Updated Successfully');
     }
 
     /**

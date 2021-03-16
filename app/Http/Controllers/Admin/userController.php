@@ -62,7 +62,8 @@ class userController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::findorfail($id);
+        return view('Admin.User.edit', compact('user'));
     }
 
     /**
@@ -74,7 +75,10 @@ class userController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $user = User::findorfail($id);
+        $user->update($data);
+        return redirect()->route('user.index')->with('success', 'User Updated Successfully');
     }
 
     /**

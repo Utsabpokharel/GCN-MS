@@ -42,7 +42,7 @@ class studentattController extends Controller
     {
         $data = $request->all();
         Studentatt::create($data);
-        return redirect()->route('Studentatt.index')->with('success', 'Student Attendance Created Successfully');
+        return redirect()->route('studentatt.index')->with('success', 'Student Attendance Created Successfully');
     }
 
     /**
@@ -64,7 +64,8 @@ class studentattController extends Controller
      */
     public function edit($id)
     {
-        //
+        $studentatt = Studentatt::findorfail($id);
+        return view('Admin.Studentatt.edit', compact('studentatt'));
     }
 
     /**
@@ -76,7 +77,10 @@ class studentattController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $studentatt = Studentatt::findorfail($id);
+        $studentatt->update($data);
+        return redirect()->route('studentatt.index')->with('success', 'Student Attendance Updated Successfully');
     }
 
     /**

@@ -62,7 +62,8 @@ class bankaccountController extends Controller
      */
     public function edit($id)
     {
-        //
+        $bank = BankAccount::findorfail($id);
+        return view('Admin.BankAccount.edit', compact('bank'));
     }
 
     /**
@@ -74,7 +75,10 @@ class bankaccountController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $bank = BankAccount::findorfail($id);
+        $bank->update($data);
+        return redirect()->route('bankaccount.index')->with('success', 'Bank Account Updated Successfully');
     }
 
     /**

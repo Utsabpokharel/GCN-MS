@@ -38,13 +38,15 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="name" required placeholder="Select Staff Name"
-                                            class="form-control input-height" value="" />
+                                    <select name="name"  class="form-control form-control-solid @error('name') is-invalid @enderror" value="{{ old('name') }}">
+          										<option value="">Select Staff Name</option>
+												<option value="abc">abc</option> 
+                                       </select>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">Type of Payment Mode
+                                    <label class="control-label col-md-3">Payment Method
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">

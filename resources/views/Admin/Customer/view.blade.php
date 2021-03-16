@@ -38,9 +38,24 @@
                                 </tr>
                             </thead>
                             <tbody>
-                              
-                                
-                             
+                            @foreach($customer as $value)
+                            <tr>
+                                <td>{{$value->step+1}}</td>
+                                <td>{{$value->image}}</td>
+								<td>{{$value->fname}}{{$value->lname}}</td>
+								<td>{{$value->gender}}</td>
+								<td>{{$value->email}}</td>
+								<td>
+                                <a href="{{route('customer.edit',$value->id) }}"
+                                class="btn btn-primary btn-xs">
+                                <i class="fa fa-pencil"></i></a>
+                                <a href=""
+                                class="btn btn-danger btn-xs">
+                    			<i class="fa fa-trash-o "></i>
+                                </button>
+								</td>
+                            </tr>
+                            @endforeach                                                            
                             </tbody>
                             <tfoot>
                                 <tr>

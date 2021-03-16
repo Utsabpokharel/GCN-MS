@@ -62,7 +62,8 @@ class servicesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $services = Services::findorfail($id);
+        return view('Admin.Services.edit', compact('services'));
     }
 
     /**
@@ -74,7 +75,10 @@ class servicesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $services = Services::findorfail($id);
+        $services->update($data);
+        return redirect()->route('services.index')->with('success', 'Services Updated Successfully');
     }
 
     /**

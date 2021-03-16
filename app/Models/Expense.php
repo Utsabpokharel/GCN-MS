@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Expense extends Model
 {
-    use SoftDeletes;
+
     protected $fillable = ['expdate', 'particular','amount','paidby','catid','payment','receivedby','status',];
     use HasFactory;
 }

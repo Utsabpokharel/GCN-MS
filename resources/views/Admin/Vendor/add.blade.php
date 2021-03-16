@@ -169,7 +169,7 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-                    								<input type="text" name='District' list='districtname' placeholder="Please Select..." 
+                    								<input type="text" name='district' list='districtname' placeholder="Please Select..." 
 													class="form-control input-height @error('district') is-invalid @enderror" value="{{old('district','')}}">
                     								@error('district')
                     								<span class="invalid-feedback" role="alert"> 

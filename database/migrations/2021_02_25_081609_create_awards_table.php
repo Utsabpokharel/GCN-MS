@@ -18,7 +18,7 @@ class CreateAwardsTable extends Migration
             $table->string('staffname');
             $table->string('awaname');
             $table->string('gift');
-            $table->date('awadate');
+            $table->date('awadate')->nullable();
             $table->longText('thankyou');
             $table->timestamps();
         });

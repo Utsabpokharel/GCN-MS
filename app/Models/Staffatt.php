@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Staffatt extends Model
 {
-    use SoftDeletes;
-    protected $fillable = ['staff', 'attendance', 'remarks'];
+
+    protected $fillable = ['name', 'attendance', 'remarks'];
     use HasFactory;
 }

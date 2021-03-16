@@ -34,12 +34,15 @@
                             {{csrf_field()}}
                             <div class="form-body">
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">Select User Name
+                                    <label class="control-label col-md-3">User Name
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="name" name="user_id" required placeholder="Select User name"
-                                            class="form-control input-height" value="" />
+                                    <select name="user_id" id="user_id"
+													class="form-control input-height @error('user_id') is-invalid @enderror" value="{{old('user_id','')}}" />
+													<option selected disabled="">Select User Name </option>
+													<option value="abc">abc</option>
+													</select>
                                     </div>
                                 </div>
 
@@ -49,7 +52,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="name" name="accountholder_name" required placeholder="Enter Account Holder Name"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{old('accountholder_name','')}}" />
                                     </div>
                                 </div>
 
@@ -60,7 +63,7 @@
                                     <div class="col-md-5">
                                         <input type="name" name="bank_name" required
                                             placeholder="Enter Bank Name"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{old('bank_name','')}}" />
                                     </div>
 
                                 </div>

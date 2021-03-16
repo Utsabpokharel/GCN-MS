@@ -62,7 +62,8 @@ class batchController extends Controller
      */
     public function edit($id)
     {
-        //
+        $batch = Batch::findorfail($id);
+        return view('Admin.Batch.edit', compact('batch'));
     }
 
     /**
@@ -74,7 +75,10 @@ class batchController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $batch = Batch::findorfail($id);
+        $batch->update($data);
+        return redirect()->route('batch.index')->with('success', 'Batch Updated Successfully');
     }
 
     /**

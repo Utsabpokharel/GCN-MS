@@ -44,6 +44,7 @@
 												<select name="name" id="name"
 													class="form-control input-height @error('name') is-invalid @enderror" value="{{old('name','')}}" />
 													<option selected disabled="">Select Staff Name </option>
+													<option value="abc">abc</option>
 													</select>
 		   
 													@error('name')
@@ -61,6 +62,7 @@
 												<select name="attendance" id="attendance"
 													class="form-control input-height @error('attendance') is-invalid @enderror" value="{{old('attendance','')}}" />
 													<option selected disabled="">Select Attendance</option>
+													<option value="abc">abc</option>
 													</select>
 		   
 													@error('attendance')
