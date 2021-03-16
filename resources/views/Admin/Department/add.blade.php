@@ -34,22 +34,30 @@
                             {{csrf_field()}}
                             <div class="form-body">
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">Department ID
-                                        <span class="required"> * </span>
-                                    </label>
-                                    <div class="col-md-5">
-                                        <input type="text" name="name" required placeholder="Department ID"
-                                            class="form-control input-height" value="" />
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
                                     <label class="control-label col-md-3">Department Name
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name= "dep_name"required placeholder="Department Name"
+                                        <input type="text" name= "departmentname"required placeholder="Department Name"
                                             class="form-control input-height " value="" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Department Short Name
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="text" name="shortname" required placeholder="Department Short Name"
+                                            class="form-control input-height" value="" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Department Code 
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="text" name="code" required placeholder="Department Code"
+                                            class="form-control input-height" value="" />
                                     </div>
                                 </div>
 
@@ -58,7 +66,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <textarea name="description" id="dep_description" cols="30" rows="10" class="form-control"></textarea>
+                                        <textarea name="departmentdescription" id="departmentdescription" cols="30" rows="10" class="form-control"></textarea>
                                     </div>
 
                                 </div>

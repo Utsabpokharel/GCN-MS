@@ -32,25 +32,37 @@
                                     <th>ID</th>
                                     <th>Date</th>
                                     <th>Amount</th>
-                                    <th>Category ID</th>
                                     <th>Mode of Payment</th>
                                     <th>Recieved By</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
+                            @foreach($income as $value)
+                            <tr>
+                                <td>{{$value->step+1}}</td>
+                                <td>{{$value->incdate}}</td>
+                                <td>{{$value->amount}}</td>
+                                <td>{{$value->payment}}</td>
+                                <td>{{$value->receivedby}}</td>
 
-                                <tr>
-
-                                </tr>
-
+                                <td>
+                                <a href="{{route('income.edit',$value->id) }}"
+                                class="btn btn-primary btn-xs">
+                                <i class="fa fa-pencil"></i></a>
+                                <a href=""
+                                class="btn btn-danger btn-xs">
+                    			<i class="fa fa-trash-o "></i>
+                                </button>
+								</td>
+                            </tr>
+                            @endforeach 
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>ID</th>
+                                <th>ID</th>
                                     <th>Date</th>
                                     <th>Amount</th>
-                                    <th>Category ID</th>
                                     <th>Mode of Payment</th>
                                     <th>Recieved By</th>
                                     <th>Actions</th>

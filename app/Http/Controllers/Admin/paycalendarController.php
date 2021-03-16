@@ -62,7 +62,8 @@ class paycalendarController extends Controller
      */
     public function edit($id)
     {
-        //
+        $paycalendar = PayCalendar::findorfail($id);
+        return view('Admin.PayCalendar.edit', compact('paycalendar'));
     }
 
     /**
@@ -74,7 +75,10 @@ class paycalendarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $paycalendar = PayCalendar::findorfail($id);
+        $paycalendar->update($data);
+        return redirect()->route('paycalendar.index')->with('success', 'Pay Calendar Updated Successfully');
     }
 
     /**

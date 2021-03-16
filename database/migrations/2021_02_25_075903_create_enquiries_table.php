@@ -21,6 +21,7 @@ class CreateEnquiriesTable extends Migration
             $table->date('endate');
             $table->time('entime');
             $table->longText('remarks');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

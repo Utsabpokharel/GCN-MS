@@ -29,7 +29,7 @@
                         <table id="exportTable" class="display nowrap" style="width:100%">
                             <thead>
                                 <tr>
-                                    <th>Service ID</th>
+                                    <th>S.N.</th>
                                     <th>Service Name</th>
                                     <th>Description</th>
                                     <th>Status</th>
@@ -37,12 +37,28 @@
                                 </tr>
                             </thead>
                             <tbody>
-                              
-                                
+                            @foreach($services as $value)
+                            <tr>
+                                <td>{{$value->step+1}}</td>
+                                <td>{{$value->name}}</td>
+                                <td>{{$value->price}}</td>
+                                <td>{{$value->description}}</td>
+                                <td>{{$value->status}}</td>
+                                <td>
+                                <a href="{{route('services.edit',$value->id) }}"
+                                class="btn btn-primary btn-xs">
+                                <i class="fa fa-pencil"></i></a>
+                                <a href=""
+                                class="btn btn-danger btn-xs">
+                    			<i class="fa fa-trash-o "></i>
+                                </button>
+								</td>
+                            </tr>
+                            @endforeach                                   
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>Service ID</th>
+                                    <th>S.N.</th>
                                     <th>Service Name</th>
                                     <th>Description</th>
                                     <th>Status</th>

@@ -62,7 +62,8 @@ class enquirycategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $enquiry = EnquiryCategory::findorfail($id);
+        return view('Admin.EnquiryCategory.edit', compact('enquiry'));
     }
 
     /**
@@ -74,7 +75,10 @@ class enquirycategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $enquiry = EnquiryCategory::findorfail($id);
+        $enquiry->update($data);
+        return redirect()->route('enquirycategory.index')->with('success', 'Enquiry Category Updated Successfully');
     }
 
     /**

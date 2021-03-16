@@ -29,31 +29,38 @@
                         <table id="exportTable" class="display nowrap" style="width:100%">
                             <thead>
                                 <tr>
-                                    <th>#</th>
+                                    <th>S.N.</th>
                                     <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Enquired Category</th>
-                                    <th>Enquired Source</th>
+                                    <th>Category</th>
                                     <th>Enquired Date</th>
                                     <th>Enquired Time</th>
                                 </tr>
                             </thead>
                             <tbody>
-
-                                <tr>
-
-                                </tr>
-
+                            @foreach($enquiry as $value)
+                            <tr>
+                                <td>{{$value->step+1}}</td>
+                                <td>{{$value->name}}</td>
+                                <td>{{$value->category}}</td>
+								<td>{{$value->endate}}</td>
+                                <td>{{$value->entime}}</td>
+                                <td>
+                                <a href="{{route('enquiry.edit',$value->id) }}"
+                                class="btn btn-primary btn-xs">
+                                <i class="fa fa-pencil"></i></a>
+                                <a href=""
+                                class="btn btn-danger btn-xs">
+                    			<i class="fa fa-trash-o "></i>
+                                </button>
+								</td>
+                            </tr>
+                            @endforeach
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>#</th>
+                                    <th>S.N.</th>
                                     <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Enquired Category</th>
-                                    <th>Enquired Source</th>
+                                    <th>Category</th>
                                     <th>Enquired Date</th>
                                     <th>Enquired Time</th>
                                 </tr>

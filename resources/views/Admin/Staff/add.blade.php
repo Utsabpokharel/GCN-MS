@@ -67,7 +67,7 @@
                     								<span class="required">*</span>
 												</label>
 												<div class="col-md-5">
-                    								<input type="date" class="form-control input-height @error('dob') is-invalid @enderror" value="{{old('dob','')}}" />
+                    								<input type="date" name="dob"class="form-control input-height @error('dob') is-invalid @enderror" value="{{old('dob','')}}" />
                     								@error('dob')
                     									<span class="invalid-feedback" role="alert">
 															<strong>{{$message}}</strong>
@@ -236,7 +236,7 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-                    								<input type="date" class="form-control input-height @error('joined_date') is-invalid @enderror" data-date-format="yyyy-mm-dd" value="{{old('joined_date','')}}" />
+                    								<input type="date" name="joined_date"class="form-control input-height @error('joined_date') is-invalid @enderror" data-date-format="yyyy-mm-dd" value="{{old('joined_date','')}}" />
 													@error('joined_date')
 													<span class="invalid-feedback" role="alert">
 														<strong>{{$message}}</strong>

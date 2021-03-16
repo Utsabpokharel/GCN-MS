@@ -62,7 +62,8 @@ class examController extends Controller
      */
     public function edit($id)
     {
-        //
+        $exam = Exam::findorfail($id);
+        return view('Admin.Exam.edit', compact('exam'));
     }
 
     /**
@@ -74,7 +75,10 @@ class examController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $exam = Exam::findorfail($id);
+        $exam->update($data);
+        return redirect()->route('exam.index')->with('success', 'Exam Updated Successfully');
     }
 
     /**

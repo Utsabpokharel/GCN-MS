@@ -62,7 +62,8 @@ class advancedController extends Controller
      */
     public function edit($id)
     {
-        //
+        $advanced = Advanced::findorfail($id);
+        return view('Admin.Advanced.edit', compact('advanced'));
     }
 
     /**
@@ -74,7 +75,10 @@ class advancedController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $advanced = Advanced::findorfail($id);
+        $advanced->update($data);
+        return redirect()->route('advanced.index')->with('success', 'Advanced Updated Successfully');
     }
 
     /**

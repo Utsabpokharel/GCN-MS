@@ -62,7 +62,8 @@ class titleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $title = Title::findorfail($id);
+        return view('Admin.Title.edit', compact('title'));
     }
 
     /**
@@ -74,7 +75,10 @@ class titleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $title = Title::findorfail($id);
+        $title->update($data);
+        return redirect()->route('title.index')->with('success', 'Title Updated Successfully');
     }
 
     /**

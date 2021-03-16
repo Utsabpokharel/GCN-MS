@@ -38,7 +38,7 @@
 										<span class="required"> * </span>
 									</label>
 									<div class="col-md-5">
-                    					<input type="date" class="form-control input-height @error('expdate') is-invalid @enderror" data-date-format="yyyy-mm-dd" value="{{old('expdate','')}}" />
+                    					<input type="date" name="expdate" class="form-control input-height @error('expdate') is-invalid @enderror" data-date-format="yyyy-mm-dd" value="{{old('expdate','')}}" />
 										@error('expdate')
 										<span class="invalid-feedback" role="alert">
 										    <strong>{{$message}}</strong>
@@ -61,7 +61,7 @@
 										<span class="required"> * </span>
 									</label>
 									<div class="col-md-5">
-                    					<input type="number" class="form-control input-height @error('amount') is-invalid @enderror" required placeholder="Enter Amount" value="{{old('amount','')}}" />
+                    					<input type="number" name="amount" class="form-control input-height @error('amount') is-invalid @enderror" required placeholder="Enter Amount" value="{{old('amount','')}}" />
 										@error('amount')
 										<span class="invalid-feedback" role="alert">
 										    <strong>{{$message}}</strong>
@@ -74,9 +74,9 @@
 										<span class="required"> * </span>
 									</label>
 									<div class="col-md-5">
-                                    <select name="paidby" class="form-control input-height @error('paidby') is-invalid @enderror"  value="" >
+                                    <select name="paidby" name="paidby" class="form-control input-height @error('paidby') is-invalid @enderror"  value="" >
                                         <option selected disabled="">Paid By</option>
-                                        
+                                        <option value="abc">abc</option>
                                     </select>
 										@error('paidby')
 										<span class="invalid-feedback" role="alert">
@@ -92,6 +92,7 @@
 									<div class="col-md-5">
                                     <select name="catid" class="form-control input-height @error('catid') is-invalid @enderror"  value="" >
                                         <option selected disabled="">Select Category ID</option>
+                                        <option value="abc">abc</option>
                                         
                                     </select>
 										@error('catid')
@@ -126,6 +127,7 @@
 									<div class="col-md-5">
                                     <select name="receivedby" class="form-control input-height @error('receivedby') is-invalid @enderror"  value="" >
                                         <option selected disabled="">Select Received By</option>
+                                        <option value="abc">abc</option>
                                         
                                     </select>
 										@error('receivedby')
@@ -143,6 +145,8 @@
                                     <div class="col-md-5">
                                         <select class="form-control input-height" name="status">
                                             <option value="" disabled selected>Select Status</option>
+                                        <option value="Available">Available</option>
+                                        <option value="Not Available">Unavailable</option>
                                         </select>
                                     </div>
                                 </div>

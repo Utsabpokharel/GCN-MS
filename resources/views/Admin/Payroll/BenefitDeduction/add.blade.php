@@ -38,8 +38,10 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="name" required placeholder="Select Staff Name"
-                                            class="form-control input-height" value="" />
+                                    <select name="name"  class="form-control form-control-solid @error('name') is-invalid @enderror" value="{{ old('name') }}">
+          								<option value="">Select Staff Name</option>
+										<option value="abc">abc</option> 
+                                    </select>
                                     </div>
                                 </div>
 
@@ -48,7 +50,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="number" name="bankno" required placeholder="Select Bank Account Number"
+                                        <input type="number" name="bankno" required placeholder="Enter Bank Account Number"
                                             class="form-control input-height " value="" />
                                     </div>
                                 </div>
@@ -69,7 +71,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="number" name="currency" required
+                                        <input type="text" name="currency" required
                                             placeholder="Enter Currency"
                                             class="form-control input-height " value="" />
                                     </div>
@@ -80,9 +82,11 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="number" name="benefit" required
-                                            placeholder="Enter Amount"
-                                            class="form-control input-height " value="" />
+                                        <select name="benefit"  class="form-control form-control-solid @error('benefit') is-invalid @enderror" value="{{ old('benefit') }}">
+          								<option value="">Select Benefit or Deduction</option>
+										<option value="abc">Benefit</option>
+										<option value="abc">Deduction</option> 
+                                    </select>
                                     </div>
 
                                 </div>
@@ -91,9 +95,10 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="number" name="payment" required
-                                            placeholder="Enter Amount"
-                                            class="form-control input-height " value="" />
+                                    <select name="payment"  class="form-control form-control-solid @error('payment') is-invalid @enderror" value="{{ old('payment') }}">
+          								<option value="">Select Payment Method</option>
+										<option value="abc">esewa</option>
+                                    </select>
                                     </div>
 
                                 </div>
@@ -102,7 +107,8 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                    <textarea name="reason" id="reason" cols="30" rows="10" class="form-control"></textarea>
+                                    <textarea name="reason" id="reason" cols="30" rows="10" class="form-control" required
+                                            placeholder="Enter Reason"></textarea>
                                     </div>
                                 </div>
 

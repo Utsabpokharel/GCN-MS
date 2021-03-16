@@ -62,7 +62,8 @@ class sectionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $section = Section::findorfail($id);
+        return view('Admin.Section.edit', compact('section'));
     }
 
     /**
@@ -74,7 +75,10 @@ class sectionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $section = Section::findorfail($id);
+        $section->update($data);
+        return redirect()->route('section.index')->with('success', 'Section Updated Successfully');
     }
 
     /**

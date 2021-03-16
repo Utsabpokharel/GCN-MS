@@ -44,6 +44,7 @@ class CreateVendorsTable extends Migration
             $table->string('joining_letter')->nullable();
             $table->string('contract_agreement')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

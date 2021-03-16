@@ -11,10 +11,10 @@
                     <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Home</a>&nbsp;
                         <i class="fa fa-angle-right"></i>
                     </li>
-                    <li><a class="parent-item" href="{{route('enquirycategory.index')}}">Enquiry Category</a>&nbsp;
+                    <li><a class="parent-item" href="{{route('enquirycategory.index')}}">Enquiry</a>&nbsp;
                         <i class="fa fa-angle-right"></i>
                     </li>
-                    <li class="active">All Enquiry Category</li>
+                    <li class="active">Enquiry Category</li>
                 </ol>
             </div>
         </div>
@@ -22,29 +22,40 @@
             <div class="col-md-12 col-sm-12">
                 <div class="card card-box">
                     <div class="card-head">
-                        <header>All Users</header>
+                        <header>All Enquiry Category</header>
                         <a class="parent-item pull-right btn btn-primary" href="{{ route('enquirycategory.create') }}">Add +</a>
                     </div>
                     <div class="card-body " id="bar-parent">
                         <table id="exportTable" class="display nowrap" style="width:100%">
                             <thead>
                                 <tr>
-                                    <th>#</th>
+                                    <th>S.N.</th>
                                     <th>Name</th>
                                     <th>Description</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-
-                                <tr>
-
-                                </tr>
-
+                            @foreach($enquiry as $value)
+                            <tr>
+                                <td>{{$value->step+1}}</td>
+                                <td>{{$value->name}}</td>
+                                <td>{{$value->description}}</td>
+                                <td>
+                                <a href="{{route('enquirycategory.edit',$value->id) }}"
+                                class="btn btn-primary btn-xs">
+                                <i class="fa fa-pencil"></i></a>
+                                <a href=""
+                                class="btn btn-danger btn-xs">
+                    			<i class="fa fa-trash-o "></i>
+                                </button>
+								</td>
+                            </tr>
+                            @endforeach
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>#</th>
+                                    <th>S.N.</th>
                                     <th>Name</th>
                                     <th>Description</th>
                                     <th>Actions</th>

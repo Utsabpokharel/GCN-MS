@@ -31,36 +31,41 @@
                                 <tr>
                                     <th>S.N.</th>
                                     <th>Image</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Gender</th>
-                                    <th>Date of Birth</th>
+                                    <th>Name</th>
                                     <th>Email</th>
                                     <th>Phone</th>
-                                    <th>Address</th>
-                                    <th>Category</th>
-                                    <th>Course</th>
                                     <th>Batch</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                    
-                                
+                            @foreach($student as $value)
+                            <tr>
+                                <td>{{$value->step+1}}</td>
+                                <td>{{$value->image}}</td>
+                                <td>{{$value->fname}}{{$value->lname}}</td>
+                                <td>{{$value->email}}</td>
+                                <td>{{$value->phone}}</td>
+								<td>{{$value->batch}}</td>
+								<td>
+                                <a href="{{route('student.edit',$value->id) }}"
+                                class="btn btn-primary btn-xs">
+                                <i class="fa fa-pencil"></i></a>
+                                <a href=""
+                                class="btn btn-danger btn-xs">
+                    			<i class="fa fa-trash-o "></i>
+                                </button>
+								</td>
+                            </tr>
+                            @endforeach  
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>S.N.</th>
+                                <th>S.N.</th>
                                     <th>Image</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Gender</th>
-                                    <th>Date of Birth</th>
+                                    <th>Name</th>
                                     <th>Email</th>
                                     <th>Phone</th>
-                                    <th>Address</th>
-                                    <th>Category</th>
-                                    <th>Course</th>
                                     <th>Batch</th>
                                     <th>Actions</th>
                                 </tr>

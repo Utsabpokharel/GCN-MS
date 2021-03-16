@@ -81,7 +81,8 @@
 											<div class="col-md-5">
           										<select name="status"  class="form-control form-control-solid @error('status') is-invalid @enderror" value="{{ old('status') }}">
           										<option value="">Select Status</option>
-          								
+												<option value="available">Available</option>
+												<option value="not available">Unavailable</option>
           										</select>
          					 					@error('status')
           										<span class="invalid-feedback" role="alert">

@@ -64,7 +64,8 @@ class teacherattController extends Controller
      */
     public function edit($id)
     {
-        //
+        $teacheratt = Teacheratt::findorfail($id);
+        return view('Admin.Teacheratt.edit', compact('teacheratt'));
     }
 
     /**
@@ -76,7 +77,10 @@ class teacherattController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $teacheratt = Teacheratt::findorfail($id);
+        $teacheratt->update($data);
+        return redirect()->route('teacheratt.index')->with('success', 'Teacher Attendance Updated Successfully');
     }
 
     /**

@@ -40,7 +40,22 @@
                             </thead>
                             <tbody>
                     
-                                
+                            @foreach($vendor as $value)
+                            <tr>
+                                <td>{{$value->step+1}}</td>
+                                <td></td>
+								<td></td>
+								<td>
+                                <a href="{{route('vendor.edit',$value->id) }}"
+                                class="btn btn-primary btn-xs">
+                                <i class="fa fa-pencil"></i></a>
+                                <a href=""
+                                class="btn btn-danger btn-xs">
+                    			<i class="fa fa-trash-o "></i>
+                                </button>
+								</td>
+                            </tr>
+                            @endforeach     
                             </tbody>
                             <tfoot>
                                 <tr>

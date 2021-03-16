@@ -63,7 +63,8 @@ class staffController extends Controller
      */
     public function edit($id)
     {
-        //
+        $staff = Staff::findorfail($id);
+        return view('Admin.staff.edit', compact('staff'));
     }
 
     /**
@@ -75,7 +76,10 @@ class staffController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $staff = Staff::findorfail($id);
+        $staff->update($data);
+        return redirect()->route('staff.index')->with('success', 'Staff Updated Successfully');
     }
 
     /**

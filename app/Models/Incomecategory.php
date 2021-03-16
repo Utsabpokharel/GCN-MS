@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Incomecategory extends Model
 {
-    use SoftDeletes;
+
     protected $fillable = ['name', 'description'];
     use HasFactory;
 }

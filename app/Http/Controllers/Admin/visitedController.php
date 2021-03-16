@@ -62,7 +62,8 @@ class visitedController extends Controller
      */
     public function edit($id)
     {
-        //
+        $visited = Visited::findorfail($id);
+        return view('Admin.Visited.edit', compact('visited'));
     }
 
     /**
@@ -74,7 +75,10 @@ class visitedController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $visited = Visited::findorfail($id);
+        $visited->update($data);
+        return redirect()->route('visited.index')->with('success', 'Visited Updated Successfully');
     }
 
     /**

@@ -27,7 +27,7 @@ class CreateStudentsTable extends Migration
             $table->string('section');
             $table->string('course');
             $table->string('address');
-
+            $table->softDeletes();
             $table->timestamps();
         });
     }

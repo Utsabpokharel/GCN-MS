@@ -40,6 +40,7 @@
 												<select name="staffname" id="staffname"
 													class="form-control input-height @error('staffname') is-invalid @enderror" value="{{old('name','')}}" />
 													<option selected disabled="">Select Staff Name </option>
+													<option value="abc">abc</option>
 													</select>
 		   
 													@error('staffname')
@@ -74,7 +75,7 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-                    								<input type="date" class="form-control input-height @error('awadate') is-invalid @enderror" data-date-format="yyyy-mm-dd" value="{{old('awadate','')}}" />
+                    								<input type="date" name="awadate" class="form-control input-height @error('awadate') is-invalid @enderror" data-date-format="yyyy-mm-dd" value="{{old('awadate','')}}" />
 													@error('awadate')
 													<span class="invalid-feedback" role="alert">
 														<strong>{{$message}}</strong>

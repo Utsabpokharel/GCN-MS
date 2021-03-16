@@ -34,16 +34,6 @@
                             {{csrf_field()}}
                             <div class="form-body">
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">Name
-                                        <span class="required"> * </span>
-                                    </label>
-                                    <div class="col-md-5">
-                                        <input type="text" name="name" required placeholder="Enter User Name"
-                                            class="form-control input-height" value="" />
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
                                     <label class="control-label col-md-3">Email
                                         <span class="required"> * </span>
                                     </label>
@@ -82,51 +72,10 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <select class="form-control input-height" name="">
+                                        <select class="form-control input-height" name="role">
                                             <option value="" disabled selected>Select Role</option>
+                                            <option value="1">1</option>
                                         </select>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="control-label col-md-3">Position
-                                        <span class="required"> * </span>
-                                    </label>
-                                    <div class="col-md-5">
-                                        <input type="text" name="position" required
-                                            placeholder="Enter User Position in Company"
-                                            class="form-control input-height" value="" />
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label class="control-label col-md-3">Main Department
-                                        <span class="required"> * </span>
-                                    </label>
-                                    <div class="col-md-5">
-                                        <select class="form-control input-height" name="department_id">
-                                            <option value="" disabled selected>Select Department</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label class="control-label col-md-3">Sub-Department
-                                        <span class="required"> * </span>
-                                    </label>
-                                    <div class="col-md-5">
-                                        <select class="form-control input-height" name="sub_department">
-                                            <option value="" disabled selected>Select Sub-Department</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="control-label col-md-3">Image
-                                        <span class="required"> * </span>
-                                    </label>
-                                    <div class="col-md-5">
-                                        <div class="input-icon right">
-                                            <input type="file" class="form-control bg-light" name="image" value="" />
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-actions">

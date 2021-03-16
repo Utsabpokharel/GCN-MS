@@ -11,7 +11,7 @@
                     <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Home</a>&nbsp;
                         <i class="fa fa-angle-right"></i>
                     </li>
-                    <li><a class="parent-item" href="{{route('incomecategory.index')}}">Income Category</a>&nbsp;
+                    <li><a class="parent-item" href="{{route('incomecategory.index')}}">Income </a>&nbsp;
                         <i class="fa fa-angle-right"></i>
                     </li>
                     <li class="active">All Income Category</li>
@@ -29,22 +29,33 @@
                         <table id="exportTable" class="display nowrap" style="width:100%">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    <th>S.N.</th>
                                     <th>Name</th>
                                     <th>Description</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-
-                                <tr>
-
-                                </tr>
-
+                            @foreach($incomecategory as $value)
+                            <tr>
+                                <td>{{$value->step+1}}</td>
+                                <td>{{$value->name}}</td>
+                                <td>{{$value->description}}</td>
+                                <td>
+                                <a href="{{route('incomecategory.edit',$value->id) }}"
+                                class="btn btn-primary btn-xs">
+                                <i class="fa fa-pencil"></i></a>
+                                <a href=""
+                                class="btn btn-danger btn-xs">
+                    			<i class="fa fa-trash-o "></i>
+                                </button>
+								</td>
+                            </tr>
+                            @endforeach   
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>ID</th>
+                                    <th>S.N.</th>
                                     <th>Name</th>
                                     <th>Description</th>
                                     <th>Actions</th>

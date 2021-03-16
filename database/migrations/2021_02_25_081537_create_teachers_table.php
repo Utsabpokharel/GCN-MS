@@ -25,6 +25,7 @@ class CreateTeachersTable extends Migration
             $table->string('course');
             $table->time('teachtime');
             $table->string('address');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

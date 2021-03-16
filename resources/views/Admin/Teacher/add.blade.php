@@ -83,6 +83,7 @@
 											<div class="col-md-5">
           										<select name="teachcat"  class="form-control form-control-solid @error('teachcat') is-invalid @enderror" value="{{ old('student') }}">
           										<option value="">Select Teacher Category</option>
+												<option value="teacher">teacher</option>  
           										</select>
          					 					@error('teachcat')
           										<span class="invalid-feedback" role="alert">
@@ -108,6 +109,7 @@
 											<div class="col-md-5">
           										<select name="batch"  class="form-control form-control-solid @error('batch') is-invalid @enderror" value="{{ old('batch') }}">
           										<option value="">Select Batch</option>
+												<option value="teacher">teacher</option>  
           										</select>
          					 					@error('batch')
           										<span class="invalid-feedback" role="alert">
@@ -123,6 +125,7 @@
 											<div class="col-md-5">
           										<select name="course"  class="form-control form-control-solid @error('course') is-invalid @enderror" value="{{ old('course') }}">
           										<option value="">Select Course</option>
+												<option value="teacher">teacher</option>  
           										</select>
          					 					@error('course')
           										<span class="invalid-feedback" role="alert">

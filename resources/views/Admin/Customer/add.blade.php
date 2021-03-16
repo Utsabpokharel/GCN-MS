@@ -67,7 +67,7 @@
                     								<span class="required">*</span>
 												</label>
 												<div class="col-md-5">
-                    								<input type="date" class="form-control input-height @error('dob') is-invalid @enderror" value="{{old('dob','')}}" />
+                    								<input type="date" name="dob" class="form-control input-height @error('dob') is-invalid @enderror" value="{{old('dob','')}}" />
                     								@error('dob')
                     									<span class="invalid-feedback" role="alert">
 															<strong>{{$message}}</strong>
@@ -179,8 +179,12 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-                    								<input type="text" name='customer_type' list='customer_type' placeholder="Please Select..." 
-													class="form-control input-height @error('customer_type') is-invalid @enderror" value="{{old('customer_type','')}}">
+												<select name="customer_type" id="customer_type"
+													class="form-control input-height @error('customer_type') is-invalid @enderror" value="{{old('customer_type','')}}" />
+													<option selected disabled="">Select Customer Type </option>
+													<option value="abc">Organization</option>
+													<option value="abc">Individual</option>
+													</select>
                     								@error('customer_type')
                     								<span class="invalid-feedback" role="alert"> 
 														<strong>{{$message}}</strong>
