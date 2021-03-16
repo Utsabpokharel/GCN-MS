@@ -39,11 +39,24 @@ class employeeterminationController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $imagepath = 'images/EmployeeTermination/';
-
-        $data['terminationdocument'] = save_image($request->terminationdocument, 150, 150, $imagepath);
-        EmployeeTermination::create($data);
+        if ($request->hasFile('terminationdocument')) {
+            $image = $request->file('terminationdocument');
+            $term = "TERMINATION-" . time() . '.' . $image->getClientOriginalExtension();
+            $image->move('public/images/EmployeeTermination/', $term);
+            // $prsnl->ctzn_f = $name;
+        }
+        $employeetermination = new EmployeeTermination([
+            'staffname' => $request->staffname,
+            'staffcode' => $request->staffcode,
+            'changestatus' => $request->changestatus,
+            'serviceenddate' => $request->serviceenddate,
+            'desireresigndate' => $request->noticedate,
+            'forwardto' => $request->forwardto,
+            'reason' => $request->reason,
+            'details' => $request->details 
+        ]);
+        $employeetermination->terminationdocument=$term;
+        $employeetermination->save();
         return redirect()->route('employeetermination.index')->with('success', 'Employee Termination created successfully');
     }
 

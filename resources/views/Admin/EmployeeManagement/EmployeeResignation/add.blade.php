@@ -53,6 +53,24 @@
                                             class="form-control input-height " value="" />
                                     </div>
                                 </div>
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Notice Date
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="date" name="noticedate" id="noticedate"
+                                            class="form-control input-height " value="" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Forward To
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="text" name="forwardto" id="forwardto" required placeholder="Forward To"
+                                            class="form-control input-height " value="" />
+                                    </div>
+                                </div>
                                  <div class="form-group row">
                                     <label class="control-label col-md-3">Desired Resign Date
                                         <span class="required"> * </span>

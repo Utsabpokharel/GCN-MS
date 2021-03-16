@@ -92,6 +92,6 @@ class rcourseController extends Controller
     {
         $rcourse = RCourse::findorFail($id);
         $rcourse->delete();
-        return back()->with('flash_error', 'Deleted Successfully');
+        return redirect()->route('rcourse.index')->with('warning', 'Subject is deleted successfully');
     }
 }

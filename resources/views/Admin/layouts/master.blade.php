@@ -3,7 +3,7 @@
 @include('Admin.Layouts.sidebar')
 @include('Admin.Layouts.index')
 @include('Admin.Layouts.footer')
-@include('sweetalert::alert')
+
 
 @yield('head')
 @yield('header')

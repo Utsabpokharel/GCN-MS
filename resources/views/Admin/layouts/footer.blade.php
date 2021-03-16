@@ -34,6 +34,7 @@
 <script src="http://radixtouch.in/templates/admin/smart/source/assets/plugins/summernote/summernote.js"></script>
 <script src="{{asset('assets/js/pages/summernote/summernote-data.js')}}"></script>
 <!-- end js include path -->
+@include('sweetalert::alert')
 </body>
 
 </html>
