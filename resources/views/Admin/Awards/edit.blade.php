@@ -29,8 +29,9 @@
 									</button>									
 								</div>
 								<div class="card-body" id="bar-parent">
-									<form action="{{ route('award.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"  enctype="multipart/form-data">
+									<form action="{{route('award.update',$award->id)}}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"  enctype="multipart/form-data">
 										{{csrf_field()}}
+										@method('PUT')
 										<div class="form-body">
 											<div class="form-group row">
 												<label class="control-label col-md-3">Staff Name
@@ -38,7 +39,7 @@
 												</label>
 												<div class="col-md-5">
 												<select name="staffname" id="staffname"
-													class="form-control input-height @error('staffname') is-invalid @enderror" value="{{old('name','')}}" />
+													class="form-control input-height @error('staffname') is-invalid @enderror" value="{{$award->staffname}}" >
 													<option selected disabled="">Select Staff Name </option>
 													</select>
 		   
@@ -55,7 +56,7 @@
 												</label>
 												<div class="col-md-5">
 												<input type="text" name="awaname" required placeholder="Enter Award Name" 
-													class="form-control input-height @error('awaname') is-invalid @enderror" value="{{old('awaname','')}}" />
+													class="form-control input-height @error('awaname') is-invalid @enderror" value="{{$award->awaname}}" />
 													@error('awaname')
 														<span class="invalid-feedback" role="alert">
 															<strong>{{$message}}</strong>
@@ -66,7 +67,8 @@
 											<div class="form-group row">
 												<label class="control-label col-md-3">Gift </label>
 												<div class="col-md-5">
-      												<input type="text" class="form-control input-height @error('gift') is-invalid @enderror" name="gift" placeholder="Enter Gift" value="{{old('gift','')}}">
+      												<input type="text" class="form-control input-height @error('gift') is-invalid @enderror" name="gift" 
+													placeholder="Enter Gift" value="{{$award->gift}}" >
      											</div>
 											</div>
 											<div class="form-group row">
@@ -74,7 +76,8 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-                    								<input type="date" class="form-control input-height @error('awadate') is-invalid @enderror" data-date-format="yyyy-mm-dd" value="{{old('awadate','')}}" />
+                    								<input type="date" class="form-control input-height @error('awadate') is-invalid @enderror" 
+													data-date-format="yyyy-mm-dd" value="{{$award->awadate}}"  />
 													@error('awadate')
 													<span class="invalid-feedback" role="alert">
 														<strong>{{$message}}</strong>
@@ -85,7 +88,8 @@
 											<div class="form-group row">
 												<label class="control-label col-md-3">Thankyou Point </label>
 												<div class="col-md-5">
-												<textarea class="form-control form-control-solid" rows="5" name="thankyou" required placeholder="Describe yourself here..." > </textarea>
+												<textarea class="form-control form-control-solid" rows="5" name="thankyou" 
+												required placeholder="Describe yourself here..." value="{{$award->thankyou}}" > </textarea>
      											</div>
 											</div>                                      
                                    	</div>                                               

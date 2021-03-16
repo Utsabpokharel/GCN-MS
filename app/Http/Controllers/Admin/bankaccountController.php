@@ -89,6 +89,8 @@ class bankaccountController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $bank = BankAccount::findorfail($id);
+        $bank->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Bank Account Deleted Successfully");
     }
 }

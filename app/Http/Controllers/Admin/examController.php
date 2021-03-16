@@ -89,6 +89,8 @@ class examController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $exam = Exam::findorfail($id);
+        $exam->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Exam Deleted Successfully");
     }
 }

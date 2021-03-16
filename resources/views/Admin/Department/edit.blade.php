@@ -29,27 +29,38 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="{{ route('department.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{route('department.update',$department->id)}}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
+                            @method('PUT')
                             <div class="form-body">
-                                <div class="form-group row">
-                                    <label class="control-label col-md-3">Department ID
-                                        <span class="required"> * </span>
-                                    </label>
-                                    <div class="col-md-5">
-                                        <input type="text" name="name" required placeholder="Department ID"
-                                            class="form-control input-height" value="" />
-                                    </div>
-                                </div>
-
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Department Name
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name= "dep_name"required placeholder="Department Name"
-                                            class="form-control input-height " value="" />
+                                        <input type="text" name="departmentname" required placeholder="Department Name"
+                                            class="form-control input-height" value="{{$department->departmentname}}" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Department Short Name
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="text" name= "shortname"required placeholder="Department Short Name"
+                                            class="form-control input-height " value="{{$department->shortname}}" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Department Code
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="text" name= "code"required placeholder="Department Code"
+                                            class="form-control input-height " value="{{$department->code}}" />
                                     </div>
                                 </div>
 
@@ -58,7 +69,8 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <textarea name="description" id="dep_description" cols="30" rows="10" class="form-control"></textarea>
+                                        <textarea name="departmentdescription" id="departmentdescription" 
+                                        cols="30" rows="10" class="form-control" value="{{$department->departmentdescription}}"></textarea>
                                     </div>
 
                                 </div>

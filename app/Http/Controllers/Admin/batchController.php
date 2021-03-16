@@ -89,6 +89,8 @@ class batchController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $batch = Batch::findorfail($id);
+        $batch->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Batch Deleted Successfully");
     }
 }

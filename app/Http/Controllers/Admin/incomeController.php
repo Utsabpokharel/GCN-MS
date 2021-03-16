@@ -89,6 +89,8 @@ class incomeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $income = Income::findorfail($id);
+        $income->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Income Deleted Successfully");
     }
 }

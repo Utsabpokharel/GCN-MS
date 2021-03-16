@@ -90,6 +90,8 @@ class teacherController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $teacher = Teacher::findorfail($id);
+        $teacher->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Teacher Deleted Successfully");
     }
 }

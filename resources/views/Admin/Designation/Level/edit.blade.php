@@ -29,9 +29,10 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="{{ route('level.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{route('level.update',$level->id)}}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
+                            @method('PUT')
                             <div class="form-body">
                             <div class="form-group row">
                                     <label class="control-label col-md-3">Level
@@ -39,7 +40,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="level" required placeholder="Enter Level"
-                                            class="form-control input-height @error('level') is-invalid @enderror" value="" />
+                                            class="form-control input-height @error('level') is-invalid @enderror" value="{{$level->level}}" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -48,7 +49,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <textarea name="description" cols="30" rows="10" class="form-control  @error('description') is-invalid @enderror"
-                                        placeholder="Enter Description" >{{old('description','')}}</textarea>
+                                        placeholder="Enter Description" value="{{$level->description}}"></textarea>
                                     </div>
                                     @error('description')
                                     <span class="invalid-feedback" role="alert">{{$message}}</span>
@@ -60,7 +61,7 @@
                                     <div class="row">
                                         <div class="offset-md-3 col-md-9">
                                             <button type="submit" class="btn btn-info m-r-20">Submit</button>
-                                            <a class="btn btn-default" href="{{route('user.index')}}">Cancel</a>
+                                            <a class="btn btn-default" href="{{route('level.index')}}">Cancel</a>
                                         </div>
                                     </div>
                                 </div>

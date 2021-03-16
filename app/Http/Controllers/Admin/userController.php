@@ -89,6 +89,8 @@ class userController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::findorfail($id);
+        $user->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "User Deleted Successfully");
     }
 }

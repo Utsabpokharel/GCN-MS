@@ -89,6 +89,8 @@ class sectionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $section = Section::findorfail($id);
+        $section->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Section Deleted Successfully");
     }
 }

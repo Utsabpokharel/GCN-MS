@@ -29,9 +29,10 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="{{ route('enquirysource.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{route('enquirysource.update',$enquirysource->id)}}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
+                            @method('PUT')
                             <div class="form-body">
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Source Name
@@ -39,7 +40,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="name" required placeholder="Source Name"
-                                            class="form-control input-height" value="" />
+                                            class="form-control input-height" value="{{$enquirysource->name}}" />
                                     </div>
                                 </div>
 
@@ -48,7 +49,8 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+                                        <textarea name="description" id="description" cols="30" rows="10" 
+                                        class="form-control" value="{{$enquirysource->description}}"></textarea>
                                     </div>
 
                                 </div>

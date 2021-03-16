@@ -89,6 +89,8 @@ class incomingController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $incoming = Incoming::findorfail($id);
+        $incoming->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Incoming Deleted Successfully");
     }
 }

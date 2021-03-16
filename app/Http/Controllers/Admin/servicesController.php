@@ -89,6 +89,8 @@ class servicesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $services = Services::findorfail($id);
+        $services->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Services Deleted Successfully");
     }
 }

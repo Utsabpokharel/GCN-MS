@@ -89,6 +89,8 @@ class advancedController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $advanced = Advanced::findorfail($id);
+        $advanced->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Advanced Deleted Successfully");
     }
 }

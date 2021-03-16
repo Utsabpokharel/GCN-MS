@@ -29,16 +29,18 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="{{ route('expense.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{route('expense.update',$expense->id)}}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
+                            @method('PUT')
                             <div class="form-body">
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Date
 										<span class="required"> * </span>
 									</label>
 									<div class="col-md-5">
-                    					<input type="date" class="form-control input-height @error('expdate') is-invalid @enderror" data-date-format="yyyy-mm-dd" value="{{old('expdate','')}}" />
+                    					<input type="date" class="form-control input-height @error('expdate') is-invalid @enderror" 
+                                        data-date-format="yyyy-mm-dd" value="{{$expense->expdate}}" />
 										@error('expdate')
 										<span class="invalid-feedback" role="alert">
 										    <strong>{{$message}}</strong>
@@ -53,7 +55,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="particular" required placeholder="Enter Particular"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{$expense->particular}}" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -61,7 +63,8 @@
 										<span class="required"> * </span>
 									</label>
 									<div class="col-md-5">
-                    					<input type="number" class="form-control input-height @error('amount') is-invalid @enderror" required placeholder="Enter Amount" value="{{old('amount','')}}" />
+                    					<input type="number" class="form-control input-height @error('amount') is-invalid @enderror" 
+                                        required placeholder="Enter Amount" value="{{$expense->amount}}" />
 										@error('amount')
 										<span class="invalid-feedback" role="alert">
 										    <strong>{{$message}}</strong>
@@ -74,7 +77,8 @@
 										<span class="required"> * </span>
 									</label>
 									<div class="col-md-5">
-                                    <select name="paidby" class="form-control input-height @error('paidby') is-invalid @enderror"  value="" >
+                                    <select name="paidby" class="form-control input-height @error('paidby') is-invalid @enderror" 
+                                     value="{{$expense->paidby}}" >
                                         <option selected disabled="">Paid By</option>
                                         
                                     </select>
@@ -90,7 +94,8 @@
 										<span class="required"> * </span>
 									</label>
 									<div class="col-md-5">
-                                    <select name="catid" class="form-control input-height @error('catid') is-invalid @enderror"  value="" >
+                                    <select name="catid" class="form-control input-height @error('catid') is-invalid @enderror"  
+                                    value="{{$expense->catid}}" >
                                         <option selected disabled="">Select Category ID</option>
                                         
                                     </select>
@@ -106,7 +111,7 @@
 										<span class="required"> * </span>
 									</label>
 									<div class="col-md-5">
-                                    <select name="payment" class="form-control input-height @error('payment') is-invalid @enderror"  value="">
+                                    <select name="payment" class="form-control input-height @error('payment') is-invalid @enderror"  value="{{$expense->payment}}">
                                         <option selected disabled="">Select Payment Method</option>
                                         <option value="bank">Bank</option>
                                         <option value="esewa">Esewa</option>
@@ -124,7 +129,8 @@
 										<span class="required"> * </span>
 									</label>
 									<div class="col-md-5">
-                                    <select name="receivedby" class="form-control input-height @error('receivedby') is-invalid @enderror"  value="" >
+                                    <select name="receivedby" class="form-control input-height @error('receivedby') is-invalid @enderror" 
+                                    value="{{$expense->receivedby}}" >
                                         <option selected disabled="">Select Received By</option>
                                         
                                     </select>
@@ -141,7 +147,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <select class="form-control input-height" name="status">
+                                        <select class="form-control input-height" name="status" value="{{$expense->status}}">
                                             <option value="" disabled selected>Select Status</option>
                                         </select>
                                     </div>

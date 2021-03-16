@@ -89,6 +89,8 @@ class salaryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $salary = Salary::findorfail($id);
+        $salary->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Salary Deleted Successfully");
     }
 }

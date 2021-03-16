@@ -90,6 +90,8 @@ class expensecategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $expensecategory = Expensecategory::findorfail($id);
+        $expensecategory->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Expense Category Deleted Successfully");
     }
 }

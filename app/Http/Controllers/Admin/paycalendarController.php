@@ -89,6 +89,8 @@ class paycalendarController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $paycalendar = PayCalendar::findorfail($id);
+        $paycalendar->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Pay Calendar Deleted Successfully");
     }
 }

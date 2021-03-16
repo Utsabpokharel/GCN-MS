@@ -11,7 +11,7 @@
                     <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Home</a>&nbsp;<i
                             class="fa fa-angle-right"></i>
                     </li>
-                    <li><a class="parent-item" href="{{route('expense.index')}}">Expense Category</a>&nbsp;<i
+                    <li><a class="parent-item" href="{{route('expensecategory.index')}}">Expense Category</a>&nbsp;<i
                             class="fa fa-angle-right"></i>
                     </li>
                     <li class="active">Add Expense Category</li>
@@ -29,9 +29,10 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="{{ route('expensecategory.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{route('expensecategory.update',$expensecategory->id)}}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
+                            @method('PUT')
                             <div class="form-body">
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Name
@@ -39,7 +40,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="name" required placeholder="Enter Name"
-                                            class="form-control input-height" value="" />
+                                            class="form-control input-height" value="{{$expensecategory->name}}" />
                                     </div>
                                 </div>
 
@@ -49,7 +50,7 @@
                                     </label>
                                     <div class="col-md-5">
                                     <textarea name="description" cols="30" rows="10" class="form-control  @error('description') is-invalid @enderror"
-                                        placeholder="Enter Description" >{{old('description','')}}</textarea>
+                                        placeholder="Enter Description" value="{{$expensecategory->description}}"></textarea>
                                     </div>
                                     @error('description')
                                     <span class="invalid-feedback" role="alert">{{$message}}</span>

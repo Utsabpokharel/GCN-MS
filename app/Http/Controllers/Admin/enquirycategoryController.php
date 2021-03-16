@@ -89,6 +89,8 @@ class enquirycategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $enquiry = EnquiryCategory::findorfail($id);
+        $enquiry->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Enquiry Category Deleted Successfully");
     }
 }

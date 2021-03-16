@@ -89,6 +89,8 @@ class expenseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $expense = Expense::findorfail($id);
+        $expense->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Expense Deleted Successfully");
     }
 }

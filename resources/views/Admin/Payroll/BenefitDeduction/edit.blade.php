@@ -29,9 +29,10 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="{{ route('benefitdeduction.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{route('benefitdeduction.update',$benefitdeduction->id)}}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
+                            @method('PUT')
                             <div class="form-body">
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Staff Name
@@ -39,7 +40,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="name" required placeholder="Select Staff Name"
-                                            class="form-control input-height" value="" />
+                                            class="form-control input-height" value="{{$benefitdeduction->name}}" />
                                     </div>
                                 </div>
 
@@ -49,7 +50,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="number" name="bankno" required placeholder="Select Bank Account Number"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{$benefitdeduction->bankno}}" />
                                     </div>
                                 </div>
 
@@ -60,7 +61,7 @@
                                     <div class="col-md-5">
                                         <input type="number" name="amount" required
                                             placeholder="Enter Amount"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{$benefitdeduction->amount}}" />
                                     </div>
 
                                 </div>
@@ -71,7 +72,7 @@
                                     <div class="col-md-5">
                                         <input type="number" name="currency" required
                                             placeholder="Enter Currency"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{$benefitdeduction->currency}}" />
                                     </div>
 
                                 </div>
@@ -82,7 +83,7 @@
                                     <div class="col-md-5">
                                         <input type="number" name="benefit" required
                                             placeholder="Enter Amount"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{$benefitdeduction->benefit}}" />
                                     </div>
 
                                 </div>
@@ -93,7 +94,7 @@
                                     <div class="col-md-5">
                                         <input type="number" name="payment" required
                                             placeholder="Enter Amount"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{$benefitdeduction->payment}}" />
                                     </div>
 
                                 </div>
@@ -102,7 +103,8 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                    <textarea name="reason" id="reason" cols="30" rows="10" class="form-control"></textarea>
+                                    <textarea name="reason" id="reason" cols="30" rows="10" value="{{$benefitdeduction->reason}}"
+                                    class="form-control"></textarea>
                                     </div>
                                 </div>
 

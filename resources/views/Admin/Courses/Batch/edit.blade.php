@@ -30,9 +30,10 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="{{ route('batch.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{route('batch.update',$batch->id)}}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
+                            @method('PUT')
                             <div class="form-body">
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Batch Name
@@ -40,7 +41,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="name" required placeholder="Enter Batch Name"
-                                            class="form-control input-height" value="" />
+                                            class="form-control input-height" value="{{$batch->name}}" />
                                     </div>
                                 </div>
 
@@ -50,7 +51,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="date" name="year" required placeholder="enter batch year"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{$batch->year}}" />
                                     </div>
                                 </div>
 
@@ -61,7 +62,7 @@
                                     <div class="col-md-5">
                                         <input type="text" name="month" required
                                             placeholder="Enter Month"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{$batch->month}}" />
                                     </div>
 
                                 </div>
@@ -72,7 +73,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="course" required
-                                            placeholder="Enter Course"
+                                            placeholder="Enter Course" value="{{$batch->course}}"
                                             class="form-control input-height" />
                                     </div>
 
@@ -84,7 +85,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="section" required
-                                            placeholder="Enter Section"
+                                            placeholder="Enter Section" value="{{$batch->section}}"
                                             class="form-control input-height" />
                                     </div>
                                 </div>
@@ -94,7 +95,7 @@
                                     </label>
                                     <div class="col-md-5">
                                             <input type="text" name="shift" required
-                                            placeholder="Enter Shift"
+                                            placeholder="Enter Shift" value="{{$batch->shift}}"
                                             class="form-control input-height" />
                                     </div>
                                 </div>

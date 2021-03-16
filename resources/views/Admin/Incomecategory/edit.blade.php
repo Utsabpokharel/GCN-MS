@@ -29,9 +29,10 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="{{ route('incomecategory.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{route('incomecategory.update',$incomecategory->id)}}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
+                            @method('PUT')
                             <div class="form-body">
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Name
@@ -39,7 +40,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="name" required placeholder="Enter Name"
-                                            class="form-control input-height" value="" />
+                                            class="form-control input-height" value="{{$incomecategory->name}}" />
                                     </div>
                                 </div>
 
@@ -49,7 +50,7 @@
                                     </label>
                                     <div class="col-md-5">
                                     <textarea name="description" cols="30" rows="10" class="form-control  @error('description') is-invalid @enderror"
-                                        placeholder="Enter Description" >{{old('description','')}}</textarea>
+                                        placeholder="Enter Description" value="{{$incomecategory->description}}"></textarea>
                                     </div>
                                     @error('description')
                                     <span class="invalid-feedback" role="alert">{{$message}}</span>

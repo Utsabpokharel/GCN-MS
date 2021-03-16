@@ -30,9 +30,10 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="{{ route('salary.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{route('salary.update',$salary->id)}}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
+                            @method('PUT')
                             <div class="form-body">
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Staff Name
@@ -40,7 +41,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="name" required placeholder="enter staff name"
-                                            class="form-control input-height" value="" />
+                                            class="form-control input-height" value="{{$salary->name}}" />
                                     </div>
                                 </div>
 
@@ -50,7 +51,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="designation" required placeholder="enter designation"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{$salary->designation}}" />
                                     </div>
                                 </div>
 
@@ -61,7 +62,7 @@
                                     <div class="col-md-5">
                                         <input type=text name="pan" required
                                             placeholder="Enter Enquiry Source"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{$salary->pan}}" />
                                     </div>
 
                                 </div>
@@ -72,7 +73,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="number" name="amount" required
-                                            placeholder="Enter Amount"
+                                            placeholder="Enter Amount" value="{{$salary->amount}}"
                                             class="form-control input-height" />
                                     </div>
 
@@ -84,7 +85,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="currency" required
-                                            placeholder="Enter Currency Type"
+                                            placeholder="Enter Currency Type" value="{{$salary->currency}}"
                                             class="form-control input-height" />
                                     </div>
                                 </div>
@@ -94,7 +95,7 @@
                                     </label>
                                     <div class="col-md-5">
                                             <input type="text" name="bankno" required
-                                            placeholder="Enter Bank Account Number"
+                                            placeholder="Enter Bank Account Number" value="{{$salary->bankno}}"
                                             class="form-control input-height" />
                                     </div>
 
@@ -105,7 +106,7 @@
                                     </label>
                                     <div class="col-md-5">
                                             <input type="text" name="payment" required
-                                            placeholder="Enter Bank Account Number"
+                                            placeholder="Enter Bank Account Number" value="{{$salary->payment}}"
                                             class="form-control input-height" />
                                     </div>
 
@@ -115,7 +116,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                            <input type="date" name="joindate"
+                                            <input type="date" name="joindate" value="{{$salary->joindate}}"
                                             class="form-control input-height" />
                                     </div>
 

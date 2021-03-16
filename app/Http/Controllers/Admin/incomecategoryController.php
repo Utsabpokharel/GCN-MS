@@ -91,6 +91,8 @@ class incomecategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $incomecategory = Incomecategory::findorfail($id);
+        $incomecategory->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Income Category Deleted Successfully");
     }
 }
