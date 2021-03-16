@@ -29,16 +29,17 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="{{ route('enquiryresponse.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{route('enquiryresponse.update',$enquiryresponse->id)}}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
-
+                            @method('PUT')
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Response
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <textarea name="response" id="response" cols="30" rows="10" class="form-control"></textarea>
+                                        <textarea name="response" id="response" cols="30" rows="10" value="{{$enquiryresponse->response}}"
+                                        class="form-control"></textarea>
                                     </div>
 
                                 </div>

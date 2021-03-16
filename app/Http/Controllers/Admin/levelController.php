@@ -89,6 +89,8 @@ class levelController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $level = Level::findorfail($id);
+        $level->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', " Designation Level Deleted Successfully");
     }
 }

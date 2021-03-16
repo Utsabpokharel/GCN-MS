@@ -29,9 +29,10 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="{{ route('incoming.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{route('incoming.update',$incoming->id)}}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
+                            @method('PUT')
                             <div class="form-body">
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Incoming Time
@@ -39,7 +40,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="time" name="intime" required placeholder="Incoming Time"
-                                            class="form-control input-height" value="" />
+                                            class="form-control input-height" value="{{$incoming->intime}}"/>
                                     </div>
                                 </div>
 
@@ -49,7 +50,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="date" name="indate" required placeholder="Incoming Date"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{$incoming->indate}}"/>
                                     </div>
                                 </div>
 
@@ -60,7 +61,7 @@
                                     <div class="col-md-5">
                                         <input type="text" name="calledby" required
                                             placeholder="Called By"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{$incoming->calledby}}"/>
                                     </div>
 
                                 </div>
@@ -72,7 +73,7 @@
                                     <div class="col-md-5">
                                         <input type="text" name="receivedby" required
                                             placeholder="Received By"
-                                            class="form-control input-height" />
+                                            class="form-control input-height" value="{{$incoming->receivedby}}"/>
                                     </div>
 
                                 </div>
@@ -81,7 +82,8 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <textarea class="form-control form-control-solid" rows="5" name="remarks" placeholder="Remarks"> </textarea>
+                                        <textarea class="form-control form-control-solid" rows="5" name="remarks" 
+                                        placeholder="Remarks" value="{{$incoming->remarks}}"> </textarea>
                                     </div>
 
                                 </div>
@@ -91,7 +93,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="purpose" required
-                                            placeholder="Purpose"
+                                            placeholder="Purpose" value="{{$incoming->purpose}}"
                                             class="form-control input-height" />
                                     </div>
 

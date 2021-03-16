@@ -89,6 +89,8 @@ class visitedController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $visited = Visited::findorfail($id);
+        $visited->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Visited Deleted Successfully");
     }
 }

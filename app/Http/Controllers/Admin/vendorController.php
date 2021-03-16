@@ -62,7 +62,8 @@ class vendorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $vendor = Vendor::findorfail($id);
+        return view('Admin.Vendor.edit', compact('vendor'));
     }
 
     /**
@@ -74,7 +75,10 @@ class vendorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $vendor = Vendor::findorfail($id);
+        $vendor->update($data);
+        return redirect()->route('vendor.index')->with('success', 'Vendor Updated Successfully');
     }
 
     /**
@@ -85,6 +89,8 @@ class vendorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $vendor = Vendor::findorfail($id);
+        $vendor->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Vendor Deleted Successfully");
     }
 }

@@ -30,17 +30,18 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="{{ route('course.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{route('course.update',$course->id)}}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
+                            @method('PUT')
                             <div class="form-body">
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Course Name
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="name" required placeholder="Enter Batch Name"
-                                            class="form-control input-height" value="" />
+                                        <input type="text" name="name" required placeholder="Enter Course Name"
+                                            class="form-control input-height" value="{{$course->name}}" />
                                     </div>
                                 </div>
 
@@ -50,7 +51,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="duration" required placeholder="Enter Duration in Weeks"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{$course->duration}}" />
                                     </div>
                                 </div>
 
@@ -61,7 +62,7 @@
                                     <div class="col-md-5">
                                         <input type="text" name="fees" required
                                             placeholder="Enter Fees"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{$course->fees}}" />
                                     </div>
 
                                 </div>
@@ -86,14 +87,16 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                    <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+                                    <textarea name="description" id="description" cols="30" rows="10" class="form-control" 
+                                    value="{{$course->description}}">
+                                    </textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">
                                     </label>
                                     <div class="col-md-5">
-                                    <input type="checkbox" name="status" id="status" value="1" checked>
+                                    <input type="checkbox" name="status" id="status" value="1" checked value="{{$course->status}}">
                                             <label for="status">Active</label>
                                     </div>
                                 </div>

@@ -91,6 +91,8 @@ class staffattController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $staffatt = Staffatt::findorfail($id);
+        $staffatt->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Staff Attendance Deleted Successfully");
     }
 }

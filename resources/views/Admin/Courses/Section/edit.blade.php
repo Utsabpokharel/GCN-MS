@@ -29,9 +29,10 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="{{ route('section.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{route('section.update',$section->id)}}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
+                            @method('PUT')
                             <div class="form-body">
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Section Name
@@ -39,7 +40,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="name" required placeholder="Section Name"
-                                            class="form-control input-height" value="" />
+                                            class="form-control input-height" value="{{$section->name}}" />
                                     </div>
                                 </div>
 
@@ -49,7 +50,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="number" name="numberofstd"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{$section->numberofstd}}" />
                                     </div>
                                 </div>
 

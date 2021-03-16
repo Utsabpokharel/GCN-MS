@@ -30,9 +30,10 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="{{ route('enquiry.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{route('enquiry.update',$enquiry->id)}}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
+                            @method('PUT')
                             <div class="form-body">
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Enquiry Name
@@ -40,7 +41,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="name" required placeholder="enter enquiry name"
-                                            class="form-control input-height" value="" />
+                                            class="form-control input-height" value="{{$enquiry->name}}" />
                                     </div>
                                 </div>
 
@@ -50,7 +51,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="category" required placeholder="enter enquiry Category"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{$enquiry->category}}" />
                                     </div>
                                 </div>
 
@@ -61,7 +62,7 @@
                                     <div class="col-md-5">
                                         <input type=text name="source" required
                                             placeholder="Enter Enquiry Source"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{$enquiry->source}}" />
                                     </div>
 
                                 </div>
@@ -72,7 +73,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="date" name="endate" required
-                                            placeholder="Enter Date"
+                                            placeholder="Enter Date" value="{{$enquiry->endate}}"
                                             class="form-control input-height" />
                                     </div>
 
@@ -84,7 +85,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="time" name="entime" required
-                                            placeholder="Enter Time"
+                                            placeholder="Enter Time" value="{{$enquiry->entime}}"
                                             class="form-control input-height" />
                                     </div>
                                 </div>
@@ -93,7 +94,8 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                            <textarea name="remarks" id="remarks" cols="30" rows="10" class="form-control"></textarea>
+                                        <textarea name="remarks" id="remarks" cols="30" rows="10" value="{{$enquiry->remarks}}"
+                                            class="form-control"></textarea>
                                     </div>
                                 </div>
 

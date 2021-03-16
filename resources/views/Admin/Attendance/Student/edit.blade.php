@@ -33,8 +33,9 @@
 								<h3>Date Today:</h3>
 								</div>
 								<div class="card-body" id="bar-parent">
-									<form action="{{ route('studentatt.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"  enctype="multipart/form-data">
+									<form action="{{route('studentatt.update',$studentatt->id)}}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"  enctype="multipart/form-data">
 										{{csrf_field()}}
+										@method('PUT')
 										<div class="form-body">
 											<div class="form-group row">
 												<label class="control-label col-md-3">Student Name
@@ -42,7 +43,7 @@
 												</label>
 												<div class="col-md-5">
 												<select name="name" id="name"
-													class="form-control input-height @error('name') is-invalid @enderror" value="{{old('name','')}}" />
+													class="form-control input-height @error('name') is-invalid @enderror" value="{{$studentatt->name}}" >
 													<option selected disabled="">Select Student Name </option>
 													</select>
 		   
@@ -59,7 +60,7 @@
 												</label>
 												<div class="col-md-5">
 												<select name="attendance" id="attendance"
-													class="form-control input-height @error('attendance') is-invalid @enderror" value="{{old('attendance','')}}" />
+													class="form-control input-height @error('attendance') is-invalid @enderror" value="{{$studentatt->attendance}}">
 													<option selected disabled="">Select Attendance</option>
 													</select>
 		   
@@ -73,7 +74,7 @@
 											<div class="form-group row">
 												<label class="control-label col-md-3">Remarks </label>
 												<div class="col-md-5">
-												<textarea class="form-control form-control-solid" rows="5" name="remarks" required placeholder="" > </textarea>
+												<textarea class="form-control form-control-solid" rows="5" name="remarks" required placeholder="Enter Remarks" value="{{$studentatt->remarks}}"> </textarea>
      										</div>
 										</div>                                      
                                    	</div>                                               

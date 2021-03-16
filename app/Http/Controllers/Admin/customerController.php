@@ -90,6 +90,8 @@ class customerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $customer = Customer::findorfail($id);
+        $customer->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Customer Deleted Successfully");
     }
 }

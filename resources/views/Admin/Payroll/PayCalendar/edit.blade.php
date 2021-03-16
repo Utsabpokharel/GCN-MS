@@ -29,9 +29,10 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="{{ route('paycalendar.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{route('paycalendar.update',$paycalendar->id)}}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
+                            @method('PUT')
                             <div class="form-body">
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Staff Name
@@ -39,17 +40,17 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="name" required placeholder="Select Staff Name"
-                                            class="form-control input-height" value="" />
+                                            class="form-control input-height" value="{{$paycalendar->name}}" />
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">Type of Payment Mode
+                                    <label class="control-label col-md-3">Type of Payment
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="payment" required placeholder="Select Payment Mode"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{$paycalendar->payment}}" />
                                     </div>
                                 </div>
 
@@ -60,7 +61,7 @@
                                     <div class="col-md-5">
                                         <input type="number" name="month" required
                                             placeholder="Enter Amount"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{$paycalendar->month}}" />
                                     </div>
 
                                 </div>

@@ -29,9 +29,10 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="{{ route('visited.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{route('visited.update',$visited->id)}}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
+                            @method('PUT')
                             <div class="form-body">
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Visited Time
@@ -39,7 +40,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="time" name="visittime" required placeholder="Visited Time"
-                                            class="form-control input-height" value="" />
+                                            class="form-control input-height" value="{{$visited->visittime}}" />
                                     </div>
                                 </div>
 
@@ -49,7 +50,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="date" name="visitdate" required placeholder="Visited Date"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{$visited->visitdate}}" />
                                     </div>
                                 </div>
 
@@ -60,7 +61,7 @@
                                     <div class="col-md-5">
                                         <input type="text" name="name" required
                                             placeholder="Visitor Name"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height" value="{{$visited->name}}" />
                                     </div>
 
                                 </div>
@@ -71,7 +72,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="handledby" required
-                                            placeholder="Handled By"
+                                            placeholder="Handled By" value="{{$visited->handledby}}" 
                                             class="form-control input-height" />
                                     </div>
 
@@ -81,7 +82,8 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <textarea class="form-control form-control-solid" rows="5" name="remarks" placeholder="Remarks"> </textarea>
+                                        <textarea class="form-control form-control-solid" rows="5" name="remarks" 
+                                        placeholder="Remarks" value="{{$visited->remarks}}"> </textarea>
                                     </div>
 
                                 </div>
@@ -91,7 +93,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="purpose" required
-                                            placeholder="Purpose"
+                                            placeholder="Purpose" value="{{$visited->purpose}}"
                                             class="form-control input-height" />
                                     </div>
 

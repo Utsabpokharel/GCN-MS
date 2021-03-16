@@ -89,6 +89,8 @@ class studentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $student = Student::findorfail($id);
+        $student->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Student Deleted Successfully");
     }
 }

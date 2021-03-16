@@ -90,6 +90,8 @@ class staffController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $staff = Staff::findorfail($id);
+        $staff->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Staff Deleted Successfully");
     }
 }

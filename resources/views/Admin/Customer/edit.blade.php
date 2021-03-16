@@ -29,7 +29,8 @@
 									</button>									
 								</div>
 								<div class="card-body" id="bar-parent">
-									<form action="{{ route('customer.update',$customer->id)) }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"  enctype="multipart/form-data">
+									<form action="{{ route('customer.update',$customer->id)) }}" id="form_sample_1" class="form-horizontal" 
+									method="post" autocomplete="on"  enctype="multipart/form-data">
 										{{csrf_field()}}
 										@method('PUT')
 										<div class="form-body">
@@ -68,7 +69,8 @@
                     								<span class="required">*</span>
 												</label>
 												<div class="col-md-5">
-                    								<input type="date" name="dob" class="form-control input-height @error('dob') is-invalid @enderror" value="{{$customer->dob}}" />
+                    								<input type="date" name="dob" class="form-control input-height @error('dob') is-invalid @enderror" 
+													value="{{$customer->dob}}" />
                     								@error('dob')
                     									<span class="invalid-feedback" role="alert">
 															<strong>{{$message}}</strong>

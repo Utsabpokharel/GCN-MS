@@ -89,6 +89,8 @@ class awardController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $award = Awards::findorfail($id);
+        $award->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Award Deleted Successfully");
     }
 }

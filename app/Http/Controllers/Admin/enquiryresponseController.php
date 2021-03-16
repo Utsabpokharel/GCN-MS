@@ -89,6 +89,8 @@ class enquiryresponseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $enquiry = EnquiryResponse::findorfail($id);
+        $enquiry->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Enquiry Response Deleted Successfully");
     }
 }

@@ -89,6 +89,8 @@ class benefitdeductionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $benefit = BenefitDeduction::findorfail($id);
+        $benefit->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Benefit/Deduction Deleted Successfully");
     }
 }

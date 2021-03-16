@@ -91,6 +91,8 @@ class studentattController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $studentatt = Studentatt::findorfail($id);
+        $studentatt->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Student Attendance Deleted Successfully");
     }
 }

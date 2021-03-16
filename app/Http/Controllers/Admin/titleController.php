@@ -89,6 +89,8 @@ class titleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $title = Title::findorfail($id);
+        $title->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', " Designation Title Deleted Successfully");
     }
 }

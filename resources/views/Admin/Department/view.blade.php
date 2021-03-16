@@ -46,7 +46,7 @@
                                 <a href="{{route('department.edit',$value->id) }}"
                                 class="btn btn-primary btn-xs">
                                 <i class="fa fa-pencil"></i></a>
-                                <a href=""
+                                <a href="{{route('department.destroy',$value->id)}}"
                                 class="btn btn-danger btn-xs">
                     			<i class="fa fa-trash-o "></i>
                                 </button>

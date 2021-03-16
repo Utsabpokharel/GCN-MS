@@ -29,9 +29,10 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="{{ route('exam.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{route('exam.update',$exam->id)}}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
+                            @method('PUT')
                             <div class="form-body">
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Exam Name
@@ -39,7 +40,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="name" required placeholder="Exam Name"
-                                            class="form-control input-height" value="" />
+                                            class="form-control input-height" value="{{$exam->name}}" />
                                     </div>
                                 </div>
 
@@ -49,7 +50,7 @@
                                     </label>
                                     <div class="col-md-5">
                                     <select name="course" id="course"
-										class="form-control input-height @error('course') is-invalid @enderror" value="{{old('course','')}}" />
+										class="form-control input-height @error('course') is-invalid @enderror" value="{{$exam->course}}" >
 										<option selected disabled="">Select Course </option>
 										<option value="abc">abc</option>
 									</select>
@@ -63,7 +64,7 @@
                                     <div class="col-md-5">
                                         <input type="date" name="examdate" required
                                             placeholder="Enter Amount"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{$exam->examdate}}" />
                                     </div>
 
                                 </div>

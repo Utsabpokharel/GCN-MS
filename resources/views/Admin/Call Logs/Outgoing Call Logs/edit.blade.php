@@ -29,9 +29,10 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="{{ route('outgoing.store') }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{route('outgoing.update',$outgoing->id)}}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
+                            @method('PUT')
                             <div class="form-body">
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Outgoing Time
@@ -39,7 +40,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="time" name="outtime" required placeholder="Outgoing Time"
-                                            class="form-control input-height" value="" />
+                                            class="form-control input-height" value="{{$outgoing->outtime}}" />
                                     </div>
                                 </div>
 
@@ -49,7 +50,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="date" name="outdate" required placeholder="Outgoing Date"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height " value="{{$outgoing->outdate}}"/>
                                     </div>
                                 </div>
 
@@ -60,7 +61,7 @@
                                     <div class="col-md-5">
                                         <input type="text" name="calledby" required
                                             placeholder="Called By"
-                                            class="form-control input-height " value="" />
+                                            class="form-control input-height" value="{{$outgoing->calledby}}"/>
                                     </div>
 
                                 </div>
@@ -71,7 +72,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="receivedby" required
-                                            placeholder="Received By"
+                                            placeholder="Received By" value="{{$outgoing->receivedby}}"
                                             class="form-control input-height" />
                                     </div>
 
@@ -81,7 +82,8 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <textarea class="form-control form-control-solid" rows="5" name="remarks" placeholder="Remarks"> </textarea>
+                                        <textarea class="form-control form-control-solid" rows="5" name="remarks" 
+                                        placeholder="Remarks" value="{{$outgoing->remarks}}"> </textarea>
                                     </div>
 
                                 </div>
@@ -91,7 +93,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="text" name="purpose" required
-                                            placeholder="Purpose"
+                                            placeholder="Purpose" value="{{$outgoing->purpose}}"
                                             class="form-control input-height" />
                                     </div>
 

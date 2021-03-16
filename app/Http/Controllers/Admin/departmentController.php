@@ -89,6 +89,8 @@ class departmentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $department = Department::findorfail($id);
+        $department->delete();
+        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Department Deleted Successfully");
     }
 }
