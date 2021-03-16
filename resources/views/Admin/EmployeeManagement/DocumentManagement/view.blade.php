@@ -32,6 +32,7 @@
                                     <th>#</th>
                                     <th>Staff Name</th>
                                     <th>Bank Account Number</th>
+                                    <th>PAN Document</th>
                                     <th>PF Document</th>
                                     <th>CIT Document</th>
                                     <th>Appointment Document</th>
@@ -45,10 +46,11 @@
                                                             <td>{{$loop->index+1}}</td>
                                                             <td>{{$value->staffname}}</td>
                                                             <td>{{$value->bankaccountnumber}}</td>
-                                                            <td>{{$value->pfdocument }}</td>
-                                                            <td>{{ $value->citdocument }}</td>
-                                                            <td>{{ $value->appointmentdocument }}</td>
-                                                            <td>{{ $value->contractdocument }}</td>
+                                                            <td><img src="{{ asset('public/images/PAN Document/'.$value->pandocument) }}" height="75" width="75" alt="" /></td>
+                                                            <td><img src="{{ asset('public/images/PF Document/'.$value->pfdocument) }}" height="75" width="75" alt="" /> </td>
+                                                            <td><img src="{{ asset('public/images/CIT Document/'.$value->citdocument) }}" height="75" width="75" alt="" /> </td>
+                                                            <td><img src="{{ asset('public/images/Appointment Document/'.$value->appointmentdocument) }}" height="75" width="75" alt="" /> </td>
+                                                            <td><img src="{{ asset('public/images/Contract Document/'.$value->contractdocument) }}" height="75" width="75" alt="" /></td>
 
 
                                                             <td>
@@ -75,6 +77,7 @@
                                     <th>#</th>
                                     <th>Staff Name</th>
                                     <th>Bank Account Number</th>
+                                    <th>PAN Document</th>
                                     <th>PF Document</th>
                                     <th>CIT Document</th>
                                     <th>Appointment Document</th>

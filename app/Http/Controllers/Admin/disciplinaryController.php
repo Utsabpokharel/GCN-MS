@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Disciplinary;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class disciplinaryController extends Controller
 {
@@ -41,7 +42,8 @@ class disciplinaryController extends Controller
     {
         $data = $request->all();
         Disciplinary::create($data);
-        return redirect()->route('disciplinary.index')->with('success', 'Employee Disciplinary Case created Successfully');
+        return redirect()->route('disciplinary.index');
+        Alert::success("Employee Disciplinary Case created Successfully");
     }
 
     /**
@@ -79,7 +81,8 @@ class disciplinaryController extends Controller
         $data = $request->all();
         $disciplinary = Disciplinary::findorfail($id);
         $disciplinary->update($data);
-        return redirect()->route('disciplinary.index')->with('success', 'Employee Disciplinary Case Updated Successfully');
+        return redirect()->route('disciplinary.index');
+        Alert::success("Employee Disciplinary Case Updated Successfully");
     }
 
     /**
@@ -92,6 +95,7 @@ class disciplinaryController extends Controller
     {
         $disciplinary = Disciplinary::findorfail($id);
         $disciplinary->delete();
-        return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Employee Disciplinary Case Deleted Successfully");
+        return redirect()->route('disciplinary.index');
+        Alert::warning("Employee Disciplinary Case Deleted Successfully");
     }
 }

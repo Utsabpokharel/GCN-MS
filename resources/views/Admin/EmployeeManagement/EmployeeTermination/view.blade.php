@@ -42,16 +42,16 @@
                             </thead>
                             <tbody>
 
-                                @foreach($employeeresignation as $value)
+                                @foreach($employeetermination as $value)
                                                         <tr>
                                                             <td>{{$loop->index+1}}</td>
                                                             <td>{{$value->staffname}}</td>
                                                             <td>{{$value->staffcode}}</td>
+                                                            <td>{{ $value->changestatus }}
                                                             <td>{{$value->noticedate}}</td>
                                                             <td>{{ $value->serviceenddate}}</td>
                                                             <td>{{ $value->forwardto}}</td>
-                                                            <td>{{ $value->terminationdocument}}
-
+                                                            <td><img src="{{ asset('public/images/EmployeeTermination/'.$value->terminationdocument)}}" height="75" width="75" alt=""/><td>
 
                                                             <td>
                                                                 <a href="{{route('employeetermination.edit',$value->id) }}"

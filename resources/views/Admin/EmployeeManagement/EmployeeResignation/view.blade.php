@@ -46,11 +46,11 @@
                                                             <td>{{$loop->index+1}}</td>
                                                             <td>{{$value->staffname}}</td>
                                                             <td>{{$value->staffcode}}</td>
-                                                            <td>{{$value->noticedate}}</td>
-                                                            <td>{{ $value->forwardto}}</td>
-                                                            <td>{{ $value->desireresigndate }}</td>
-                                                            <td>{{ $value->resignationdocument }}</td>
-
+                                                            <td>{{ $value->noticedate }}</td>
+                                                            <td>{{ $value->forwardto }}</td>
+                                                            <td>{{$value->desireresigndate}}</td>
+                                                            
+                                                            <td><img src="{{asset('public/images/EmployeeResignation/'.$value->resignationdocument)}}"height="75" width="75" alt="" /></td>
 
                                                             <td>
                                                                 <a href="{{route('employeeresignation.edit',$value->id) }}"

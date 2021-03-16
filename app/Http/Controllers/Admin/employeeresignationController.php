@@ -38,12 +38,23 @@ class employeeresignationController extends Controller
      */
     public function store(Request $request)
     {
-        $data=$request->all();
-        $imagepath = 'images/EmployeeResignation/';
-
-        $data['resignationdocument'] = save_image($request->resignationdocument, 150, 150, $imagepath);
-        EmployeeResignation::create($data);
-        return redirect()->route('employeeresignation.index')->with('success','Employee Resignation created successfully');
+        if ($request->hasFile('resignationdocument')) {
+            $image = $request->file('resignationdocument');
+            $res = "RESIGNATION-" . time() . '.' . $image->getClientOriginalExtension();
+            $image->move('public/images/EmployeeResignation/', $res);
+        }
+        $employeeresignation = new EmployeeResignation([
+            'staffname' => $request->staffname,
+            'staffcode' => $request->staffcode,
+            'noticedate' => $request->noticedate,
+            'forwardto' => $request->forwardto,
+            'desireresigndate' => $request->desireresigndate,
+            'reason' => $request->reason,
+            'details' => $request->details
+        ]);
+        $employeeresignation->resignationdocument = $res;
+        $employeeresignation->save();
+        return redirect()->route('employeeresignation.index')->with('success', 'Employee Resignation created successfully');
     }
 
     /**
@@ -66,7 +77,7 @@ class employeeresignationController extends Controller
     public function edit($id)
     {
         $employeeresignation = EmployeeResignation::findorfail($id);
-        return view('Admin.EmployeeManagement.EmployeeQualification.edit', compact('employeequalification'));
+        return view('Admin.EmployeeManagement.EmployeeResignation.edit', compact('employeeresignation'));
     }
 
     /**
@@ -95,6 +106,5 @@ class employeeresignationController extends Controller
         $employeeresignation = EmployeeResignation::findorfail($id);
         $employeeresignation->delete();
         return back()->with('flash_error', 'Deleted Successfully')->with('warning', "Employee Resignation Deleted Successfully");
-
     }
 }

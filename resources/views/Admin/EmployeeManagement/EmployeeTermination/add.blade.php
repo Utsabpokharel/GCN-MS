@@ -85,7 +85,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                    <input type="text" name="forwardto" id="forwardto"
+                                    <input type="text" name="forwardto" id="forwardto" required placeholder="Forward To"
                                             class="form-control input-height " value="" />
                                     </div>
                                 </div>
