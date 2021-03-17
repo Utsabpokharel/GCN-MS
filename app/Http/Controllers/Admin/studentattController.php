@@ -65,7 +65,7 @@ class studentattController extends Controller
     public function edit($id)
     {
         $studentatt = Studentatt::findorfail($id);
-        return view('Admin.Studentatt.edit', compact('studentatt'));
+        return view('Admin.Attendance.Student.edit', compact('studentatt'));
     }
 
     /**

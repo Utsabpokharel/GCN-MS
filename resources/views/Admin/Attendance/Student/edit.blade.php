@@ -45,6 +45,8 @@
 												<select name="name" id="name"
 													class="form-control input-height @error('name') is-invalid @enderror" value="{{$studentatt->name}}" >
 													<option selected disabled="">Select Student Name </option>
+													<option value="abc">abc</option>
+
 													</select>
 		   
 													@error('name')
@@ -62,6 +64,8 @@
 												<select name="attendance" id="attendance"
 													class="form-control input-height @error('attendance') is-invalid @enderror" value="{{$studentatt->attendance}}">
 													<option selected disabled="">Select Attendance</option>
+													<option value="abc">abc</option>
+
 													</select>
 		   
 													@error('attendance')
@@ -74,7 +78,8 @@
 											<div class="form-group row">
 												<label class="control-label col-md-3">Remarks </label>
 												<div class="col-md-5">
-												<textarea class="form-control form-control-solid" rows="5" name="remarks" required placeholder="Enter Remarks" value="{{$studentatt->remarks}}"> </textarea>
+												<textarea class="form-control form-control-solid" rows="5" name="remarks" 
+												required placeholder="Enter Remarks" value="{{$studentatt->remarks}}"> </textarea>
      										</div>
 										</div>                                      
                                    	</div>                                               

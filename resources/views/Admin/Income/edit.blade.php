@@ -70,7 +70,7 @@
                                     <select name="paidby" class="form-control input-height @error('paidby') is-invalid @enderror" 
                                      value="{{$income->paidby}}" >
                                         <option selected disabled="">Paid By</option>
-                                        
+                                        <option value="abc">abc</option>
                                     </select>
 										@error('paidby')
 										<span class="invalid-feedback" role="alert">
@@ -87,7 +87,7 @@
                                     <select name="catid" class="form-control input-height @error('catid') is-invalid @enderror" 
                                      value="{{$income->catid}}" >
                                         <option selected disabled="">Select Category ID</option>
-                                        
+                                        <option value="abc">abc</option>
                                     </select>
 										@error('catid')
 										<span class="invalid-feedback" role="alert">
@@ -123,7 +123,7 @@
                                     <select name="receivedby" class="form-control input-height @error('receivedby') is-invalid @enderror" 
                                      value="{{$income->receivedby}}" >
                                         <option selected disabled="">Select Received By</option>
-                                        
+                                        <option value="abc">abc</option>
                                     </select>
 										@error('receivedby')
 										<span class="invalid-feedback" role="alert">

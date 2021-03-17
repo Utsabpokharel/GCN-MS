@@ -63,7 +63,7 @@ class levelController extends Controller
     public function edit($id)
     {
         $level = Level::findorfail($id);
-        return view('Admin.Level.edit', compact('level'));
+        return view('Admin.Designation.Level.edit', compact('level'));
     }
 
     /**

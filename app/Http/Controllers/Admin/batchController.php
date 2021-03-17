@@ -63,7 +63,7 @@ class batchController extends Controller
     public function edit($id)
     {
         $batch = Batch::findorfail($id);
-        return view('Admin.Batch.edit', compact('batch'));
+        return view('Admin.Courses.Batch.edit', compact('batch'));
     }
 
     /**

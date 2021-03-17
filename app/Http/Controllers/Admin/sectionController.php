@@ -63,7 +63,7 @@ class sectionController extends Controller
     public function edit($id)
     {
         $section = Section::findorfail($id);
-        return view('Admin.Section.edit', compact('section'));
+        return view('Admin.Courses.Section.edit', compact('section'));
     }
 
     /**

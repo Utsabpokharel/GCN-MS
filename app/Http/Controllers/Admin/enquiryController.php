@@ -63,7 +63,7 @@ class enquiryController extends Controller
     public function edit($id)
     {
         $enquiry = Enquiry::findorfail($id);
-        return view('Admin.Enquiry.edit', compact('enquiry'));
+        return view('Admin.Enquiry.Enquiry.edit', compact('enquiry'));
     }
 
     /**

@@ -42,15 +42,17 @@
                             <tr>
                                 <td>{{$value->step+1}}</td>
                                 <td>{{$value->image}}</td>
-								<td>{{$value->fname}}{{$value->lname}}</td>
+								<td>{{$value->fname}} {{$value->lname}}</td>
 								<td>{{$value->gender}}</td>
 								<td>{{$value->email}}</td>
 								<td>
                                 <a href="{{route('customer.edit',$value->id) }}"
                                 class="btn btn-primary btn-xs">
                                 <i class="fa fa-pencil"></i></a>
-                                <a href="{{route('customer.destroy',$value->id)}}"
-                                class="btn btn-danger btn-xs">
+                                <form method="POST" action="{{ route('customer.destroy', $value->id) }}" id="deleteForm">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger btn-xs">
                     			<i class="fa fa-trash-o "></i>
                                 </button>
 								</td>

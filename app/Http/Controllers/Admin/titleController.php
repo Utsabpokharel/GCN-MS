@@ -63,7 +63,7 @@ class titleController extends Controller
     public function edit($id)
     {
         $title = Title::findorfail($id);
-        return view('Admin.Title.edit', compact('title'));
+        return view('Admin.Designation.Title.edit', compact('title'));
     }
 
     /**

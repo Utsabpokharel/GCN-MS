@@ -74,7 +74,8 @@
 											<div class="form-group row">
 												<label class="control-label col-md-3">Remarks </label>
 												<div class="col-md-5">
-												<textarea class="form-control form-control-solid" rows="5" name="remarks" required placeholder="Enter Remarks" value="{{$teacheratt->remarks}}"> </textarea>
+												<textarea class="form-control form-control-solid" rows="5" name="remarks" 
+												required placeholder="Enter Remarks" value="{{$teacheratt->remarks}}"> </textarea>
      										</div>
 										</div>                                      
                                    	</div>                                               

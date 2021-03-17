@@ -63,7 +63,7 @@ class visitedController extends Controller
     public function edit($id)
     {
         $visited = Visited::findorfail($id);
-        return view('Admin.Visited.edit', compact('visited'));
+        return view('Admin.Call Logs.Visitor Logs.edit', compact('visited'));
     }
 
     /**

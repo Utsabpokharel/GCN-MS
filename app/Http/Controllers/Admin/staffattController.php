@@ -65,7 +65,7 @@ class staffattController extends Controller
     public function edit($id)
     {
         $staffatt = Staffatt::findorfail($id);
-        return view('Admin.Staffatt.edit', compact('staffatt'));
+        return view('Admin.Attendance.Staff.edit', compact('staffatt'));
     }
 
     /**

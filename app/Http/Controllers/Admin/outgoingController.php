@@ -63,7 +63,7 @@ class outgoingController extends Controller
     public function edit($id)
     {
         $outgoing = Outgoing::findorfail($id);
-        return view('Admin.Outgoing.edit', compact('outgoing'));
+        return view('Admin.Call Logs.Outgoing Call Logs.edit', compact('outgoing'));
     }
 
     /**

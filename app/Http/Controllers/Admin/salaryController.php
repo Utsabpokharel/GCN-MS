@@ -63,7 +63,7 @@ class salaryController extends Controller
     public function edit($id)
     {
         $salary = Salary::findorfail($id);
-        return view('Admin.Salary.edit', compact('salary'));
+        return view('Admin.Payroll.Salary.edit', compact('salary'));
     }
 
     /**

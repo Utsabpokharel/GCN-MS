@@ -182,8 +182,8 @@
 												<select name="customer_type" id="customer_type"
 													class="form-control input-height @error('customer_type') is-invalid @enderror" value="{{old('customer_type','')}}" />
 													<option selected disabled="">Select Customer Type </option>
-													<option value="abc">Organization</option>
-													<option value="abc">Individual</option>
+													<option value="Organization">Organization</option>
+													<option value="Individual">Individual</option>
 													</select>
                     								@error('customer_type')
                     								<span class="invalid-feedback" role="alert"> 
