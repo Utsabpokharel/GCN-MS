@@ -42,7 +42,7 @@
                             @foreach($teacher as $value)
                             <tr>
                                 <td>{{$value->step+1}}</td>
-                                <td>{{$value->fname}}{{$value->lname}}</td>
+                                <td>{{$value->fname}} {{$value->lname}}</td>
                                 <td>{{$value->phone}}</td>
                                 <td>{{$value->course}}</td>
                                 <td>{{$value->teachtime}}</td>
@@ -51,8 +51,10 @@
                                 <a href="{{route('teacher.edit',$value->id) }}"
                                 class="btn btn-primary btn-xs">
                                 <i class="fa fa-pencil"></i></a>
-                                <a href="{{route('teacher.destroy',$value->id) }}"
-                                class="btn btn-danger btn-xs">
+                                <form method="POST" action="{{ route('teacher.destroy', $value->id) }}" id="deleteForm">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger btn-xs">
                     			<i class="fa fa-trash-o "></i>
                                 </button>
 								</td>

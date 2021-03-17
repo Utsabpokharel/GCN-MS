@@ -29,7 +29,7 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="{{route('enquiryresponse.update',$enquiryresponse->id)}}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{route('enquiryresponse.update',$enquiry->id)}}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
                             @method('PUT')
@@ -38,7 +38,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <textarea name="response" id="response" cols="30" rows="10" value="{{$enquiryresponse->response}}"
+                                        <textarea name="response" id="response" cols="30" rows="10" value="{{$enquiry->response}}"
                                         class="form-control"></textarea>
                                     </div>
 

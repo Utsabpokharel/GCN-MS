@@ -41,7 +41,7 @@
                                     <select name="user_id" id="user_id"
 													class="form-control input-height @error('user_id') is-invalid @enderror" value="{{old('user_id','')}}" />
 													<option selected disabled="">Select User Name </option>
-													<option value="abc">abc</option>
+													<option value="1">abc</option>
 													</select>
                                     </div>
                                 </div>

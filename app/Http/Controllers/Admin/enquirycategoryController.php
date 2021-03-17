@@ -63,7 +63,7 @@ class enquirycategoryController extends Controller
     public function edit($id)
     {
         $enquiry = EnquiryCategory::findorfail($id);
-        return view('Admin.EnquiryCategory.edit', compact('enquiry'));
+        return view('Admin.Enquiry.EnquiryCategory.edit', compact('enquiry'));
     }
 
     /**

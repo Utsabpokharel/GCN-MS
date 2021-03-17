@@ -63,7 +63,7 @@ class courseController extends Controller
     public function edit($id)
     {
         $course = course::findorfail($id);
-        return view('Admin.Course.edit', compact('course'));
+        return view('Admin.Courses.Course.edit', compact('course'));
     }
 
     /**

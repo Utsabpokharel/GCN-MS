@@ -38,7 +38,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name= "departmentname"required placeholder="Department Name"
+                                        <input type="text" name= "departmentname"required placeholder=" Enter Department Name"
                                             class="form-control input-height " value="" />
                                     </div>
                                 </div>
@@ -47,7 +47,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="shortname" required placeholder="Department Short Name"
+                                        <input type="text" name="shortname" required placeholder=" Enter Department Short Name"
                                             class="form-control input-height" value="" />
                                     </div>
                                 </div>
@@ -56,7 +56,7 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="code" required placeholder="Department Code"
+                                        <input type="text" name="code" required placeholder="Enter Department Code"
                                             class="form-control input-height" value="" />
                                     </div>
                                 </div>
@@ -66,7 +66,8 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <textarea name="departmentdescription" id="departmentdescription" cols="30" rows="10" class="form-control"></textarea>
+                                        <textarea name="departmentdescription" id="departmentdescription" cols="30" rows="10" 
+                                        class="form-control" required placeholder=" Enter Department Description"></textarea>
                                     </div>
 
                                 </div>

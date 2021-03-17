@@ -39,8 +39,11 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="name" required placeholder="Select Staff Name"
-                                            class="form-control input-height" value="{{$paycalendar->name}}" />
+                                    <select name="name"  class="form-control form-control-solid @error('name') is-invalid @enderror" 
+                                    value="{{$paycalendar->name}}">
+          										<option value="">Select Staff Name</option>
+												<option value="abc">abc</option> 
+                                       </select>
                                     </div>
                                 </div>
 

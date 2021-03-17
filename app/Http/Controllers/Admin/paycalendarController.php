@@ -63,7 +63,7 @@ class paycalendarController extends Controller
     public function edit($id)
     {
         $paycalendar = PayCalendar::findorfail($id);
-        return view('Admin.PayCalendar.edit', compact('paycalendar'));
+        return view('Admin.Payroll.PayCalendar.edit', compact('paycalendar'));
     }
 
     /**

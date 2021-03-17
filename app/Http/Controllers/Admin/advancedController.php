@@ -63,7 +63,7 @@ class advancedController extends Controller
     public function edit($id)
     {
         $advanced = Advanced::findorfail($id);
-        return view('Admin.Advanced.edit', compact('advanced'));
+        return view('Admin.Payroll.Advanced.edit', compact('advanced'));
     }
 
     /**

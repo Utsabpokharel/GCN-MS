@@ -93,7 +93,9 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                    <textarea name="reason" id="reason" cols="30" rows="10" class="form-control"></textarea>
+                                    <textarea name="reason" id="reason" cols="30" rows="10" 
+                                    class="form-control" required
+                                            placeholder="Enter Reason"></textarea>
                                     </div>
                                 </div>
 

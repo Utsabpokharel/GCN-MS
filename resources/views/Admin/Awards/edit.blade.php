@@ -41,6 +41,7 @@
 												<select name="staffname" id="staffname"
 													class="form-control input-height @error('staffname') is-invalid @enderror" value="{{$award->staffname}}" >
 													<option selected disabled="">Select Staff Name </option>
+													<option value="abc">abc</option>
 													</select>
 		   
 													@error('staffname')

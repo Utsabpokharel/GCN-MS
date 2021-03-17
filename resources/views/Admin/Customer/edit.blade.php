@@ -29,7 +29,7 @@
 									</button>									
 								</div>
 								<div class="card-body" id="bar-parent">
-									<form action="{{ route('customer.update',$customer->id)) }}" id="form_sample_1" class="form-horizontal" 
+									<form action="{{ route('customer.update',$customer->id) }}" id="form_sample_1" class="form-horizontal" 
 									method="post" autocomplete="on"  enctype="multipart/form-data">
 										{{csrf_field()}}
 										@method('PUT')
@@ -39,7 +39,7 @@
 													<span class="required"> * </span>
 												</label>
 												<div class="col-md-5">
-													<input type="text" name="dob" required placeholder="Enter First Name" 
+													<input type="text" name="fname" required placeholder="Enter First Name" 
 													class="form-control input-height @error('fname') is-invalid @enderror" value="{{$customer->fname}}" />
 													@error('fname')
 														<span class="invalid-feedback" role="alert">
@@ -185,8 +185,8 @@
 												<select name="customer_type" id="customer_type"
 													class="form-control input-height @error('customer_type') is-invalid @enderror" value="{{$customer->customer_type}}"/>
 													<option selected disabled="">Select Customer Type </option>
-													<option value="abc">Organization</option>
-													<option value="abc">Individual</option>
+													<option value="Organization">Organization</option>
+													<option value="Individual">Individual</option>
 													</select>
                     								@error('customer_type')
                     								<span class="invalid-feedback" role="alert"> 

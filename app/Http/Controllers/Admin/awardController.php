@@ -63,7 +63,7 @@ class awardController extends Controller
     public function edit($id)
     {
         $award = Awards::findorfail($id);
-        return view('Admin.Award.edit', compact('award'));
+        return view('Admin.Awards.edit', compact('award'));
     }
 
     /**
