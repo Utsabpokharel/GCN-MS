@@ -89,9 +89,23 @@ class employeeresignationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->all();
+
         $employeeresignation = EmployeeResignation::findorfail($id);
-        $employeeresignation->update($data);
+        if ($request->hasFile('resignationdocument')) {
+            $image = $request->file('resignationdocument');
+            $res = "RESIGNATION-" . time() . '.' . $image->getClientOriginalExtension();
+            $image->move('public/images/EmployeeResignation/', $res);
+            $employeeresignation->resignationdocument = $res;
+        }
+        $employeeresignation->staffname = $request->input('staffname');
+        $employeeresignation->staffcode = $request->input('staffcode');
+        $employeeresignation->forwardto = $request->input('forwardto');
+        $employeeresignation->noticedate = $request->input('noticedate');
+        $employeeresignation->desireresigndate = $request->input('desireresigndate');
+        $employeeresignation->reason = $request->input('reason');
+        $employeeresignation->details = $request->input('details');
+
+        $employeeresignation->save();
         return redirect()->route('employeeresignation.index')->with('success', 'Employee Resignation Updated Successfully');
     }
 
