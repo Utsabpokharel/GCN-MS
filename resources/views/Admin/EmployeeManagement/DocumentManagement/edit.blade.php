@@ -5,7 +5,7 @@
         <div class="page-bar">
             <div class="page-title-breadcrumb">
                 <div class=" pull-left">
-                    <div class="page-title">Add Documents</div>
+                    <div class="page-title">Edit Documents</div>
                 </div>
                 <ol class="breadcrumb page-breadcrumb pull-right">
                     <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="">Home</a>&nbsp;<i
@@ -30,7 +30,7 @@
                         </button>
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="{{ route('documentmanagement.update',$document->id) }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
+                        <form action="{{ route('documentmanagement.update',$documentmanagement->id) }}" id="form_sample_1" class="form-horizontal" method="post" autocomplete="on"
                             enctype="multipart/form-data">
                             {{csrf_field()}}
                             @method('PUT')
@@ -60,8 +60,8 @@
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="pandocument" required placeholder="PAN Number"
-                                            class="form-control input-height" value="{{ old('pandocument',$documentmanagement->pandocument) }}"/>
+                                        <input type="file" name="pandocument"
+                                            class="form-control input-height" value="{{ asset('public/images/PAN Document/'.$documentmanagement->pandocument) }}"/>
                                     </div>
 
                                 </div>
@@ -71,7 +71,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="file" name="pfdocument"
-                                            class="form-control input-height" value="{{ old('pfdocument',$documentmanagement->pfdocument) }}"/>
+                                            class="form-control input-height" value="{{ asset('public/images/PF Document/'.$documentmanagement->pfdocument) }}"/>
                                     </div>
                                 </div>
 
@@ -81,7 +81,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="file" name="citdocument"
-                                            class="form-control input-height " value="{{ old('citdocument',$documentmanagement->citdocument) }}" />
+                                            class="form-control input-height " value="{{ asset('public/images/CIT Document/'.$documentmanagement->citdocument) }}" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -90,7 +90,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="file" name="appointmentdocument"
-                                            class="form-control input-height " value="{{ old('appointmentdocument',$documentmanagement->appointmentdocument) }}" />
+                                            class="form-control input-height " value="{{ asset('public/images/Appointment Document/'.$documentmanagement->appointmentdocument) }}"/>
                                     </div>
                                 </div>
                                  <div class="form-group row">
@@ -99,7 +99,7 @@
                                     </label>
                                     <div class="col-md-5">
                                         <input type="file" name="contractdocument"
-                                            class="form-control input-height " value="{{ old('contractdocument',$documentmanagement->contractdocument) }}" />
+                                            class="form-control input-height " value="{{ asset('public/images/Contract Document/'.$documentmanagement->contractdocument) }}" />
                                     </div>
                                 </div>
 

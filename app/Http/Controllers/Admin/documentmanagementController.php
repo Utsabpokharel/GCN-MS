@@ -38,49 +38,49 @@ class documentmanagementController extends Controller
      */
     public function store(Request $request)
     {
-         if ($request->hasFile('pandocument')) {
+        if ($request->hasFile('pandocument')) {
             $image = $request->file('pandocument');
-            $pan = "PAN-".time().'.'. $image->getClientOriginalExtension();           
-            $image->move('public/images/PAN Document/',$pan); 
-            // $prsnl->ctzn_f = $name;          
+            $pan = "PAN-" . time() . '.' . $image->getClientOriginalExtension();
+            $image->move('public/images/PAN Document/', $pan);
+            // $prsnl->ctzn_f = $name;
         }
         if ($request->hasFile('pfdocument')) {
             $image = $request->file('pfdocument');
             $pf = "PF-" . time() . '.' . $image->getClientOriginalExtension();
             $image->move('public/images/PF Document/', $pf);
-            // $prsnl->ctzn_f = $name;          
+            // $prsnl->ctzn_f = $name;
         }
         if ($request->hasFile('citdocument')) {
             $image = $request->file('citdocument');
             $cit = "CIT-" . time() . '.' . $image->getClientOriginalExtension();
             $image->move('public/images/CIT Document/', $cit);
-            // $prsnl->ctzn_f = $name;          
+            // $prsnl->ctzn_f = $name;
         }
         if ($request->hasFile('appointmentdocument')) {
             $image = $request->file('appointmentdocument');
             $appointment = "APPOINTMENT-" . time() . '.' . $image->getClientOriginalExtension();
             $image->move('public/images/Appointment Document/', $appointment);
-            // $prsnl->ctzn_f = $name;          
+            // $prsnl->ctzn_f = $name;
         }
         if ($request->hasFile('contractdocument')) {
             $image = $request->file('contractdocument');
             $contract = "CONTRACT-" . time() . '.' . $image->getClientOriginalExtension();
             $image->move('public/images/Contract Document/', $contract);
-            // $prsnl->ctzn_f = $name;          
+            // $prsnl->ctzn_f = $name;
         }
         // dd($name);
-        
-        $documentmanagement = new DocumentManagement([            
+
+        $documentmanagement = new DocumentManagement([
             'staffname' => $request->staffname,
-            'bankaccountnumber' => $request->bankaccountnumber,           
-       ]);
-       $documentmanagement->pandocument = $pan;
+            'bankaccountnumber' => $request->bankaccountnumber,
+        ]);
+        $documentmanagement->pandocument = $pan;
         $documentmanagement->pfdocument = $pf;
         $documentmanagement->citdocument = $cit;
         $documentmanagement->appointmentdocument = $appointment;
         $documentmanagement->contractdocument = $contract;
-    //    dd($prsnl);
-       $documentmanagement->save();
+        //    dd($prsnl);
+        $documentmanagement->save();
         return redirect()->route('documentmanagement.index')->with('success', 'Employee Documents created Successfully');
     }
 
@@ -116,9 +116,42 @@ class documentmanagementController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->all();
         $documentmanagement = DocumentManagement::findorfail($id);
-        $documentmanagement->update($data);
+        if ($request->hasFile('pandocument')) {
+            $image = $request->file('pandocument');
+            $pan = "PAN-" . time() . '.' . $image->getClientOriginalExtension();
+            $image->move('public/images/PAN Document/', $pan);
+            $documentmanagement->pandocument = $pan;
+            //
+        }
+        if ($request->hasFile('pfdocument')) {
+            $image = $request->file('pfdocument');
+            $pf = "PF-" . time() . '.' . $image->getClientOriginalExtension();
+            $image->move('public/images/PF Document/', $pf);
+            $documentmanagement->pfdocument = $pf;
+        }
+        if ($request->hasFile('citdocument')) {
+            $image = $request->file('citdocument');
+            $cit = "CIT-" . time() . '.' . $image->getClientOriginalExtension();
+            $image->move('public/images/CIT Document/', $cit);
+            $documentmanagement->citdocument = $cit;
+        }
+        if ($request->hasFile('appointmentdocument')) {
+            $image = $request->file('appointmentdocument');
+            $appointment = "APPOINTMENT-" . time() . '.' . $image->getClientOriginalExtension();
+            $image->move('public/images/Appointment Document/', $appointment);
+            $documentmanagement->appointmentdocument = $appointment;
+        }
+        if ($request->hasFile('contractdocument')) {
+            $image = $request->file('contractdocument');
+            $contract = "CONTRACT-" . time() . '.' . $image->getClientOriginalExtension();
+            $image->move('public/images/Contract Document/', $contract);
+            $documentmanagement->contractdocument = $contract;
+        }
+        $documentmanagement->staffname = $request->input('staffname');
+        $documentmanagement->bankaccountnumber = $request->input('bankaccountnumber');
+
+        $documentmanagement->save();
         return redirect()->route('documentmanagement.index')->with('success', 'Employee Document Updated Successfully');
     }
 

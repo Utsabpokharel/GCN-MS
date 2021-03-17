@@ -49,13 +49,14 @@ class employeeterminationController extends Controller
             'staffname' => $request->staffname,
             'staffcode' => $request->staffcode,
             'changestatus' => $request->changestatus,
+            'noticedate'   => $request->noticedate,
             'serviceenddate' => $request->serviceenddate,
             'desireresigndate' => $request->noticedate,
             'forwardto' => $request->forwardto,
             'reason' => $request->reason,
-            'details' => $request->details 
+            'details' => $request->details
         ]);
-        $employeetermination->terminationdocument=$term;
+        $employeetermination->terminationdocument = $term;
         $employeetermination->save();
         return redirect()->route('employeetermination.index')->with('success', 'Employee Termination created successfully');
     }
@@ -92,9 +93,24 @@ class employeeterminationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->all();
         $employeetermination = EmployeeTermination::findorfail($id);
-        $employeetermination->update($data);
+        if ($request->hasFile('terminationdocument')) {
+            $image = $request->file('terminationdocument');
+            $term = "TERMINATION-" . time() . '.' . $image->getClientOriginalExtension();
+            $image->move('public/images/EmployeeTermination/', $term);
+            $employeetermination->terminationdocument = $term;
+        }
+        $employeetermination->staffname = $request->input('staffname');
+        $employeetermination->staffcode = $request->input('staffcode');
+        $employeetermination->changestatus = $request->input('changestatus');
+        $employeetermination->noticedate = $request->input('noticedate');
+        $employeetermination->serviceenddate = $request->input('serviceenddate');
+        $employeetermination->noticedate = $request->input('noticedate');
+        $employeetermination->forwardto = $request->input('forwardto');
+        $employeetermination->reason = $request->input('reason');
+        $employeetermination->details = $request->input('details');
+
+        $employeetermination->save();
         return redirect()->route('employeetermination.index')->with('success', 'Employee Termination Updated Successfully');
     }
 
